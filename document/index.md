@@ -21,12 +21,6 @@
 * 客服工具，服务器台 http://www.hesk.com/
 * php电商开源  https://www.prestashop.com/  
 
-### 1.6 PHP架构
-* ORM MYSQL，同一提交功能
-* ORM REDIS，Set，ZSet，List，Hash 结构封装，同一提交功能
-* 地址路由转发
-* GM
-* 
 
 
 
