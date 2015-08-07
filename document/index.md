@@ -16,12 +16,21 @@
 * 每台服务器请求数量 = ((80%*总PV量) / (24小时 * 60分钟 * 40%))
 * 例500W PV的网站，(0.8* 50000000) / (24*60*60*0.4) =1157。峰值没秒处理1157个请求 
  
-### 1.5 Help desk
-* 客服工具，服务器台
-* PHP开源 http://www.hesk.com/
 
-### 1.6 php电商开源
-* https://www.prestashop.com/  
+### 1.5 PHP 开源 
+* 客服工具，服务器台 http://www.hesk.com/
+* php电商开源  https://www.prestashop.com/  
+
+### 1.6 PHP架构
+* ORM MYSQL，同一提交功能
+* ORM REDIS，Set，ZSet，List，Hash 结构封装，同一提交功能
+* 地址路由转发
+* GM
+* 
+
+
+
+
 
 
 
