@@ -2,8 +2,6 @@
 
 ### fixme
 * Thrift与protobuf测试
-* 
-
 
 
 
