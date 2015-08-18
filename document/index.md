@@ -1,29 +1,37 @@
-# 知识字典
+# Table of Contents
 
-### 1.1 运维工具
+---
+
+1. Programming Language
+2. Operating System
+3. Other
+
+
+
+
+## 1 Programming Language
+* PHP
+	* PHP 安装
+	* PHP性能分析工具xhprof，图形化工具xhgui
+	* 日志，程序日志通过LogStash进入到ElasticSearch，使用Kibana搜索。业务日志通过LogStash落地日志服务器
+* GO
+
+
+## 3 Other
+* QPS计算公式，80%的请求发生在40%的时间里，每台服务器请求数量 = ((80%*总PV量) / (24小时 * 60分钟 * 40%))。例500W PV的网站，(0.8* 50000000) / (24*60*60*0.4) =1157。峰值没秒处理1157个请求
+* Help Desk http://www.hesk.com/
+* 电商 https://www.prestashop.com/
 * expect交互语言可以用来做发布工具
 * puppet配置管理系统
 
-### 1.2 日志管理
-* 程序日志通过LogStash进入到ElasticSearch，使用Kibana搜索
-* 业务日志通过LogStash落地日志服务器
 
-### 1.3 性能监控
-* xhprof，图形化工具xhgui
 
-### 1.4 性能术语
-* QPS计算公式，80%的请求发生在40%的时间里
-* 每台服务器请求数量 = ((80%*总PV量) / (24小时 * 60分钟 * 40%))
-* 例500W PV的网站，(0.8* 50000000) / (24*60*60*0.4) =1157。峰值没秒处理1157个请求 
+
+
  
 
-### 1.5 PHP 开源 
-* 客服工具，服务器台 http://www.hesk.com/
-* php电商开源  https://www.prestashop.com/  
 
 
 
 
-
----
 
