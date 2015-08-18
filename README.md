@@ -1,10 +1,11 @@
 # Table of Contents
 
 ---
-
 1. Programming Language
 2. Operating System
 3. Other
+
+* [English](gonet架构.md)
 
 
 ## 1 Programming Language
