@@ -5,9 +5,6 @@
 2. Operating System
 3. Other
 
-* [English](gonet架构.md)
-
-
 ## 1 Programming Language
 * PHP
 	* PHP 安装
