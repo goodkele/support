@@ -1,19 +1,21 @@
 # Table of Contents
 
 ---
-
+1. Desktop and Tool
 1. Programming Language
-2. Operating System
-3. Software Design
-4. Other
+1. Operating System
+1. Software Design
+1. Other
+
+## 1 Desktop and Tool
+* gcc 
+* protobuf
+* thrift
 
 ## 1 Programming Language
-* PHP
-	* PHP 安装
-	* PHP性能分析工具xhprof，图形化工具xhgui
-	* 日志，程序日志通过LogStash进入到ElasticSearch，使用Kibana搜索。业务日志通过LogStash落地日志服务器
+* PHP [PHP](语言-PHP.md)
 * GO
-* expect
+* Expect
 
 
 ## 3 Design
