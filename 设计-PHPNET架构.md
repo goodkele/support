@@ -13,7 +13,7 @@
 ### Freamework
 * ORM MYSQL，统一提交功能。分库时候数据库应该映射在ring里
 * ORM REDIS，Set，ZSet，List，Hash 结构封装，统一提交功能
-	* REDIS 做主存储，mysql做备份存储
+	* REDIS 做主存储，mysql做备份存储。按照玩家ID分库，公共数据比如排行榜数据，按照key前缀分库
 * 地址路由转发
 * 异常捕获
 * 日志
