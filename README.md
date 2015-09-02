@@ -21,7 +21,8 @@
 ## 4 Design
 * [游戏制作与发布流程](设计-制作与发布流程.md)
 * [PHPNET架构](设计-PHPNET架构.md)
-* 
+
+
 ## 5 Game Operating
 * [游戏运营活动](设计-运营活动.md)
 
