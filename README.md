@@ -15,7 +15,7 @@
 
 ## 2 Programming Language
 * PHP [PHP](语言-PHP.md)
-* GO
+* GO [GO](语言-GO.md)
 * Expect
 
 ## 4 Design
