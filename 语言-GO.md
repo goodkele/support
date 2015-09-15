@@ -3,10 +3,11 @@
 ---
 1. 类型
 2. 顺序编程
+3. 操作符
 
 
 ## 1 变量&类型
-### 1 声明
+### 1.1 声明
 	var a int				// int
 	var b string			// string
 	var c [10]int			// int数组长度是10
@@ -18,26 +19,26 @@
 	var h map[string]int	// map, key为string类型，value为int类型
 	var i func(a int) int	// 函数指针
 
-### 2 变量初始化
+### 1.2 变量初始化
 	var a int				// int默认值0
 	var b *int				// 指针默认值为nil
 	
 	c := make(chan int)		// chan类型只能用make 初始化
 	d := make(map[string]int)//map类型只能用make 初始化
 
-### 3 变量赋值
+### 1.3 变量赋值
 	var a int
 	a = 10					// 正常赋值
 
 	c, d = d, c				// 交换
 	
-### 4 常量
+### 1.4 常量
+	
+
+### 1.5 枚举
 
 
-### 4 枚举
-
-
-### 1 chan
+### 1.6 chan
 	var ch chan int			// 空 int Channel
 	ch := make(chan int) 	// int Channel
 	ch := make(chan int, 10)// 十个缓冲区的 int Channel
