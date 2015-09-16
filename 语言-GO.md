@@ -7,7 +7,7 @@
 	3. 浮点类型：float32,float64
 	4. 复数类型：complex64, complex128
 	5. 字符串：string
-	6. 字符类型：rune
+	6. 字符类型：byte,rune
 	7. 错误类型：error
 	8. 复合类型指针：pointer
 	9. 复合类型数组：array
@@ -149,6 +149,24 @@
 ### 1.6 复数类型
 
 ### 1.6 字符串
+	var a string			// 空字符串
+	b := "hello"			// 
+	b[1]					// 一个字符byte，'e'
+	len(b)					// 5个字符
+	c := "hello世界"			//
+	len(c)					// 11个字符，世界为utf8编码，每个占3个字节
+	b + c					// hellohello世界，+符号为字符连接符
+
+	d := "hello,世界"		// 
+	for i:=0; i<len(d); i++ {
+		fmt.Println(d[i])	// d[i]类型为byte
+	}
+
+	for i, ch := range a {
+		fmt.Println(i, ch)	// i为字符开始下标，ch为rune类型字符
+	}
+
+
 
 ### 1.6 字符类型 byte & rune
 
