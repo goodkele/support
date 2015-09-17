@@ -215,10 +215,104 @@ rune 为 4字节。应该是用uint32来保存
 	c := append(a, b...)	// 0,0,0,0,0,1,2,3,4,5
 	d := append(a, 1,2,3)	// 0,0,0,0,0,1,2,3
 	
+`基于数组或者基于切片创建切片，当切片改变时原数组也会改变`
 
+	// 基于切片创建切片
+	var a []int = []int{1,2,3,4,5}
+	b := a[:3]
+
+	// 内容复制
+	var a []int = []int{1,2,3}
+	var b []int = []int{4,5,6,7,8,9}
+
+	copy(a, b)				// a为3,4,5
+	copy(b, a)				// b为1,2,3,7,8,9
+
+### 1.6 map	
+
+	var a map[string]int	// 
+	a = make(map[string]int) // 初始化
+	a["hello"] = 1			// 元素赋值
+	a["world"] = 2			// 元素赋值
+	delete(a, "world")		// 元素删除
+	
+	i := a["hello"]			// i为1
+	i,ok := a["hello"]		// i为1,ok为true
+	i,ok := a["notok"]		// i为0,ok为false
 	
 
 ## 2 流程控制
+### 条件语句
+	if true {				// 注意，golang不允许return在if中
+		...
+	} else {
+		...
+	}
+
+### 选择语句
+
+`fallthrough，在switch里执行下一个`
+`golang里不需要break退出`
+
+	// i=0， 输出0
+	// i=1， 输出1
+	// i=2， 输出3 
+	// i=3， 输出3
+	// i=4， 输出4, 5, 6
+	// i=5， 输出4, 5, 6
+	// i=6， 输出4, 5, 6
+	// i=任意，输出Default
+	switch i {
+		case 0:
+			fmt.Println("0")
+		case 1:
+			fmt.Println("1")
+		case 2:
+			fallthrough
+		case 3:
+			fmt.Println("3")
+		case 4,5,6:
+			fmt.Println("4,5,6")
+		default :
+			fmt.Println("Default")
+	}
+
+switch 后边无表达式。作用与多个if...else...逻辑作用相同
+
+	switch {
+		case 0 <= Num && Num <= 3 :
+			fmt.Println("0~3")
+		case 4 <= Num && Num <= 6 :
+			fmt.Println("4~6")
+		case 7 <= Num && Num <= 9 :
+			fmt.Println("7~9")
+	}
+
+### 循环语句
+`只有for关键字的循环，golang里没有其他循环关键字`
+
+	for i:=0; i<10; i++ {
+		...
+	}
+
+	// 等于while{}，无限循环
+	sum := 0
+	for {
+		sum++
+		if sum>100 {
+			break
+		}
+	}
+
+	// golang不支持i:=0,j:=0这样的逗号赋值
+	for i, j := 0, 0; i<10 && j<10; i,j=i+1,j+1 {
+		...
+	}
+
+	
+
+### 跳转语句
+
 ### select
 	var n int
 	for {
@@ -226,7 +320,8 @@ rune 为 4字节。应该是用uint32来保存
 			case n = <- ch
 		}
 	}
-#### select超时
+
+	// select超时
 	var n int
 	chFor : 
 	for {
