@@ -471,6 +471,7 @@ func recover() interface{}
 	// 最终输出 Recover hoho
 	
 
-
-
 ## 5 面向对象
+
+	// 定义类型
+	type Header map[string][]string
