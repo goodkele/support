@@ -33,6 +33,16 @@
 	var h map[string]int	// map, key为string类型，value为int类型
 	var i func(a int) int	// 函数指针
 
+	// struct 初始化
+	type User struct  {
+		name string
+		age int
+	}
+
+	a := &User{"hello", 18}	
+
+
+
 ### 1.2 变量初始化
 	var a int				// int默认值0
 	var b *int				// 指针默认值为nil
@@ -355,14 +365,112 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 ## 3 函数
 
 ### 函数定义
+	
+	// 函数定义
+	func test(a int, b int)		// 
+	func test(a,b int)			// 同上
+	func test(a int, b int) (ret int, err error)	// 带返回值函数
 
-### 函数调用
+	// 匿名函数定义
+	fun := func(a int, b int) int 
 
 ### 不定参数
 
-### 多返回值
+	func myfunc(args ...int) {
+		for _, arg := range args {
+			fmt.Println(arg)
+		}
+	}
 
-### 匿名函数与闭包
+	myfunc(1,2,3)
+	myfunc(1,2,3,4,5,6)
+	
+	var a []int = []int{10,20,30,40}
+	myfunc(a...)	// 等于myfunc(10,20,30,40)
+
+	// 不定参数，interface类型
+	func myfunc2(args ...interface{}) {
+		for _,arg := range args{
+			switch arg.(type) {
+				case int :
+					fmt.Printf("This is Int: %d", arg)
+				case string :
+					fmt.Printf("THis is String:%s\n", arg)
+			}
+		}
+	}
+	
+	myfunc2(10)		//  10
+	myfunc2(10, "hello") // 10,hello
+
+	
+	// 多返回值
+	func myfunc3() (int,int) {
+		return 1,2
+	}
+
+### Defer
+
+`Defer 遵循后进先出原则`
+	
+	defer func() {
+		fmt.Println("a");
+	}()
+
 
 ## 4 错误处理
+	
+### 错误类型
 
+	// 原生错误
+	err := errors.New("first error")
+
+	// 自定义错误类型
+	type errorTest struct {
+		s string
+	}
+	func (e *errorTest)Error() string {
+		return e.s
+	}
+	
+	func myfunc() (int,error) {
+		err := &errorTest{"myfunc error"}
+		return 10,err
+	}
+	
+	func main() {
+		_,err := myfunc()
+		fmt.Println(err)
+	}
+
+
+### panic() & recover()
+
+当函数执行panic函数时，正常函数执行流程立即终止。函数中defer关键字正常执行。之后返回调用函数，并导致逐层执行panic。直至goroutine执行函数终止。错误信息将被报告，包括panic调用时传入的参数。
+	
+func panic(interface{})
+
+从错误流程中恢复过来，使用defer关键字执行
+
+func recover() interface{}
+
+	func reco() {
+		if r := recover(); r != nil {
+			fmt.Printf("Recover %s", r)
+		}
+	}
+
+	func main() {
+	
+		defer reco()
+
+		panic("hoho")
+
+		fmt.Println("hello")
+	}
+	// 最终输出 Recover hoho
+	
+
+
+
+## 5 面向对象
