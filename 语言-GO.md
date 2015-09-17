@@ -308,10 +308,27 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 	for i, j := 0, 0; i<10 && j<10; i,j=i+1,j+1 {
 		...
 	}
-
+	
+	// 支持continue，break关键字
+	ForHere:
+	for i:=0; i<10; i++ {
+		if i >= 5 {
+			break ForHere
+		}
+	}
 	
 
 ### 跳转语句
+
+	func myFunc() {
+		i := 0
+		HERE:
+		fmt.Println(i)
+		i++
+		if i < 10 {
+			goto HERE
+		}
+	}
 
 ### select
 	var n int
@@ -331,4 +348,21 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 				break chFor
 		}
 	}
+
+
+
+
+## 3 函数
+
+### 函数定义
+
+### 函数调用
+
+### 不定参数
+
+### 多返回值
+
+### 匿名函数与闭包
+
+## 4 错误处理
 
