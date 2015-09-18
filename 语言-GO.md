@@ -1,4 +1,4 @@
-# PHP
+# Golang
 
 ---
 1. 类型
@@ -472,6 +472,94 @@ func recover() interface{}
 	
 
 ## 5 面向对象
+	
+值语义类型
+
+`基本类型：byte,int,bool,float32,float64,string`
+
+`复合类型：array,struct,pointer（指针）`
+
+引用语义类型
+
+`数组切片：指向array的一个区间`
+
+`map,channel,interface`
+
+	
 
 	// 定义类型
 	type Header map[string][]string
+	type Integer
+
+	// 定义结构体
+	type User struct {
+		Name string
+		Age int
+	}
+
+	func (this *User) getAge() (int) {
+		return this.Age
+	}
+
+	func (this *User) setAge(age int) {
+		this.Age = age
+	}
+
+	// 初始化结构体
+	user := new(User)
+	user := &User{}
+	user := &User{"hello", 10}
+	user := &User{Name:"world", Age:10}
+	
+### 5.1 匿名组合 & 嵌入类型
+
+	// 定义结构体
+	type Person struct {
+		Name string
+		Age int
+		Level int
+	}
+	
+	func (this *Person) Fight() {
+		fmt.Println("Person.Fight()")
+	}
+	
+	type Hero struct {
+		Person
+	}
+	
+	func (this *Hero) Fight() {
+		fmt.Println("Hero Fight")
+		this.Person.Fight()
+	}
+	
+	type Soldier struct {
+		*Person
+	}
+	
+	func (this *Soldier) Fight() {
+		fmt.Println("Soldier Fight")
+		this.Person.Fight()
+	}
+	
+	// 指针类型
+	func main() {
+		h := &Hero{Person{"person", 10, 100}}
+		h.Fight()					
+		h.Person.Fight()
+		
+		s := &Soldier{&Person{"person", 10, 100}}
+		s.Fight()
+	}
+
+	// 输出
+	// Hero Fight
+	// Person.Fight()
+	// Person.Fight()
+	// Soldier Fight
+	// Person.Fight()
+
+
+### 5.2 接口 & interface
+
+
