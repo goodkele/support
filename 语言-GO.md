@@ -33,7 +33,8 @@
 5. 网络编程
 6. reflect
 7. sync
-8. CGO
+8. flag
+8. cgo
   
 
 
@@ -576,6 +577,43 @@ func recover() interface{}
 
 
 ### 4.3 接口 & interface
+	
+	type Integer int
+	
+	func (a Integer) Less(b Integer) bool {
+		return a < b
+	}
+	
+	func (a *Integer) Add(b Integer) {
+		*a += b
+	}
+	
+	type LessAdder interface {
+		Less(b Integer) bool
+		Add(b Integer)
+	}
+
+	func main() {
+	
+	
+		var i Integer
+		var ier LessAdder = &i
+	
+		i = 10
+		i.Add(10)
+		
+		
+		
+		fmt.Println(ier.Less(20))
+		// 输出 false
+
+	}
+
+### 4.4 接口查询
+
+### 4.5 类型查询
+
+
 
 
 ## 5 网络编程
