@@ -42,6 +42,7 @@
 
 ## 1 变量类型
 
+
 值语义类型
 
 `基本类型：byte,int,bool,float32,float64,string`
@@ -615,8 +616,75 @@ func recover() interface{}
 
 
 
+	// 接口声明与调用
+	type Integer int  
+	
+	func (this Integer) Less(b Integer) bool {
+		return this < b
+	}
+	
+	func (this *Integer) Add(b Integer) {
+		*this += b
+	}
+	
+	func (this Integer) Show() {
+		fmt.Println(this)
+	}
+	
+	type IntegerInterface interface {
+		Less(b Integer) (bool)
+		Add(b Integer)
+		Show()
+	}
+	
+	func main() {
+	
+		var a Integer
+		a.Add(Integer(1))
+		fmt.Println(a)		// 1
+		
+		var b Integer
+		b = 2
+		
+		var bInterface IntegerInterface
+		bInterface = &b
+		bInterface.Add(1)
+		bInterface.Show()	// 3
+	}
+
+### 5.2 接口查询
+
+
 
 ## 5 网络编程
 ## 6 reflect
+
+### 6.1 
+
+	type T struct {
+		A int
+		B string
+	}
+	
+	func main() {
+	
+		t := T{23, "skidoo"}
+		s := reflect.ValueOf(&t).Elem()
+		fmt.Println(s)
+	
+		typeOfT := s.Type()
+		for i := 0; i < s.NumField(); i++ {
+			f := s.Field(i)
+			fmt.Printf("%d: %s %s = %v\n", i,
+			typeOfT.Field(i).Name, f.Type(), f.Interface())
+		}
+	}
+
 ## 7 sync
 ## 8 CGO
+
+
+
+
+	
+
