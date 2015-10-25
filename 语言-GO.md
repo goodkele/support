@@ -16,10 +16,13 @@
 	12. 复合类型通道：chan
 	13. 复合类型结构体：struct
 	14. 复合类型接口：interface
-2. 顺序编程
-3. 操作符
-4. 锁 & 原子操作
-5. 反射
+2. 面向对象
+3. 顺序编程 & 操作符
+4. 反射
+5. 序列化
+6. strings包
+7. PATH包 
+8. sync包，锁 & 原子操作
 
 
 ## 1 变量&类型
@@ -251,6 +254,8 @@ rune 为 4字节。应该是用uint32来保存
 	i := a["hello"]			// i为1
 	i,ok := a["hello"]		// i为1,ok为true
 	i,ok := a["notok"]		// i为0,ok为false
+
+	var aa map[int]int = map[int]int {1:1}
 	
 
 ## 2 流程控制
@@ -512,7 +517,9 @@ func recover() interface{}
 	user := &User{}
 	user := &User{"hello", 10}
 	user := &User{Name:"world", Age:10}
+	users:= []User{{Name:"1", Age:1}, {Name:"2", Age:2}}
 	
+
 ### 5.1 匿名组合 & 嵌入类型
 
 	// 定义结构体
@@ -624,3 +631,43 @@ func recover() interface{}
 			typeOfT.Field(i).Name, f.Type(), f.Interface())
 		}
 	}
+
+## 序列化
+
+### json
+
+	type Road struct {
+		Name   string
+		Number int
+	}
+
+	b, err := json.Marshal(Road{})
+	if err != nil {
+		//log.Fatal(err)
+	}
+
+	fmt.Println(string(b))
+
+
+
+	var jsonBlob = []byte(`[
+		{"Name": "Platypus", "Order": "Monotremata"},
+		{"Name": "Quoll",    "Order": "Dasyuromorphia"}
+	]`)
+	type Animal struct {
+		Name  string
+		Order string
+	}
+	var animals []Animal
+	err = json.Unmarshal(jsonBlob, &animals)
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	fmt.Printf("%+v", animals)
+
+	// 输出
+	// {"Name":"","Number":0}
+	// [{Name:Platypus Order:Monotremata} {Name:Quoll Order:Dasyuromorphia}]
+
+
+
