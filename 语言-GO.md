@@ -2,17 +2,17 @@
 
 ---
 1. 类型
-	1. bool
-	2. 整型：int8,byte,int16,int,uint,uintptr 等
-	3. 浮点类型：float32,float64
-	4. 复数类型：complex64, complex128
-	5. 字符串：string
-	6. 字符类型：byte,rune
-	7. 错误类型：error
-	8. 复合类型指针：pointer
-	9. 复合类型数组：array
-	10. 复合类型切片：slice
-	11. 复合类型字典：map
+	1. 变量声明 & 初始化 & 赋值
+	2. bool 类型
+	3. 整型
+	4. 浮点类型
+	5. 字符串
+	6. 字符类型 byte & rune
+	7. 复合类型数组：array
+	8. 复合类型切片：slice
+	9. 复合类型字典：map
+	10. 常量
+	11. 枚举
 	12. 复合类型通道：chan
 	13. 复合类型结构体：struct
 	14. 复合类型接口：interface
@@ -25,8 +25,21 @@
 8. sync包，锁 & 原子操作
 
 
-## 1 变量&类型
-### 1.1 声明
+## 1 变量类型
+
+值语义类型
+
+`基本类型：byte,int,bool,float32,float64,string`
+
+`复合类型：array,struct,pointer（指针）`
+
+引用语义类型
+
+`数组切片：指向array的一个区间`
+
+`map,channel,interface`
+
+### 1.1 变量声明 & 初始化 & 赋值
 	var a int				// int
 	var b string			// string
 	var c [10]int			// int数组长度是10
@@ -46,73 +59,29 @@
 
 	a := &User{"hello", 18}	
 
-
-
-### 1.2 变量初始化
+	// 变量初始化
 	var a int				// int默认值0
 	var b *int				// 指针默认值为nil
 	
 	c := make(chan int)		// chan类型只能用make 初始化
 	d := make(map[string]int)//map类型只能用make 初始化
 
-### 1.3 变量赋值
+	// 变量赋值
 	var a int
 	a = 10					// 正常赋值
 
 	c, d = d, c				// 交换
-	
-### 1.4 常量
-	const PI float64 = 3.1415926 // 带类型常量
-	const zero = 0.0		// 不带类型常量等于字面常量
-	const a, b = 1, 2		// 无类型常量
-	const (					// 无类型常量
-		c = "a"
-		d = 123
-	)
-	const (
-		e = iota			// 0
-		f = iota			// 1
-		g = iota			// 2
-	)
-	const (
-		h = iota			// 0
-		i					// 1
-		j					// 2
-	)
-	
-### 1.5 枚举
-	const (
-		Sunday = iota		// 0
-		Monday 				// 1
-		Tuesday
-		Wednesday
-		Thursday
-		Friday
-		Saturday
-	)
 
-### 1.6 chan
-	var ch chan int			// 空 int Channel
-	ch := make(chan int) 	// int Channel
-	ch := make(chan int, 10)// 十个缓冲区的 int Channel
-	ch <- 1					// 像ch Channel 发送 1
-	<- ch					// 接受一个ch值
-	i := <- ch				// 接受一个ch值，赋值给i
-	i, err := <- ch			// 接受一个ch值，如果ch关闭则err为非空
-	close(ch)				// 关闭chan
-	var ch1 chan<- int		// 单向只读chan int 
-	var ch2 <-chan int 		// 单向只写chan int
-	ch3 := chan<- int(ch)	// 转换ch为只读chan int
-	ch4 := <-chan int(ch)	// 转换ch为只写chan int
 
-### 1.6 bool 类型
+### 1.2 bool 类型
 	var a bool				// bool类型只接受true或者false
 	a = true
 	a = false
 	a = 1					// error 编译错误
 	a = bool(1)				// error 也不支持自动或者强制类型转换 
 
-### 1.6 整型
+
+### 1.3 整型
 	var a int8				// -128~127
 	var b uint8				// 0~255
 	var c int16				// -32768~32767
@@ -145,7 +114,7 @@
 	124 | 2					// 126
 	^2						// -3
 
-### 1.6 浮点类型
+### 1.4 浮点类型
 	var a float32			// 浮点类型采用IEEE-754标准
 	var b float64			// 等于C的double类型
 	c := 12					// 自动推到为整型
@@ -160,10 +129,9 @@
 	func isEqual(f1, f2, p float64) bool {
 		return math.Fdim(f1, f2) < p
 	}
-	
-### 1.6 复数类型
 
-### 1.6 字符串
+
+### 1.5 字符串
 	var a string			// 空字符串
 	b := "hello"			// 
 	b[1]					// 一个字符byte，'e'
@@ -187,7 +155,7 @@ byte 为 uint8别名
 
 rune 为 4字节。应该是用uint32来保存
 
-### 1.6 数组
+### 1.7 复合类型数组：array
 数组是值类型，函数传值时会发生复制操作
 
 	[32]byte				// 长度为32的byte数组
@@ -198,7 +166,7 @@ rune 为 4字节。应该是用uint32来保存
 	var a [5]int = [5]int{1,2,3,4,5} // 1,2,3,4,5
 	var b [5]int = [5]int{1}// 1,0,0,0,0
 	
-### 1.6 数组切片
+### 1.8 复合类型切片：slice
 	// 从数组创建切片
 	var a [5]int = [5]int{1,2,3,4,5,6,7,8,9,10}
 	var b []int = a[:5]		// 1,2,3,4,5
@@ -243,7 +211,7 @@ rune 为 4字节。应该是用uint32来保存
 	copy(a, b)				// a为3,4,5
 	copy(b, a)				// b为1,2,3,7,8,9
 
-### 1.6 map	
+### 1.9 复合类型字典：map
 
 	var a map[string]int	// 
 	a = make(map[string]int) // 初始化
@@ -258,15 +226,60 @@ rune 为 4字节。应该是用uint32来保存
 	var aa map[int]int = map[int]int {1:1}
 	
 
+### 1.10 常量
+	const PI float64 = 3.1415926 // 带类型常量
+	const zero = 0.0		// 不带类型常量等于字面常量
+	const a, b = 1, 2		// 无类型常量
+	const (					// 无类型常量
+		c = "a"
+		d = 123
+	)
+	const (
+		e = iota			// 0
+		f = iota			// 1
+		g = iota			// 2
+	)
+	const (
+		h = iota			// 0
+		i					// 1
+		j					// 2
+	)
+	
+### 1.11 枚举
+	const (
+		Sunday = iota		// 0
+		Monday 				// 1
+		Tuesday
+		Wednesday
+		Thursday
+		Friday
+		Saturday
+	)
+
+### 1.12 复合类型通道：chan
+	var ch chan int			// 空 int Channel
+	ch := make(chan int) 	// int Channel
+	ch := make(chan int, 10)// 十个缓冲区的 int Channel
+	ch <- 1					// 像ch Channel 发送 1
+	<- ch					// 接受一个ch值
+	i := <- ch				// 接受一个ch值，赋值给i
+	i, err := <- ch			// 接受一个ch值，如果ch关闭则err为非空
+	close(ch)				// 关闭chan
+	var ch1 chan<- int		// 单向只读chan int 
+	var ch2 <-chan int 		// 单向只写chan int
+	ch3 := chan<- int(ch)	// 转换ch为只读chan int
+	ch4 := <-chan int(ch)	// 转换ch为只写chan int
+
+
 ## 2 流程控制
-### 条件语句
+### 2.1 条件语句
 	if true {				// 注意，golang不允许return在if中
 		...
 	} else {
 		...
 	}
 
-### 选择语句
+### 2.2 选择语句
 
 `fallthrough，在switch里执行下一个`
 `golang里不需要break退出`
@@ -305,7 +318,7 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 			fmt.Println("7~9")
 	}
 
-### 循环语句
+### 2.3 循环语句
 `只有for关键字的循环，golang里没有其他循环关键字`
 
 	for i:=0; i<10; i++ {
@@ -335,7 +348,7 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 	}
 	
 
-### 跳转语句
+### 2.4 跳转语句
 
 	func myFunc() {
 		i := 0
@@ -347,7 +360,7 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 		}
 	}
 
-### select
+### 2.5 select
 	var n int
 	for {
 		select {
@@ -368,10 +381,9 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 
 
 
-
 ## 3 函数
 
-### 函数定义
+### 3.1 函数定义
 	
 	// 函数定义
 	func test(a int, b int)		// 
@@ -381,7 +393,7 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 	// 匿名函数定义
 	fun := func(a int, b int) int 
 
-### 不定参数
+### 3.2 不定参数
 
 	func myfunc(args ...int) {
 		for _, arg := range args {
@@ -416,18 +428,15 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 		return 1,2
 	}
 
-### Defer
+### 3.3 Defer
 
 `Defer 遵循后进先出原则`
 	
 	defer func() {
 		fmt.Println("a");
 	}()
-
-
-## 4 错误处理
 	
-### 错误类型
+### 3.4 错误类型
 
 	// 原生错误
 	err := errors.New("first error")
@@ -451,7 +460,7 @@ switch 后边无表达式。作用与多个if...else...逻辑作用相同
 	}
 
 
-### panic() & recover()
+### 3.5 panic() & recover()
 
 当函数执行panic函数时，正常函数执行流程立即终止。函数中defer关键字正常执行。之后返回调用函数，并导致逐层执行panic。直至goroutine执行函数终止。错误信息将被报告，包括panic调用时传入的参数。
 	
@@ -478,22 +487,9 @@ func recover() interface{}
 	// 最终输出 Recover hoho
 	
 
-## 5 面向对象
+## 4 面向对象
+### 4.1 对象声明与定义
 	
-值语义类型
-
-`基本类型：byte,int,bool,float32,float64,string`
-
-`复合类型：array,struct,pointer（指针）`
-
-引用语义类型
-
-`数组切片：指向array的一个区间`
-
-`map,channel,interface`
-
-	
-
 	// 定义类型
 	type Header map[string][]string
 	type Integer
@@ -520,7 +516,7 @@ func recover() interface{}
 	users:= []User{{Name:"1", Age:1}, {Name:"2", Age:2}}
 	
 
-### 5.1 匿名组合 & 嵌入类型
+### 4.2 匿名组合 & 嵌入类型
 
 	// 定义结构体
 	type Person struct {
@@ -569,7 +565,44 @@ func recover() interface{}
 	// Person.Fight()
 
 
-### 5.2 接口 & interface
+### 4.3 接口 & interface
+	
+	type Integer int
+	
+	func (a Integer) Less(b Integer) bool {
+		return a < b
+	}
+	
+	func (a *Integer) Add(b Integer) {
+		*a += b
+	}
+	
+	type LessAdder interface {
+		Less(b Integer) bool
+		Add(b Integer)
+	}
+
+	func main() {
+	
+	
+		var i Integer
+		var ier LessAdder = &i
+	
+		i = 10
+		i.Add(10)
+		
+		
+		
+		fmt.Println(ier.Less(20))
+		// 输出 false
+
+	}
+
+### 4.4 接口查询
+
+### 4.5 类型查询
+
+
 
 	// 接口声明与调用
 	type Integer int  
@@ -611,7 +644,10 @@ func recover() interface{}
 
 
 
-## 反射
+## 5 网络编程
+## 6 reflect
+
+### 6.1 
 
 	type T struct {
 		A int
@@ -631,6 +667,7 @@ func recover() interface{}
 			typeOfT.Field(i).Name, f.Type(), f.Interface())
 		}
 	}
+
 
 ## 序列化
 
@@ -668,6 +705,13 @@ func recover() interface{}
 	// 输出
 	// {"Name":"","Number":0}
 	// [{Name:Platypus Order:Monotremata} {Name:Quoll Order:Dasyuromorphia}]
+
+
+
+## 7 sync
+## 8 CGO
+
+
 
 
 
