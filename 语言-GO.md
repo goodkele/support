@@ -1,6 +1,9 @@
 # Golang
 
 ---
+
+0. 注意事项
+	1. import 导入
 1. 类型
 	1. 变量声明 & 初始化 & 赋值
 	2. bool 类型
@@ -23,6 +26,12 @@
 6. strings包
 7. PATH包 
 8. sync包，锁 & 原子操作
+9. flag包
+
+
+## 0 import 导入
+
+
 
 
 ## 1 变量类型
@@ -710,6 +719,9 @@ func recover() interface{}
 
 ## 7 sync
 ## 8 CGO
+## 9 flag包
+
+
 
 
 
