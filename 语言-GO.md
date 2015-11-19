@@ -158,6 +158,49 @@
 		fmt.Println(i, ch)	// i为字符开始下标，ch为rune类型字符
 	}
 
+	// range 的码点
+	for i, ru := range "世界" {
+		fmt.Printf("%d %x\n", i, ru)	// 输出为unicode码点非utf8码点
+	}
+	
+	// 将world追加到b的末尾
+	a := "hello"
+	b := a
+	b += "world"
+
+	// 下标为3的原始字符就是byte
+	fmt.Println(a[3])
+	// 从下标为1的位置开始到下标为5-1位置结束的byte原始字符，这里的“哈”字会截掉
+	fmt.Println(a[1:5])
+	// 从下标为3的字符开始到字符长度-1
+	fmt.Println(a[3:])
+	// 从首字符开始到下标为3 -1位置
+	fmt.Println(a[:3])
+	// 全部字符串
+	fmt.Println(a[:])
+	// 字符串的字节数，这里是14
+	fmt.Println(len("hello哈哈哈"))	
+	// 字符串的utf8长度，这里是8, 更快的方法 fmt.Println(utf8.RuneCountInString("hello哈哈哈"))
+	fmt.Println(len([]rune("hello哈哈哈")))
+	// 将字符串转换成unicode码点
+	fmt.Println([]rune("hello哈哈哈"))
+	// 将rune或者uint32切片转换成字符串，当然里边必须包含的是码点
+	var arr = []rune{104, 101, 108, 108, 111, 21704, 21704, 21704}
+	// 字符串转换成byte
+	fmt.Println([]byte("hello哈哈哈"))
+	// 将byte转换成字符串
+	var arr2 = []byte{104,101,108,108,111,229,147,136,229,147,136,229,147,136}
+	fmt.Println(string(arr2))
+	// 整型转字符串
+	fmt.Println(strconv.Itoa(123))
+
+
+	
+	
+	
+
+
+
 ### 1.6 字符类型 byte & rune
 
 byte 为 uint8别名
