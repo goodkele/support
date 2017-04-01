@@ -25,5 +25,7 @@
 	* 站点：http://www.ocenter.cn/
 	* 介绍：OpenSNS 配套开源，ThinkPHP用户中心
 
-
+*. MarkDown 开源编辑器
+	* 站点：http://pandao.github.io/editor.md/
+	* 介绍：适合做wiki编辑器
 
