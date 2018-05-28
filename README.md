@@ -3,7 +3,7 @@
 ---
 
 * [运维](https://github.com/goodkele/support/blob/master/README.md#运维)
-    * [Nginx](https://github.com/goodkele/support/blob/master/README.md##Nginx)
+    * [Nginx](https://github.com/goodkele/support/blob/master/README.md#Nginx)
 
 
 # 运维
