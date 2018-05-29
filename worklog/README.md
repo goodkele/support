@@ -112,9 +112,102 @@
 * 团建休假
 
 #### 2018-05-25 周五
-* 数据库结构
-    * 
+* 数据库结构 common库
+    * comm_short_url    短地址
+    * k12_class_info    报名管理 - 班级信息表
+    * k12_class_tag     报名管理 - 班级标签表
+    * k12_course_info   教务管理 - 课程信息表
+    * k12_course_tag    教务管理 - 课程标签表
+    * k12_cusers        人事管理 - 家长端(C方)用户表
+    * k12_cusers_bind   人事管理 - 家长端(C方)用户-第三方绑定表
+    * k12_teacher_info  教务管理 - 老师信息表
+    * k12_teacher_tag   教务管理 - 老师标签表
+    * k12_users         人事管理 - 培训机构(B方)用户表
+    * k12_users_bind    人事管理 - 培训机构(B方)用户表-第三方绑定表
+    * log               
+    * sale_apply_probation  申请试用表
+    * sale_merchant     商户表
+    * sale_users        人事管理 - 本站销售平台用户表
+* 数据库结构 机构库
+    * k12_apply_class_continue	报名管理 - 班级续班提醒
+    * k12_apply_class_info_onetoone	报名管理 - 一对一班级信息表，FK k12_apply_info
+    * k12_apply_class_member		报名管理 - 班级中在读学员信息表
+    * k12_apply_edc_learn_log		education chain教育接口结班学员上报日志
+    * k12_apply_freeze		报名管理 - 在读学员 冻结信息表
+    * k12_apply_info 			报名管理 - 报名/购买记录表
+    * k12_apply_info_concession	报名管理 - 报名/购买整体优惠记录表
+    * k12_apply_item			报名管理 - 报名项目记录表(课程/考证报名/教学用品)
+    * k12_apply_makeup		报名管理 - 补课安排表
+    * k12_apply_prepaid_card		报名管理 - 预充值卡创建/充值记录表
+    * k12_apply_refund		报名管理 - 退款记录表(包括退班/退定金)
+    * k12_apply_schedule		报名管理 - 课时安排表
+    * k12_apply_student_checkin	报名管理 - 学生签到信息表
+    * k12_apply_student_schedule	报名管理 - 学生课时安排表(按次购买专用)
+    * k12_apply_teacher_checkin	报名管理 - 老师签到信息表
+    * k12_apply_teacher_schedule	报名管理 - 老师课时安排表
+    * k12_auth_menu 		权限管理 - 菜单列表
+    * k12_auth_menu_role	权限管理 - 菜单角色关联表
+    * k12_auth_perm 		权限管理 - 权限表
+    * k12_auth_perm_role 	权限管理 - 权限角色关联表
+    * k12_auth_role 		权限管理 - 角色表
+    * k12_auth_role_user 	权限管理 - 用户 角色 关联表
+    * k12_consumer_audition		客户管理 - 学生试听表
+    * k12_consumer_info		客户管理 - 客户信息表
+    * k12_consumer_message 		消息表
+    * k12_consumer_message_extra	消息扩展表
+    * k12_consumer_tag		客户管理 - 客户需求标签表
+    * k12_consumer_trail		客户管理 - 销售行为跟进表
+    * k12_consumer_transfer		客户管理 - 客户申请转校记录表
+    * k12_eduaffair_cert		教务管理 - 考证报名信息表
+    * k12_eduaffair_classroom		教务管理 - 教室表
+    * k12_eduaffair_realia		教务管理 - 教学用品信息表
+    * k12_eduaffair_relation		教务管理 - 课程关系表
+    * k12_eduaffair_school_zone	教务管理 - 校区表
+    * k12_eduaffair_subject		教务管理 - 老师科目表
+    * k12_eduaffair_worktime		教务管理 - 老师工作时间(排课时间)表
+    * k12_finaffair_voucher 		财务管理 - 代金券发放规则配置表
+    * k12_finaffair_voucher_receive	财务管理 - 代金券发放记录表
+    * k12_member_account 		学员管理 - 资金账号信息表
+    * k12_member_account_balance 	学员管理 - 资金账号余额类收入表
+    * k12_member_account_balance_do	
+    * k12_member_expend_log		学员管理 - 课时交付(课消)/学杂费交付日志表
+    * k12_member_fund_log		学员管理 - 资金变更日志表
+    * k12_member_message 		消息表
+    * k12_member_message_extra	消息扩展表
+    * k12_member_prepaid_card		学员管理 - 学员预充值卡表
+    * k12_setting_concession		系统设置 - 优惠配置表
+    * k12_setting_general		系统设置 - 通用配置表
+    * k12_setting_holiday		系统设置 - 节假日配置表
+    * k12_setting_message_log		消息日志表
+    * k12_setting_message_notice	系统设置 - 通知提醒设置表
+    * k12_setting_message_template	系统设置 - 消息配置表
+    * k12_setting_multi		系统设置 - 多级配置表
+    * k12_setting_prepaid_card	系统设置 - 预充值卡配置表
+    * k12_setting_refund		系统设置 - 退款配置表
+    * k12_setting_sell_action		系统设置 - 销售业务行为配置表
+    * k12_setting_touch_level		系统设置 - 沟通等级与业务行为关系配置表
+    * k12_stat_consumer		统计 - 客户
+    * k12_teacher_leave 		老师请假--老师端 个人中心
+    * k12_teacher_leave_item		报名管理 - 老师课时安排表
+
+
 
 #### 2018-05-28 周一
+* 省市区js数据更新
 * 数据层封装
-    * 
+
+#### 2018-05-29 周二
+* 营销工具需求分析
+    * 优惠卷
+        * 优惠卷是否是原系统中代金卷功能
+        * 优惠卷是否接入微信卡卷
+        * 优惠卷核销
+    * 课程报名
+    * 活动报名
+
+
+#### 2018-05-30 周三
+
+#### 2018-05-31 周四
+
+
