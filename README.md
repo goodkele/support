@@ -46,6 +46,7 @@
 * [Drupal](https://www.oschina.net/p/drupal)
 
 ## CRM
+
 * [然之协同办公](https://www.oschina.net/p/ranzhi)
 * [喧喧-燃之团队](https://www.oschina.net/p/xuanxuan)
 * [SugarCRM](https://www.oschina.net/p/sugarcrm)
@@ -66,11 +67,12 @@
 * [BlueERP 财务管理系统](https://www.oschina.net/p/blueerp)
 * 
 ## 社区
+
 * [EoenYoubbs](https://www.oschina.net/p/youbbs-eoen)
 * [PHPDish-Symfony社区](https://www.oschina.net/p/phpdish)
 * [MonicaHQ个人人际关系管理软件](https://www.oschina.net/p/monicahq)
-* [Modoer-PHP点评系统](https://www.oschina.net/p/modoer
-* [OpenCenter-PHP通用用户中心框架](https://www.oschina.net/p/opencenter
+* [Modoer-PHP点评系统](https://www.oschina.net/p/modoer)
+* [OpenCenter-PHP通用用户中心框架](https://www.oschina.net/p/opencenter)
 * [拍旁轻博客](https://www.oschina.net/p/paipang)
 * [PHP168 独立分类信息系统](https://www.oschina.net/p/php168)
 * [UCenter Home](https://www.oschina.net/p/ucenter+home)
