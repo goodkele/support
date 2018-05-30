@@ -6,8 +6,8 @@
     * [Nginx](https://github.com/goodkele/support/blob/master/README.md#Nginx)
 * [前端](https://github.com/goodkele/support/blob/master/README.md#前端)
 * [开源项目](https://github.com/goodkele/support/blob/master/README.md#开源项目)
-    * [开源项目](https://github.com/goodkele/support/blob/master/README.md#框架)
-    * [开源项目](https://github.com/goodkele/support/blob/master/README.md#CRM)
+    * [框架](https://github.com/goodkele/support/blob/master/README.md#框架)
+    * [CRM](https://github.com/goodkele/support/blob/master/README.md#CRM)
 * 
 # 运维
 
