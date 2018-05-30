@@ -26,6 +26,9 @@
 
 ## React
 
+* [阮一峰 React 入门实例教程](https://www.cnblogs.com/axl234/p/8269018.html)
+* [阮一峰 react-demos 源代码](https://github.com/ruanyf/react-demos)
+* [阮一峰 webpack-demos 源代码](https://github.com/ruanyf/webpack-demos)
 * [create-react-app的使用及原理分析](https://www.cnblogs.com/axl234/p/8269018.html)
 
 
