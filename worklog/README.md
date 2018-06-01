@@ -219,11 +219,15 @@
 * React
 
 #### 2018-05-31 周四
-
+* 创建yaf example
+* 试用爱校saas http://i.xiaohe.com
 
 #### 2018-06-01 周五
-
-
+* 营销管理表创建
+* 营销管理controller和model创建
+* 
+* js 微页面解决方案
+* yii 源代码分析
 
 #### 2018-06-01 周六
 
