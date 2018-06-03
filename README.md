@@ -26,6 +26,7 @@
 ## PHP
 
 * [PSR PHP 标准规范](https://psr.phphub.org/) 
+* [PDO 防止SQL注入](https://www.zhihu.com/question/23922206)
 
 # 前端
 
