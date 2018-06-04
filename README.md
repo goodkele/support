@@ -37,6 +37,8 @@
 * [阮一峰 webpack-demos 源代码](https://github.com/ruanyf/webpack-demos)
 * [create-react-app的使用及原理分析](https://www.cnblogs.com/axl234/p/8269018.html)
 
+## Redis
+* [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
 
 
 # 开源项目
