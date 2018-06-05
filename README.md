@@ -19,6 +19,28 @@
 * sudo apt install libpcre3 libpcre3-dev   
 * sudo apt install zlib1g-dev  
 
+
+* mount -t vboxsf www /data/www
+
+* sudo apt-get update;
+* sudo apt-get install mysql-server ;
+* sudo mysql_secure_installation;
+
+* grant all privileges on *.* to 'root'@'%' identified by 'xxxxxx';
+
+* mysql启动 sudo service mysql start;
+* mysql关闭 sudo service mysql stop;
+* mysql重启 sudo service mysql restart;
+
+* apt install php7.2 php7.2-common php7.2-dev php7.2-fpm php7.2-mbstring php7.2-xml
+* service php7.2-fpm start
+* service php7.2-fpm stop
+* service php7.2-fpm restart
+
+* sudo apt-get install nginx
+
+* netstat -an|grep 3306
+
 ## vbox
 
 # 后端
