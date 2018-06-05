@@ -27,16 +27,18 @@
 
 * [PSR PHP 标准规范](https://psr.phphub.org/) 
 * [PDO 防止SQL注入](https://www.zhihu.com/question/23922206)
+* [phpspider](https://github.com/owner888/phpspider)
 * [浅谈数据仓库建设中的数据建模方法](https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0803zhousb/index.html)
 
 # 前端
 
-## React
+## Javascript
 
 * [阮一峰 React 入门实例教程](https://www.cnblogs.com/axl234/p/8269018.html)
 * [阮一峰 react-demos 源代码](https://github.com/ruanyf/react-demos)
 * [阮一峰 webpack-demos 源代码](https://github.com/ruanyf/webpack-demos)
 * [create-react-app的使用及原理分析](https://www.cnblogs.com/axl234/p/8269018.html)
+* [Layui Layui/LayaAdmin/Lay论坛](http://www.layui.com/)
 
 ## Redis
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
