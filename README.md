@@ -27,6 +27,7 @@
 
 * [PSR PHP 标准规范](https://psr.phphub.org/) 
 * [PDO 防止SQL注入](https://www.zhihu.com/question/23922206)
+* [浅谈数据仓库建设中的数据建模方法](https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0803zhousb/index.html)
 
 # 前端
 
@@ -40,6 +41,10 @@
 ## Redis
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
 
+# 学校管理系统
+
+* [ETM早教管理系统](http://www.etmcn.com/html/) 
+* [爱校-学校管理系统](http://www.xiaohe.com/)
 
 # 开源项目
 
