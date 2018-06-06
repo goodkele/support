@@ -1,5 +1,5 @@
 <?php
-use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+//use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class IndexController extends Yaf_Controller_Abstract {
     public function indexAction() {//默认Action
@@ -18,9 +18,8 @@ class IndexController extends Yaf_Controller_Abstract {
 //        echo $png;
 //
 //        exit();
+//
+        $this->getView()->assign("content", "Hello opacity");
 
-        echo "asdf";
-        exit();
-//        $this->getView()->assign("content", "Hello World");
     }
 }

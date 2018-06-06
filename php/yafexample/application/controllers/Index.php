@@ -7,19 +7,21 @@ class IndexController extends Yaf_Controller_Abstract {
 
 //        $log = file_get_contents(DATAPATH . "/s_akuyd.png");
 
-        $png = $qrcode->format("png")
-            ->size(510)
-            ->margin(0)
-//            ->mergeString($log, .2)
-            ->errorCorrection('H')
-            ->generate("123");
+//        $png = $qrcode->format("png")
+//            ->size(510)
+//            ->margin(0)
+////            ->mergeString($log, .2)
+//            ->errorCorrection('H')
+//            ->generate("123");
+//
+//        header('Content-type: image/png');
+//        echo $png;
+//
+//        exit();
 
-        header('Content-type: image/png');
-        echo $png;
+        new Admin_UserModel();
 
-        exit();
-
-        $this->getView()->assign("content", "Hello World");
+        $this->getView()->assign("content", "Hello Wor123ld");
     }
 }
 
