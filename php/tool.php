@@ -83,4 +83,31 @@ class Tool
         return$version . mt_rand(10000, 99999);
     }
 
+
+
+    /**
+     * 营销模板变量替换
+     *
+     * @author wulei
+     * @param $str      string  寻找字符串中<:abcde/>标签
+     * @param $params   array   替换['abcde'=>''] 替换abcde标签为空字符串
+     * @return string
+     */
+    public static function promotionTempRender($str, $params)
+    {
+        $p = '/<:(\w+)\/>/';
+
+        $str = preg_replace_callback($p,
+            function ($matches) use ($params) {
+                if (isset($matches[1])) {
+                    return $params[strtolower($matches[1])] ? $params[strtolower($matches[1])] : '';
+                }
+                return '';
+            },
+            $str
+        );
+
+        return $str;
+    }
+
 }
