@@ -25,26 +25,26 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
         }
     }
 
-    /**
-     * 注册本地命名空间
-     */
-    public function _initLocalName()
-    {
-        Yaf_Loader::getInstance()->registerLocalNamespace(array(
-            'Smarty',
-        ));
-    }
+    // /**
+    //  * 注册本地命名空间
+    //  */
+    // public function _initLocalName()
+    // {
+    //     Yaf_Loader::getInstance()->registerLocalNamespace(array(
+    //         'Smarty',
+    //     ));
+    // }
 
-    /**
-     * 初始化smarty
-     *
-     * @param Yaf_Dispatcher $dispatcher
-     */
-    public function _initSmarty(Yaf_Dispatcher $dispatcher)
-    {
-        Yaf_Loader::import("Smarty/Adapter.php");
-        $smarty = new Smarty_Adapter(null, Yaf_Application::app()->getConfig()->smarty);
-        $dispatcher->setView($smarty);
-    }
+    // /**
+    //  * 初始化smarty
+    //  *
+    //  * @param Yaf_Dispatcher $dispatcher
+    //  */
+    // public function _initSmarty(Yaf_Dispatcher $dispatcher)
+    // {
+    //     Yaf_Loader::import("Smarty/Adapter.php");
+    //     $smarty = new Smarty_Adapter(null, Yaf_Application::app()->getConfig()->smarty);
+    //     $dispatcher->setView($smarty);
+    // }
 
 }

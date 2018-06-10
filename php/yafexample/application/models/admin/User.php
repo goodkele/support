@@ -8,9 +8,9 @@ class Admin_UserModel
     private static $instance;
 
     /**
-     * Get the instance of ExampleModel.
+     * Get the instance of Admin_UserModel.
      *
-     * @return ExampleModel
+     * @return Admin_UserModel
      */
     public static function getInstance()
     {

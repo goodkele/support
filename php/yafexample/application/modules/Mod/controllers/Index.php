@@ -1,8 +1,13 @@
 <?php
 //use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
-class IndexController extends Yaf_Controller_Abstract {
+// namespace mod;
+
+
+
+class IndexController extends Base_ModController {
     public function indexAction() {//默认Action
+        
 //        $qrcode = new BaconQrCodeGenerator;
 //
 ////        $log = file_get_contents(DATAPATH . "/s_akuyd.png");
@@ -19,8 +24,9 @@ class IndexController extends Yaf_Controller_Abstract {
 //
 //        exit();
 //
-//        $this->getView()->assign("content", "Hello World");\
-        echo "Asdf";
-        exit();
+       $this->getView()->assign("content", "Hello World");
+       $this->getView()->assign("content2", "2");
+        // echo "Asdf123";
+        // exit();
     }
 }
