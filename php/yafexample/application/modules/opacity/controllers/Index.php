@@ -24,6 +24,20 @@ class IndexController extends Base_OpacityController {
 //        echo "asdf123";
 //        exit();
 
+
+
+        $a = Admin_UserModel::find(31);
+
+        vaR_dump($a->toArray());
+
+        $a->free_time = "1213";
+        $a->save();
+
+//        foreach ($a as $aa) {
+//            var_dump($aa->username);
+//        }
+
+
         $this->getView()->assign("content", "Hello opacity");
 
     }

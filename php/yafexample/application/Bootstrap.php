@@ -39,12 +39,14 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
         $capsule = new Capsule();
         $capsule->addConnection(
             \Yaf\Application::app()->getConfig()->database->akuyd->toArray(),
-            'default'
+            GameConst::DB_AKUYD
+//            'default'
         );
 
         $capsule->addConnection(
             \Yaf\Application::app()->getConfig()->database->akuadmin->toArray(),
-            'akuadmin'
+            GameConst::DB_AKUADMIN
+//            'akuadmin'
         );
 
         $capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher(new \Illuminate\Container\Container));

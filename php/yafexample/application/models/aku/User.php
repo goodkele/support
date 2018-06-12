@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class Admin_UserModel extends Model
+class Aku_UserModel extends Model
 {
 
     /**
@@ -11,7 +11,7 @@ class Admin_UserModel extends Model
      *
      * @var string
      */
-    protected $table = GameConst::TBL_AKUADMIN_USER;
+    protected $table = GameConst::TBL_AKU_USER;
 
     /**
      * update_at create_at 时间戳记
@@ -20,12 +20,11 @@ class Admin_UserModel extends Model
      */
     protected $dateFormat = 'U';
 
-    /**
-     * 数据库连接
-     *
-     * @var string
-     */
-    protected $connection = GameConst::DB_AKUADMIN;
+
+//    protected $connection = GameConst::DB_AKUADMIN; //'connection-name';
+
+//    public $timestamps = false;
+
 
 
 
