@@ -1,8 +1,8 @@
 {
     "require": {
         "simplesoftwareio/simple-qrcode": "~2",
-        "illuminate/database" : "*"
-
+        "illuminate/database" : "*",
+        "illuminate/events": "*",
     },
     "repositories": {
         "packagist": {

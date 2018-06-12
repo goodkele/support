@@ -1,6 +1,6 @@
 <?php
 
-class Base_V1Controller extends Yaf_Controller_Abstract
+class Base_V1Controller extends \Yaf\Controller_Abstract
 {
     public function init()
     {

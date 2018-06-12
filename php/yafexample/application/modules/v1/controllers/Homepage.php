@@ -2,7 +2,14 @@
 //use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class HomepageController extends Base_V1Controller {
-    public function indexAction() {//默认Action
+
+    public function indexAction() { //默认Action
+
+
+
+        Admin_UserModel::getInstance()->sayHello();
+
+
 //        $qrcode = new BaconQrCodeGenerator;
 //
 ////        $log = file_get_contents(DATAPATH . "/s_akuyd.png");
