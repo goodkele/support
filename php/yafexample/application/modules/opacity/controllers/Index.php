@@ -1,7 +1,8 @@
 <?php
 //use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
-class IndexController extends BaseController {
+class IndexController extends Base_OpacityController {
+
     public function indexAction() {//默认Action
 //        $qrcode = new BaconQrCodeGenerator;
 //
@@ -20,8 +21,8 @@ class IndexController extends BaseController {
 //        exit();
 //
 
-        echo "asdf123";
-        exit();
+//        echo "asdf123";
+//        exit();
 
         $this->getView()->assign("content", "Hello opacity");
 

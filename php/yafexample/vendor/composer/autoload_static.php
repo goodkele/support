@@ -25,6 +25,7 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Events\\' => 18,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
@@ -32,6 +33,9 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'Doctrine\\Common\\' => 16,
         ),
     );
 
@@ -56,6 +60,10 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         array (
             0 => __DIR__ . '/..' . '/illuminate/support',
         ),
+        'Illuminate\\Events\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/events',
+        ),
         'Illuminate\\Database\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/database',
@@ -72,6 +80,18 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -84,6 +104,21 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
             'SimpleSoftwareIO\\QrCode\\' => 
             array (
                 0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
+            ),
+        ),
+        'D' => 
+        array (
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
             ),
         ),
         'B' => 

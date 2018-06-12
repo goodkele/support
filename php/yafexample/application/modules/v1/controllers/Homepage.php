@@ -7,7 +7,24 @@ class HomepageController extends Base_V1Controller {
 
 
 
-        Admin_UserModel::getInstance()->sayHello();
+//        $a = \Yaf\Application::app()->getDispatcher()->getRequest();
+//
+//            vaR_dump($a);
+//
+//            return;
+
+
+        $this->getView()->assign('content', 'asdf');
+
+
+//        Admin_UserModel::getInstance()->sayHello();
+
+        $a = Admin_UserModel::all();
+
+        foreach ($a as $aa) {
+            vaR_dump($aa->name);
+        }
+
 
 
 //        $qrcode = new BaconQrCodeGenerator;
@@ -49,8 +66,8 @@ class HomepageController extends Base_V1Controller {
     //    return $this->getView()->render(APP_PATH . "/application/modules/v1/views/homepage/index.html");
 
  
-    echo "asdf";
-    exit();
+//    echo "asdf";
+//    exit();
     
         
     }

@@ -8,8 +8,14 @@ use Illuminate\Container\Container as LContainer;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 
+
 class Admin_UserModel extends Model
 {
+
+    protected $table = 'aku_user';
+
+    public $timestamps = false;
+
     /**
      * @var Admin_UserModel
      */
@@ -31,7 +37,8 @@ class Admin_UserModel extends Model
     public function sayHello()
     {
 
-        ;
+
+
 //        var_dump(DB::connection());
 
 //        ; database

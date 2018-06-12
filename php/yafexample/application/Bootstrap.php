@@ -1,12 +1,5 @@
 <?php
 
-use Yaf\Registry;
-use Yaf\Dispatcher;
-use Yaf\Application;
-use Yaf\Bootstrap_Abstract;
-
-//use Illuminate\Events\Dispatcher;
-use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Bootstrap extends \Yaf\Bootstrap_Abstract{
@@ -21,7 +14,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 //    }
 
     /**
-     * 初始化时间
+     * 初始化时区
      */
     public function _initDate()
     {
@@ -36,48 +29,62 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
     }
 
 
-    public function _initDb(Dispatcher $dispatcher)
+    /**
+     * 初始化orm
+     *
+     * @param \Yaf\Dispatcher $dispatcher
+     */
+    public function _initDb(\Yaf\Dispatcher $dispatcher)
     {
-
         $capsule = new Capsule();
-        $a = $capsule->addConnection(
-            [
-                'driver' => 'mysql',
-                'host' => '127.0.0.1',
-                'database' => 'aku_yd',
-                'username' => 'root',
-                'password' => '!Mima2008',
-                'port' => 3306,
-                'charset' => 'utf8',
-                'collation' => 'utf8_unicode_ci',
-                'prefix' => '',
-            ]
+        $capsule->addConnection(
+            \Yaf\Application::app()->getConfig()->database->akuyd->toArray(),
+            'default'
         );
 
-
-//        vaR_dump($capsule->select("select * from aku_user"));
+        $capsule->addConnection(
+            \Yaf\Application::app()->getConfig()->database->akuadmin->toArray(),
+            'akuadmin'
+        );
 
         $capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher(new \Illuminate\Container\Container));
 
         $capsule->setAsGlobal();
+
         $capsule->bootEloquent();
-
-
-
-//        $capsule->setEventDispatcher(new LDispatcher(new LContainer));
-//        $capsule->setAsGlobal();
-//        $capsule->bootEloquent();
     }
 
-    // /**
-    //  * 注册本地命名空间
-    //  */
-    // public function _initLocalName()
-    // {
-    //     Yaf_Loader::getInstance()->registerLocalNamespace(array(
-    //         'Smarty',
-    //     ));
-    // }
+     /**
+      * 注册本地命名空间
+      */
+     public function _initLocalName()
+     {
+         \Yaf\Loader::getInstance()->registerLocalNamespace(array(
+             'Smarty',
+         ));
+     }
+//
+//    /**
+//     * Custom init file for modules.
+//     *
+//     * Allows to load extra settings per module, like routes etc.
+//     */
+    public function _initModules(\Yaf\Dispatcher $dispatcher)
+    {
+
+        $app = $dispatcher->getApplication();
+        $modules = $app->getModules();
+
+        $requestUri = $dispatcher->getRequest()->getRequestUri();
+        $requestUri = explode("/", $requestUri);
+
+        foreach ($modules as $module) {
+            if ('index' == strtolower($module)) continue;
+            if ($requestUri['1'] != strtolower($module) || empty($requestUri['1'])) continue;
+
+            require_once $app->getAppDirectory() . "/modules/" . $module . "/boot.php";
+        }
+    }
 
     // /**
     //  * 初始化smarty
