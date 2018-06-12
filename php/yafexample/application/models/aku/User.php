@@ -20,12 +20,12 @@ class Aku_UserModel extends Model
      */
     protected $dateFormat = 'U';
 
-
-//    protected $connection = GameConst::DB_AKUADMIN; //'connection-name';
-
-//    public $timestamps = false;
-
-
+    /**
+     * 数据库连接
+     *
+     * @var string
+     */
+    protected $connection = GameConst::DB_AKUYD;
 
 
 }
