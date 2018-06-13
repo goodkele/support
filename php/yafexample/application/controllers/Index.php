@@ -1,4 +1,5 @@
 <?php
+
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class IndexController extends Base_BaseController {
@@ -19,7 +20,7 @@ class IndexController extends Base_BaseController {
 //
 //        exit();
 
-        new Admin_UserModel();
+        new \Admin\UserModel();
 
         $this->getView()->assign("content", "Hello Wor123ld");
     }

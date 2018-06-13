@@ -1,9 +1,10 @@
 <?php
 
+namespace Admin;
+
 use Illuminate\Database\Eloquent\Model;
 
-
-class Admin_UserModel extends Model
+class UserModel extends Model
 {
 
     /**
@@ -11,7 +12,7 @@ class Admin_UserModel extends Model
      *
      * @var string
      */
-    protected $table = GameConst::TBL_AKUADMIN_USER;
+    protected $table = \GameConst::TBL_AKUADMIN_USER;
 
     /**
      * update_at create_at 时间戳记
@@ -25,7 +26,7 @@ class Admin_UserModel extends Model
      *
      * @var string
      */
-    protected $connection = GameConst::DB_AKUADMIN;
+    protected $connection = \GameConst::DB_AKUADMIN;
 
 
 

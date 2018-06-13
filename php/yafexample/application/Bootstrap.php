@@ -56,21 +56,43 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
         $capsule->bootEloquent();
     }
 
-     /**
-      * 注册本地命名空间
-      */
-     public function _initLocalName()
-     {
-         \Yaf\Loader::getInstance()->registerLocalNamespace(array(
-             'Smarty',
-         ));
-     }
-//
-//    /**
-//     * Custom init file for modules.
-//     *
-//     * Allows to load extra settings per module, like routes etc.
-//     */
+
+    /**
+     * 注册本地命名空间
+     */
+    public function _initLocalName()
+    {
+        \Yaf\Loader::getInstance()->registerLocalNamespace(array(
+            'Smarty',
+        ));
+    }
+
+    // /**
+    //  * 初始化smarty
+    //  *
+    //  * @param Yaf_Dispatcher $dispatcher
+    //  */
+    // public function _initSmarty(Yaf_Dispatcher $dispatcher)
+    // {
+    //     Yaf_Loader::import("Smarty/Adapter.php");
+    //     $smarty = new Smarty_Adapter(null, Yaf_Application::app()->getConfig()->smarty);
+    //     $dispatcher->setView($smarty);
+    // }
+
+    /**
+     * 初始化模版
+     */
+    public function _initView(\Yaf\Dispatcher $dispatcher)
+    {
+
+        $view = $dispatcher->initView(APP_PATH . "/application/modules/opacity/views/");
+
+        \Yaf\Registry::set(\GameConst::CURRENTVIEW, $view);
+
+//        $view->assign('content2', "123123");
+    }
+
+
     public function _initModules(\Yaf\Dispatcher $dispatcher)
     {
 
@@ -87,17 +109,5 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
             require_once $app->getAppDirectory() . "/modules/" . $module . "/boot.php";
         }
     }
-
-    // /**
-    //  * 初始化smarty
-    //  *
-    //  * @param Yaf_Dispatcher $dispatcher
-    //  */
-    // public function _initSmarty(Yaf_Dispatcher $dispatcher)
-    // {
-    //     Yaf_Loader::import("Smarty/Adapter.php");
-    //     $smarty = new Smarty_Adapter(null, Yaf_Application::app()->getConfig()->smarty);
-    //     $dispatcher->setView($smarty);
-    // }
 
 }

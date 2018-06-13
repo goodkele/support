@@ -1,5 +1,4 @@
 <?php
-//use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class IndexController extends Base_OpacityController {
 
@@ -26,12 +25,12 @@ class IndexController extends Base_OpacityController {
 
 
 
-        $a = Admin_UserModel::find(31);
-
-        vaR_dump($a->toArray());
-
-        $a->free_time = "1213";
-        $a->save();
+//        $a = Admin_UserModel::find(31);
+//
+//        vaR_dump($a->toArray());
+//
+//        $a->free_time = "1213";
+//        $a->save();
 
 //        foreach ($a as $aa) {
 //            var_dump($aa->username);
@@ -41,4 +40,16 @@ class IndexController extends Base_OpacityController {
         $this->getView()->assign("content", "Hello opacity");
 
     }
+
+    public function loginAction()
+    {
+
+    }
+
+    public function logoutAction()
+    {
+
+    }
+
+
 }
