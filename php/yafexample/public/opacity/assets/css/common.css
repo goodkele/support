@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* ---------------------------------------------
+Main CSS file for woiyuadmin 
+Created by:weq 2011-3-3
+1. 重定义浏览器默认样式
+----------------------------------
+
+关于 CSS Hack 的说明：
+
+所有 IE浏览器适用：	.ie_all .foo { ... }
+IE6 专用：			.ie6 .foo { ... }
+IE7 专用：			.ie7 .foo { ... }
+IE8 专用：			.ie8 .foo { ... }
+
+---------------------------------- */
+
+/*--------- 重定义浏览器默认样式-------------------*/
+* { margin: 0; padding: 0; word-wrap: break-word; }
+body, html ,input {font: 12px/1.5 Tahoma,Helvetica,SimSun,sans-serif,Hei;}
+ul li, dl dt dd {list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; }
+table {border-collapse: collapse;border-spacing: 0;}
+input, label, img, th {vertical-align: middle;}
+
+.tra_30{filter:alpha(opacity=30);opacity:0.6; }
+   
+    
+
+a { text-decoration: none; outline: medium none; hidefocus:true; color: #444444;}
+   a:hover { text-decoration: underline; }
+   a img { border: none; }
+/* .z/.y 浮动 left/right */ 
+.lft { float: left; } .rit { float: right; }
+/* 自动闭合浮动 .cl --> Clear */
+.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; line-height:0px; font-size:0; } .cl { zoom: 1; }
+/* 转元素为box  .box--->  转元素为行内  .inl*/
+.box { display:block;}
+.inl { display:inline;}
+.in_box_lft{ display:inline-block;}
+/* 常用字体颜色 样式 em */
+em, cite{font-style: normal;}
+.f14{ font-size:14px;}
+.f12{ font-size:12px;}
+.blue, .blue a{ color:#285c95;}
+.fb{ font-weight:bold}
+/* 外边距 Margin，三组从窄到宽，级别分别为：5px, 10px, 20px, */
+	.mg5 { margin: 5px !important; }
+	.mg_5_rt{ margin-right:5px !important;}
+	
+	
+
+/* 内边距 Padding，三组从窄到宽，级别分别为：5px, 10px, 20px,*/
+.p_lr_10{ padding:0 10px;}
+.p_r_20{ padding-right:20px;padding-bottom:10px;}
+.pad-6{padding:6px; }
+
+/* 常用边框/---------------------*/
+.line-btm {border-bottom: 1px solid #EEEEEE;}
+.xheoneLine{ display:block; height:44px; float:left; width:20px;}
+    
+
+    
+   
