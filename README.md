@@ -2,16 +2,27 @@
 
 ---
 
+
 * [运维](https://github.com/goodkele/support/blob/master/README.md#运维)
-    * [Nginx](https://github.com/goodkele/support/blob/master/README.md#Nginx)
+    * [Ubuntu环境搭建](https://github.com/goodkele/support/blob/master/README.md#Ubuntu环境搭建)
+* [数据库](https://github.com/goodkele/support/blob/master/README.md#数据库)
+    * [Redis](https://github.com/goodkele/support/blob/master/README.md#Redis)
+* [后端](https://github.com/goodkele/support/blob/master/README.md#后端)
+    * [PHP](https://github.com/goodkele/support/blob/master/README.md#PHP)
 * [前端](https://github.com/goodkele/support/blob/master/README.md#前端)
+    * [Javascript][https://github.com/goodkele/support/blob/master/README.md#Javascript]
+* [SAAS管理系统](https://github.com/goodkele/support/blob/master/README.md#SAAS管理系统)
+    * [学校管理系统](https://github.com/goodkele/support/blob/master/README.md#学校管理系统)
 * [开源项目](https://github.com/goodkele/support/blob/master/README.md#开源项目)
     * [框架](https://github.com/goodkele/support/blob/master/README.md#框架)
     * [CRM](https://github.com/goodkele/support/blob/master/README.md#CRM)
-* 
+
+
+
+
 # 运维
 
-## Nginx
+## Ubuntu环境搭建
 * sudo apt install gcc g++ 
 * sudo apt install make make-guide
 
@@ -41,7 +52,10 @@
 
 * netstat -an|grep 3306
 
-## vbox
+
+
+
+
 
 # 后端
 
@@ -51,6 +65,9 @@
 * [PDO 防止SQL注入](https://www.zhihu.com/question/23922206)
 * [phpspider](https://github.com/owner888/phpspider)
 * [浅谈数据仓库建设中的数据建模方法](https://www.ibm.com/developerworks/cn/data/library/techarticles/dm-0803zhousb/index.html)
+* [跨站请求伪造 CSRF ](https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0)
+* [Web 应用程序常见漏洞 CSRF 的入侵检测与防范](https://www.ibm.com/developerworks/cn/rational/r-cn-webcsrf/)
+* [源码解读：php artisan serve](https://zhuanlan.zhihu.com/p/27573264)
 
 # 前端
 
@@ -65,10 +82,14 @@
 ## Redis
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
 
-# 学校管理系统
 
-* [ETM早教管理系统](http://www.etmcn.com/html/) 
+# SAAS管理系统
+
+## 学校管理系统
+
+* [ETM早教管理系统](http://www.etmcn.com/html/)
 * [爱校-学校管理系统](http://www.xiaohe.com/)
+
 
 # 开源项目
 
@@ -156,8 +177,10 @@
 * [Help Desk](http://www.hesk.com/)
 
 
+
 # Other
 * QPS计算公式，80%的请求发生在40%的时间里，每台服务器请求数量 = ((80%*总PV量) / (24小时 * 60分钟 * 40%))。例500W PV的网站，(0.8* 50000000) / (24*60*60*0.4) =1157。峰值没秒处理1157个请求
+
 
 
 * RBAC https://blog.csdn.net/painsonline/article/details/7183613/
