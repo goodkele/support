@@ -10,7 +10,7 @@
 * [后端](https://github.com/goodkele/support/blob/master/README.md#后端)
     * [PHP](https://github.com/goodkele/support/blob/master/README.md#PHP)
 * [前端](https://github.com/goodkele/support/blob/master/README.md#前端)
-    * [Javascript][https://github.com/goodkele/support/blob/master/README.md#Javascript]
+    * [Javascript](https://github.com/goodkele/support/blob/master/README.md#Javascript)
 * [SAAS管理系统](https://github.com/goodkele/support/blob/master/README.md#SAAS管理系统)
     * [学校管理系统](https://github.com/goodkele/support/blob/master/README.md#学校管理系统)
 * [开源项目](https://github.com/goodkele/support/blob/master/README.md#开源项目)
