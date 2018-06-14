@@ -11,8 +11,8 @@
     * [PHP](https://github.com/goodkele/support/blob/master/README.md#PHP)
 * [前端](https://github.com/goodkele/support/blob/master/README.md#前端)
     * [Javascript](https://github.com/goodkele/support/blob/master/README.md#Javascript)
-* [SAAS管理系统](https://github.com/goodkele/support/blob/master/README.md#SAAS管理系统)
-    * [学校管理系统](https://github.com/goodkele/support/blob/master/README.md#学校管理系统)
+* [产品](https://github.com/goodkele/support/blob/master/README.md#产品)
+    * [SAAS学校管理系统](https://github.com/goodkele/support/blob/master/README.md#SAAS学校管理系统)
 * [开源项目](https://github.com/goodkele/support/blob/master/README.md#开源项目)
     * [框架](https://github.com/goodkele/support/blob/master/README.md#框架)
     * [CRM](https://github.com/goodkele/support/blob/master/README.md#CRM)
@@ -83,13 +83,16 @@
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
 
 
-# SAAS管理系统
+# 产品
 
-## 学校管理系统
+## SAAS学校管理系统
 
 * [ETM早教管理系统](http://www.etmcn.com/html/)
 * [爱校-学校管理系统](http://www.xiaohe.com/)
 
+## 创新产品
+* [他是实体商圈的空中雷达 消费数据分析店铺现状 指导经营选址](https://www.pencilnews.cn/p/8357.html)
+* [小满信息](http://www.xmandata.com/index.html#position-advantage)
 
 # 开源项目
 
