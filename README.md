@@ -81,7 +81,8 @@
 
 ## Redis
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
-
+* [Redis环境搭建和代码测试及与GIS结合的GEO数据类型预研](http://www.cnblogs.com/naaoveGIS/p/6728459.html)
+* [WebGIS中GeoHash编码的研究和扩展](http://www.cnblogs.com/naaoveGIS/p/5164187.html)
 
 # 产品
 
