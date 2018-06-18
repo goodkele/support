@@ -4,14 +4,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Bootstrap extends \Yaf\Bootstrap_Abstract{
 
-//    public function _initConfig() {
-//        $config = Yaf_Application::app()->getConfig();
-//        Yaf_Registry::set("config", $config);
-//    }
 
-//    public function _initDefaultName(Yaf_Dispatcher $dispatcher) {
-//        $dispatcher->setDefaultModule("Index")->setDefaultController("Index")->setDefaultAction("index");
-//    }
 
     /**
      * 初始化时区
@@ -40,13 +33,11 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
         $capsule->addConnection(
             \Yaf\Application::app()->getConfig()->database->akuyd->toArray(),
             GameConst::DB_AKUYD
-//            'default'
         );
 
         $capsule->addConnection(
             \Yaf\Application::app()->getConfig()->database->akuadmin->toArray(),
             GameConst::DB_AKUADMIN
-//            'akuadmin'
         );
 
         $capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher(new \Illuminate\Container\Container));
@@ -78,20 +69,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
     //     $smarty = new Smarty_Adapter(null, Yaf_Application::app()->getConfig()->smarty);
     //     $dispatcher->setView($smarty);
     // }
-
-    /**
-     * 初始化模版
-     */
-    public function _initView(\Yaf\Dispatcher $dispatcher)
-    {
-
-        $view = $dispatcher->initView(APP_PATH . "/application/modules/opacity/views/");
-
-        \Yaf\Registry::set(\GameConst::CURRENTVIEW, $view);
-
-//        $view->assign('content2', "123123");
-    }
-
+    
 
     public function _initModules(\Yaf\Dispatcher $dispatcher)
     {
@@ -105,6 +83,9 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
         foreach ($modules as $module) {
             if ('index' == strtolower($module)) continue;
             if ($requestUri['1'] != strtolower($module) || empty($requestUri['1'])) continue;
+
+            $view = $dispatcher->initView(APP_PATH . "/application/modules/". strtolower($module) ."/views/");
+            \Yaf\Registry::set(\GameConst::CURRENTVIEW, $view);
 
             require_once $app->getAppDirectory() . "/modules/" . $module . "/boot.php";
         }

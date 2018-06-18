@@ -1,5 +1,12 @@
 <?php
-session_start();
+//session_start();
+
+ini_set('session.save_handler', 'redis');
+ini_set('session.save_path', 'tcp://:::6379');
+ini_set('session.serialize_handler', 'php_serialize');
+
+\Yaf\Session::getInstance()->start();
+
 define("APP_PATH",  realpath(dirname(__FILE__) . '/../'));
 define("PUBLIC_PATH",  dirname(__FILE__));
 define("APPLICATION_PATH",  dirname(dirname(__FILE__)));

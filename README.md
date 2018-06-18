@@ -68,6 +68,9 @@
 * [跨站请求伪造 CSRF ](https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0)
 * [Web 应用程序常见漏洞 CSRF 的入侵检测与防范](https://www.ibm.com/developerworks/cn/rational/r-cn-webcsrf/)
 * [源码解读：php artisan serve](https://zhuanlan.zhihu.com/p/27573264)
+* [md5/sha1+salt和Bcrypt
+](http://www.cnblogs.com/lixiong/archive/2011/12/24/2300098.html)
+* (彻底理解PHP的SESSION机制)[http://www.cnblogs.com/acpp/archive/2011/06/10/2077592.html]
 
 # 前端
 

@@ -37,8 +37,13 @@ class LoginController extends Base_OpacityController {
 //            var_dump($aa->username);
 //        }
 
-
 //        $this->getView()->assign("content", "Hello opacity");
+    }
+
+
+
+    public function logoutAction()
+    {
 
     }
 
@@ -49,7 +54,7 @@ class LoginController extends Base_OpacityController {
         \Yaf\Dispatcher::getInstance()->disableView();
 
         $vi = new Vcode();
-        $vi->SetImage(1, 4, 62, 25, 10, 3);
+        $vi->SetImage(1, 4, 130, 38, 10, 3);
     }
 
 

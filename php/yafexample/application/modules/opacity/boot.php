@@ -21,6 +21,7 @@ $config = new \Yaf\Config\Ini(APP_PATH . "/application/modules/opacity/conf/appl
 //$view->assign("content2", "123");
 
 
+
 \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("HTTP_STATIC_URL", $config->http->static_url);
 \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("HTTP_HOST_URL", $config->http->host_url);
 
