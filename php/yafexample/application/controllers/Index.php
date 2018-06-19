@@ -3,7 +3,9 @@
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class IndexController extends Base_BaseController {
-    public function indexAction() {//默认Action
+    
+    public function indexAction() 
+    {//默认Action
         $qrcode = new BaconQrCodeGenerator;
 
 //        $log = file_get_contents(DATAPATH . "/s_akuyd.png");
@@ -19,6 +21,9 @@ class IndexController extends Base_BaseController {
 //        echo $png;
 //
 //        exit();
+
+        return;
+        exit();
 
         new \Admin\UserModel();
 

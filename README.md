@@ -72,6 +72,7 @@
 * [彻底理解PHP的SESSION机制](http://www.cnblogs.com/acpp/archive/2011/06/10/2077592.html)
 * [C# 封装miniblink 使用HTML/CSS/JS来构建.Net 应用程序界面和简易浏览器](https://www.cnblogs.com/dskin/p/8664912.html)
 * [使用 TCPDF 动态创建 PDF](https://www.ibm.com/developerworks/cn/opensource/os-tcpdf/index.html)
+* [PHPExcel 最新版本](https://github.com/PHPOffice/PhpSpreadsheet)
 
 # 前端
 
@@ -87,6 +88,8 @@
 * [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
 * [Redis环境搭建和代码测试及与GIS结合的GEO数据类型预研](http://www.cnblogs.com/naaoveGIS/p/6728459.html)
 * [WebGIS中GeoHash编码的研究和扩展](http://www.cnblogs.com/naaoveGIS/p/5164187.html)
+* [阿里云Redis GEO地理位置功能上线啦](https://yq.aliyun.com/articles/62844)
+* [Redis持久化方式对比](http://www.cnblogs.com/wupeixuan/p/8667335.html)
 
 # 产品
 

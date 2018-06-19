@@ -84,6 +84,8 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
             if ('index' == strtolower($module)) continue;
             if ($requestUri['1'] != strtolower($module) || empty($requestUri['1'])) continue;
 
+            
+
             $view = $dispatcher->initView(APP_PATH . "/application/modules/". strtolower($module) ."/views/");
             \Yaf\Registry::set(\GameConst::CURRENTVIEW, $view);
 
