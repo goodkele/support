@@ -71,7 +71,7 @@
 * [md5/sha1+salt和Bcrypt](http://www.cnblogs.com/lixiong/archive/2011/12/24/2300098.html)
 * [彻底理解PHP的SESSION机制](http://www.cnblogs.com/acpp/archive/2011/06/10/2077592.html)
 * [C# 封装miniblink 使用HTML/CSS/JS来构建.Net 应用程序界面和简易浏览器](https://www.cnblogs.com/dskin/p/8664912.html)
-
+* [使用 TCPDF 动态创建 PDF](https://www.ibm.com/developerworks/cn/opensource/os-tcpdf/index.html)
 
 # 前端
 
