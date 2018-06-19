@@ -2,13 +2,43 @@
 
 //namespace Aku\Opacity;
 //
-//use Aku\Admin;
+use \Admin\ModuleModel as Module;
+use \Admin\UserModel as User;
+use \Admin\GroupModel as Group;
 
 
 class IndexController extends Base_OpacityController {
 
     public function indexAction()
     {
+
+        $a = \Yaf\Registry::get(\GameConst::ADMINUSER);
+
+        var_dump($a);
+
+
+        exit();
+
+        // $a = User::find(1);
+
+        // var_dump($a->groups);
+
+        
+
+        $aa = Group::find(1);
+
+        var_dump($aa->id);
+
+        var_dump($aa->users->name);
+
+
+
+
+        // $a = Module::all();
+
+        // var_dump($a);
+
+
 
 //
 //        $a = 'a:1:{s:1:"a";s:10:"helloworld";}';
@@ -102,14 +132,23 @@ class IndexController extends Base_OpacityController {
 
     }
 
-    public function loginAction()
+
+
+    public function topmenuAction()
     {
+        $adminuser = \Yaf\Registry::get(\GameConst::ADMINUSER);
+
+        // $adminuser->groupid
 
     }
 
-    public function logoutAction()
+    public function leftmenuAction()
     {
+        $adminuser = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
+        // $adminuser->group_id
+
+        
     }
 
 

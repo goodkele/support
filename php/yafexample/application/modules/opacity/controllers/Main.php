@@ -2,7 +2,8 @@
 
 class MainController extends Base_OpacityController {
 
-    public function indexAction() {//默认Action
+    public function indexAction() 
+    {
 //        $qrcode = new BaconQrCodeGenerator;
 //
 ////        $log = file_get_contents(DATAPATH . "/s_akuyd.png");

@@ -9,7 +9,14 @@ class GameConst
     const DB_AKUYD = "default";
     const DB_AKUADMIN = "adkuadmin";
 
+
+    //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    //-* GLOBAL Yaf Register
+    //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     const CURRENTVIEW = "CURRENTVIEW";  // 当前view 在 Yaf\Register中的名字
+
+    const ADMINUSER = "ADMINUSER";  
+    const USER = "USER";  
 
 
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
