@@ -16,4 +16,6 @@ class Module extends Model
         return $this->belongsToMany('Aku\Models\Admin\Group');
     }
 
+    
+
 }

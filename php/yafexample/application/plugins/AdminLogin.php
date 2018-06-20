@@ -1,6 +1,6 @@
 <?php
 
-use \Admin\UserModel as User;
+use \Aku\Models\Admin\User;
 
 class AdminLoginPlugin extends \Yaf\Plugin_Abstract
 {

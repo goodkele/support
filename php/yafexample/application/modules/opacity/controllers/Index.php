@@ -2,9 +2,9 @@
 
 //namespace Aku\Opacity;
 //
-use \Admin\ModuleModel as Module;
-use \Admin\UserModel as User;
-use \Admin\GroupModel as Group;
+// use \Admin\ModuleModel as Module;
+// use \Admin\UserModel as User;
+// use \Admin\GroupModel as Group;
 
 
 class IndexController extends Base_OpacityController {
@@ -12,9 +12,9 @@ class IndexController extends Base_OpacityController {
     public function indexAction()
     {
 
-        $a = \Yaf\Registry::get(\GameConst::ADMINUSER);
+        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
-        var_dump($a);
+        var_dump($user->getTopMenu());
 
 
         exit();
@@ -25,11 +25,11 @@ class IndexController extends Base_OpacityController {
 
         
 
-        $aa = Group::find(1);
+        // $aa = Group::find(1);
 
-        var_dump($aa->id);
+        // var_dump($aa->id);
 
-        var_dump($aa->users->name);
+        // var_dump($aa->users->name);
 
 
 
