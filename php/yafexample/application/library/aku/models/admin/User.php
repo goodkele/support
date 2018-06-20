@@ -1,13 +1,11 @@
 <?php
 
-namespace Admin;
+namespace Aku\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserModel extends Model
+class User extends Model
 {
-
-    protected $table = \GameConst::TBL_AKUADMIN_USER;
 
     protected $dateFormat = 'U';
 
@@ -15,9 +13,10 @@ class UserModel extends Model
 
     public function groups()
     {
-        return $this->hasMany('\Admin\GroupModel', 'id');
+        return $this->belongsToMany('Aku\Models\Admin\Group');
     }
 
 
+    
 
 }

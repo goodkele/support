@@ -1,13 +1,11 @@
 <?php
 
-namespace Admin;
+namespace Aku\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GroupModel extends Model
+class Log extends Model
 {
-
-    protected $table = \GameConst::TBL_AKUADMIN_GROUP;
 
     protected $dateFormat = 'U';
 

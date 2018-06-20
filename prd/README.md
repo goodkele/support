@@ -25,6 +25,26 @@
 17. 商圈选址  
 
 
+
+1. 学员添加，导入
+2. 学员分配
+3. 学员跟进，预约，沟通，销售截断
+4. 学员参观，活动，试听
+5. 合同签订
+6. 课程安排
+7. 课程消课
+8. 后期回访跟进，续约，转介绍会员
+
+
+
+
+
+
+
+
+
+
+
 admin
 1. 运营工具    -   oper
 2. 数据统计   -   stat
@@ -261,3 +281,32 @@ tbl_user
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+
+以及时序图:
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+
+### 流程图
+```flow
+st=>start: Start
+e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
+
+
+使用 `- [ ]` 和 `- [x]` 语法可以创建复选框，实现 todo-list 等功能。例如：
+
+- [x] 已完成事项
+- [ ] 待办事项1
+- [ ] 待办事项2

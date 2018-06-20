@@ -2,10 +2,36 @@
 
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
+use \Aku\Models\Admin\User;
+use \Aku\Models\Admin\LoginLog;
+
 class IndexController extends Base_BaseController {
     
     public function indexAction() 
-    {//默认Action
+    {
+
+        // $a = LoginLog::all();
+        // var_dump($a);
+        // exit();
+
+
+        $user = User::find(1);
+        
+        var_dump($user->modules);
+
+        exit();
+
+
+        foreach ($user->groups as $group) {
+            var_dump($group->modules);
+        }
+        
+        
+        exit();
+        
+        //默认Action
+
+
         $qrcode = new BaconQrCodeGenerator;
 
 //        $log = file_get_contents(DATAPATH . "/s_akuyd.png");
