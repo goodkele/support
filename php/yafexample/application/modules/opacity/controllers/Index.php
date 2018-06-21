@@ -8,13 +8,10 @@
 
 
 
-
 class IndexController extends Base_OpacityController {
 
     public function indexAction()
     {
-
-
 
 
         // exit();

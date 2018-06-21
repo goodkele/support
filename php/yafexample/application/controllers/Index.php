@@ -15,8 +15,8 @@ class IndexController extends Base_BaseController {
         // $a = LoginLog::all();
         // var_dump($a);
         // exit();
-        
-        $a = AdmModule::getModuleTree(1);
+
+        $a = AdmModule::getModuleTree();
 
         var_dump($a);
 
