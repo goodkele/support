@@ -12,12 +12,15 @@ class AdminLoginPlugin extends \Yaf\Plugin_Abstract
         // $rep->controller
         // $rep->action
 
+        $user = User::find(1);
         
+        \Yaf\Registry::set(\GameConst::ADMINUSER, $user);
+
         
-        \Yaf\Registry::set(\GameConst::ADMINUSER, User::find(1));
+
         // \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("HTTP_STATIC_URL", $config->http->static_url);
         
-        // var_dump($request);
+        
     }
 
 }

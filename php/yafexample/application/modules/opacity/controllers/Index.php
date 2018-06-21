@@ -7,14 +7,23 @@
 // use \Admin\GroupModel as Group;
 
 
+
+
 class IndexController extends Base_OpacityController {
 
     public function indexAction()
     {
 
+
+
+
+        // exit();
+
         $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
-        var_dump($user->getTopMenu());
+        $a = $user->getTopMenu();
+
+        // var_dump($a->);
 
 
         exit();
