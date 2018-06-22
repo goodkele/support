@@ -73,6 +73,8 @@
 * [C# 封装miniblink 使用HTML/CSS/JS来构建.Net 应用程序界面和简易浏览器](https://www.cnblogs.com/dskin/p/8664912.html)
 * [使用 TCPDF 动态创建 PDF](https://www.ibm.com/developerworks/cn/opensource/os-tcpdf/index.html)
 * [PHPExcel 最新版本](https://github.com/PHPOffice/PhpSpreadsheet)
+* [下载量最高的 50 个 Laravel 扩展包](https://github.com/godruoyi/laravel-package-top)
+* [php Markdown解析器](http://parsedown.org/)
 
 # 前端
 
