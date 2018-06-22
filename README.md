@@ -75,6 +75,7 @@
 * [PHPExcel 最新版本](https://github.com/PHPOffice/PhpSpreadsheet)
 * [下载量最高的 50 个 Laravel 扩展包](https://github.com/godruoyi/laravel-package-top)
 * [php Markdown解析器](http://parsedown.org/)
+* [uuid v1 之 v5](http://www.postgres.cn/docs/9.4/uuid-ossp.html)
 
 # 前端
 
