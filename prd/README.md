@@ -2,8 +2,6 @@
 
 ---
 
-
-
 * 系统功能
 
 1. 招生推广		
@@ -26,18 +24,21 @@
 
 
 
-1. 学员添加，导入
+* CRM 流程
+
+1. 学员导入，添加
 2. 学员分配
-3. 学员跟进，预约，沟通，销售截断
-4. 学员参观，活动，试听
-5. 合同签订
-6. 课程安排
-7. 课程消课
-8. 后期回访跟进，续约，转介绍会员
+3. 学员跟踪，邀约
+4. 学员试听，参观，试听
+5. 签订合同，会员开卡
+6. 安排课程
+7. 课程销课程
+8. 回访，续卡
 
 
 
-权限
+* 权限
+
 1. menu权限
 2. 学员权限
 3. 校区权限
@@ -48,11 +49,32 @@
 
 
 
+#opacity
+## 运营工具    -   oper
+* 账号管理
+    * 部门管理
+    * 用户管理
+    * 用户日志
+## 数据统计   -   stat
 
 
-admin
-1. 运营工具    -   oper
-2. 数据统计   -   stat
+
+# akuyd
+
+## 学员管理 -	member
+## 合同签约	-	contract
+## 教学管理	-	edu
+## 活动中心	-	event
+## 财务管理	-	fin
+## 员工管理	-	staff
+## 统计报表	-	stat
+## 营养餐食 -   recipe
+## 系统配置	-	sysconf
+## 集团管理 -   corp
+## 商圈选址 -   shoparea
+
+
+
 
 
 ## 会员
@@ -277,41 +299,3 @@ tbl_user
 
 
 
-
-
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
-以及时序图:
-
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
-
-
-### 流程图
-```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
-
-
-使用 `- [ ]` 和 `- [x]` 语法可以创建复选框，实现 todo-list 等功能。例如：
-
-- [x] 已完成事项
-- [ ] 待办事项1
-- [ ] 待办事项2

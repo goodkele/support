@@ -1,8 +1,9 @@
 <?php
 //session_start();
+date_default_timezone_set('Asia/Shanghai');
 
 ini_set('session.save_handler', 'redis');
-ini_set('session.save_path', 'tcp://:::6379');
+ini_set('session.save_path', 'tcp://127.0.0.1:6379');
 ini_set('session.serialize_handler', 'php_serialize');
 
 \Yaf\Session::getInstance()->start();
@@ -14,6 +15,8 @@ define("APPLICATION_PATH",  dirname(dirname(__FILE__)));
 define("APP_WEB_HOST", "http://yafexample.goodkele.com");
 define("APP_STATIC_HOST", "http://yafexample.goodkele.com");
 define("APP_VERSION", "v1");
+
+
 
 require_once APPLICATION_PATH . "/vendor/autoload.php";
 
