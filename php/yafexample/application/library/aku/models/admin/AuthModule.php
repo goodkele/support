@@ -13,12 +13,11 @@ class AuthModule extends Model
 
     public function groups()
     {
-        return $this->belongsToMany('Aku\Models\Admin\AuthGroup');
+        return $this->belongsToMany(
+            'Aku\Models\Admin\AuthGroup'
+        );
     }
 
     
-
-
-
 
 }

@@ -11,6 +11,13 @@ class IndexController extends Base_OpacityController {
     public function indexAction()
     {
 
+        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
+
+        var_dump($user->getModuleTree());
+
+        exit();
+
+
         $group = \Aku\models\Admin\AuthGroup::find(1);
 
         vaR_dump($group->users->toArray());
@@ -25,7 +32,7 @@ class IndexController extends Base_OpacityController {
         exit();
 
 
-        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
+        
 
         
 

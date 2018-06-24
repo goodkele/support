@@ -3,6 +3,7 @@
 namespace Aku\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
+use Codeception\Step\Condition;
 
 class User extends Model
 {
@@ -13,7 +14,90 @@ class User extends Model
 
     public function groups()
     {
-        return $this->belongsToMany('Aku\Models\Admin\AuthGroup');
+        return $this->belongsToMany(
+            'Aku\Models\Admin\AuthGroup',
+            \GameConst::TBL_AKUADMIN_AUTH_GROUP_USER,
+            'user_id',
+            'group_id'
+        );
+    }
+
+    /**
+     * 获得权限模型树
+     */
+    public function getModuleTree()
+    {
+
+        $re = [];
+
+        $isAdmin = false;
+        foreach ($this->groups as $group) {
+            if ($group->is_admin) {
+                $isAdmin = true;
+            }
+        }
+
+        $moduleTree = \Aku\Core\AdmAuthModule::getModuleTree();
+
+        if ($isAdmin) {
+            $re = $moduleTree;
+        } else {
+
+            foreach ($moduleTree as $module) {
+
+                // 一层
+                foreach ($this->groups as $group) {
+                    foreach ($group->modules as $groupModule) {   
+                        if ($module['id'] == $groupModule->id) {
+                            $re[$module['id']] = $module;
+                            continue;
+                        }
+                    }
+                }
+
+                foreach ($module['sub'] as $subModule) {
+
+                    // 二层
+                    foreach ($this->groups as $group) {
+                        foreach ($group->modules as $groupModule) {
+                            if ($subModule['id'] == $groupModule->id) {
+                                $re[$module['id']]['sub'][$subModule['id']] = $subModule;
+                                continue;
+                            }
+                        }
+                    }
+
+                    foreach ($subModule['sub'] as $subSubModule) {
+
+                        // 三层
+                        foreach ($this->groups as $group) {
+                            foreach ($group->modules as $groupModule) {
+                                if ($subSubModule['id'] == $groupModule->id) {
+                                    
+                                    if (!$re[$module['id']]) {
+                                        $temp = $module;
+                                        $temp['sub'] = [];
+                                        $re[$module['id']] = $temp;
+                                    }
+
+                                    if (!$re[$module['id']]['sub'][$subModule['id']]) {
+                                        $temp = $subModule;
+                                        $temp['sub'] = [];
+                                        $re[$module['id']]['sub'][$subModule['id']] = $temp;
+                                    }
+                                    
+                                    $re[$module['id']]['sub'][$subModule['id']]['sub'][$subSubModule['id']] = $subSubModule;
+                                }
+                                
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        return $re;
     }
 
     /**
@@ -21,20 +105,29 @@ class User extends Model
      */
     public function getTopMenu()
     {
-        $list = [];
-        foreach ($this->groups as $group) {
-            $list = array_merge($list, $group->modules()->where("pid", 0)->get()->toArray());
-        }
-        return $list;
+        return $this->getModuleTree();
     }
 
     /**
      * 获得左边导航栏
      */
-    public function getLeftMenu()
+    public function getLeftMenu($module_id)
     {
+        $moduleTree = $this->getModuleTree();
+        foreach ($moduleTree as $module) {
+            if ($module['id'] == $module_id) {
+                return $module;
+            }
+        }
+        return [];
+    }
 
+    /**
+     * 验证用户是否有此权限
+     */
+    public function checkAuth($module, $controller)
+    {
+        
     }
     
-
 }
