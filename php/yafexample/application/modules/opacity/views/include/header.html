@@ -14,68 +14,18 @@
 
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
 
+    
+
+    <!-- <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script> -->
+
+
+
     <!--<link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">-->
     <!--<link rel="stylesheet" href="../layuiadmin/style/admin.css" media="all">-->
 
 </head>
 
 <body>
-<div class="server">
-
-
-    选择平台
-    ：<select id="headerdept" name="headerdept" onchange="headerGetSubType( this.value, 'server_id', null )">
-    {{foreach item=item from=$serverTree}}
-    <option value="{{$item->dept}}" {{if $item->dept == $curPlatform}} selected="selected" {{/if}} >{{$item->name}}</option>
-    {{/foreach}}
-</select>
-
-    &nbsp;&nbsp;
-    {{if $server!= 'hidden'}}
-    选择区服：
-
-    <select id="server_id" name="server_id" onchange="loader.get('','/index/changeserver?server_id='+this.value)"></select>
-
-    <!--<SELECT NAME="" onchange="loader.get('','/index/changeserver?server_id='+this.value)">-->
-    <!--{{foreach item=item from=$serverTree}}-->
-
-    <!--{{foreach item=item2 from=$item->sub}}-->
-    <!--<option VALUE="{{$item2->server_id}}" {{if $item2->server_id==$curServer}}selected='selected'{{/if}}  {{if $item2->isHefu==true}} style="color:#AAAAAA" {{/if}}  >&#45;&#45;{{$item2->server_name}}</option>-->
-    <!--{{/foreach}}-->
-    <!--{{/foreach}}-->
-    <!--</SELECT>-->
-    {{/if}}
-
-    <script type="text/javascript">
-        function headerGetSubType(pid, subObj) {
-
-            $(".serverlist").html('');
-            addserverlist = [];
-            var json = {{$jsonServerTree}};
-
-            var obj = document.getElementById(subObj);
-            obj.options.length = 0;
-
-            if (json[pid] != undefined && json[pid].sub != undefined ) {
-                obj.options[obj.options.length] = new Option("-- 请选择服务器 --", "0");
-                for (i in json[pid].sub) {
-                    obj.options[obj.options.length] = new Option(json[pid].sub[i].server_name, json[pid].sub[i].server_id)
-                }
-            } else {
-                obj.options[obj.options.length] = new Option("-- 请选择服务器 --", "0");
-            }
-
-
-            {{if $curServer}}
-            if (json[pid] != undefined && json[pid].sub[{{$curServer}}] != undefined) {
-                obj.value = {{$curServer}};
-            }
-            {{/if}}
-        }
-        headerGetSubType(document.getElementById('headerdept').value, 'server_id');
-    </script>
-</div>
-
 
 <a href="index.php" class="box "></a>
 <div class="header">
