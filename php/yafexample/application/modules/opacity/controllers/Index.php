@@ -6,17 +6,38 @@
 // use \Admin\UserModel as User;
 // use \Admin\GroupModel as Group;
 
-
-
 class IndexController extends Base_OpacityController {
 
     public function indexAction()
     {
 
+        $group = \Aku\models\Admin\AuthGroup::find(1);
+
+        vaR_dump($group->users->toArray());
+
+        exit();
+
+
+        $a = \Aku\Core\AdmAuthModule::getModuleTree();
+
+        var_dump($a);
+
+        exit();
+
+
+        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
+
+        
+
+        var_dump($user->toArray());
+
+
+        exit();
+
 
         // exit();
 
-        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
+        
 
         $a = $user->getTopMenu();
 

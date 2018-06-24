@@ -39,6 +39,9 @@
 
 * grant all privileges on *.* to 'root'@'%' identified by 'xxxxxx';
 
+
+grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
+
 * mysql启动 sudo service mysql start;
 * mysql关闭 sudo service mysql stop;
 * mysql重启 sudo service mysql restart;
