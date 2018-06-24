@@ -23,7 +23,8 @@ class GameConst
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     //-* TABLE AKUYD
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    const TBL_AKU_USER = "aku_user";
+    const TBL_AKU_USERS = "aku_users";
+    
 
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     //-* TABLE ADMIN
@@ -35,8 +36,5 @@ class GameConst
     const TBL_AKUADMIN_AUTH_GROUP_USER = "auth_group_user";
     const TBL_AKUADMIN_LOG = "logs";
     const TBL_AKUADMIN_LOGIN_LOG = "login_logs";
-    
-
-
 
 }

@@ -2,9 +2,9 @@
 
 namespace Aku\Core;
 
-use \Aku\Models\Admin\Module;
+use \Aku\Models\Admin\AuthModule;
 
-class AdmModule 
+class AdmAuthModule 
 {
 
     /**
@@ -12,7 +12,7 @@ class AdmModule
      */
     public static function getModuleTree($pid = 0)
     {
-        $list = Module::all();
+        $list = AuthModule::all();
         return self::getModuleTreeRecursion($list, $pid);
     }
 

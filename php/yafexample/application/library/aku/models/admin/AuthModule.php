@@ -4,7 +4,7 @@ namespace Aku\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Module extends Model
+class AuthModule extends Model
 {
 
     protected $dateFormat = 'U';
@@ -13,7 +13,7 @@ class Module extends Model
 
     public function groups()
     {
-        return $this->belongsToMany('Aku\Models\Admin\Group');
+        return $this->belongsToMany('Aku\Models\Admin\AuthGroup');
     }
 
     
