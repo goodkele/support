@@ -27,7 +27,6 @@ class User extends Model
      */
     public function getModuleTree()
     {
-
         $re = [];
 
         $isAdmin = false;
@@ -127,7 +126,37 @@ class User extends Model
      */
     public function checkAuth($module, $controller)
     {
-        
+        // module, controller
+        $whilelist = [
+            ['opacity', 'index'],
+            ['opacity', 'failed'],
+        ];
+
+        foreach ($whilelist as $val) {
+            if ($module == $val[0] && $controller == $val[1]) {
+                return true;
+            }
+        }
+
+        $moduleTree = $this->getModuleTree();
+
+        foreach ($moduleTree as $module) {
+            if ($module['module'] == $module && $module['controller'] == $controller) {
+                return true;
+            }
+            foreach ($module['sub'] as $subModule) {
+                if ($subModule['module'] == $module && $subModule['controller'] == $controller) {
+                    return true;
+                }
+                foreach ($subModule['sub'] as $subSubModule) {
+                    if ($subSubModule['module'] == $module && $subSubModule['controller'] == $controller) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
     
 }

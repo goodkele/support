@@ -1,0 +1,15 @@
+<div class="cl">
+{{foreach item=item from =$leftModules}}
+  <h3 class="f14">
+	 <span title="展开与收缩" class="on cu"></span>
+	 {{$item.name}}
+  </h3>
+	  <ul style="display:block;">
+	  {{foreach item=subitem from=$item.sub}}
+		  <li class="sub_menu {{if $subitem.purview_tag==$modeStr}} on fb{{/if}}">
+			  <a href="{{$subitem.action}}">{{$subitem.name}}</a>
+		  </li>
+		{{/foreach}}
+	  </ul>
+{{/foreach}}
+</div>

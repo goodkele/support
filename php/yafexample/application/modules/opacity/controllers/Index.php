@@ -11,6 +11,8 @@ class IndexController extends Base_OpacityController {
     public function indexAction()
     {
 
+        return;
+        
         $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
         var_dump($user->getModuleTree());
