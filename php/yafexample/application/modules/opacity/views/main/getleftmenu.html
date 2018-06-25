@@ -7,7 +7,7 @@
 	<ul style="display:block;">
 		<?php foreach ($item['sub'] as $subItem) { ?>
 		<li class="sub_menu {{if $subitem.purview_tag==$modeStr}} on fb{{/if}}">
-		<a href="{{$subitem.action}}"><?php echo $subItem['name']; ?></a>
+		<a href="javascript:loadMain('', '<?php echo "/{$subItem['module']}/{$subItem['controller']}/index"?>')"><?php echo $subItem['name']; ?></a>
 		</li>
 		<?php } ?>
 	</ul>

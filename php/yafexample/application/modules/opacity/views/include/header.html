@@ -14,15 +14,6 @@
 
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
 
-    
-
-    <!-- <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script> -->
-
-
-
-    <!--<link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">-->
-    <!--<link rel="stylesheet" href="../layuiadmin/style/admin.css" media="all">-->
-
 </head>
 
 <body>
@@ -38,9 +29,32 @@
     </div>
     <ul class="top_nav" id="topMenu">
         <?php foreach ($topMenu as $item)  { ?>
-            <li class="<?php echo $controller == $item['controller'] ? 'this' : 'top_menu'; ?>" id="top{{$item.purview_tag}}">
-                <a href="{{if $item.action}}{{$item.action}}{{else}}javascript:loadLMod('{{$item.purview_tag}}'){{/if}}" ><?php echo $item['name']; ?></a>
+            <li class="<?php echo $item['id'] == $leftMenu[0]['pid'] ? 'this' : 'top_menu'; ?>" id="top<?php echo $item['id'];?>">
+                <a href="javascript:loadLeftMenu('<?php echo $item['id']?>')" ><?php echo $item['name']; ?></a>
             </li>
         <?php } ?>
     </ul>
 </div>
+
+<script type="text/javascript">
+function loadLeftMenu(pid) {
+    if (!pid) return;
+    $.ajax({
+        url: "http://yafexample.goodkele.com/opacity/main/getLeftMenu?pid=" + pid,
+        type: "GET",
+        dataType: "jsonp",
+        success: function (data) {
+            $("#leftMenu").html(data.html);
+        }
+    });
+}
+
+function loadMain(nav, src) {
+
+    console.log(nav);
+    console.log(src);
+    
+    $("#mainContent").prop("src", src);
+}
+
+</script>
