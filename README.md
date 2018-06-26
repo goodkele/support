@@ -81,6 +81,8 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [uuid v1 之 v5](http://www.postgres.cn/docs/9.4/uuid-ossp.html)
 * [pgSql 手册](http://www.postgres.cn/docs/9.4/index.html)
 * [大家都是如何收集系统日志并进行分析的？](https://www.zhihu.com/question/21427267)
+* [laravel验证表单文档](https://docs.golaravel.com/docs/5.0/validation/)
+* [laravel表单验证](https://blog.csdn.net/woshihaiyong168/article/details/53406149)
 
 # 前端
 
