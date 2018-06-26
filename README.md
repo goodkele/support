@@ -83,6 +83,7 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [大家都是如何收集系统日志并进行分析的？](https://www.zhihu.com/question/21427267)
 * [laravel验证表单文档](https://docs.golaravel.com/docs/5.0/validation/)
 * [laravel表单验证](https://blog.csdn.net/woshihaiyong168/article/details/53406149)
+* [Laravel教程 七：表单验证 Validation](https://www.codecasts.com/blog/post/programming-with-laravel-5-form-request-and-validation)
 
 # 前端
 
