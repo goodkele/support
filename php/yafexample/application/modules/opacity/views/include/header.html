@@ -40,21 +40,25 @@
 function loadLeftMenu(pid) {
     if (!pid) return;
     $.ajax({
-        url: "http://yafexample.goodkele.com/opacity/main/getLeftMenu?pid=" + pid,
+        url: "<?php echo $APP_WEB_HOST;?>/opacity/main/getLeftMenu?pid=" + pid,
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
             $("#leftMenu").html(data.html);
+            $("#topMenu").find(".this").prop("class", 'top_menu');
+            $("#top" + pid).prop("class", "this");
+
+            loadMainContent(0,'', "<?php echo $APP_WEB_HOST;?>/" + data.module + "/" + data.controller + "/index");
         }
     });
 }
 
-function loadMain(nav, src) {
-
-    console.log(nav);
-    console.log(src);
-    
+function loadMainContent(pid, nav, src) {
+    $("#leftMenu").find(".sub_menu").prop("class", "sub_menu");
+    $("#sub_menu" + pid).prop("class", "sub_menu on");
     $("#mainContent").prop("src", src);
 }
+
+
 
 </script>

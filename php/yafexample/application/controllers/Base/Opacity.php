@@ -10,6 +10,7 @@ class Base_OpacityController extends \Yaf\Controller_Abstract
         $this->getView()->assign("APP_VERSION", APP_VERSION);
         $this->getView()->assign("APP_WEB_HOST", APP_WEB_HOST);
         $this->getView()->assign("APP_STATIC_HOST", APP_STATIC_HOST);   
+        
 
     }
 }

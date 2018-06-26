@@ -2,21 +2,14 @@
 
 class MainController extends Base_OpacityController 
 {
-
+    /**
+     * 首页
+     */
     public function indexAction() 
     {
-
         $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
         $topMenu = $user->getTopMenu();
-
-        // $leftMenu = $topMenu[0];
-
-        //var_dump($topMenu[0]['sub']);
-
-        // $leftMenu = $user->getLeftMenu();
-
-
 
         $this->getView()->assign("topMenu", $topMenu);
         $this->getView()->assign("leftMenu", $topMenu[0]['sub'] ? $topMenu[0]['sub'] : []);
@@ -25,7 +18,6 @@ class MainController extends Base_OpacityController
         $this->getView()->assign('controller', strtolower($req->controller));
         $this->getView()->assign('action', strtolower($req->action));
     }
-
 
     /**
      * 获得左边导航栏
@@ -47,15 +39,25 @@ class MainController extends Base_OpacityController
             "main/getleftmenu.html",
             [
                 'callback' => $callback,
-                'leftMenu' => $leftMenu,
+                'leftMenu' => $leftMenu['sub'] ? $leftMenu['sub'] : [],
             ]
         );
 
         echo $callback . "(". json_encode([
             'html' => $html,
+            'module' => $leftMenu['module'],
+            'controller' => $leftMenu['controller'],
         ]) .")" ;
     }
 
+    /**
+     * 
+     */
+    public function homepageAction()
+    {
+
+        
+    }
 
 
 }

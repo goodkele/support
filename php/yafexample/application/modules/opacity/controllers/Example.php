@@ -12,4 +12,9 @@ class ExampleController extends Base_OpacityController
     {
         
     }
+
+    public function formAction()
+    {
+        
+    }
 }

@@ -115,7 +115,7 @@ class User extends Model
         $moduleTree = $this->getModuleTree();
         foreach ($moduleTree as $module) {
             if ($module['id'] == $module_id) {
-                return $module['sub'] ? $module['sub'] : [];
+                return $module ? $module : [];
             }
         }
         return [];
