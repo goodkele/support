@@ -20,7 +20,7 @@
 14. 营养餐食    -   recipe
 15. 系统配置    -	sysconf
 16. 集团管理    -   corp
-17. 商圈选址  -   shoparea
+17. 商圈选址  -   shoparea
 
 
 
