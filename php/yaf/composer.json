@@ -3,7 +3,8 @@
         "simplesoftwareio/simple-qrcode": "~2",
         "illuminate/database" : "*",
         "illuminate/events": "*",
-        "doctrine/dbal" : "*"
+        "doctrine/dbal" : "*",
+        "illuminate/validation" : "*"
     },
     "repositories": {
         "packagist": {
