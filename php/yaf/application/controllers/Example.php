@@ -13,7 +13,7 @@ class ExampleController extends Base_BaseController {
 
     }
 
-
+    
     public function mainAction()
     {
         $rules = [  
@@ -51,6 +51,38 @@ class ExampleController extends Base_BaseController {
     public function validAction()
     {
         // new Validator();
+        $rules = [  
+            'user_name'=>'required|between:4,20',  
+            'user_pwd'=>'required|between:6,20',  
+            'code'=>'required|between:4,4'  
+        ];  
+        $message = [  
+            'user_name.required'=>'账号不能为空！',  
+            'user_name.between'=>'账号必须在6-20位之间！',  
+            'user_pwd.required'=>'密码不能为空！',  
+            'user_pwd.between'=>'密码必须在6-20位之间！',  
+            'code.required'=>'验证码不能为空！',  
+            'code.between'=>'验证码必须为4位！',  
+        ];  
+        // $validator = Validator::make();  
+
+        $input['user_name'] = 'wulei';
+        $input['user_pwd'] = '123456';
+        $input['code'] = '123';
+
+        $validator = Validator::getInstance()->make($input,$rules,$message);
+
+        var_dump($validator->passes());
+
+        var_dump($validator->messages());
+
+        $validator->errors()->add('field', 'Something is wrong with this field!');
+
+        var_dump($validator->errors());
+
+        vaR_dump($_SESSION);
+
+        exit();
     }
 
 }
