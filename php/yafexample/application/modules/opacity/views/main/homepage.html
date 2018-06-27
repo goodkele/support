@@ -1,1 +1,789 @@
-homepage
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>opacity</title>
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/etm.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer.js"></script>
+  </head>
+  
+
+  
+
+<style type="text/css">
+    .select{ color: #ff9900 !important;}
+          .hightlight2,#btnSet,#btnSet:link,#btnOther,#btnOther:link,#btnSet:hover,#btnOther:hover{color: #ff9900;}
+       .itemBtn1 a,.itemBtn1 a:link,  .itemBtn1 a:hover{ text-decoration: none;color: #ff9900;}
+        .width1{ width: 6.6%;}
+       .width3{ width: 23%;}
+        .width4{ width: 31%; }
+       .height1{ height: 105px;line-height: 105px;}
+       .list3 td{ text-align: center;} 
+       .list2 { border-collapse: collapse; }
+       .list2 thead td, .list2 thead th { background-color: #F4F4F4; height: 27px; line-height: 27px; font-weight: bold; border: 1px solid #DAD8D4; }
+
+       .list2 tbody td { background-color: white; height: 24px; line-height: 24px; padding-left: 5px; padding-right: 5px; border: 1px solid #DAD8D4; }
+
+       .borderAl{ border: 1px solid #DAD8D4;}
+       .hightlight1{color: #FF7F00;}
+   .padding1{ padding-left: 30px;}
+   .item1{ position: relative;height: 225px;border: 1px solid #DAD8D4; background-color: white;margin-top: 4px;}
+   .item1 .item_title{ position: relative;height: 30px;line-height: 30px; border-bottom: 1px solid #DAD8D4;width: 100%;font-weight: bolder;background-color: #F4F4F4;}
+   .item1 .item_title .itemBtn{ position: absolute;top: 4px;right: 10px;font-weight: normal;}
+    .item1 .item_title .itemBtn1{ position: absolute;top: 0px;right: 10px;font-weight: normal;}
+   .item1 .item_title span{ margin-left: 10px;}
+   .item1 .item_title .itemBtn img{ width: 16px;height: 16px;}
+   .item1 table{border-collapse: collapse;width: 100%;}
+   .item1 table td{ height: 29px;}
+   .item2{ z-index: 1000;position:absolute; border-bottom: 1px solid #DAD8D4;border-left: 1px solid #DAD8D4;border-right: 1px solid #DAD8D4; background-color: white;margin-top: -8px;}
+   .item2 table{border-collapse: collapse;width: 100%;}
+   .item2 table td{ height: 29px;}
+   .padding2{ padding-left: 10px;}
+       #tbCardNo{ background-image: url("images/card.png"); background-position: left center; background-repeat: no-repeat; padding-left: 50px;margin-right:20px;height: 38px;width: 90%; line-height: 38px;font-size: 30px; margin-top: 5px;margin-bottom: 5px;margin-left: 10px;}
+      #tbCardNo:focus{ outline:none }
+       .textright{ text-align: right;padding-right: 10px;}
+
+       .loading1{ background: url(Images/loading.gif) no-repeat center center;}
+       .marginTopABottom{ margin-top: 8px;margin-bottom: 8px;}
+       #flash{height: 464px; width: 100%; overflow: hidden; background-color: white;}
+       @media screen and (-webkit-min-device-pixel-ratio:0) {
+           #flash{height: 464px; }
+       }
+       #shortcut .shortcut{ width: 80px;height: 80px;margin: 0px auto;}
+       #shortcut .shortcuttext{ text-align: center;color: white;margin-top: 5px;margin-bottom: 5px;}
+
+       .shortcut1{ background-color: #FA7D11;height: 112px;}
+       .shortcut1 .shortcut{ background: url("images/kj1.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut2{background-color: #008EBE;height: 112px;}
+       .shortcut2 .shortcut{ background: url("images/kj2.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut3{ background-color: #82B900;height: 112px;}
+       .shortcut3 .shortcut{ background: url("images/kj3.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut4{ background-color: #FC8F30;height: 112px;}
+       .shortcut4 .shortcut{ background: url("images/kj4.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut5{ background-color: #333333;height: 112px;}
+       .shortcut5 .shortcut{ background: url("images/kj5.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut6{ background-color: #0058D8;height: 112px;}
+       .shortcut6 .shortcut{ background: url("images/kj6.jpg") no-repeat scroll 0 5px transparent;}
+
+             .shortcut7{ background-color: #AB8324;height: 112px;}
+       .shortcut7 .shortcut{ background: url("images/kj8.jpg") no-repeat scroll 0 5px transparent;}
+
+       .fixWidth{ width: 1%;}
+
+           /*右下角卷页效果*/
+       #rightBottom{ width: 80px;height: 60px;float: right;background-color: #ff9900}
+       #rightBottom div{background: url("images/jiao.png") no-repeat;width: 100%;height: 100%;}
+       #cardSignRoleList{ width: auto; border: 1px solid #ff9900;position: absolute;top: 96px;left: 0px;z-index: 3;background-color: white;}
+       #cardSignRoleList div:hover{ cursor: pointer;}
+       #cardSignRoleList div{ border-bottom: 1px solid #ff9900; height: 28px; line-height: 28px; padding-left: 10px; width: auto;}
+       .roleTitle{border-right: 1px solid #ff9900;width: 85px;background-color: #F4F4F4;padding-left: 10px;}
+       .fixRoleTitle{border-bottom: 1px solid #ff9900; }
+       .top{ padding-right: 10px;}
+   </style>
+
+<body>
+<form name="form1" method="post" action="myindex.aspx?1530058012711" id="form1" tabindex="5000" style="height: 888px; overflow-y: hidden; outline: none;">
+    <div>
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkwNTAyMTUyMg9kFgICBA9kFjZmDw8WAh4HVmlzaWJsZWdkZAIBDw8WAh8AZ2RkAgIPDxYCHwBnZGQCAw8PFgIfAGdkZAIEDw8WAh8AZ2RkAgUPDxYCHwBnZGQCBg8PFgIfAGdkZAIHDw8WAh8AZ2RkAggPDxYCHwBnZGQCCQ8PFgIfAGdkZAIKDw8WAh8AZ2RkAgsPDxYCHwBnZGQCDA8PFgIfAGdkZAINDw8WAh8AZ2RkAg4PDxYCHwBnZGQCDw8PFgIfAGdkZAIQDw8WAh8AZ2RkAhEPDxYCHwBnZGQCEg8PFgIfAGdkZAITDw8WAh8AZ2RkAhQPDxYCHwBnZGQCFQ8PFgIfAGdkZAIWDw8WAh8AZ2RkAhcPDxYCHwBnZGQCGQ8PFgIfAGdkZAIbDw8WAh8AZ2RkAh0PDxYCHwBnZGRkjsH+IaCjd7l4ijBWv+q3Sjo6RT0=">
+    </div>
+    
+    <div>
+    
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2B5C0AD">
+    </div>
+     <div id="cardSignRoleList" class="hidden" style="left: 148.656px;">
+                 <table cellpadding="0" cellspacing="0">
+                     <tbody><tr>
+                         <td class="roleTitle fixRoleTitle">预约排课签到</td>
+                         <td>
+                             <div class="top" ititle="排课刷卡签到" guid="00000000-0000-0000-0000-000000000000">排课刷卡签到</div>
+                         </td>
+                     </tr>
+                     <tr><td class="roleTitle">按次刷卡签到</td><td><div guid="4cafefbb-d1a9-47e2-a26d-f0a9e527523a" ititle="亲子课" style="border-bottom-width: 0px;">亲子课（刷卡时间：09:00至21:00；扣课/扣积分：扣课时 1.00）</div></td></tr>
+                    
+                </tbody></table>
+            </div>
+            <div style="margin-bottom: 10px; margin-top: 10px; margin-right: 11px;">
+                <div id="p_signing" class=" marginTopABottom">
+        
+                    <div style="margin: 0px auto; width: 70%;">
+                    
+                        
+                        <!-- <iframe src="MyIndex/MyIndex_SecSigning.aspx" frameborder="0" style="margin-top: 10px; border: 0px; background-color: #F4F4F4; width: 100%; height: 116px;"></iframe> -->
+                   
+                    </div>
+    
+                    <div style="width: 100%; border-bottom-width: 0px; margin-top: 3px; margin-bottom: 8px;" class="borderBottom"></div>
+                
+    </div>
+                <table style="margin-top: 3px; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                    <tbody><tr>
+                        <td colspan="3">
+                            <table style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0" id="shortcut">
+                                <tbody><tr>
+                                    <td class="shortcut1">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">打&nbsp;&nbsp;&nbsp;电&nbsp;&nbsp;&nbsp;话</div>
+                                    </td>
+                                    <td class="fixWidth"></td>
+                                    <td class="shortcut2">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">发&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;息</div>
+                                    </td>
+                                    <td class="fixWidth"></td>
+                                    <td class="shortcut3">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">通&nbsp;&nbsp;&nbsp;讯&nbsp;&nbsp;&nbsp;录</div>
+                                    </td>
+                                    <td class="fixWidth"></td>
+                                    <td class="shortcut4">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">流&nbsp;&nbsp;&nbsp;程&nbsp;&nbsp;&nbsp;图</div>
+                                    </td>
+                                    <td class="fixWidth"></td>
+                                    <td class="shortcut5">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">课&nbsp;&nbsp;&nbsp;程&nbsp;&nbsp;&nbsp;表</div>
+                                    </td>
+                                    <td class="fixWidth"></td>
+                                    <td class="shortcut6">
+                                        <div class="shortcut">&nbsp;</div>
+                                        <div class="shortcuttext">教&nbsp;&nbsp;&nbsp;案&nbsp;&nbsp;&nbsp;库</div>
+                                    </td>
+                                    
+    
+                                </tr>
+                            </tbody></table>
+                            <div style="height: 10px;">&nbsp;</div>
+                        </td>
+                        <td class="width4" style="padding-left: 11px; width: 28%;">
+                            <div id="p_target">
+        
+                                <table style="height: 112px; border-collapse: collapse; background-color: white;" class="borderAl">
+                                    <tbody><tr>
+                                        <td class="borderRight" style="padding-left: 10px;">本月预计目标：<span style="padding-right: 10px; text-align: right;"><a href="javascript:void(0)" id="btnSet">设置</a></span></td>
+                                        <td style="padding-left: 10px;">已完成目标</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hightlight1 borderRight" style="font-size: 30px; padding-left: 10px; font-weight: bolder;"><span id="span_target" class="words">70 万</span></td>
+                                        <td class="hightlight2 " style="font-size: 30px; padding-left: 10px; font-weight: bolder;"><span id="span_finishtarget">5.06 万</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="borderTop" style="padding-left: 10px;">本月剩余时间&nbsp;<span id="span_DayOfEnd" class="words">4</span>&nbsp;天</td>
+                                        <td class="borderTop" style="padding-left: 10px;"><a href="javascript:void(0)" id="btnOther" onclick="show('顾问目标查看', '../MyIndex/AdvisorTargetList.aspx', '600px', '350px')">查看其他员工目标</a></td>
+                                    </tr>
+                                </tbody></table>
+                                <div style="height: 10px;">&nbsp;</div>
+                            
+    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width3 table_hide" style="width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span>工作任务</span>
+                                    <div class="itemBtn">
+                                        <a href="javascript:void(0)" onclick="getTask('flash')">
+                                            <img src="Images/refresh.png"></a>
+                                    </div>
+                                </div>
+                                <div id="p_myfollow">
+        
+                                        </div><div id="p_mycourse1">
+        
+                                        </div><div id="p_myvisit">
+        
+                                        </div><div id="p_mybirthdaymember">
+        
+                                        </div><div id="p_mydo">
+        
+                                        </div><div id="p_mycourse0">
+        
+                                        </div><table id="table_mywork">
+                                    <tbody><tr>
+                                            <td class="padding2">今天要继续跟进的</td>
+                                            <td style="width: 40px;"><a href="javascript:void(0)" class="hightlight2" onclick="show('今天要继续跟进的', '../MyIndex/MyFollow.aspx', '860px', '450px')"><span class="span_task" id="spanMyFollow">0</span></a></td>
+                                            <td style="width: 40px;" class="textright">人</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">今天要体验试听的</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('今天要体验试听的', '../MyIndex/MyCourse.aspx?CourseType=1', '860px', '450px')"><span class="span_task" id="spanMyTiyan">0</span></a></td>
+                                            <td class="textright">人</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">今天要到店参观的</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('今天要到店参观的', '../MyIndex/MyVisit.aspx', '860px', '450px')"><span class="span_task" id="spanMyVisit">1</span></a></td>
+                                            <td class="textright">人</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">今天生日的学员</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('今天生日的学员', '../MyIndex/MyBirthDayMember.aspx', '860px', '450px')"><span class="span_task" id="spanMyBirthMember">3</span></a></td>
+                                            <td class="textright">人</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">今天参加活动的</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('今天参加活动的', '../MyIndex/MyDo.aspx', '860px', '450px')"><span class="span_task" id="spanMyDo">0</span></a></td>
+                                            <td class="textright">人</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">今天预约上课的</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('今天预约上课的', '../K_Remend/HYYY.aspx', '860px', '450px')"><span class="span_task" id="spanMyMemberCourse">3</span></a></td>
+                                            <td class="textright">人</td>
+                                        </tr>
+                                    
+     
+                                </tbody></table>
+                            </div>
+                            <div id="p_newassign" class="div_hide" style="display: none">
+        
+                                <div class="item2">
+                                    <table id="table_mywork_add">
+                                        <tbody><tr>
+                                            <td class="padding2">新分配的学员</td>
+                                            <td style="width: 40px;"><a href="javascript:void(0)" class="hightlight2" onclick="show('新分配的学员', '../K_Remend/NewWorkRemend.aspx', '860px', '450px')"><span class="span_task" id="spanNewAssign">741</span></a></td>
+                                            <td style="width: 40px;" class="textright">人</td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                            
+    </div>
+                            <script type="text/ecmascript">
+                                // function getTask(arg) {
+                                //     $(".span_task").html("<img src=\"../images/loading.gif\" style=\"width:12px;height:12px;\" />");
+                                //     $.post("../Ashx/MyIndex.ashx", { "action": "gettask", "arg": arg }, function (result) {
+                                //         r = eval("({" + result + "})");
+                                //         $("#spanMyFollow").html(r.myFollowCount);
+                                //         $("#spanMyTiyan").html(r.myTiyan);
+                                //         $("#spanMyVisit").html(r.myVisit);
+                                //         $("#spanMyBirthMember").html(r.myBirthMember);
+                                //         $("#spanMyDo").html(r.myDo);
+                                //         $("#spanMyMemberCourse").html(r.myMemberCourse);
+                                //         $("#spanNewAssign").html(r.myNewAssign);
+                                //     }, "text");
+                                // }
+    
+                                // getTask('');
+                            </script>
+                        </td>
+                        <td class="width3" style="padding-left: 11px; width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span>统计看板</span>
+                                    <div class="itemBtn">
+                                        <a href="javascript:void(0)" onclick="getcount('day','flash')">
+                                            <img src="Images/refresh.png"></a>
+                                    </div>
+                                </div>
+                                <div id="p_newaddcontract">
+        
+                                        </div><div id="p_newadduser">
+        
+                                        </div><div id="p_newaddmember">
+        
+                                        </div><div id="p_havefollow">
+        
+                                        </div><div id="p_newcontractamount">
+        
+                                        </div><div id="p_reduceclasshours">
+        
+                                        </div><table>
+                                    <tbody><tr>
+                                            <td class="padding2">新增签约合同</td>
+                                            <td style="width: 40px;" class="hightlight2"><span class="span_getcount" id="span_newaddcontract">0</span></td>
+                                            <td style="width: 40px;" class="textright">个</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">新增未签约学员</td>
+                                            <td class="hightlight2"><span class="span_getcount" id="span_newadduser">0</span></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">新增已签约学员</td>
+                                            <td class="hightlight2"><span class="span_getcount" id="span_newaddmember">0</span></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">已跟进学员数量</td>
+                                            <td class="hightlight2"><span class="span_getcount" id="span_havefollow">0</span></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">签约实收金额（￥）</td>
+                                            <td class="hightlight2"><span class="span_getcount" id="span_newcontractamount">0</span></td>
+                                            <td class="textright">元</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">已消耗课时数</td>
+                                            <td class="hightlight2"><span class="span_getcount" id="span_reduceclasshours">0</span></td>
+                                            <td class="textright">节</td>
+                                        </tr>
+                                    
+    
+                                </tbody></table>
+                                <script type="text/ecmascript">
+                                    // function getcount(param,arg) {
+                                    //     $(".span_getcount").html("<img src=\"../images/loading.gif\" style=\"width:12px;height:12px;\" />");
+                                    //     $.post("../Ashx/MyIndex.ashx", { "action": "getcount", "param": param, "arg": arg }, function (result) {
+                                    //         r = eval("({" + result + "})");
+                                    //         $("#span_newaddcontract").html(r.newContractCount);
+                                    //         $("#span_newadduser").html(r.newAddUserCount);
+                                    //         $("#span_newaddmember").html(r.newSignMemberCount);
+                                    //         $("#span_havefollow").html(r.haveFollowCount);
+                                    //         $("#span_newcontractamount").html(r.signAmount);
+                                    //         $("#span_reduceclasshours").html(r.reduceHours);
+                                    //     }, "text");
+                                    // }
+                                    // getcount("day",'');
+                                </script>
+                            </div>
+                        </td>
+                        <td class="width3 table_hide" style="padding-left: 11px; width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span>系统预警</span>
+                                    <div class="itemBtn">
+                                        <a href="javascript:void(0)" onclick="getwarning('flash')">
+                                            <img src="Images/refresh.png"></a>
+                                    </div>
+                                </div>
+                                <div id="p_contractremind">
+        
+                                        </div><div id="p_noneappointcourse">
+        
+                                        </div><div id="p_memberclasshours">
+        
+                                        </div><div id="p_membercardfreezeremind">
+        
+                                        </div><div id="p_qkcs">
+        
+                                        </div><div id="p_nonefollow">
+        
+                                        </div><table>
+                                    <tbody><tr>
+                                            <td class="padding2">本月内到期的合同</td>
+                                            <td style="width: 40px;"><a href="javascript:void(0)" class="hightlight2" onclick="show('本月内到期的合同', '../K_Remend/ContractRemind.aspx', '860px', '450px')"><span class="span_getwarning" id="span_contractenddate">10</span></a></td>
+                                            <td style="width: 40px;" class="textright">个</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">长时间未上课学员</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('长时间未上课的学员', '../K_Remend/NoneAppointCourse.aspx', '860px', '450px')"><span class="span_getwarning" id="span_longtimenocourse">1035</span></a></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">课时剩余不足预警</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('课时剩余不足预警', '../K_Remend/MemberClassHours.aspx', '860px', '450px')"><span class="span_getwarning" id="span_lessclasshours">706</span></a></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">会员卡冻结到期</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('会员卡冻结到期预警', '../K_Remend/MemberCardFreezeRemind.aspx', '860px', '450px')"><span class="span_getwarning" id="span_cardfreeze">0</span></a></td>
+                                            <td class="textright">位</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">学员旷课次数预警</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('学员旷课次数预警', '../K_Remend/QKCS.aspx', '860px', '450px')"><span class="span_getwarning" id="span_memberqk">7</span></a></td>
+                                            <td class="textright">个</td>
+                                        </tr>
+                                    
+    
+                                    <tr>
+                                            <td class="padding2">从未跟进过的学员</td>
+                                            <td><a href="javascript:void(0)" class="hightlight2" onclick="show('从未跟进过的学员', '../K_Remend/NoneFollow.aspx', '860px', '450px')"><span class="span_getwarning" id="span_neverfollowuser">88</span></a></td>
+                                            <td class="textright">个</td>
+                                        </tr>
+                                    
+    
+                                </tbody></table>                            
+                            </div>
+                            <div id="p_leave" class="div_hide" style="display: none">
+        
+                                <div class="item2">
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="padding2">学员请假次数预警</td>
+                                            <td style="width: 40px;"><a href="javascript:void(0)" class="hightlight2" onclick="show('学员请假次数预警', '../MyIndex/MemberLeave.aspx', '860px', '450px')"><span class="span_task" id="span_memberleave">1</span></a></td>
+                                            <td style="width: 40px;" class="textright">个</td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                            
+    </div>
+                            <script type="text/ecmascript">
+                                // function getwarning(arg) {
+                                //     $(".span_getwarning").html("<img src=\"../images/loading.gif\" style=\"width:12px;height:12px;\" />");
+                                //     $.post("../Ashx/MyIndex.ashx", { "action": "getwarning", "arg": arg }, function (result) {
+                                //         r = eval("({" + result + "})");
+                                //         $("#span_contractenddate").html(r.contractEndDateCount);
+                                //         $("#span_longtimenocourse").html(r.longTimeNoCourseCount);
+                                //         $("#span_lessclasshours").html(r.lessClassHoursCount);
+                                //         $("#span_cardfreeze").html(r.cardFreezeCount);
+                                //         $("#span_memberqk").html(r.memberQKCount);
+                                //         $("#span_neverfollowuser").html(r.neverFollowUserCount);
+                                //         $("#span_memberleave").html(r.memberLeaveCount);
+    
+                                //     }, "text");
+                                // }
+    
+                                // getwarning('');
+                            </script>
+                        </td>
+                        <td class="width4" rowspan="2" style="padding-left: 11px; height: 100%; padding-top: 4px; width: 28%;">
+                            <div id="p_chart">
+        
+                                <div id="flash" class="borderBottom">
+                                    <table style="width: 100%;" class="borderAl">
+                                        <tbody><tr>
+                                            <td class="borderBottom">
+                                                <div id="div_node" align="center" style="height: 264px;" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 258px; height: 264px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="258" height="264"><desc>Created with Highcharts 3.0.10</desc><defs><clipPath id="highcharts-1"><rect x="0" y="0" width="148" height="209"></rect></clipPath></defs><rect x="0" y="0" width="258" height="264" rx="5" ry="5" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(10,40) scale(1 1)" style=""><path fill="none" d="M 169.7933014354067 20.5 C 164.7933014354067 20.5 133.4160527762507 60.66630016492579 128.4160527762507 60.66630016492579 L 123.4160527762507 60.66630016492579" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 163.98660287081339 41 C 158.98660287081339 41 111.25266630016492 138.91203958218802 106.25266630016492 138.91203958218802 L 101.25266630016492 138.91203958218802" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 158.1799043062201 61.5 C 153.1799043062201 61.5 106.2 165.45354590434306 101.2 165.45354590434306 L 96.2 165.45354590434306" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 152.3732057416268 82 C 147.3732057416268 82 106.2 181.30951072017595 101.2 181.30951072017595 L 96.2 181.30951072017595" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 146.5665071770335 102.5 C 141.5665071770335 102.5 106.2 192.16739967014846 101.2 192.16739967014846 L 96.2 192.16739967014846" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 140.7598086124402 123 C 135.7598086124402 123 106.2 199.34854315558005 101.2 199.34854315558005 L 96.2 199.34854315558005" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 134.9531100478469 143.5 C 129.9531100478469 143.5 106.2 204.6913139087411 101.2 204.6913139087411 L 96.2 204.6913139087411" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 131.2 164 C 126.2 164 106.2 207.62122045079718 101.2 207.62122045079718 L 96.2 207.62122045079718" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 131.2 184.5 C 126.2 184.5 106.2 208.65530511269932 101.2 208.65530511269932 L 96.2 208.65530511269932" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="none" d="M 131.2 208.9425508521166 C 126.2 208.9425508521166 106.2 208.9425508521166 101.2 208.9425508521166 L 96.2 208.9425508521166" stroke="#606060" stroke-width="1" visibility="visible"></path><path fill="#2f7ed8" d="M 7.400000000000006 0 L 140.6 0 106.23210555250137 121.33260032985157 41.767894447498634 121.33260032985157 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#0d233a" d="M 41.767894447498634 121.33260032985157 L 106.23210555250137 121.33260032985157 96.27322704782847 156.49147883452446 51.72677295217152 156.49147883452446 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#8bbc21" d="M 51.72677295217153 156.4914788345245 L 96.27322704782847 156.4914788345245 96.19999999999999 156.75 96.19999999999999 174.41561297416166 51.8 174.41561297416166 51.8 156.75 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#910000" d="M 51.8 174.41561297416166 L 96.2 174.41561297416166 96.2 188.20340846619024 51.8 188.20340846619024 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#1aadce" d="M 51.8 188.20340846619024 L 96.2 188.20340846619024 96.2 196.13139087410667 51.8 196.13139087410667 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#492970" d="M 51.8 196.1313908741067 L 96.2 196.1313908741067 96.2 202.56569543705336 51.8 202.56569543705336 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#f28f43" d="M 51.8 202.56569543705336 L 96.2 202.56569543705336 96.2 206.81693238042885 51.8 206.81693238042885 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#77a1e5" d="M 51.8 206.81693238042885 L 96.2 206.81693238042885 96.2 208.4255085211655 51.8 208.4255085211655 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#c42525" d="M 51.8 208.4255085211655 L 96.2 208.4255085211655 96.2 208.88510170423314 51.8 208.88510170423314 Z" stroke="#FFFFFF" stroke-width="1"></path><path fill="#a6c96a" d="M 51.8 208.88510170423314 L 96.2 208.88510170423314 96.2 209.00000000000003 51.8 209.00000000000003 Z" stroke="#FFFFFF" stroke-width="1"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(10,40) scale(1 1)"></g></g><text x="79" y="25" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#46626A;font-size:12px;font-family:Verdana, sans-serif;fill:#46626A;width:194px;"><tspan x="79">销售漏斗统计</tspan></text><g class="highcharts-data-labels highcharts-tracker" visibility="visible" zIndex="6" transform="translate(10,40) scale(1 1)" style=""><g zIndex="1" style="cursor:default;" transform="translate(175,11)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">未划分 (1056)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(169,31)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">到店参观 (306)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(163,52)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">预交定金 (156)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(157,72)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">陌生名单12 (120)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(152,93)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">成功报课 (69)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(146,113)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">继续沟通 (56)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(140,134)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">报课异议沟通 (37)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(136,154)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">体验试听 (14)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(136,175)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">参加活动 (4)</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(136,199)" visibility="visible"><text x="3" y="16" zIndex="1" style="font-size:12px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">有意向客户 (1)</tspan></text></g></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(76,60)" opacity="0" visibility="hidden"><rect x="0.5" y="0.5" width="82" height="44" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="82" height="44" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="82" height="44" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="82" height="44" fill="rgb(255,255,255)" fill-opacity="0.85" rx="3" ry="3" stroke="#2f7ed8" stroke-width="1" anchorX="-7.5" anchorY="56"></rect><text x="8" y="21" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;"><tspan style="font-size: 10px" x="8">未划分</tspan><tspan style="fill:" x="8" dy="16">数量</tspan><tspan dx="0">: </tspan><tspan style="font-weight:bold" dx="0">1,056</tspan></text></g><text x="248" y="259" text-anchor="end" zIndex="8" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;"></text></svg></div></div>
+                                                <script type="text/javascript">
+                                                    // $.post("../Ashx/MyIndex.ashx", { "action": "getnodeinfo", "arg": "" }, function (result) {
+                                                    //     if (result == "") {
+                                                    //         $("#div_node").html("<div style='padding-top: 130px;'>暂无相关数据</div>");
+                                                    //     }
+                                                    //     else {
+                                                    //         //document.write(result);
+                                                    //         var seri = [];
+                                                    //         var strData = result.split("||");
+                                                    //         for (var i = 0; i < strData.length; i++) {
+                                                    //             seri.push({ name: strData[i].split(",")[0], y: parseInt(strData[i].split(",")[1]) });
+                                                    //         }
+                                                            
+    
+                                                    //         $('#div_node').highcharts({
+                                                    //             chart: {
+                                                    //                 type: 'funnel',
+                                                    //                 marginRight: 100
+                                                    //             },
+                                                    //             title: {
+                                                    //                 text: '销售漏斗统计',
+                                                    //                 x: -50,
+                                                    //                 style: {
+                                                    //                     fontSize: '12px',
+                                                    //                     fontFamily: 'Verdana, sans-serif',
+                                                    //                     color: '#46626A'
+                                                    //                 }
+                                                    //             },
+                                                    //             plotOptions: {
+                                                    //                 series: {
+                                                    //                     dataLabels: {
+                                                    //                         enabled: true,
+                                                    //                         format: '{point.name} ({point.y})',
+                                                    //                         softConnector: true,                                                                        
+                                                    //                         style: {
+                                                    //                             fontSize: '12px',
+                                                    //                             fontFamily: 'Verdana, sans-serif',
+                                                    //                             color: '#46626A'
+                                                    //                         }
+                                                    //                     },
+                                                    //                     neckWidth: '30%',
+                                                    //                     neckHeight: '25%'
+                                                    //                 }
+                                                    //             },
+                                                    //             legend: {
+                                                    //                 enabled: false
+                                                    //             },
+                                                    //             series: [{
+                                                    //                 name: '数量',
+                                                    //                 data: seri
+                                                    //             }]
+                                                    //         });
+    
+                                                    //     }
+                                                    // }, "text");
+                                                </script>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div id="div_member" align="center" style="height: 200px;" data-highcharts-chart="1"><div class="highcharts-container" id="highcharts-2" style="position: relative; overflow: hidden; width: 258px; height: 200px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="258" height="200"><desc>Created with Highcharts 3.0.10</desc><defs><clipPath id="highcharts-3"><rect x="0" y="0" width="202" height="29"></rect></clipPath></defs><rect x="0" y="0" width="258" height="200" rx="5" ry="5" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 46 39.5 L 248 39.5" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 46 69.5 L 248 69.5" stroke="#C0C0C0" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 82.5 69 L 82.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 100.5 69 L 100.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 118.5 69 L 118.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 137.5 69 L 137.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 155.5 69 L 155.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 174.5 69 L 174.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 192.5 69 L 192.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 210.5 69 L 210.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 229.5 69 L 229.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 248.5 69 L 248.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 63.5 69 L 63.5 74" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 45.5 69 L 45.5 74" stroke="#C0D0E0" stroke-width="1"></path><path fill="none" d="M 46 69.5 L 248 69.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(46,40) scale(1 1)" style="" clip-path="url(#highcharts-3)"><rect x="4.5" y="12.5" width="9" height="17" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="22.5" y="5.5" width="9" height="24" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="41.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="59.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="77.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="96.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="114.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="132.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="151.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="169.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect><rect x="187.5" y="29.5" width="9" height="0" stroke="#FFFFFF" stroke-width="1" fill="#2f7ed8" rx="0" ry="0"></rect></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(46,40) scale(1 1)"></g></g><text x="129" y="25" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#46626A;font-size:12px;font-family:Verdana, sans-serif;fill:#46626A;width:194px;"><tspan x="129">学员分布统计</tspan></text><g class="highcharts-data-labels highcharts-tracker" visibility="visible" zIndex="6" transform="translate(46,40) scale(1 1)" style=""><g zIndex="1" style="cursor:default;" transform="translate(9,1)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">734</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(27,16)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">1,032</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(40,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">1</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(50,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">12</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(76,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">3</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(95,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">7</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(105,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">19</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(131,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">3</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(150,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">1</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(168,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">6</tspan></text></g><g zIndex="1" style="cursor:default;" transform="translate(186,-2)"><text x="3" y="17" zIndex="1" style="font-size:13px;font-family:Verdana, sans-serif;color:#46626A;fill:#46626A;"><tspan x="3">1</tspan></text></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="55.18181818181818" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 55.18181818181818 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="55.18181818181818">新客户</tspan></text><text x="73.54545454545453" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 73.54545454545453 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="73.54545454545453">签约会员</tspan></text><text x="91.9090909090909" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 91.9090909090909 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="91.9090909090909">定金客户</tspan></text><text x="110.27272727272727" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 110.27272727272727 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="110.27272727272727">退费会员</tspan></text><text x="128.63636363636363" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 128.63636363636363 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="128.63636363636363">黑名单</tspan></text><text x="147" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 147 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="147">试听客户</tspan></text><text x="165.36363636363635" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 165.36363636363635 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="165.36363636363635">托班会员</tspan></text><text x="183.72727272727272" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 183.72727272727272 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="183.72727272727272">第三方</tspan></text><text x="202.0909090909091" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 202.0909090909091 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="202.0909090909091">BPFC--已体验待联系学员</tspan></text><text x="220.45454545454544" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 220.45454545454544 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="220.45454545454544">老客户</tspan></text><text x="238.8181818181818" y="78.89949493661166" text-anchor="end" transform="translate(0,0) rotate(-45 238.8181818181818 78.89949493661166)" style="color:#46626A;cursor:default;font-size:13px;font-family:Verdana, sans-serif;fill:#46626A;" opacity="1"><tspan x="238.8181818181818">双课包</tspan></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="38" y="74.5" text-anchor="end" style="width:65px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="38">0</tspan></text><text x="38" y="45.5" text-anchor="end" style="width:65px;color:#666;cursor:default;font-size:11px;fill:#666;" opacity="1"><tspan x="38">1250</tspan></text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="none" fill-opacity="0.85" rx="3" ry="3" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></rect><rect x="0.5" y="0.5" width="16" height="16" fill="rgb(255,255,255)" fill-opacity="0.85" rx="3" ry="3"></rect><text x="8" y="21" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;"></text></g><text x="248" y="195" text-anchor="end" zIndex="8" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;"></text></svg></div></div>
+                                                <script type="text/javascript">
+                                                    // $.post("../Ashx/MyIndex.ashx", { "action": "getmemberinfo", "arg": "" }, function (result) {
+                                                    //     if (result == "") {
+                                                    //         $("#div_member").html("<div style='padding-top: 100px;'>暂无相关数据</div>");
+                                                    //     }
+                                                    //     else {
+                                                    //         var cate = []; var seri = [];
+                                                    //         var c = result.split("||")[0].split(",");
+                                                    //         var s = result.split("||")[1].split(",");
+                                                    //         for (var i = 0; i < c.length; i++)
+                                                    //         {
+                                                    //             cate.push(c[i]);
+                                                    //             seri.push(parseInt(s[i]));
+                                                    //         }
+    
+                                                    //         $('#div_member').highcharts({
+                                                    //             chart: {
+                                                    //                 type: 'column'
+                                                    //             },
+                                                    //             title: {
+                                                    //                 text: '学员分布统计',
+                                                    //                 style: {
+                                                    //                     fontSize: '12px',
+                                                    //                     fontFamily: 'Verdana, sans-serif',
+                                                    //                     color: '#46626A'
+                                                    //                 }
+                                                    //             },
+                                                    //             xAxis: {
+                                                    //                 categories: cate,
+                                                    //                 labels: {
+                                                    //                     rotation: -45,
+                                                    //                     align: 'right',
+                                                    //                     style: {
+                                                    //                         fontSize: '13px',
+                                                    //                         fontFamily: 'Verdana, sans-serif',
+                                                    //                         color: '#46626A'
+                                                    //                     }
+                                                    //                 }
+                                                    //             },
+                                                    //             yAxis: {
+                                                    //                 min: 0,
+                                                    //                 title: {
+                                                    //                     text: ''
+                                                    //                 }
+                                                    //             },
+                                                    //             legend: {
+                                                    //                 enabled: false
+                                                    //             },
+                                                    //             tooltip: {
+                                                    //                 pointFormat: '数量: <b>{point.y} </b>',
+                                                    //             },
+                                                    //             series: [{
+                                                    //                 name: '数量',
+                                                    //                 data: seri,
+                                                    //                 dataLabels: {
+                                                    //                     enabled: true, 
+                                                    //                     color: '#46626A',
+                                                    //                     align: 'right',
+                                                    //                     x: 4,
+                                                    //                     y: 10,
+                                                    //                     style: {
+                                                    //                         fontSize: '13px',
+                                                    //                         fontFamily: 'Verdana, sans-serif', 
+                                                    //                     }
+                                                    //                 }
+                                                    //             }]
+                                                    //         });
+                                                    //     }
+                                                    // }, "text");
+                                                </script>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                            
+    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="width3" style="padding-top: 7px; width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span>通知公告</span>
+                                    <div class="itemBtn1">
+                                        <a href="javascript:void(0)" onclick="show('通知公告', '/K_Info/InfoList.aspx?navId=3d780072-2f22-4b3c-b12e-b819a981c249', '860px', '450px')">更多</a>
+                                    </div> 
+                                </div>
+                                <div id="p_info">
+        
+                                    <table id="noteList"><tbody><tr class="noteitem" guid="69f1beb7-9439-4d09-854a-6fcd1e01f3ab"><td class="padding2" title="">test</td><td style="width: 70px;">2018-06-05</td><td style="width: 40px;" class=" textright">已阅读</td></tr><tr class="noteitem" guid="ca2d581d-113a-40d1-81dd-f734f38a4198"><td class="padding2" title="">端午放假通知</td><td style="width: 70px;">2017-06-05</td><td style="width: 40px;" class=" textright">已阅读</td></tr><tr class="noteitem" guid="a64720a3-e251-40b8-9b31-70f9940bdbcb"><td class="padding2" title="">测试</td><td style="width: 70px;">2017-08-23</td><td style="width: 40px;" class=" textright">已阅读</td></tr><tr class="noteitem" guid="46f6d2ed-1550-4b98-882e-a9f8afbac9a6"><td class="padding2" title="">2017开会</td><td style="width: 70px;">2017-07-04</td><td style="width: 40px;" class=" textright">已阅读</td></tr><tr class="noteitem" guid="e3ad71e5-35f8-46c8-b252-eb144e615343"><td class="padding2" title="">茶话会</td><td style="width: 70px;">2017-11-14</td><td style="width: 40px;" class=" textright">已阅读</td></tr><tr class="noteitem" guid="f27a2939-40be-4110-9276-719b5c405666"><td class="padding2" title="">放假</td><td style="width: 70px;">2017-10-23</td><td style="width: 40px;" class=" textright">已阅读</td></tr></tbody></table>
+                                
+    </div>
+                                
+                            </div>
+                        </td>
+                        <td class="width3" style="padding-left: 11px; padding-top: 7px; width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span id="taskTitle"> 工作计划（6月 至 7月）</span>
+                                    <div class="itemBtn1 btnAdd">
+                                        <a href="javascript:void(0);">创建</a>
+                                    </div>
+                                </div>
+                                <div id="p_tasklist">
+        
+                                    <table id="taskList"><tbody><tr><td class="padding2" title="">123</td><td style="width: 40px;" class=" textright" title="06-07 12:00 至 06-07 12:00">已结束</td></tr><tr><td class="padding2" title="">阿水淀粉</td><td style="width: 40px;" class=" textright" title="06-07 12:00 至 06-07 12:00">已结束</td></tr><tr><td class="padding2" title="">`121`2</td><td style="width: 40px;" class=" textright" title="06-09 12:00 至 06-09 12:00">已结束</td></tr><tr><td class="padding2" title="">test</td><td style="width: 40px;" class=" textright" title="06-05 12:00 至 06-05 12:00">已结束</td></tr></tbody></table>
+                                
+    </div>
+                                
+                            </div>
+                        </td>
+                        <td class="width3" style="padding-left: 11px; padding-top: 7px; width: 24%;">
+                            <div class="item1">
+                                <div class="item_title">
+                                    <span>任务指派（待处理）</span>
+                                    <div class="itemBtn1">
+                                        <a href="javascript:void(0)" id="btnTaskMore1">创建</a>
+                                    </div>
+                                </div>                           
+                                <div id="p_worklist">
+        
+                                     <table id="myTaskList"><tbody><tr class="mytaskinfo" taskid="29"><td class="padding2" title="发起人：demo
+    接收人：
+    内容：下午一点开会">下午一点开会</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：">05-26 23:49</td></tr><tr class="mytaskinfo" taskid="28"><td class="padding2" title="发起人：demo
+    接收人：
+    内容：下午一点开会">下午一点开会</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：">05-26 23:49</td></tr><tr class="mytaskinfo" taskid="27"><td class="padding2" title="发起人：demo
+    接收人：99663
+    内容：下午一点开会">下午一点开会</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：99663">05-26 23:49</td></tr><tr class="mytaskinfo" taskid="26"><td class="padding2" title="发起人：demo
+    接收人：
+    内容：下午一点开会">下午一点开会</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：">05-26 23:49</td></tr><tr class="mytaskinfo" taskid="21"><td class="padding2" title="发起人：demo
+    接收人：
+    内容：下班之前将数据发来">下班之前将数据发来</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：">04-25 13:56</td></tr><tr class="mytaskinfo" taskid="20"><td class="padding2" title="发起人：demo
+    接收人：liao
+    内容：下班之前将数据发来">下班之前将数据发来</td><td style="width: 70px;" class="textright" title="发起人：demo
+    接收人：liao">04-25 13:56</td></tr></tbody></table>
+                                
+    </div>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+    
+    
+                <div id="p_count">
+        
+                    <div style="margin-left: 0px; margin-right: 0px; margin-top: 11px; overflow: hidden;">
+                        <table class="list2 list3">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th style="width: 10%; ">业绩统计</th>
+                                    <th style="width: 8%">01月</th>
+                                    <th style="width: 7%">02月</th>
+                                    <th style="width: 8%">03月</th>
+                                    <th style="width: 7%">04月</th>
+                                    <th style="width: 8%">05月</th>
+                                    <th style="width: 7%">06月</th>
+                                    <th style="width: 8%">07月</th>
+                                    <th style="width: 7%">08月</th>
+                                    <th style="width: 8%">09月</th>
+                                    <th style="width: 7%">10月</th>
+                                    <th style="width: 8%">11月</th>
+                                    <th>12月</th>
+                                </tr>
+                            </thead>
+                            <tbody id="saleamount" style="text-align: right"><tr><td style="text_align:center;">去年</td><td>8994</td><td>0</td><td>0</td><td>0</td><td>515994</td><td>354400</td><td>141728</td><td>290738</td><td>290829</td><td>352802</td><td>309972</td><td>117692</td></tr><tr><td style="text_align:center;">今年</td><td>62935</td><td>5960</td><td>41740</td><td>18253</td><td>28220</td><td>50640</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td style="text_align:center; ">变化</td><td style="color:green">+599.74%</td><td style="color:green">-</td><td style="color:green">-</td><td style="color:green">-</td><td style="color:red">-94.53%</td><td style="color:red">-85.71%</td><td style="color:red">-</td><td style="color:red">-</td><td style="color:red">-</td><td style="color:red">-</td><td style="color:red">-</td><td style="color:red">-</td></tr></tbody>
+                        </table>
+                    </div>
+                    <script type="text/javascript">
+                        // function GetSaleAmount() {
+                        //     $.post("../Ashx/MyIndex.ashx", { "action": "getsalesamount", "arg": "" }, function (result) {
+                        //         $("#saleamount").html(result);
+                        //     }, "text");
+                        // }
+                        // GetSaleAmount();
+                    </script>
+                
+    </div>
+            </div>
+            <!--右下角卷页效果-->
+            
+    
+            <div id="showtest2" style="text-align: center; display: none; height: 80px; width: 200px; position: absolute; background-color: white; border: solid 1px #DAD8D4">
+                <div style="text-align: center; padding-top: 10px;">设置本月目标：<input id="txtTarget" class="int" style="width: 92px;" type="text">&nbsp;万</div>
+                <div style="text-align: center; padding-top: 10px;margin-top: 7px;">
+                    <input id="btnSave" class="button" type="button" value="确定" onclick="SaveTarget()">&nbsp;
+                    <input id="btnChance" class="button" type="button" value="取消" onclick="hideSetTarget()">
+                </div>
+            </div>
+            
+            <script type="text/ecmascript">
+                // var dt = new Date();
+                // var sd = dt.getDate();
+                // dt.setMonth(dt.getMonth() + 1);
+                // dt.setDate(0);
+                // var ld = dt.getDate();
+                // $("#span_DayOfEnd").html((ld - sd + 1).toString());
+        
+                // function hideSetTarget()
+                // { $("#showtest2").hide(); }
+                // function SaveTarget() {
+                //     if ($("#txtTarget").val() == "") {
+                //         alert("请输入正确的本月目标");
+                //     }
+                //     else {
+                //         if ($("#txtTarget").val().search(/^\d+$/) == -1) {
+                //             alert("请输入正确的本月目标");
+                //         }
+                //         else {
+                //             $.post("../Ashx/MyIndex.ashx", { "action": "setsalestarget", "target": $("#txtTarget").val() }, function (result) {
+                //                 GetTarget();
+                //                 $("#showtest2").hide();
+                //             }, "text");
+                //         }
+                //     }
+                // }
+                // function GetTarget() {
+                //     $.post("../Ashx/MyIndex.ashx", { "action": "getsalestarget" }, function (result) {
+                //         if (result.split("|")[0] == "未设置")
+                //             $("#span_target").html(result.split("|")[0]);
+                //         else
+                //             $("#span_target").html(result.split("|")[0] + " 万");
+                //         $("#span_finishtarget").html(result.split("|")[1] + " 万");
+                //     }, "text");
+                // }
+                // GetTarget();
+                // function show(title, url, width, heigh) {
+                //     window.parent.showDialog(title, url, width, heigh);
+                // }
+                // $("#cardSignRoleList div:last").css("border-bottom-width", "0px");
+                // if ($("#p_signing iframe").size() > 0)
+                //     $("#cardSignRoleList").css("left", $("#p_signing iframe").offset().left + "px");
+    
+                // $(function () {
+                //     $(".table_hide").mouseover(function () {
+                //         $(this).find("div[class=div_hide]").show();
+                //         $(this).find("div[class=div_hide]").find("table").width($(this).find("table").eq(0).width());
+                //     });
+                //     $(".table_hide").mouseleave(function () {
+                //         $(this).find("div[class=div_hide]").hide();
+                //     });
+                // })
+            </script>
+            
+        </form>
+
+    </body>
+
+    </html>
