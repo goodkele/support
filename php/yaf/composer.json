@@ -1,0 +1,14 @@
+{
+    "require": {
+        "simplesoftwareio/simple-qrcode": "~2",
+        "illuminate/database" : "*",
+        "illuminate/events": "*",
+        "doctrine/dbal" : "*"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
