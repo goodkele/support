@@ -4,8 +4,6 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Bootstrap extends \Yaf\Bootstrap_Abstract{
 
-
-
     /**
      * 初始化时区
      */
@@ -31,14 +29,14 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
     {
         $capsule = new Capsule();
         $capsule->addConnection(
-            \Yaf\Application::app()->getConfig()->database->akuyd->toArray(),
+            \Yaf\Application::app()->getConfig()->database->default->toArray(),
             GameConst::DB_AKUYD
         );
 
-        $capsule->addConnection(
-            \Yaf\Application::app()->getConfig()->database->akuadmin->toArray(),
-            GameConst::DB_AKUADMIN
-        );
+        // $capsule->addConnection(
+        //     \Yaf\Application::app()->getConfig()->database->akuadmin->toArray(),
+        //     GameConst::DB_AKUADMIN
+        // );
 
         $capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher(new \Illuminate\Container\Container));
 

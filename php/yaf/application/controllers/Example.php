@@ -13,6 +13,7 @@ class ExampleController extends Base_BaseController {
 
     }
 
+
     
     public function mainAction()
     {
@@ -82,6 +83,21 @@ class ExampleController extends Base_BaseController {
 
         vaR_dump($_SESSION);
 
+        exit();
+    }
+
+    public function tableAction()
+    {
+    
+    }
+
+    public function listAction()
+    {
+        $page = $_GET['page'];
+
+        $users = UserModel::paginate(5, ['*'], 'page', $page);
+
+        echo json_encode($users->toArray());
         exit();
     }
 

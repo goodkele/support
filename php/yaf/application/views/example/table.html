@@ -1,0 +1,35 @@
+<!Doctype html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+<script src="/layui/layui.all.js"></script>
+
+</head>
+
+<body>
+
+    <div id="test"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var table = layui.table;
+  
+  table.render({
+    elem: '#test'
+    ,url:'/example/list/'
+    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    ,cols: [[
+      {field:'id', width:80, title: 'ID', sort: true}
+      ,{field:'name', width:80, title: '用户名'}
+    ]]
+    // ,size: 'sm'
+  });
+
+    
+</script>

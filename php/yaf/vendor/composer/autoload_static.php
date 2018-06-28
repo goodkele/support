@@ -29,6 +29,7 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
             'Illuminate\\Validation\\' => 22,
             'Illuminate\\Translation\\' => 23,
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Pagination\\' => 22,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
             'Illuminate\\Database\\' => 20,
@@ -80,6 +81,10 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Pagination\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/pagination',
         ),
         'Illuminate\\Filesystem\\' => 
         array (
