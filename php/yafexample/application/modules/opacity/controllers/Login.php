@@ -1,6 +1,7 @@
 <?php
 
-class LoginController extends Base_OpacityController {
+class LoginController extends Base_OpacityController
+{
 
     public function indexAction()
     {
