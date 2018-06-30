@@ -9,6 +9,7 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -16,6 +17,10 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
         array (
@@ -47,6 +52,10 @@ class ComposerStaticInitbc0fabadcde22790cc4990914908582b
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
         'Psr\\SimpleCache\\' => 
         array (

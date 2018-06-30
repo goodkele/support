@@ -50,27 +50,55 @@
 
 
 
-
-
 机构公有角色：所有机构读取这个角色权限，机构不可以更改
 机构私有角色：可以单独给一结构设置角色
 
+权限模块
 
+角色
+
+角色 关联 权限模块
+
+店铺
+
+拥有学员
+
+
+
+* 权限特性
+    * 可以给单个用户分配角色组，用户拥有角色组下面的所有权限。这样可以分出免费用户权限，付费用户权限
+    * 如果是特殊用户则创建一个单独的角色组就好
 
 
 
 #opacity
 ## 用户管理 -   user
 * 会员管理
-    * 会员列表
+    * 会员列表  UserUserList
+    * 新建会员  UserUserAdd
+* 店铺管理
+    * 店铺列表  UserShopList
 * 基础信息设置
-    * 角色设置
-    * 权限模块设置
+    * 角色组设置    UserBasisRoleGroup
+        * 添加
+        * 修改
+        * 删除
+    * 角色设置      UserBasisRole
+        * 添加
+        * 修改
+        * 删除
+    * 权限模块设置  UserBasisModule
+        * 添加
+        * 修改
+        * 删除
 ## 运营工具    -   oper
-* 账号管理
-    * 部门管理  -   AdmGroup
-    * 用户管理  -   AdmUser
-    * 用户日志  -   AdmLog
+* 账号管理  
+    * 用户信息添加  -   OperAdmUseradd  
+    * 用户管理  -   OperAdmUser
+    * 部门管理  -   OperAdmRole
+    * 用户日志  -   OperAdmLog
+* 基础信息设置
+    * 版本设置  -   OperBasisVersion
 ## 数据统计   -   stat
 
 
@@ -79,21 +107,24 @@
 
 ## 学员管理 -	member
 * 学员信息管理
-    * 添加学员
-    * 批量导入学员
+    * 添加学员          MemberBaseAdd
+    * 批量导入学员      MemberBaseImport
+* 学员分配管理
+    * 分配学员          MemberAssignMember
+    * 分配记录查看      MemberAssignHistory
 ## 合同签约	-	contract
 ## 教学管理	-	edu
 ## 活动中心	-	event
 ## 财务管理	-	fin
 ## 员工管理	-	staff
 * 组织架构管理
-    * 部门信息管理
-    * 员工岗位管理
-    * 员工信息添加
-    * 员工信息查看
+    * 部门信息管理      StaffStructDepartment
+    * 员工岗位管理      StaffStructPosition
+    * 员工信息添加      StaffStructStaffadd
+    * 员工信息查看      StaffStructList
 * 基础信息设置
-    * 老师级别设置
-    * 员工权限设置
+    * 老师级别设置      StaffBasisTeacherlevel
+    * 员工权限设置      StaffBasisStaffrole
 ## 统计报表	-	stat
 ## 营养餐食 -   recipe
 ## 系统配置	-	sysconf

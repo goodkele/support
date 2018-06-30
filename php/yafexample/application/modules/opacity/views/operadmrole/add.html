@@ -1,0 +1,135 @@
+<?php include $VIEW_PATH . "/include/maincontentheader.html"; ?>
+
+<body>
+
+    <form name="form1" method="post" action="WorkerEdit.aspx?navId=f9e63389-b767-4a30-8ce4-fa1fe8525ccc" id="form1">
+
+        <table class="edit partview">
+            <tbody>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">
+                        部门名称：
+                    </td>
+                    <td >
+                        <input name="txtName" type="text" id="txtName" class="int" onchange="return CheckEmpty('txtName', 'spanName');" style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanName"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="borderBottom"></td>
+                </tr>
+
+                <tr>
+                    <td class="textAlignRight">
+                        超级管理员：
+                    </td>
+                    <td >
+                        <label>
+                            <input id="cbAdvisor" type="radio" name="cbAdvisor">是
+                        </label>
+                        <span style="margin-left:10px;">
+                            <label>
+                                <input id="cbTeacher" type="radio" name="cbAdvisor" onclick="showLevel();">否</span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="borderBottom"></td>
+                </tr>
+
+                <tr>
+                    <td class="textAlignRight">
+                        权限模块：
+                        <br>
+                    </td>
+                    <td >
+
+                        <div>
+                            <h3><label><input type="checkbox" />用户管理</label></h3>
+
+                            <div>
+                                <h5><label><input type="checkbox" />账户管理</label></h5>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
+                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                            </div>
+                            <div>
+                                <h5><label><input type="checkbox" />账户管理</label></h5>
+                                <label><input type="checkbox" />用户信息添加</label>
+                                <label><input type="checkbox" />用户管理</label>
+                                <label><input type="checkbox" />部门管理</label>
+                                <label><input type="checkbox" />用户日志</label>
+                            </div>
+                        </div>  
+
+
+
+
+
+
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" class="borderBottom"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="submit" name="btnSave" value="保 存" id="btnSave" class="button">
+                        <input type="button" name="btnSave" value="返 回" onclick="history.go(-1);" class="button">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </form>
+
+</body>
+
+
+<script>
+
+// var height = $(window.parent.document).find("#main_box").height(); 
+// var page_height = document.documentElement.clientHeight;
+
+// console.log(height, page_height);
+
+// if( height+110<page_height){
+//     $(window.parent.document).find("#main_box").css({'height':(page_height-120)+'px'});
+//     $(window.parent.document).find("#main_box>iframe").css({'height':(page_height-122)+'px'});
+//     // $("#main_box").css({'height':(page_height-120)+'px'});
+//     // $("#main_box>iframe").css({'height':(page_height-122)+'px'});
+// }
+
+</script>
+
+
+<?php include $VIEW_PATH . "/include/maincontentfooter.html"; ?>

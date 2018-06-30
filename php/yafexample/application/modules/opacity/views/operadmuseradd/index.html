@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>opacity</title>
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/etm.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer/layer.js"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/laydate/laydate.js"></script>
+</head>
+
+<body>
+
+    <form name="form1" method="post" action="WorkerEdit.aspx?navId=f9e63389-b767-4a30-8ce4-fa1fe8525ccc" id="form1">
+        
+        <table class="edit partview">
+            <tbody>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">
+                        系统账号：
+                    </td>
+                    <td class="borderRight" style="width: 360px;">
+                        <input name="txtName" type="text" id="txtName" class="int" onchange="return CheckEmpty('txtName', 'spanName');" style="width:200px;">
+                        <span class="words">*</span>
+                        登陆系统使用
+                        <span class="words" id="spanName"></span>
+                    </td>
+                    <td class="textAlignRight" style="width: 130px;">
+                        Email：
+                    </td>
+                    <td class="borderRight">
+                        <input name="txtEmail" type="text" id="txtEmail" class="int" onchange="return CheckEmpty('txtEmail', 'spanEmail');" style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanEmail"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        真实姓名：
+                    </td>
+                    <td class="borderRight">
+                        <input name="txtRealName" type="text" id="txtRealName" class="int" onchange="return CheckEmpty('txtRealName', 'spanRealName');"
+                            style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanRealName"></span>
+                    </td>
+                    <td class="textAlignRight">
+                        状态：
+                    </td>
+                    <td class="borderRight">
+                        <select name="ddlState" id="ddlState" class="int" style="width:200px;">
+                            <option value="0">请选择</option>
+                            <option selected="selected" value="72">在职</option>
+                            <option value="73">离职</option>
+                            <option value="86">兼职</option>
+                            <option value="93">实习</option>
+                            <option value="152">冻结</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        手机号码：
+                    </td>
+                    <td class="borderRight">
+                        <input name="txtMobile" type="text" id="txtMobile" class="int" style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanMobile"></span>
+                    </td>
+                    <td class="textAlignRight">
+                        入职时间：
+                    </td>
+                    <td>
+                        <input name="txtJobDate" type="text" value="2018-06-30" id="txtJobDate" class="int" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                            onchange="return CheckDate('txtJobDate','spanJobDate');" style="width:100px;">
+                        <span class="words" id="spanJobDate"></span>
+                        <script>
+                            //执行一个laydate实例
+                            laydate.render({
+                              elem: '#txtJobDate' //指定元素
+                            });
+                            </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        所属部门：
+                    </td>
+                    <td class="borderRight">
+                        <select name="ddlDepartment" id="ddlDepartment" class="int" style="width:200px;">
+                            <option value="00000000-0000-0000-0000-000000000000">请选择</option>
+
+                        </select>
+                    </td>
+                    <td class="textAlignRight">
+                        Q Q：
+                    </td>
+                    <td>
+                        <input name="txtQQ" type="text" id="txtQQ" class="int" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        员工岗位：
+                    </td>
+                    <td class="borderRight">
+                        <select name="ddlPosition" id="ddlPosition" class="int" style="width:200px;">
+                            <option value="00000000-0000-0000-0000-000000000000">请选择</option>
+                            <option value="b1b9fb95-eb45-4996-9fe9-623ef0833653">|—买买买</option>
+                            <option value="19f7294c-e7dc-44cb-8d3e-0f936d2917c6">|—|—AAAA</option>
+                            <option value="691a9363-cb33-4a2b-9631-75338d6a8c08">|—学前指导师</option>
+                            <option value="d14242ed-fe5f-41a3-87c2-80a5000f2dd2">|—222</option>
+                            <option value="7d1ba7fe-5c91-4564-a5b1-82bb34ad6880">|—顾问</option>
+                            <option value="b6c0c9a4-c36f-4b20-9394-9affaf309bb3">|—行政</option>
+                            <option value="8324cd8b-3166-4f25-bde4-b77ee138a70a">|—123</option>
+                            <option value="4f55eb3f-87d1-485d-975a-bb07e204d874">|—学龄指导师</option>
+                            <option value="69d33c9d-ab07-40b4-b2d8-0b4c70a7b995">|—销售主管</option>
+                            <option value="805ff037-1f71-4b89-a0e7-3be009a99c7d">|—|—市场专员</option>
+                            <option value="cd65ace8-4a87-4541-b15e-0e053719ae70">|—系统管理</option>
+                            <option value="f179c39b-822b-49a5-9c30-1cb9588e700f">|—|—教务主任</option>
+                            <option value="8cc1b0b5-6cea-427e-a036-bf45dcee03b0">|—|—|—老师</option>
+                            <option value="4f474249-3cea-4460-9805-2b8fa4dc108b">|—|—顾问主管</option>
+                            <option value="f812f7af-8bb9-474b-ac43-e7fb848b78fb">|—|—校长</option>
+                            <option value="a0a02101-5292-4f73-b9e3-41c0cbd69dd0">|—|—|—市场主管</option>
+                            <option value="ed2e8c07-177b-490e-afde-ec28a2b37a9c">|—|—|—|—运营部</option>
+                            <option value="7312b3a0-b2a8-42ee-9af0-5d84cb12e691">|—|—|—IT</option>
+                            <option value="7f3be43f-becc-4357-89f0-802f5242fa91">|—|—|—销售主管</option>
+                            <option value="39b38d9d-3804-4680-ae5c-c6353b4ac879">|—|—|—|—课程顾问</option>
+                            <option value="eab990ad-42a2-4537-a709-946a08dd36c5">|—|—|—教练员</option>
+                            <option value="2bbd628d-c719-41e8-9ccd-1ab21111bb26">|—|—|—教务主管</option>
+                            <option value="59af13f9-43f9-4612-b71f-c27e10c7d3ec">|—|—|—顾问</option>
+                            <option value="d0431434-3b3b-4c33-80aa-e1801eafcc00">|—|—|—教学主管</option>
+                            <option value="564e2039-d4aa-4f12-bdce-1e431128da7b">|—|—|—|—绘本阅读老师</option>
+                            <option value="ef02248c-543d-4e60-8010-9e53150e406a">|—|—|—|—中教</option>
+                            <option value="3f836db2-3d51-4d3f-b97b-cae525a6f3f2">|—|—|—|—外教</option>
+                            <option value="5cf3ee0a-b1bf-4343-84ae-f3854675bd33">|—|—|—|—教师</option>
+                            <option value="e3d42473-d9d0-417f-946e-cc11e783ab49">|—|—|—老师A</option>
+                            <option value="bd413a9f-214e-4836-ae5b-388a81cbefdd">|—|—|—课程老师</option>
+                            <option value="26f4da2c-073e-42b1-b964-bbfb4cc2d6bb">|—|—|—教务</option>
+                            <option value="55144f94-14de-4697-ab19-07f89e0fc0c1">|—|—|—|—老师</option>
+                            <option value="cf1173fa-352a-41f4-9aee-5d5931fcaa70">|—店长</option>
+                            <option value="c77ae7f5-7ffb-4f60-8e2e-e12780e6c6cf">|—|—销售</option>
+
+                        </select>
+                        <span class="words">*</span>
+                    </td>
+                    <td colspan="2" style="padding-left:70px;">
+                        <input id="cbAdvisor" type="checkbox" name="cbAdvisor">是否顾问
+                        <span style="margin-left:10px;">
+                            <input id="cbTeacher" type="checkbox" name="cbTeacher" onclick="showLevel();">是否老师</span>
+                        <span style="margin-left: 5px; display: none;" id="spanLevel">级别：
+                            <select name="ddlLevel" id="ddlLevel">
+                                <option value="00000000-0000-0000-0000-000000000000">请选择</option>
+                                <option value="3ab71ee4-2683-429f-892f-0597c65c95fc">市场专员</option>
+                                <option value="8aaabc07-25e7-430d-9251-72c3098c0e03">课程顾问主管</option>
+                                <option value="72aed14a-11ab-4d96-b024-83737b523f48">副校长</option>
+                                <option value="6455dbb0-25dc-48d0-a3a3-8a7cf22e7a9f">中教</option>
+                                <option value="c1f9749a-9fd6-4a2c-951d-a0c4f5426491">教学主管</option>
+                                <option value="639f2b3a-b1cf-4320-829e-f0621eb62cd4">课程顾问</option>
+
+                            </select>
+                        </span>
+                        <span style="margin-left:10px;">
+                            <input id="cbMktStaff" type="checkbox" name="cbMktStaff">是否市场人员</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        员工权限：
+                    </td>
+                    <td colspan="3">
+                        <input name="cbRight" value="1fd4756a-19a0-4e17-b9be-e5700a45f9a8" type="checkbox">
+                        <a href="javascript:show('1fd4756a-19a0-4e17-b9be-e5700a45f9a8','系统管理员')">系统管理员</a>
+                        <input name="cbRight" value="aa1110ef-5111-411e-b959-dc0c39074de3" type="checkbox">
+                        <a href="javascript:show('aa1110ef-5111-411e-b959-dc0c39074de3','店长')">店长</a>
+                        <input name="cbRight" value="bd9c646d-7b95-4079-add9-1f1ce8501721" type="checkbox">
+                        <a href="javascript:show('bd9c646d-7b95-4079-add9-1f1ce8501721','前台')">前台</a>
+                        <input name="cbRight" value="15bffaff-0b1b-497f-b9af-8c7f39284804" type="checkbox">
+                        <a href="javascript:show('15bffaff-0b1b-497f-b9af-8c7f39284804','老师')">老师</a>
+                        <input name="cbRight" value="6217c883-0230-4b45-a35e-406fad33b53b" type="checkbox">
+                        <a href="javascript:show('6217c883-0230-4b45-a35e-406fad33b53b','顾问')">顾问</a>
+                        <input name="cbRight" value="9dc8739c-efb9-44de-9462-35ea6914b5a1" type="checkbox">
+                        <a href="javascript:show('9dc8739c-efb9-44de-9462-35ea6914b5a1','排课')">排课</a>
+                        <input name="cbRight" value="a3b106e3-34e4-4d75-bffe-eac4dd6d7e91" type="checkbox">
+                        <a href="javascript:show('a3b106e3-34e4-4d75-bffe-eac4dd6d7e91','行政')">行政</a>
+                        <input name="cbRight" value="f47b1934-7062-44a2-8c34-96767ec40eca" type="checkbox">
+                        <a href="javascript:show('f47b1934-7062-44a2-8c34-96767ec40eca','财务')">财务</a> &nbsp;&nbsp;
+                        <a href="javascript:void(0);" class="mouseTips">[?]</a>
+                        <div class="tips" style="display:none;">
+                            注：可同时拥有多个权限
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight" rowspan="3">
+                        拥有学员：
+                        <br>
+                        <a href="javascript:void(0);" class="mouseTips">[?]</a>
+                        <div class="tips" style="display:none;">
+                            注：若勾选后面选项，将会拥有对应选项下面所有学员
+                        </div>
+                    </td>
+                    <td colspan="3" class="textAlignLeft">
+                        潜在学员：
+                        <input name="cbStatus" value="21" type="checkbox">新客户
+                        <input name="cbStatus" value="291" type="checkbox">第三方
+                        <input name="cbStatus" value="294" type="checkbox">BPFC--已体验待联系学员
+                        <input name="cbStatus" value="298" type="checkbox">购买能力不强
+                        <input name="cbStatus" value="299" type="checkbox">3
+                        <input name="cbStatus" value="300" type="checkbox">双课包
+                        <input name="cbStatus" value="301" type="checkbox">111
+                        <input name="cbStatus" value="303" type="checkbox">312
+                        <input name="cbStatus" value="304" type="checkbox">我的测试参数
+                        <input name="cbStatus" value="305" type="checkbox">我的测试参数
+                        <input name="cbStatus" value="131" type="checkbox">定金客户
+                        <input name="cbStatus" value="204" type="checkbox">试听客户
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="textAlignLeft">
+                        无效学员：
+                        <input name="cbStatus" value="297" type="checkbox">事实上
+                        <input name="cbStatus" value="133" type="checkbox">号码无效客户
+                        <input name="cbStatus" value="203" type="checkbox">试听无效客户
+                        <input name="cbStatus" value="202" type="checkbox">黑名单
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="textAlignLeft">
+                        会　　员：
+                        <input name="cbStatus" value="286" type="checkbox">托班会员
+                        <input name="cbStatus" value="23" type="checkbox">签约会员
+                        <input name="cbStatus" value="144" type="checkbox">退费会员
+                        <input name="cbStatus" value="295" type="checkbox">老客户
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">
+                        备注信息：
+                    </td>
+                    <td colspan="3">
+                        <textarea name="txtNotes" rows="2" cols="20" id="txtNotes" class="int" style="width:700px;height:50px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:center;">
+                        <input type="submit" name="btnSave" value="保 存" id="btnSave" disabled="disabled" class="button">
+                        <span style="color:red;margin-top:5px;padding-left:20px;">体验用户无法使用此功能！</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script type="text/javascript" src="../JS/dialog.js"></script>
+        <script type="text/javascript">
+            function show(RoleGuid, RoleName) {
+                window.parent.showDialog("权限角色详细[" + RoleName + "]", "../K_Department/RightInfo.aspx?RoleGuid=" + RoleGuid, "860px", "400px");
+            }
+            function getValidator() {
+                if (!CheckEmpty('txtName', 'spanName') || !CheckEmpty('txtRealName', 'spanRealName') || !CheckEmpty('txtEmail', 'spanEmail') || !CheckEmpty('txtMobile', 'spanMobile') || !CheckEMail('txtEmail', 'spanEmail') || !CheckIDcard('txtIDcard', 'spanIDcard') || !CheckDate('txtJobDate', 'spanJobDate') || !CheckMobile('txtMobile', 'spanMobile') || !CheckPhone('txtWorkPhone', 'spanWorkPhone')) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+            showLevel();
+            function showLevel() {
+                if (document.getElementById("cbTeacher").checked) {
+                    document.getElementById("spanLevel").style.display = "";
+                }
+                else {
+                    document.getElementById("spanLevel").style.display = "none";
+                }
+            }
+
+            $(function () {
+                $(".mouseTips").bind({
+                    mouseenter: function () {
+                        var $offset = $(this).position();
+                        $(this).next().css({ "top": ($offset.top - 22) + "px", "left": ($offset.left + 18) + "px" }).show();
+                    },
+                    mouseleave: function () {
+                        $(this).next().hide();
+                    }
+                });
+            });
+        </script>
+    </form>
+
+
+</body>
+
+</html>

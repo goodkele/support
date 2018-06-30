@@ -1,6 +1,6 @@
 <?php
 
-class AdmUserController extends Base_OpacityController
+class OperAdmUserController extends Base_OpacityController
 {
 
     public function indexAction() 
