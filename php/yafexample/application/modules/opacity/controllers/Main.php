@@ -8,6 +8,7 @@ class MainController extends Base_OpacityController
     public function indexAction() 
     {
 
+        /* @var \Aku\Models\Admin\User */
         $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
 
         $topMenu = $user->getTopMenu();

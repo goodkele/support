@@ -1,5 +1,8 @@
 <?php
 
+
+use \Aku\Models\Admin\AuthRole;
+
 class OperAdmRoleController extends Base_OpacityController
 {
 
@@ -16,38 +19,26 @@ class OperAdmRoleController extends Base_OpacityController
 
             \Yaf\Dispatcher::getInstance()->autoRender(false);
 
-            echo '<div>
-            <h5><label><input type="checkbox">账户管理</label></h5>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-            <label style="display:inline-block"><input type="checkbox">用户信息添加</label>
-            <label style="display:inline-block"><input type="checkbox">用户管理</label>
-            <label style="display:inline-block"><input type="checkbox">部门管理</label>
-            <label style="display:inline-block"><input type="checkbox">用户日志</label>
-        </div>';
             
+
+            $data = [];
+            $data['name'] = $_POST['name'];
+            $data['is_admin'] = intval($_POST['is_admin']);
+
+            AuthRole::create(['name' => 'bb']);
+
+            $this->showMessage("创建成功", "location.reload()");
+
             return;
         }
 
+        $user = \Yaf\Registry::get(\GameConst::ADMINUSER);
+        $moduleTree =  $user->getModuleTree();
+
+        $this->getView()->assign('moduleTree', $moduleTree);
+
         
+
         
     }
 

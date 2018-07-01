@@ -15,10 +15,10 @@ class User extends Model
     public function groups()
     {
         return $this->belongsToMany(
-            'Aku\Models\Admin\AuthGroup',
-            \GameConst::TBL_AKUADMIN_AUTH_GROUP_USER,
+            'Aku\Models\Admin\AuthROle',
+            \GameConst::TBL_AKUADMIN_AUTH_ROLE_USER,
             'user_id',
-            'group_id'
+            'role_id'
         );
     }
 

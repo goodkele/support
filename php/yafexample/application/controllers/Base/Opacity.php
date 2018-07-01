@@ -14,4 +14,12 @@ class Base_OpacityController extends \Yaf\Controller_Abstract
         $this->getView()->assign("APP_STATIC_VERSION", time());
 
     }
+
+    /**
+     * 输出 json
+     */
+    public function showMessage($message, $scriptCode = null, $autoScript = null,  $code = 0, $error = '')
+    {
+        \Tool::show_message($message, $autoScript, $scriptCode, $code, $error);
+    }
 }

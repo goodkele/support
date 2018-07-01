@@ -32,10 +32,10 @@ class GameConst
     //-* TABLE ADMIN
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     const TBL_AKUADMIN_USERS = "users";
-    const TBL_AKUADMIN_AUTH_GROUPS = "auth_groups";
+    const TBL_AKUADMIN_AUTH_ROLES = "auth_roles";
     const TBL_AKUADMIN_AUTH_MODULES = "auth_modules";
-    const TBL_AKUADMIN_AUTH_GROUP_MODULE = "auth_group_module";
-    const TBL_AKUADMIN_AUTH_GROUP_USER = "auth_group_user";
+    const TBL_AKUADMIN_AUTH_MODULE_ROLE = "auth_module_role";
+    const TBL_AKUADMIN_AUTH_ROLE_USER = "auth_role_user";
     const TBL_AKUADMIN_LOG = "logs";
     const TBL_AKUADMIN_LOGIN_LOG = "login_logs";
 

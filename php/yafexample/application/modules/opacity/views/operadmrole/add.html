@@ -26,358 +26,51 @@
                         超级管理员：
                     </td>
                     <td >
-                        <label><input type="radio" name="is_admin" value="1">是</label>
+                        <label >
+                            <input type="radio" name="is_admin" class="radioIsAdmin" value="1" onclick="switchIsAdmin(this)">是</label>
                         <span style="margin-left:10px;"></span>
-                        <label><input type="radio" name="is_admin" value="0">否</label>
+                        <label >
+                            <input type="radio" name="is_admin" class="radioIsAdmin" value="0" checked="true" onclick="switchIsAdmin(this)">否</label>
+                        <script>
+                            function switchIsAdmin(obj) {
+                                if ($(obj).val() == 1) {
+                                    $(".modulebox").css("display", "table-row");
+                                } else {
+                                    $(".modulebox").css("display", "none");
+                                }
+                            }
+                        </script>
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="modulebox" style="display:none">
                     <td colspan="2" class="borderBottom"></td>
                 </tr>
 
-                <tr>
+                <tr class="modulebox" style="display:none">
                     <td class="textAlignRight">
                         权限模块：
                         <br>
                     </td>
                     <td >
-                        
-                        <div>
-                            <h3><label><input type="checkbox" />用户管理</label></h3>
-
+                        <?php foreach ($moduleTree as $module) { ?>
                             <div>
-                                <h5><label><input type="checkbox" />账户管理</label></h5>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
+                                <h3><label><input type="checkbox" /><?php echo $module['name']?></label></h3>
+                                <?php foreach ($module['sub'] as $subModule) { ?>
+                                <div>
+                                    <h5><label><input type="checkbox" /><?php echo $subModule['name']?></label></h5>
+                                    <?php foreach ($subModule['sub'] as $subSubModule) { ?>
+                                        <label style="display:inline-block"><input type="checkbox" /><?php echo $subSubModule['name']?></label>
+                                    <?php } ?>
+                                </div>
+                                <?php } ?>
                             </div>
-                            <div>
-                                <h5><label><input type="checkbox" />账户管理</label></h5>
-                                <label><input type="checkbox" />用户信息添加</label>
-                                <label><input type="checkbox" />用户管理</label>
-                                <label><input type="checkbox" />部门管理</label>
-                                <label><input type="checkbox" />用户日志</label>
-                            </div>
+                        <?php } ?>
                         </div>  
 
                     </td>
                 </tr>
 
-                <tr>
-                        <td class="textAlignRight">
-                            权限模块：
-                            <br>
-                        </td>
-                        <td >
-    
-                            <div>
-                                <h3><label><input type="checkbox" />用户管理</label></h3>
-    
-                                <div>
-                                    <h5><label><input type="checkbox" />账户管理</label></h5>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                </div>
-                                <div>
-                                    <h5><label><input type="checkbox" />账户管理</label></h5>
-                                    <label><input type="checkbox" />用户信息添加</label>
-                                    <label><input type="checkbox" />用户管理</label>
-                                    <label><input type="checkbox" />部门管理</label>
-                                    <label><input type="checkbox" />用户日志</label>
-                                </div>
-                            </div>  
-    
-                        </td>
-                    </tr>
-
-                    <tr>
-                            <td class="textAlignRight">
-                                权限模块：
-                                <br>
-                            </td>
-                            <td >
-        
-                                <div>
-                                    <h3><label><input type="checkbox" />用户管理</label></h3>
-        
-                                    <div>
-                                        <h5><label><input type="checkbox" />账户管理</label></h5>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                    </div>
-                                    <div>
-                                        <h5><label><input type="checkbox" />账户管理</label></h5>
-                                        <label><input type="checkbox" />用户信息添加</label>
-                                        <label><input type="checkbox" />用户管理</label>
-                                        <label><input type="checkbox" />部门管理</label>
-                                        <label><input type="checkbox" />用户日志</label>
-                                    </div>
-                                </div>  
-        
-                            </td>
-                        </tr>
-
-                        <tr>
-                                <td class="textAlignRight">
-                                    权限模块：
-                                    <br>
-                                </td>
-                                <td >
-            
-                                    <div>
-                                        <h3><label><input type="checkbox" />用户管理</label></h3>
-            
-                                        <div>
-                                            <h5><label><input type="checkbox" />账户管理</label></h5>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                            <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                        </div>
-                                        <div>
-                                            <h5><label><input type="checkbox" />账户管理</label></h5>
-                                            <label><input type="checkbox" />用户信息添加</label>
-                                            <label><input type="checkbox" />用户管理</label>
-                                            <label><input type="checkbox" />部门管理</label>
-                                            <label><input type="checkbox" />用户日志</label>
-                                        </div>
-                                    </div>  
-            
-                                </td>
-                            </tr>
-
-                            <tr>
-                                    <td class="textAlignRight">
-                                        权限模块：
-                                        <br>
-                                    </td>
-                                    <td >
-                
-                                        <div>
-                                            <h3><label><input type="checkbox" />用户管理</label></h3>
-                
-                                            <div>
-                                                <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                            </div>
-                                            <div>
-                                                <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                <label><input type="checkbox" />用户信息添加</label>
-                                                <label><input type="checkbox" />用户管理</label>
-                                                <label><input type="checkbox" />部门管理</label>
-                                                <label><input type="checkbox" />用户日志</label>
-                                            </div>
-                                        </div>  
-                
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                        <td class="textAlignRight">
-                                            权限模块：
-                                            <br>
-                                        </td>
-                                        <td >
-                    
-                                            <div>
-                                                <h3><label><input type="checkbox" />用户管理</label></h3>
-                    
-                                                <div>
-                                                    <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                    <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                </div>
-                                                <div>
-                                                    <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                    <label><input type="checkbox" />用户信息添加</label>
-                                                    <label><input type="checkbox" />用户管理</label>
-                                                    <label><input type="checkbox" />部门管理</label>
-                                                    <label><input type="checkbox" />用户日志</label>
-                                                </div>
-                                            </div>  
-                    
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                            <td class="textAlignRight">
-                                                权限模块：
-                                                <br>
-                                            </td>
-                                            <td >
-                        
-                                                <div>
-                                                    <h3><label><input type="checkbox" />用户管理</label></h3>
-                        
-                                                    <div>
-                                                        <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户信息添加</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />部门管理</label>
-                                                        <label style="display:inline-block"><input type="checkbox" />用户日志</label>
-                                                    </div>
-                                                    <div>
-                                                        <h5><label><input type="checkbox" />账户管理</label></h5>
-                                                        <label><input type="checkbox" />用户信息添加</label>
-                                                        <label><input type="checkbox" />用户管理</label>
-                                                        <label><input type="checkbox" />部门管理</label>
-                                                        <label><input type="checkbox" />用户日志</label>
-                                                    </div>
-                                                </div>  
-                        
-                                            </td>
-                                        </tr>
-                
                 <tr>
                     <td colspan="2" class="borderBottom"></td>
                 </tr>

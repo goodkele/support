@@ -12,4 +12,12 @@ class Base_BaseController extends \Yaf\Controller_Abstract
         $this->getView()->assign("APP_STATIC_HOST", APP_STATIC_HOST);   
 
     }
+
+    /**
+     * 输出 json
+     */
+    public function showMessage($message, $autoScript = null, $scriptCode = null, $code = 0, $error = '')
+    {
+        \Tool::show_message($message, $autoScript, $scriptCode, $code, $error);
+    }
 }

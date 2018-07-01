@@ -18,13 +18,17 @@ function Loader()
             data : sQueryString,
             dataType : 'text',
             success : function(data) {
-
                 var obj;
                 try {
                     obj=JSON.parse(data);
                 } catch (err) { obj = data; }
                 
                 if(typeof obj == 'object' && obj ){
+
+                    if (obj.auto_script) {
+                        eval(obj.auto_script);
+                    }
+
                     window.parent.layer.open({
                         closeBtn : 0,
                         title: title
@@ -32,6 +36,9 @@ function Loader()
                         btn1 : function(index, layero) {
                             console.log(index, layero);
                             window.parent.layer.close(index);
+                            if (obj.script_code) {
+                                eval(obj.script_code);
+                            }
                         }
                       }); 
                 }else{
@@ -57,7 +64,7 @@ function Loader()
     }
 
     this.get = function(title, sUrl, sQueryString, callbackFunc) {
-        
+
     }
     
 }
@@ -72,5 +79,11 @@ aku.layerShadeLoading = function() {
 aku.layerShadeLoadingClose = function() {
     window.parent.layer.close(this.layerShadeLoadingIndex);
 }
+
+aku.layerConfirm = function() {
+    
+}
+
+
 
 aku.loader = new Loader();
