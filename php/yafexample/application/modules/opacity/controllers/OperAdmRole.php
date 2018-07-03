@@ -2,6 +2,8 @@
 
 
 use \Aku\Models\Admin\AuthRole;
+use \Aku\Models\Admin\AuthModuleRole;
+
 
 class OperAdmRoleController extends Base_OpacityController
 {
@@ -10,6 +12,15 @@ class OperAdmRoleController extends Base_OpacityController
     {
         // echo "index";
         // exit();
+
+        $list = AuthRole::orderBy('id', 'DESC')->get();
+
+
+
+        $this->getView()->assign('list', $list);
+
+        //vaR_dump($list->toArray());
+
     }
 
     public function addAction()
@@ -19,13 +30,17 @@ class OperAdmRoleController extends Base_OpacityController
 
             \Yaf\Dispatcher::getInstance()->autoRender(false);
 
-            
-
             $data = [];
             $data['name'] = $_POST['name'];
             $data['is_admin'] = intval($_POST['is_admin']);
+            $auto_module = $_POST['auto_module'];
 
-            AuthRole::create(['name' => 'bb']);
+            $roleInfo = AuthRole::create($data);
+
+            if ($auto_module && is_array($auto_module)) {
+                foreach ($auto_module as $module_id)
+                AuthModuleRole::create(['role_id'=>$roleInfo->id, 'module_id'=>$module_id]);
+            }
 
             $this->showMessage("创建成功", "location.reload()");
 
@@ -36,10 +51,8 @@ class OperAdmRoleController extends Base_OpacityController
         $moduleTree =  $user->getModuleTree();
 
         $this->getView()->assign('moduleTree', $moduleTree);
-
-        
-
-        
     }
+
+
 
 }

@@ -33,7 +33,7 @@
                             <input type="radio" name="is_admin" class="radioIsAdmin" value="0" checked="true" onclick="switchIsAdmin(this)">否</label>
                         <script>
                             function switchIsAdmin(obj) {
-                                if ($(obj).val() == 1) {
+                                if ($(obj).val() == 0) {
                                     $(".modulebox").css("display", "table-row");
                                 } else {
                                     $(".modulebox").css("display", "none");
@@ -55,19 +55,32 @@
                     <td >
                         <?php foreach ($moduleTree as $module) { ?>
                             <div>
-                                <h3><label><input type="checkbox" /><?php echo $module['name']?></label></h3>
+                                <h3><label><input type="checkbox" name="auto_module[]" class="auto_module" value="<?php echo $module['id']; ?>" data-level="<?php echo $module['level']; ?>" /><?php echo $module['name']?></label></h3>
                                 <?php foreach ($module['sub'] as $subModule) { ?>
                                 <div>
-                                    <h5><label><input type="checkbox" /><?php echo $subModule['name']?></label></h5>
+                                    <h5><label><input type="checkbox" name="auto_module[]" class="auto_module auto_module_<?php echo $module['id']; ?> " value="<?php echo $subModule['id']; ?>" data-level="<?php echo $subModule['level']; ?>" data-pid="<?php echo $subModule['pid']; ?>" /><?php echo $subModule['name']?></label></h5>
                                     <?php foreach ($subModule['sub'] as $subSubModule) { ?>
-                                        <label style="display:inline-block"><input type="checkbox" /><?php echo $subSubModule['name']?></label>
+                                        <label style="display:inline-block"><input type="checkbox" name="auto_module[]" class="auto_module auto_module_<?php echo $module['id']; ?> auto_module_<?php echo $module['id']; ?>_<?php echo $subModule['id']; ?>" value="<?php echo $subSubModule['id']; ?>" data-level="<?php echo $subSubModule['level']; ?>" /><?php echo $subSubModule['name']?></label>
                                     <?php } ?>
                                 </div>
                                 <?php } ?>
                             </div>
                         <?php } ?>
                         </div>  
-
+                        <script>
+                            $(".auto_module").on('click', function() {
+                                if ($(this).data('level') == 1) {   
+                                    $(".auto_module_" + $(this).val()).prop("checked", $(this).prop("checked"));
+                                    $(".auto_module_" + $(this).val()).prop("disabled", $(this).prop("checked"));
+                                } else if ($(this).data('level') == 2) {
+                                    
+                                    $(".auto_module_" + $(this).data('pid') + "_" + $(this).val()).prop("checked", $(this).prop("checked"));
+                                    $(".auto_module_" + $(this).data('pid') + "_" + $(this).val()).prop("disabled", $(this).prop("checked"));
+                                } else if ($(this).data('level') == 3) {
+                                    // $(".auto_module_" + $(this).val()).prop("checked", $(this).prop("checked"));
+                                }
+                            })
+                        </script>
                     </td>
                 </tr>
 

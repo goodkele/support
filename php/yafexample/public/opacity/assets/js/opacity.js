@@ -85,5 +85,11 @@ aku.layerConfirm = function() {
 }
 
 
+function listTable() {
+
+}
+
+
 
 aku.loader = new Loader();
+aku.table = new listTable();

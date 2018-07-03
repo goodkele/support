@@ -46,6 +46,27 @@
       </thead>
       <tbody>
 
+
+        
+        <?php foreach ($list as $info) {?>
+          
+
+          <tr bgg="rgb(255, 255, 255)">
+            <td style="width: 100px; background-color: rgb(255, 255, 255);">
+              <a href="Position.aspx?navId=5d4ba9de-7ae0-4b38-b71d-2d47ae319225&amp;PositionGuid=19f7294c-e7dc-44cb-8d3e-0f936d2917c6">[修改]</a>
+              <a onclick="return confirm('确认要删除吗？');" id="rptPosition_ctl00_linkDel" href="javascript:__doPostBack('rptPosition$ctl00$linkDel','')">[删除]</a>
+            </td>
+            <td style="background-color: rgb(255, 255, 255);"><?php echo $info->name; ?></td>
+            <td style="background-color: rgb(255, 255, 255);">0</td>
+            <td style="background-color: rgb(255, 255, 255);"><?php echo date("Y-m-d H:i:s", $info->create_at); ?></td>
+            <td style="text-align: left; background-color: rgb(255, 255, 255);">
+  
+            </td>
+          </tr>
+
+        <?php } ?>
+
+
         <tr bgg="rgb(255, 255, 255)">
           <td style="width: 100px; background-color: rgb(255, 255, 255);">
             <a href="Position.aspx?navId=5d4ba9de-7ae0-4b38-b71d-2d47ae319225&amp;PositionGuid=19f7294c-e7dc-44cb-8d3e-0f936d2917c6">[修改]</a>

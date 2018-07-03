@@ -8,4 +8,10 @@ class OperAdmUserController extends Base_OpacityController
         // echo "index";
         // exit();
     }
+
+    public function addAction()
+    {
+
+    }
+    
 }
