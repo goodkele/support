@@ -8,144 +8,137 @@
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer.js"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/opacity.js"></script>
   </head>
 
 <body style="cursor: default;">
 
 
-
-    <table class="search">
-        <tbody>
-            <tr>
-                <td class="search_left">
-                    <input type="button" onclick="location.href='/opacity/operadmuser/add';" name="btnNew" value="添加新用户" id="btnNew" class="button"
-                        style="margin-left: 20px;">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="headDiv">
 
 
+        <table class="search">
+            <tbody>
+                <tr>
+                    <td class="search_left">
+                        <input type="button" onclick="location.href='/opacity/operadmuser/add';" name="btnNew" value="添加新用户" id="btnNew" class="button" style="margin-left: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <form name="form1" method="post" action="SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f" id="form1" style="overflow: hidden; height: 844px; outline: none;" tabindex="5000">
+        <!-- <form name="form1" method="post" action="SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f" id="form1" style="overflow: hidden; height: 844px; outline: none;" tabindex="5000"> -->
 
-
-
-
-    
-    <style type="text/css">
-        .floatSearch{ margin-top: 8px;margin-bottom: 8px;}
-    </style>
-
-
-
-
-
-
-    <div class="floatSearch">
-    <table id="tableSearch" cellpadding="0" cellspacing="0">    
-        <tbody id="tbodySearch">
-            <tr>
-                <td style="text-align: left; padding-left: 20px;">
-                    <div style="height: 25px;">
-                        选择条件：
-
-            <select name="MemberSearch1$ddlSearchParamName_0" id="MemberSearch1_ddlSearchParamName_0" class="ParamName" onchange="BindSearchType(this)" lasttr="true" style="width: 140px;">
-            <option value="||00000000-0000-0000-0000-000000000000">请选择</option>
-            <option value="string|RealName|f0326cb7-42b5-4f5f-9bf4-b9224040fe8a">学员姓名</option>
-            <option value="string|NickName|7b044a29-1d6f-4838-b297-63e56c8085b3">学员昵称</option>
-            <option value="int|ID|f8282e38-27c8-497f-9645-7261fa95b86a">学员编号</option>
-            <option value="string|YBirthDate|45bcad63-7218-49bd-bdb7-f20db24d575c">年龄</option>
-            <option value="datetime|BirthDate|64c4c9db-dcd9-4636-bd13-2d3c7cc8c60f">生日</option>
-            <option value="string|BirthDate|3b1bc2fa-14a0-4b00-9665-a5b0e527162f">生日（月日）</option>
-            <option value="int|DoStatus|35f407e1-1885-45ed-8b96-1d2e80ba9356">学员状态</option>
-            <option value="string|Mobile|77bf9ffa-7388-4153-8b23-1f6181c3d5d7">手机号码</option>
-            <option value="string|Mobile1|aae4305c-b6c4-4573-bf84-44c4d55d085e">备用号码</option>
-            <option value="string|ManagerNames|3657d1b4-6a4c-4ec7-a2fe-b8fcede1bfed">顾问|老师</option>
-            <option value="string|IntentionLesson|96ece09c-7b92-4050-bb60-7b42d132dbf8">意向课程</option>
-            <option value="datetime|IntentionDate|dfffa45b-1ecc-4ec3-b65c-e380d1d1303c">意向时间</option>
-            <option value="string|NowLessonNames|7cc7f5ef-5e6b-45e5-bb4f-89b11ba27427">当前班级</option>
-            <option value="string|ImportantLevel|7af9369e-ba19-4a3a-8425-15ff59f44c38">重要程度</option>
-            <option value="guid|SourceGuid|8f403eea-e37c-4b1a-9b33-7beba39802ad">学员来源</option>
-            <option value="guid|AreaGuid|d976d0d5-0648-4d43-951d-60d646b98f6e">地区</option>
-            <option value="datetime|CreateTime|d0b02efd-0e88-4c80-a5e1-bde50fc3a730">录入日期</option>
-            <option value="string|ConsultingGuid|5c56da31-dbe6-43a7-bc45-fca52a0564f7">首次接触</option>
-            <option value="string|MktStaffGuid|f29cd68e-5c61-4848-8f54-4b25a7ccb2f8">市场人员</option>
-            <option value="datetime|SignDate|68dfaac3-fecd-4d62-b3ac-31e1125383d1">签约日期</option>
-            <option value="string|Guardian|b2ccf71e-086d-44da-b326-ff900f306121">家长姓名</option>
-            <option value="string|BatchTitle|19afa661-c133-416f-a9ac-a5c9b349c34d">导入批次</option>
-            <option value="string|Marks|0ea19255-f43b-46cb-940b-ae7622593a5b">标签</option>
-            <option value="string|Email|430ba1d0-3054-483c-9ecb-e2b9ddf035cf">Email</option>
-            <option value="string|QQ|90409fc8-99b1-1031-a281-ce27594a651e">QQ</option>
-            <option value="string|Phone|c4e33202-99b1-1031-a281-ce27594a651e">固定电话</option>
-            <option value="string|BasicInfo|e7b0dd9e-99b0-1031-a281-ce27594a651e">基本情况</option>
-            <option value="string|Address|78e86d39-8ba2-41b0-b2c5-8c2908406927">家庭住址</option>
-            <option value="string|WXUserName|8166a3b3-c826-459d-a716-ebf59c65b484">微信昵称</option>
-            <option value="string|MarketNodeGuid|ba19c0ce-b215-4a78-b61f-a5abef36d0eb">销售阶段</option>
-            <option value="string|MemberUD14|MemberUD14">父亲姓名</option>
-            <option value="string|MemberUD15|MemberUD15">父亲联系方式</option>
-            <option value="string|MemberUD16|MemberUD16">母亲姓名</option>
-            <option value="string|MemberUD17|MemberUD17">母亲联系方式</option>
-    
-        </select>
-        &nbsp;
-        <select name="MemberSearch1$ddlSearchType_0" id="MemberSearch1_ddlSearchType_0" class="int" onchange="showNullOrNotNull(this)">
-        </select>
-        &nbsp;
-        <span id="span_ValueContent_0">
-            <input name="MemberSearch1_Value" type="text" id="MemberSearch1_Value_0" class="int">
-        </span>
-        &nbsp;&nbsp;
         
-                        <input type="button" class="button" id="btnMoreSearch" onclick="SaveSearchParam()" value="搜 索">
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+        <style type="text/css">
+            .floatSearch{ margin-top: 8px;margin-bottom: 8px;}
+        </style>
 
+        <div class="floatSearch">
+        <table id="tableSearch" cellpadding="0" cellspacing="0">    
+            <tbody id="tbodySearch">
+                <tr>
+                    <td style="text-align: left; padding-left: 20px;">
+                        <div style="height: 25px;">
+                            选择条件：
 
+                <select name="MemberSearch1$ddlSearchParamName_0" id="MemberSearch1_ddlSearchParamName_0" class="ParamName" onchange="BindSearchType(this)" lasttr="true" style="width: 140px;">
+                <option value="||00000000-0000-0000-0000-000000000000">请选择</option>
+                <option value="string|RealName|f0326cb7-42b5-4f5f-9bf4-b9224040fe8a">学员姓名</option>
+                <option value="string|NickName|7b044a29-1d6f-4838-b297-63e56c8085b3">学员昵称</option>
+                <option value="int|ID|f8282e38-27c8-497f-9645-7261fa95b86a">学员编号</option>
+                <option value="string|YBirthDate|45bcad63-7218-49bd-bdb7-f20db24d575c">年龄</option>
+                <option value="datetime|BirthDate|64c4c9db-dcd9-4636-bd13-2d3c7cc8c60f">生日</option>
+                <option value="string|BirthDate|3b1bc2fa-14a0-4b00-9665-a5b0e527162f">生日（月日）</option>
+                <option value="int|DoStatus|35f407e1-1885-45ed-8b96-1d2e80ba9356">学员状态</option>
+                <option value="string|Mobile|77bf9ffa-7388-4153-8b23-1f6181c3d5d7">手机号码</option>
+                <option value="string|Mobile1|aae4305c-b6c4-4573-bf84-44c4d55d085e">备用号码</option>
+                <option value="string|ManagerNames|3657d1b4-6a4c-4ec7-a2fe-b8fcede1bfed">顾问|老师</option>
+                <option value="string|IntentionLesson|96ece09c-7b92-4050-bb60-7b42d132dbf8">意向课程</option>
+                <option value="datetime|IntentionDate|dfffa45b-1ecc-4ec3-b65c-e380d1d1303c">意向时间</option>
+                <option value="string|NowLessonNames|7cc7f5ef-5e6b-45e5-bb4f-89b11ba27427">当前班级</option>
+                <option value="string|ImportantLevel|7af9369e-ba19-4a3a-8425-15ff59f44c38">重要程度</option>
+                <option value="guid|SourceGuid|8f403eea-e37c-4b1a-9b33-7beba39802ad">学员来源</option>
+                <option value="guid|AreaGuid|d976d0d5-0648-4d43-951d-60d646b98f6e">地区</option>
+                <option value="datetime|CreateTime|d0b02efd-0e88-4c80-a5e1-bde50fc3a730">录入日期</option>
+                <option value="string|ConsultingGuid|5c56da31-dbe6-43a7-bc45-fca52a0564f7">首次接触</option>
+                <option value="string|MktStaffGuid|f29cd68e-5c61-4848-8f54-4b25a7ccb2f8">市场人员</option>
+                <option value="datetime|SignDate|68dfaac3-fecd-4d62-b3ac-31e1125383d1">签约日期</option>
+                <option value="string|Guardian|b2ccf71e-086d-44da-b326-ff900f306121">家长姓名</option>
+                <option value="string|BatchTitle|19afa661-c133-416f-a9ac-a5c9b349c34d">导入批次</option>
+                <option value="string|Marks|0ea19255-f43b-46cb-940b-ae7622593a5b">标签</option>
+                <option value="string|Email|430ba1d0-3054-483c-9ecb-e2b9ddf035cf">Email</option>
+                <option value="string|QQ|90409fc8-99b1-1031-a281-ce27594a651e">QQ</option>
+                <option value="string|Phone|c4e33202-99b1-1031-a281-ce27594a651e">固定电话</option>
+                <option value="string|BasicInfo|e7b0dd9e-99b0-1031-a281-ce27594a651e">基本情况</option>
+                <option value="string|Address|78e86d39-8ba2-41b0-b2c5-8c2908406927">家庭住址</option>
+                <option value="string|WXUserName|8166a3b3-c826-459d-a716-ebf59c65b484">微信昵称</option>
+                <option value="string|MarketNodeGuid|ba19c0ce-b215-4a78-b61f-a5abef36d0eb">销售阶段</option>
+                <option value="string|MemberUD14|MemberUD14">父亲姓名</option>
+                <option value="string|MemberUD15|MemberUD15">父亲联系方式</option>
+                <option value="string|MemberUD16|MemberUD16">母亲姓名</option>
+                <option value="string|MemberUD17|MemberUD17">母亲联系方式</option>
+        
+            </select>
+            &nbsp;
+            <select name="MemberSearch1$ddlSearchType_0" id="MemberSearch1_ddlSearchType_0" class="int" onchange="showNullOrNotNull(this)">
+            </select>
+            &nbsp;
+            <span id="span_ValueContent_0">
+                <input name="MemberSearch1_Value" type="text" id="MemberSearch1_Value_0" class="int">
+            </span>
+            &nbsp;&nbsp;
+            
+                            <input type="button" class="button" id="btnMoreSearch" onclick="SaveSearchParam()" value="搜 索">
 
-
-
-
-
-
-    <!-- etmlinksNormalBg -->
-    <div id="linkContent">
-        <div class="etmlinks etmlinksHoverBg ">快速筛选：
-            <a class="etmlink" href="javascript:link(0);">全部</a>
-            <span>|</span>
-            <a href="javascript:link(3);">从未跟进过</a>
-            <span>|</span>
-            <a href="javascript:link(2);">已跟进过</a>
-            <span>|</span>
-            <a href="javascript:link(1);">今天已分配</a>
-            <span>|</span>
-            <a href="javascript:link(4);">从未分配过</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         </div>
+
+
+
+
+
+
+
+
+        <!-- etmlinksNormalBg -->
+        <div id="linkContent">
+            <div class="etmlinks etmlinksHoverBg ">快速筛选：
+                <a class="etmlink" href="javascript:link(0);">全部</a>
+                <span>|</span>
+                <a href="javascript:link(3);">从未跟进过</a>
+                <span>|</span>
+                <a href="javascript:link(2);">已跟进过</a>
+                <span>|</span>
+                <a href="javascript:link(1);">今天已分配</a>
+                <span>|</span>
+                <a href="javascript:link(4);">从未分配过</a>
+            </div>
+        </div>
+
+
+
+
+        
+
+
+        <div id="loading-mask" class="hidden"></div>
+
     </div>
 
 
 
-
-
-
-
-
-
-
-    <div id="loading-mask" class="hidden"></div>
-
-
-
+    <div id="bodyDiv">
         
         <div class="flexigrid" >
-            <div class="nBtn" style="display: none;">
-                <div>&nbsp;</div>
-            </div>
+            <!-- <div class="nBtn" style="display: none;">
+                <div>&nbsp;123123</div>
+            </div> -->
 
 
             <!-- 隐藏菜单栏 -->
@@ -220,36 +213,39 @@
 
             
 
+            
+
+
             <div class="hDiv">
                 <div class="hDivBox">
                     <table cellpadding="0" cellspacing="0">
                     <thead>
                         <tr>
-                            <th axis="col0" etmname="FollowAct" align="right" width="undefined">
+                            <th align="right" >
                                 <div style="text-align: center; width: 100px;">操作</div>
                             </th>
-                            <th axis="col1" etmname="MemberName" align="Center" width="undefined" class="">
+                            <th align="Center"  class="">
                                 <div style="text-align: center; width: 100px;">学员姓名</div>
                             </th>
-                            <th axis="col2" etmname="Mobile" align="Center" width="undefined" class="">
+                            <th align="Center"  class="">
                                 <div style="text-align: center; width: 100px;">手机号码</div>
                             </th>
-                            <th axis="col3" etmname="FollowWayInfo" align="Center" width="undefined" class="">
+                            <th align="Center" class="">
                                 <div style="text-align: center; width: 100px;">跟进方式</div>
                             </th>
-                            <th axis="col4" etmname="FollowContent" align="left" width="undefined">
+                            <th align="left" >
                                 <div style="text-align: center; width: 260px;">跟进内容</div>
                             </th>
-                            <th axis="col5" abbr="CreateTime" etmname="CreateTime" align="Center" width="undefined" class="sorted">
+                            <th align="Center" class="sorted">
                                 <div class="sdesc" style="text-align: center; width: 120px;">跟进时间</div>
                             </th>
-                            <th axis="col6" abbr="NextFollowTime" etmname="NextFollowTime" align="Center" width="undefined">
+                            <th align="Center">
                                 <div style="text-align: center; width: 120px;">预计下次跟进时间</div>
                             </th>
-                            <th axis="col7" etmname="AdvisorName" align="Center" width="undefined" class="">
+                            <th align="Center"  class="">
                                 <div style="text-align: center; width: 100px;">跟进人</div>
                             </th>
-                            <th axis="col8" etmname="FollowStatus" align="Center" width="undefined">
+                            <th align="Center" >
                                 <div style="text-align: center; width: 100px;">状态</div>
                             </th>
                         </tr>
@@ -257,14 +253,23 @@
                     </table>
                 </div>
 
-                <div id="btnShowOrHide" style="background-image: url(&quot;/opacity/images/more.png&quot;); background-repeat: no-repeat; width: 24px; height: 28px; z-index: 999; position: absolute; top: 3px; left: 1174px; cursor: default;"
-        title="隐藏/显示列">&nbsp;</div>
+                <div id="btnShowOrHide" style="
+                background-image: url('/opacity/images/more.png'); 
+                background-repeat: no-repeat; 
+                width: 24px; 
+                height: 28px; 
+                z-index: 999; 
+                position: absolute; top: 3px; left: 1174px; 
+                cursor: default;
+                cursor:hand;
+                "
+                title="隐藏/显示列">&nbsp;</div>
 
             </div>
 
 
             
-
+            
 
 
             <!-- <div class="cDrag" style="top: 1px;">
@@ -282,10 +287,9 @@
 
 
 
-            
 
-            <div class="bDiv" style="height: 484px; overflow: auto; outline: none;" tabindex="5002" >
-                <table id="Test" style="width: auto;" cellpadding="0" cellspacing="0" border="0" width="undefined">
+            <div id="bDiv" class="bDiv" style="height: 484px; overflow: auto; outline: none;" tabindex="5002" >
+                <table id="Test" style="width: auto;" cellpadding="0" cellspacing="0" border="0" >
                     <tbody>
                         <tr>
                             <td align="Center" style="" abbr="">
@@ -448,7 +452,7 @@
                         </tr>
 
                         
-                        
+
                     
                 
                     </tbody>
@@ -472,8 +476,10 @@
 
 
 
+            <div class="flexigridTips">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>
 
-            <div class="pDiv">
+
+            <div id="pDiv" class="pDiv">
                 <div class="pDiv2">
                     <div class="pGroup fixselect"> 
                         显示 <span style="display: inline-block;width:60px;"></span> 
@@ -512,11 +518,12 @@
                 <div style="clear:both"></div>
             </div>
 
-                
-            <div class="vGrip"><span></span></div>
-
-
             
+
+
+            <div class="vGrip"><span>123</span></div>
+
+
 
 
         </div>
@@ -527,61 +534,49 @@
 
 
 
+    </div>
+        
 
+    <div id="footDiv">
 
-
-
-
-                    
-                
-
+            
 
         <table class="search">
-        <tbody>
-            <tr>
-                <td class="textAlignRight" style="width:80px;">短信内容：
-                </td>
-                <td class="">
-                    <textarea class="int" style="width:550px;height: 50px; " onkeyup="count();" name="txtContent" id="txtContent"></textarea>
-                    <span id="msg" class="words" style="margin-left:10px;">0</span> &nbsp;&nbsp;
-                    <span style="display:none"><input id="cbRecv" name="cbRecv" type="checkbox">接收回复</span>&nbsp;
-                    <input type="button" class="button" id="btnSelectSend" value="选中发送">&nbsp;
-                    <input type="button" class="button" id="btnAllSend" value="搜索结果发送">
-                </td>
-            </tr>
-            <tr>
-                <td class="textAlignRight">可用参数：</td>
-                <td>
-                    [家长姓名]&nbsp;&nbsp;[学员姓名]&nbsp;&nbsp;[学员昵称]&nbsp;&nbsp;
-                        <a href="javascript:void(0);" class="mouseTips">[?]</a>
-                    <div class="tips" style="display:none;">
-                        注：适当加上参数，可提高短信质量和避免被归类为垃圾短信的概率。
-                    </div>
-                </td>
-            </tr>
-            <!-- <tr>
-                <td class="textAlignRight">可用参数：</td>
-                <td>
-                    [家长姓名]&nbsp;&nbsp;[学员姓名]&nbsp;&nbsp;[学员昵称]&nbsp;&nbsp;
-                        <a href="javascript:void(0);" class="mouseTips">[?]</a>
-                    <div class="tips" style="display:none;">
-                        注：适当加上参数，可提高短信质量和避免被归类为垃圾短信的概率。
-                    </div>
-                </td>
-            </tr> -->
-            <tr>
-                <td class="textAlignRight">发送结果：</td>
-                <td>
-                <span id="lbSendResult"></span>
-                    <span id="lbFailMobile" class="words">123123</span>
-                </td>
-            </tr>
-        </tbody>
+            <tbody>
+                <tr>
+                    <td class="textAlignRight" style="width:80px;">短信内容：
+                    </td>
+                    <td class="">
+                        <textarea class="int" style="width:550px;height: 50px; " onkeyup="count();" name="txtContent" id="txtContent"></textarea>
+                        <span id="msg" class="words" style="margin-left:10px;">0</span> &nbsp;&nbsp;
+                        <span style="display:none"><input id="cbRecv" name="cbRecv" type="checkbox">接收回复</span>&nbsp;
+                        <input type="button" class="button" id="btnSelectSend" value="选中发送">&nbsp;
+                        <input type="button" class="button" id="btnAllSend" value="搜索结果发送">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">可用参数：</td>
+                    <td>
+                        [家长姓名]&nbsp;&nbsp;[学员姓名]&nbsp;&nbsp;[学员昵称]&nbsp;&nbsp;
+                            <a href="javascript:void(0);" class="mouseTips">[?]</a>
+                        <div class="tips" style="display:none;">
+                            注：适当加上参数，可提高短信质量和避免被归类为垃圾短信的概率。
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">发送结果：</td>
+                    <td>
+                    <span id="lbSendResult"></span>
+                        <span id="lbFailMobile" class="words">123123</span>
+                    </td>
+                </tr>
+            </tbody>
         </table>
+    
+    </div>
 
-
-
-    </form>
+    <!-- </form> -->
 
 
 
@@ -592,6 +587,45 @@
 
 </html>
 
+<script>
+
+
+    aku.table.render({});
+
+    console.log(aku.table.Tables);
+
+
+
+    console.log($("#headDiv").outerHeight(true));
+    console.log($("#bodyDiv").outerHeight(true));
+    console.log($("#footDiv").outerHeight(true));
+
+    console.log($("#headDiv").outerHeight(true) + $("#bodyDiv").outerHeight(true) + $("#footDiv").outerHeight(true));
+
+    // console.log($("#navDiv").outerWidth(true));
+
+    // console.log($(".floatSearch").outerHeight(true));
+
+    // console.log($(document.body).height());
+
+    // console.log($("#asadfdf").length > 0 ? true : false);
+
+    //console.log($("#bDiv").height());
+
+    // $("#bDiv").on('resize', function() {
+    //     console.log(this);
+    // })
+
+
+    // $(document).resize(function() {
+    //     console.log("asdf");
+    // })
+    
+
+    // jQuery resize
+
+
+</script>
     
 
 
