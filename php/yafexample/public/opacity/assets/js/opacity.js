@@ -137,25 +137,45 @@ function ListTable(obj) {
         //initSort :'',   // Object 初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
 
         url : '',   // 接口地址。默认会自动传递两个参数：?page=1&limit=30（该参数可通过 request 自定义） page 代表当前页码、limit 代表每页数据量
-        method : '',    // 接口http请求类型，默认：get
-        where : '', // 接口的其它参数。如：where: {token: 'sasasas', id: 123}
-        headers : '',   // 接口的请求头。如：headers: {token: 'sasasas'}。注：该参数为 layui 2.2.6 开始新增
-        request : '',   // 用于对分页请求的参数：page、limit重新设定名称，如：
-        // request: {
-        //   pageName: 'curr' //页码的参数名称，默认：page
-        //   ,limitName: 'nums' //每页数据量的参数名，默认：limit
-        // }              
-        // 那么请求数据时的参数将会变为：?curr=1&nums=30
-        response : '',  // 用于对返回的数据格式的自定义，如：
-        // response: {
-        //   statusName: 'status' //数据状态的字段名称，默认：code
-        //   ,statusCode: 200 //成功的状态码，默认：0
-        //   ,msgName: 'hint' //状态信息的字段名称，默认：msg
-        //   ,countName: 'total' //数据总数的字段名称，默认：count
-        //   ,dataName: 'rows' //数据列表的字段名称，默认：data
-        // }                    
-        // 你接口返回的数据格式，比如遵循 response 对应的字段名称。比如上面对应的格式为：
-        
+        method : 'get',    // 接口http请求类型，默认：get
+        where : {}, // 接口的其它参数。如：where: {token: 'sasasas', id: 123}
+        headers : {},   // 接口的请求头。如：headers: {token: 'sasasas'}。注：该参数为 layui 2.2.6 开始新增
+        request : { // 用于对分页请求的参数：page、limit重新设定名称，如：
+            pageName : 'page',  //页码的参数名称，默认：page
+            limitName : 'limit',    //每页数据量的参数名，默认：limit
+        },
+        response : {    // 用于对返回的数据格式的自定义，如：
+            statusName: 'code', //数据状态的字段名称，默认：code
+            statusCode: 0, //成功的状态码，默认：0
+            dataName: 'data', //数据列表的字段名称，默认：data
+
+            listName : 'data',  // 结果集名字
+            msgName: 'msg', //状态信息的字段名称，默认：msg
+            countName: 'total', //数据总数的字段名称，默认：total
+            // pPageStat
+
+            
+        },
+
+//         "total": 50,
+//    "per_page": 15,
+//    "current_page": 1,
+//    "last_page": 4,
+//    "first_page_url": "http://laravel.app?page=1",
+//    "last_page_url": "http://laravel.app?page=4",
+//    "next_page_url": "http://laravel.app?page=2",
+//    "prev_page_url": null,
+//    "path": "http://laravel.app",
+//    "from": 1,
+//    "to": 15,
+//    "data":[
+//         {
+//             // 结果集
+//         },
+//         {
+//             // 结果集
+//         }
+//    ]
     };
 
     var colsOptions = {
@@ -164,10 +184,10 @@ function ListTable(obj) {
          width : 0, //    Number/String   设定列宽（默认自动分配）。支持填写：数字、百分比。请结合实际情况，对不同列做不同设定。注意：如果是 layui 2.2.0 之前的版本，列宽必须设定一个固定数字
          minWidth : 60, // Number  （layui 2.2.1 新增）局部定义当前常规单元格的最小宽度（默认：60），一般用于列宽自动分配的情况。其优先级高于基础参数中的 cellMinWidth
          type : '', // String  设定列类型。可选值有：normal（常规列，无需设定）、checkbox（复选框列）、space（空列）、numbers（序号列）。注意：该参数为 layui 2.2.0 新增。而如果是之前的版本，复选框列采用 checkbox: true、空列采用 space: true
-         sort : '', // Boolean 是否允许排序（默认：false）。如果设置 true，则在对应的表头显示排序icon，从而对列开启排序功能。注意：不推荐对值同时存在“数字和普通字符”的列开启排序，因为会进入字典序比对。比如：'贤心' > '2' > '100'，这可能并不是你想要的结果，但字典序排列算法（ASCII码比对）就是如此。
-         initSort : '', // Object  初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
-         unresize : '', // Boolean 是否禁用拖拽列宽（默认：false）。默认情况下会根据列类型（type）来决定是否禁用，如复选框列，会自动禁用。而其它普通列，默认允许拖拽列宽，当然你也可以设置 true 来禁用该功能。
-         edit  : '', // 单元格编辑类型（默认不开启）目前只支持：text（输入框）	
+         sort : false, // Boolean 是否允许排序（默认：false）。如果设置 true，则在对应的表头显示排序icon，从而对列开启排序功能。注意：不推荐对值同时存在“数字和普通字符”的列开启排序，因为会进入字典序比对。比如：'贤心' > '2' > '100'，这可能并不是你想要的结果，但字典序排列算法（ASCII码比对）就是如此。
+         initSort : '', // Object   ASC or DESC  初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
+         unresize : false, // Boolean 是否禁用拖拽列宽（默认：false）。默认情况下会根据列类型（type）来决定是否禁用，如复选框列，会自动禁用。而其它普通列，默认允许拖拽列宽，当然你也可以设置 true 来禁用该功能。
+         edit  : '' , // 单元格编辑类型（默认不开启）目前只支持：text（输入框）	
          event : '', // 自定义单元格点击事件名，以便在 tool 事件中完成对该单元格的业务处理	
          style : '', //    String  自定义单元格样式。即传入 CSS 样式	
          align : '', //    String  单元格排列方式。可选值有：left（默认）、center（居中）、right（居右）
@@ -184,6 +204,18 @@ function ListTable(obj) {
      */
 
     $.extend(options, obj);
+
+    // var myObject = {
+    //     a: {
+    //       one: 1,
+    //       two: 2,
+    //       three: 3
+    //     },
+    //     b: [ 1, 2, 3 ]
+    //   };
+    //   var shallowEncoded = $.param( myObject, true );
+    //   console.log(shallowEncoded);
+
 
     this.__construct = function() {
         if (!options.id) {
