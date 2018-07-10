@@ -594,11 +594,60 @@ title=\"隐藏/显示列\">&nbsp;</div> */}
 
                         // 文本区间-日期
                         if (options.cols[colsid].columnPannel.type == "between-date") {
+                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; height: 61px; width:150px;  \" > " +
+                            "<form class=\"flexigridColumnHeaderForm\">" + 
+                            "<div class=\"tmpContainer\" style=\"padding-top:5px;text-align:center;\">" +
+                            "<input type=\"text\" class=\"int\" id=\"flexMin\" name=\"flexMin\" style=\"width:64px\"> - " +
+                            "<input type=\"text\" class=\"int\" id=\"flexMax\" name=\"flexMax\" style=\"width:64px\">" +
+                            "</div> " +
+                            "<div class=\"tmpContainer\" style=\"width:100%;padding-top:5px; text-align: right;\"> " +
+                            "<input type=\"button\" class=\"button\" style=\"margin-right:5px;\" value=\"确定\">  " +
+                            "</div> " +
+                            "</form>" + 
+                            "</div> ";
+                            html = $.parseHTML(html);
+                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
+                            
+                            $(html).css("left", offset.left + "px");
+                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
 
+                            if (!$.isEmptyObject(currentTable.options.cols[colsid].columnPannel.data)) { 
+                                $(html).find("input[name=flexMin]").val(currentTable.options.cols[colsid].columnPannel.data.flexMin);
+                                $(html).find("input[name=flexMax]").val(currentTable.options.cols[colsid].columnPannel.data.flexMax);
+                            }
+
+                            $(html).find("input[type=button]").on("click", function() {
+                                var query = $(html).find(".flexigridColumnHeaderForm").serialize();
+                                var data = aku.queryToJson(query);
+                                if (data.flexMin || data.flexMax) {
+                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(data.flexMin + " 至 " + data.flexMax);
+                                } else {
+                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title)
+                                }
+                                currentTable.options.cols[colsid].columnPannel.data = data;
+                                $(".flexigridColumnHeader").remove();
+                                $(".flexigridColumnHeader").remove();
+                            });
+
+                            $(document.body).append(html);
+
+                            laydate.render({elem: "#flexMin",});
+                            laydate.render({elem: "#flexMax",});
                         }
 
                         // 状态列表
                         if (options.cols[colsid].columnPannel.type == "status") {
+                            // <div id="flexigridColumnHeader" style="height: 220px; z-index: 5; background-color: rgb(249, 249, 249); overflow-x: hidden; overflow-y: auto; position: absolute; border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); top: 31px; left: 759px; border-bottom: 0px solid rgb(218, 216, 212); width: 110px;" class=""><table columnname="学员状态" cellspacing="0" cellpadding="0" style="width: 100%;"><tbody><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="-1" forid="ddlState">全部</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="21" forid="ddlState">新客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="286" forid="ddlState">托班会员</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="23" forid="ddlState">签约会员</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="144" forid="ddlState">退费会员</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="295" forid="ddlState">老客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="291" forid="ddlState">第三方</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="294" forid="ddlState">BPFC--已体验待联系学员</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="298" forid="ddlState">购买能力不强</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="299" forid="ddlState">3</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="300" forid="ddlState">双课包</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="301" forid="ddlState">111</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="303" forid="ddlState">312</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="304" forid="ddlState">我的测试参数</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="305" forid="ddlState">我的测试参数</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="131" forid="ddlState">定金客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="204" forid="ddlState">试听客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="297" forid="ddlState">事实上</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="133" forid="ddlState">号码无效客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="203" forid="ddlState">试听无效客户</td></tr><tr><td thindex="9" style="height:25px;line-height:25px;white-space:nowrap;overflow:hidden; padding-left:10px;border-bottom:1px solid #DAD8D4;border-bottom:1px solid #DAD8D4;" value="202" forid="ddlState">黑名单</td></tr></tbody></table></div>
+
+                            var width = "";
+                            if (table.options.cols[colsid].width) {
+                                width = "width:" + (aku.isPercent(table.options.cols[colsid].width) ? table.options.cols[colsid].width : table.options.cols[colsid].width + "px") + ";";
+                            }
+                            if (width == "") width = "width : 100px;";
+
+
+                            
+
 
                         }
 

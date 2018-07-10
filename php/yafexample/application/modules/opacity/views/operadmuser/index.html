@@ -7,7 +7,11 @@
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/etm.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer.js"></script>
+
+
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer/layer.js?v=<?php echo $APP_STATIC_VERSION;?>"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/laydate/laydate.js?v=<?php echo $APP_STATIC_VERSION;?>"></script>
+
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/opacity.js"></script>
   </head>
 
@@ -590,6 +594,7 @@
         {field : 'title', title : '标题', width:200, columnPannel : {type : 'text'}},
         {field : 'age', title : '年龄', width:100, columnPannel : {type : 'text'}},
         {field : 'index', title : '编号', width:100, columnPannel : {type : 'between'}},
+        {field : 'date', title : '日期', width:100, columnPannel : {type : 'between-date'}},
     ]});
 
 
