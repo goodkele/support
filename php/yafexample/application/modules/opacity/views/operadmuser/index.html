@@ -26,6 +26,7 @@
                 </tr>
             </tbody>
         </table>
+        
 
         <!-- <form name="form1" method="post" action="SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f" id="form1" style="overflow: hidden; height: 844px; outline: none;" tabindex="5000"> -->
 
@@ -212,7 +213,7 @@
             </div>
 
             
-
+            
             
 
 
@@ -272,7 +273,7 @@
             
 
 
-            <!-- <div class="cDrag" style="top: 1px;">
+            <!-- <div id="cDrag" class="cDrag" style="top: 1px;">
                 <div style="height: 613px; display: block; left: 39px;"></div>
                 <div style="height: 613px; display: block; left: 151px;"></div>
                 <div style="height: 613px; display: block; left: 263px;"></div>
@@ -474,9 +475,7 @@
 
 
 
-
-
-            <div class="flexigridTips">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>
+            <div  class="flexigridTips">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>
 
 
             <div id="pDiv" class="pDiv">
@@ -532,8 +531,6 @@
 
 
 
-
-
     </div>
         
 
@@ -578,10 +575,6 @@
 
     <!-- </form> -->
 
-
-
-
-
 </body>
 
 
@@ -590,17 +583,26 @@
 <script>
 
 
-    aku.table.render({elem : '#bodyDiv'});
 
-    console.log(aku.table.Tables);
+    aku.table.render({elem : '#bodyDiv', cols : [
+        {field : 'opt', title : '操作'},
+        {field : 'name', title : '名字', sort : true},
+        {field : 'title', title : '标题', width:200, columnPannel : {type : 'text'}},
+        {field : 'age', title : '年龄', width:100, columnPannel : {type : 'text'}},
+        {field : 'index', title : '编号', width:100, columnPannel : {type : 'between'}},
+    ]});
 
 
 
-    console.log($("#headDiv").outerHeight(true));
-    console.log($("#bodyDiv").outerHeight(true));
-    console.log($("#footDiv").outerHeight(true));
+    // console.log(aku.table.Tables);
 
-    console.log($("#headDiv").outerHeight(true) + $("#bodyDiv").outerHeight(true) + $("#footDiv").outerHeight(true));
+
+
+    // console.log($("#headDiv").outerHeight(true));
+    // console.log($("#bodyDiv").outerHeight(true));
+    // console.log($("#footDiv").outerHeight(true));
+
+    // console.log($("#headDiv").outerHeight(true) + $("#bodyDiv").outerHeight(true) + $("#footDiv").outerHeight(true));
 
     // console.log($("#navDiv").outerWidth(true));
 
