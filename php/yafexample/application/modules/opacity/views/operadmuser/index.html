@@ -6,6 +6,7 @@
     <title>opacity</title>
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/etm.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/opacity.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
 
 
@@ -595,6 +596,85 @@
         {field : 'age', title : '年龄', width:100, columnPannel : {type : 'text'}},
         {field : 'index', title : '编号', width:100, columnPannel : {type : 'between'}},
         {field : 'date', title : '日期', width:100, columnPannel : {type : 'between-date'}},
+        {field : 'status', title : '状态', width:100, columnPannel : {type : 'status', options :[ 
+            {title:'状态1', value:'status1'},
+            {title:'状态2', value:'status2'},
+            {title:'状态3', value:'status3'},
+            {title:'状态4', value:'status4'},
+            {title:'状态5', value:'status5'},
+            {title:'状态6', value:'status6'},
+            {title:'状态7', value:'status7'},
+            {title:'状态8', value:'status8'},
+            {title:'状态9', value:'status9'},
+            {title:'状态10', value:'status10'},
+        ] }},
+        {field : 'custom', title : '自定义', width:100, columnPannel : {
+            type : 'between-custom',
+            width : 400,
+            height: 61,
+            getHtml : function(option) {
+
+        var html = "<select class=\"int\" id=\"ddlStartYear\" name=\"ddlStartYear\" style=\"width: 94px;\">"+
+                "<option value=\"-1\">请选择</option>"+
+            "<option value=\"0\">0岁</option>"+
+            "<option value=\"1\">1岁</option>"+
+            "<option value=\"2\">2岁</option>"+
+            "<option value=\"3\">3岁</option>"+
+            "<option value=\"4\">4岁</option>"+
+            "<option value=\"5\">5岁</option>"+
+            "<option value=\"6\">6岁</option>"+
+            "</select>" +  
+        "<select class=\"int\" id=\"ddlStartMonth\" name=\"ddlStartMonth\" style=\"width: 94px;\">"+
+                "<option value=\"-1\">请选择</option>"+
+            "<option value=\"1\">1个月</option>"+
+            "<option value=\"2\">2个月</option>"+
+            "<option value=\"3\">3个月</option>"+
+            "<option value=\"4\">4个月</option>"+
+            "<option value=\"5\">5个月</option>"+
+            "<option value=\"6\">6个月</option>"+
+            "<option value=\"7\">7个月</option>"+
+            "<option value=\"8\">8个月</option>"+
+            "<option value=\"9\">9个月</option>"+
+            "<option value=\"10\">10个月</option>"+
+            "<option value=\"11\">11个月</option>"+
+            "</select>"+
+        "-"+
+        "<select class=\"int\" id=\"ddlendYear\" name=\"ddlendYear\" style=\"width: 94px;\">"+
+                "<option value=\"-1\">请选择</option>"+
+            "<option value=\"0\">0岁</option>"+
+            "<option value=\"1\">1岁</option>"+
+            "<option value=\"2\">2岁</option>"+
+            "<option value=\"3\">3岁</option>"+
+            "<option value=\"4\">4岁</option>"+
+            "<option value=\"5\">5岁</option>"+
+            "<option value=\"6\">6岁</option>"+
+            "</select>" +  
+        "<select class=\"int\" id=\"ddlEndMonth\" name=\"ddlEndMonth\" style=\"width: 94px;\">"+
+                "<option value=\"-1\">请选择</option>"+
+            "<option value=\"1\">1个月</option>"+
+            "<option value=\"2\">2个月</option>"+
+            "<option value=\"3\">3个月</option>"+
+            "<option value=\"4\">4个月</option>"+
+            "<option value=\"5\">5个月</option>"+
+            "<option value=\"6\">6个月</option>"+
+            "<option value=\"7\">7个月</option>"+
+            "<option value=\"8\">8个月</option>"+
+            "<option value=\"9\">9个月</option>"+
+            "<option value=\"10\">10个月</option>"+
+            "<option value=\"11\">11个月</option>"+
+            "</select>";
+                
+                return html;
+            },
+            btn : function() {
+                var data = {a:'a', 'title':'adsfasdf'};
+
+                console.log("btn");
+
+                return data;
+            }
+            }},
+
     ]});
 
 

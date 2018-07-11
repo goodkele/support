@@ -1,0 +1,17 @@
+
+.flexigridColumnHeader tr:hover {
+    background-color:#fffcd3;
+}
+
+.flexigridColumnHeader tr td {
+    cursor:pointer; 
+    height:25px;
+    line-height:25px;
+    white-space:nowrap;
+    overflow:hidden; 
+    padding-left:10px;
+    border-bottom:1px solid #DAD8D4;
+    
+    
+    /* background-color:#fffcd3; */
+}
