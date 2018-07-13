@@ -202,56 +202,6 @@ function ListTable(obj) {
     }
 
 
-    var hdiv = "<div class=\"hDiv\">" +
-    "<div class=\"hDivBox\">" +
-        "<table cellpadding=\"0\" cellspacing=\"0\">" +
-        "<thead>" +
-            "<tr>" +
-                "<th align=\"right\" >" +
-                    "<div style=\"text-align: center; width: 100px;\">操作</div>" +
-                "</th>" +
-                "<th align=\"Center\"  class=\"\">" +
-                    "<div style=\"text-align: center; width: 100px;\">学员姓名</div>" +
-                "</th>"
-                "<th align=\"Center\"  class=\"\">"
-                    "<div style=\"text-align: center; width: 100px;\">手机号码</div>"
-                "</th>"
-                "<th align=\"Center\" class=\"\">"
-                    "<div style=\"text-align: center; width: 100px;\">跟进方式</div>"
-                "</th>"
-                "<th align=\"left\" >"
-                    "<div style=\"text-align: center; width: 260px;\">跟进内容</div>"
-                "</th>"
-                "<th align=\"Center\" class=\"sorted\">"
-                    "<div class=\"sdesc\" style=\"text-align: center; width: 120px;\">跟进时间</div>"
-                "</th>"
-                "<th align=\"Center\">"
-                    "<div style=\"text-align: center; width: 120px;\">预计下次跟进时间</div>"
-                "</th>"
-                "<th align=\"Center\"  class=\"\">"
-                    "<div style=\"text-align: center; width: 100px;\">跟进人</div>"
-                "</th>"
-                "<th align=\"Center\" >"
-                    "<div style=\"text-align: center; width: 100px;\">状态</div>"
-                "</th>"
-            "</tr>"
-        "</thead>"
-        "</table>"
-    "</div>"
-    "</div>";
-
-{/* <div id=\"btnShowOrHide\" style=\"
-background-image: url('/opacity/images/more.png');
-background-repeat: no-repeat;
-width: 24px;
-height: 28px;
-z-index: 999;
-position: absolute; top: 3px; left: 1174px;
-cursor: default;
-cursor:hand;
-\"
-title=\"隐藏/显示列\">&nbsp;</div> */}
-
 
     /**
      * 表头支持排序/按条件搜索。初始化排序
@@ -262,17 +212,6 @@ title=\"隐藏/显示列\">&nbsp;</div> */}
      * 
      */
 
-
-    // var myObject = {
-    //     a: {
-    //       one: 1,
-    //       two: 2,
-    //       three: 3
-    //     },
-    //     b: [ 1, 2, 3 ]
-    //   };
-    //   var shallowEncoded = $.param( myObject, true );
-    //   console.log(shallowEncoded);
 
 
     this.flexigrid = {};    // table
@@ -315,9 +254,13 @@ title=\"隐藏/显示列\">&nbsp;</div> */}
 
         
 
-
         this.renderHdiv();
 
+        this.renderBdiv();
+
+        this.renderPdiv();
+
+        this.autoResize();
     }
 
 
@@ -723,7 +666,6 @@ title=\"隐藏/显示列\">&nbsp;</div> */}
                             });
 
                             $(document.body).append(html);
-
                         }
           
                         return false;
@@ -756,30 +698,159 @@ title=\"隐藏/显示列\">&nbsp;</div> */}
             $(hdiv).find('tr').append(ths[i]);
         }
 
+        var btnShowOrHide = "<div class=\"btnShowOrHide\" style=\"position: absolute; background-image: url('/opacity/images/more.png'); background-repeat: no-repeat; width: 24px; height: 28px; cursor:pointer;\" title=\"隐藏/显示列\" tips=\"隐藏/显示列\"></div>";
+
+        btnShowOrHide = $.parseHTML(btnShowOrHide);
+        btnShowOrHide = ($.isArray(btnShowOrHide) && btnShowOrHide.length > 0) ? btnShowOrHide[0] : {};
+
+        $(btnShowOrHide).on("click", function() {
+
+            if ($(".flexigrid").find(".nDiv").length > 0) {
+                $(".flexigrid").find(".nDiv").remove();
+                return;
+            }
+
+            var ndiv = "<div class=\"nDiv\" style=\"  position:absolute; top:29px; display: block; overflow-y: hidden; outline: none;\" >" + 
+            "<table cellpadding=\"0\" cellspacing=\"0\" style=\"width: 150px;\">" +
+            "<tbody>" +
+            "<tr >" +
+            "<td class=\"ndcol1\">" +
+            "<input type=\"checkbox\" checked=\"checked\" class=\"togCol\" value=\"0\">" +
+            "</td>" +
+            "<td class=\"ndcol2\">" +
+            "<input type=\"checkbox\" class=\"selectAll\" disabled=\"\">" +
+            "</td>" +
+            "</tr>" +
+            "<tr >" +
+            "<td class=\"ndcol1\">" +
+            "<input type=\"checkbox\" checked=\"checked\" class=\"togCol\" value=\"1\">" +
+            "</td>" +
+            "<td class=\"ndcol2\">编号</td>" +
+            "</tr>" +
+            "</tbody>" +
+            "</table>" +
+            "</div>";
+
+            ndiv = $.parseHTML(ndiv);
+            ndiv = ($.isArray(ndiv) && ndiv.length > 0) ? ndiv[0] : {};
+
+            $(ndiv).css("left", $(hdiv).find(".hDivBox").width()-120 + "px");
+            $(".flexigrid").prepend(ndiv);
+        });
+
+        $(hdiv).append(btnShowOrHide);
+
         this.flexigrid.append(hdiv);
+
+        $(btnShowOrHide).css("top", "3px");
+        $(btnShowOrHide).css("left", $(hdiv).find(".hDivBox").width() + "px");
     }
+
 
 
     this.renderBdiv = function() {
 
+        var bdiv = "<div id=\"bDiv\" class=\"bDiv\" style=\"height: 484px; overflow: auto; outline: none;\"  >" +
+        "<table  style=\"width: auto;\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" >" +
+        "<tbody>" +
+        "</tbody>" +
+        "</table>" +
+        "</div>";
+
+        bdiv = $.parseHTML(bdiv);
+        bdiv = ($.isArray(bdiv) && bdiv.length > 0) ? bdiv[0] : {};
+
+        this.flexigrid.append(bdiv);
     }
 
-    this.renderPdiv= function() {
+
+
+    this.renderPdiv = function() {
+
+        var tips = "<div  class=\"flexigridTips\">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>";
+
+        var pdiv = "<div id=\"pDiv\" class=\"pDiv\">" +
+        "<div class=\"pDiv2\">" +
+        "<div class=\"pGroup fixselect\"> " +
+        "显示 <span style=\"display: inline-block;width:60px;\"></span> " +
+        "<select id=\"rp\" name=\"rp\">" +
+        "<option value=\"20\">20&nbsp;&nbsp;</option>" +
+        "<option value=\"30\" selected=\"selected\">30&nbsp;&nbsp;</option>" +
+        "<option value=\"50\">50&nbsp;&nbsp;</option>" +
+        "<option value=\"100\">100&nbsp;&nbsp;</option>" +
+        " <option value=\"200\">200&nbsp;&nbsp;</option>" +
+        "</select> 条/页 " +
+        "</div> " +
+
+        " <div class=\"btnseparator\"></div> " +
+
+        " <div class=\"pGroup\"> " +
+        "<div class=\"pFirst pButton\">首页</div>" +
+        " <div class=\"pPrev pButton\">上一页</div> " +
+        "</div> " +
+        " <div class=\"btnseparator\"></div> " +
+        " <div class=\"pGroup\">" +
+        "<span class=\"pcontrol\">第 <input type=\"text\" class=\"int\" style=\"width:50px;height:15px;\" value=\"1\"> 页 <span class=\"pGoto button\">转&nbsp;到</span> 共 <span class=\"pageCount\">61</span> 页 </span>" +
+        " </div> " +
+        "<div class=\"btnseparator\"></div> " +
+
+        "<div class=\"pGroup\"> " +
+        "<div class=\"pNext pButton\">下一页</div>" +
+        " <div class=\"pLast pButton\">末页</div> " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"> " +
+        "<div class=\"pReload button\">刷&nbsp;新</div> " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"><span class=\"pPageStat\">显示从 1 条数据到 30 条数据，共 1823 条数据</span></div>" +
+        "</div>" +
+        "<div style=\"clear:both\"></div>" +
+        "</div>";
+
+        var vgrip = "<div class=\"vGrip\"><span></span></div>";
+    
+        tips = $.parseHTML(tips);
+        tips = ($.isArray(tips) && tips.length > 0) ? tips[0] : {};
+
+        pdiv = $.parseHTML(pdiv);
+        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
+
+        vgrip = $.parseHTML(vgrip);
+        vgrip = ($.isArray(vgrip) && vgrip.length > 0) ? vgrip[0] : {};
+
+        this.flexigrid.append(tips);
+        this.flexigrid.append(pdiv);
+        this.flexigrid.append(vgrip);
 
     }
+
+
+
+    this.autoResize = function() {
+        var bodyHeight = $(document.body).outerHeight();
+        var bodyDivHeight = bodyHeight - ($("#headDiv").outerHeight() + $("#footDiv").outerHeight())
+        $("#bodyDiv").css("height", bodyDivHeight + "px");
+        $("#" + this.options.id).css("height", bodyDivHeight + "px");
+    }
+
 
 
     this.on = function() {
 
     }
 
+
+
     this.calcTableId = function() {
         return "table_" + Math.floor(Math.random() * 100000 + 1)
     }
 
+    // 调用构造函数
     if (typeof this.__construct == 'function') {
         this.__construct();
     }
+
 }
 
 /**
@@ -790,7 +861,7 @@ function ListPage(obj) {
     var pagediv = "";
 
     this.render = function() {
-
+        
     }
 }
 
