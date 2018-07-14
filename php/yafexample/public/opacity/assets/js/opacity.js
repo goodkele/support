@@ -20,7 +20,7 @@ function Loader()
 
         if ($(sQueryString).is("form")) {
             sQueryString = $(sQueryString).serialize();
-        } 
+        }
 
         $.ajax({
             type: method,
@@ -104,7 +104,6 @@ function ListTableManager() {
         this.Tables.push(objTable);
     }
     
-
     this.findTable = function(tableId) {
         for (i=0; i<this.Tables.length; i++) {
             if (this.Tables[i].options.id == tableId) {
@@ -231,17 +230,17 @@ function ListTable(obj) {
             }
         }
 
-        // 实例化分页
-        if ($.isEmptyObject(this.listPage)) {
-            this.listPage = new ListPage({
-                url : this.options.url, 
-                method : this.options.method,
-                where : this.options.where,
-                headers : this.options.headers,
-                request : this.options.request,
-                response : this.options.response,
-            });
-        }
+        // // 实例化分页
+        // if ($.isEmptyObject(this.listPage)) {
+        //     this.listPage = new ListPage(this, {
+        //         url : this.options.url, 
+        //         method : this.options.method,
+        //         where : this.options.where,
+        //         headers : this.options.headers,
+        //         request : this.options.request,
+        //         response : this.options.response,
+        //     });
+        // }
 
 
 
@@ -260,7 +259,13 @@ function ListTable(obj) {
 
         this.renderPdiv();
 
+        this.renderTips();
+
+        this.renderVgrip();
+
         this.autoResize();
+
+        // this.loadShade();
     }
 
 
@@ -268,67 +273,11 @@ function ListTable(obj) {
 
         this.flexigrid.find(".hDiv").html('');
 
-        // var hdiv = "<div class=\"hDiv\">" +
-        // "<div class=\"hDivBox\">" +
-        //     "<table cellpadding=\"0\" cellspacing=\"0\">" +
-        //     "<thead>" +
-        //         "<tr>" +
-        //             "<th align=\"right\" >" +
-        //                 "<div style=\"text-align: center; width: 100px;\">操作</div>" +
-        //             "</th>" +
-        //             "<th align=\"Center\"  class=\"\">" +
-        //                 "<div style=\"text-align: center; width: 100px;\">学员姓名</div>" +
-        //             "</th>"
-        //             "<th align=\"Center\"  class=\"\">"
-        //                 "<div style=\"text-align: center; width: 100px;\">手机号码</div>"
-        //             "</th>"
-        //             "<th align=\"Center\" class=\"\">"
-        //                 "<div style=\"text-align: center; width: 100px;\">跟进方式</div>"
-        //             "</th>"
-        //             "<th align=\"left\" >"
-        //                 "<div style=\"text-align: center; width: 260px;\">跟进内容</div>"
-        //             "</th>"
-        //             "<th align=\"Center\" class=\"sorted\">"
-        //                 "<div class=\"sdesc\" style=\"text-align: center; width: 120px;\">跟进时间</div>"
-        //             "</th>"
-        //             "<th align=\"Center\">"
-        //                 "<div style=\"text-align: center; width: 120px;\">预计下次跟进时间</div>"
-        //             "</th>"
-        //             "<th align=\"Center\"  class=\"\">"
-        //                 "<div style=\"text-align: center; width: 100px;\">跟进人</div>"
-        //             "</th>"
-        //             "<th align=\"Center\" >"
-        //                 "<div style=\"text-align: center; width: 100px;\">状态</div>"
-        //             "</th>"
-        //         "</tr>"
-        //     "</thead>"
-        //     "</table>"
-        // "</div>"
-        // "</div>";
-
         var ths = [];
         for (var i=0; i < this.options.cols.length; i++)  {
 
-        //     var colsOptions = {
-        //         field : '', //    String  （必填项）设定字段名。字段名的设定非常重要，且是表格数据列的唯一标识
-        //         title : '', //    String  （必填项）设定标题名称
-        //         width : 0, //    Number/String   设定列宽（默认自动分配）。支持填写：数字、百分比。请结合实际情况，对不同列做不同设定。注意：如果是 layui 2.2.0 之前的版本，列宽必须设定一个固定数字
-        //         minWidth : 60, // Number  （layui 2.2.1 新增）局部定义当前常规单元格的最小宽度（默认：60），一般用于列宽自动分配的情况。其优先级高于基础参数中的 cellMinWidth
-        //         type : '', // String  设定列类型。可选值有：normal（常规列，无需设定）、checkbox（复选框列）、space（空列）、numbers（序号列）。注意：该参数为 layui 2.2.0 新增。而如果是之前的版本，复选框列采用 checkbox: true、空列采用 space: true
-        //         sort : false, // Boolean 是否允许排序（默认：false）。如果设置 true，则在对应的表头显示排序icon，从而对列开启排序功能。注意：不推荐对值同时存在“数字和普通字符”的列开启排序，因为会进入字典序比对。比如：'贤心' > '2' > '100'，这可能并不是你想要的结果，但字典序排列算法（ASCII码比对）就是如此。
-        //         initSort : '', // string   ASC or DESC  初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
-        //         unresize : false, // Boolean 是否禁用拖拽列宽（默认：false）。默认情况下会根据列类型（type）来决定是否禁用，如复选框列，会自动禁用。而其它普通列，默认允许拖拽列宽，当然你也可以设置 true 来禁用该功能。
-        //         edit  : 'text' , // 单元格编辑类型（默认不开启）目前只支持：text（输入框）	
-        //        //  event : '', // 自定义单元格点击事件名，以便在 tool 事件中完成对该单元格的业务处理	
-        //         style : '', //    String  自定义单元格样式。即传入 CSS 样式	
-        //         align : 'center', //    String  单元格排列方式。可选值有：left（默认）、center（居中）、right（居右）
-        //         toolbar : '', //  String  绑定列工具条。设定后，可在每行列中出现一些自定义的操作性按钮	
-        //         columnPannel : {type:'text'}, // 列面板，type:text文本框,between文本区间,between-date日期区间,status状态值,custom自定义
-        //    }
-
         // if ($.isEmptyObject(this.listPage)) {
 
-            
             var cursor = "";
             if (this.options.cols[i].sort || !$.isEmptyObject(this.options.cols[i].columnPannel)) {
                 cursor = "cursor: pointer;";
@@ -374,8 +323,7 @@ function ListTable(obj) {
             if (this.options.cols[i].sort && $.isEmptyObject(this.options.cols[i].columnPannel)) {
                 $(th).on("mouseover", function() {
                     if ($(this).data('initsort')) {
-                        // $(this).find("div").hasClass("sasc");
-
+                        
                         if ($(this).data('initsort') == "asc") {
                             $(this).find("div").removeClass("sasc");
                             $(this).find("div").addClass("sdesc");
@@ -424,8 +372,6 @@ function ListTable(obj) {
                     }
                 });
             }
-
-
 
             // 绑定列面板事件
             if (!$.isEmptyObject(this.options.cols[i].columnPannel)) {
@@ -676,8 +622,8 @@ function ListTable(obj) {
                 
             }
             
-            
             ths.push(th);
+
         }
 
         // console.log(ths.toString());
@@ -763,69 +709,30 @@ function ListTable(obj) {
         this.flexigrid.append(bdiv);
     }
 
-
-
-    this.renderPdiv = function() {
-
+    this.renderTips = function() {
         var tips = "<div  class=\"flexigridTips\">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>";
-
-        var pdiv = "<div id=\"pDiv\" class=\"pDiv\">" +
-        "<div class=\"pDiv2\">" +
-        "<div class=\"pGroup fixselect\"> " +
-        "显示 <span style=\"display: inline-block;width:60px;\"></span> " +
-        "<select id=\"rp\" name=\"rp\">" +
-        "<option value=\"20\">20&nbsp;&nbsp;</option>" +
-        "<option value=\"30\" selected=\"selected\">30&nbsp;&nbsp;</option>" +
-        "<option value=\"50\">50&nbsp;&nbsp;</option>" +
-        "<option value=\"100\">100&nbsp;&nbsp;</option>" +
-        " <option value=\"200\">200&nbsp;&nbsp;</option>" +
-        "</select> 条/页 " +
-        "</div> " +
-
-        " <div class=\"btnseparator\"></div> " +
-
-        " <div class=\"pGroup\"> " +
-        "<div class=\"pFirst pButton\">首页</div>" +
-        " <div class=\"pPrev pButton\">上一页</div> " +
-        "</div> " +
-        " <div class=\"btnseparator\"></div> " +
-        " <div class=\"pGroup\">" +
-        "<span class=\"pcontrol\">第 <input type=\"text\" class=\"int\" style=\"width:50px;height:15px;\" value=\"1\"> 页 <span class=\"pGoto button\">转&nbsp;到</span> 共 <span class=\"pageCount\">61</span> 页 </span>" +
-        " </div> " +
-        "<div class=\"btnseparator\"></div> " +
-
-        "<div class=\"pGroup\"> " +
-        "<div class=\"pNext pButton\">下一页</div>" +
-        " <div class=\"pLast pButton\">末页</div> " +
-        "</div> " +
-        "<div class=\"btnseparator\"></div> " +
-        "<div class=\"pGroup\"> " +
-        "<div class=\"pReload button\">刷&nbsp;新</div> " +
-        "</div> " +
-        "<div class=\"btnseparator\"></div> " +
-        "<div class=\"pGroup\"><span class=\"pPageStat\">显示从 1 条数据到 30 条数据，共 1823 条数据</span></div>" +
-        "</div>" +
-        "<div style=\"clear:both\"></div>" +
-        "</div>";
-
-        var vgrip = "<div class=\"vGrip\"><span></span></div>";
-    
         tips = $.parseHTML(tips);
         tips = ($.isArray(tips) && tips.length > 0) ? tips[0] : {};
-
-        pdiv = $.parseHTML(pdiv);
-        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
-
-        vgrip = $.parseHTML(vgrip);
-        vgrip = ($.isArray(vgrip) && vgrip.length > 0) ? vgrip[0] : {};
-
         this.flexigrid.append(tips);
-        this.flexigrid.append(pdiv);
-        this.flexigrid.append(vgrip);
-
     }
 
+    this.renderPdiv = function() {
+        var pdiv = "<div class=\"pDiv\"></div>";
+        pdiv = $.parseHTML(pdiv);
+        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
+        this.flexigrid.append(pdiv);
 
+        this.listPage = new ListPage({elem : "#"+ this.options.id +" .pDiv"});
+
+        this.listPage.render();
+    }
+
+    this.renderVgrip = function() {
+        var vgrip = "<div class=\"vGrip\"><span></span></div>";
+        vgrip = $.parseHTML(vgrip);
+        vgrip = ($.isArray(vgrip) && vgrip.length > 0) ? vgrip[0] : {};
+        this.flexigrid.append(vgrip);
+    }
 
     this.autoResize = function() {
         var bodyHeight = $(document.body).outerHeight();
@@ -835,6 +742,15 @@ function ListTable(obj) {
     }
 
 
+    this.loadShade = function() {
+        
+        var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
+        this.flexigrid.append(shade);
+    }
+
+    this.loadList = function() {
+        
+    }
 
     this.on = function() {
 
@@ -858,10 +774,136 @@ function ListTable(obj) {
  */
 function ListPage(obj) {
 
-    var pagediv = "";
+    this.table = {}
+    this.options = {
+        elem : '',
+        count : 0,
+        limit : 20,
+        limits : [20, 30, 50, 100, 200],
+        curr : 1,
+    };
+
+    this.pdiv = {};
+
+    this.__construct = function() {
+        $.extend(this.options, obj);
+    }
 
     this.render = function() {
+
+        var pdiv = "<div >" +
+        "<div class=\"pDiv2\">" +
+        "<div class=\"pGroup fixselect\"> " +
+        "显示 <span style=\"display: inline-block;width:60px;\"></span> " +
+        "<select id=\"rp\" class=\"rp\" name=\"rp\">" +
+        "</select> 条/页 " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"> " +
+        "<div class=\"pFirst pButton\">首页</div>" +
+        "<div class=\"pPrev pButton\">上一页</div> " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\">" +
+        "<span class=\"pcontrol\">第 <input type=\"text\" class=\"int\" style=\"width:50px;height:15px;\" value=\"1\"> 页 <span class=\"pGoto button\">转&nbsp;到</span> 共 <span class=\"pageCount\">61</span> 页 </span>" +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"> " +
+        "<div class=\"pNext pButton\">下一页</div>" +
+        "<div class=\"pLast pButton\">末页</div> " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"> " +
+        "<div class=\"pReload button\">刷&nbsp;新</div> " +
+        "</div> " +
+        "<div class=\"btnseparator\"></div> " +
+        "<div class=\"pGroup\"><span class=\"pPageStat\">显示从 1 条数据到 30 条数据，共 1823 条数据</span></div>" +
+        "</div>" +
+        "<div style=\"clear:both\"></div>"+
+        "</div>";
+
+        pdiv = $.parseHTML(pdiv);
+        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
+
+        this.pdiv = pdiv;
+
+
+
+        for (var i=0; i<this.options.limits.length; i++) {
+            var opt = "<option value=\""+ this.options.limits[i] +"\" "+ ((this.options.limits[i] == this.options.limit) ? "selected=\"selected\"" : "" ) +" >"+ this.options.limits[i] +"&nbsp;&nbsp;</option>";
+            $(pdiv).find(".rp").append(opt);
+        }
         
+        $(pdiv).find(".pageCount").html(this.getLastPage());
+
+
+        var listpage = this;
+
+        $(pdiv).find(".rp").on("change", function() {
+            listpage.onSelectLimit($(this).val());
+        });
+
+        $(pdiv).find(".pPrev").on("click", function() {
+            listpage.onPrev(listpage.options.curr);
+        });
+        $(pdiv).find(".pNext").on("click", function() {
+            listpage.onNext(listpage.options.curr);
+        });
+        $(pdiv).find(".pFirst").on("click", function() {
+            listpage.onFirst();
+        });
+        $(pdiv).find(".pLast").on("click", function() {
+            listpage.onLast();
+        });
+        $(pdiv).find(".pReload").on("click", function() {
+            listpage.onRefresh(listpage.options.curr);
+        });
+        
+        $(this.options.elem).append(pdiv);
+    }
+
+
+
+    this.onSelectLimit = function(limit) {
+        console.log(limit);
+    }
+
+    this.onFirst = function() {
+
+    }
+
+    this.onLast = function() {
+
+    }
+
+    this.onPrev = function(curr) {
+
+    }
+
+    this.onNext = function(curr) {
+        
+    }
+
+    this.onRefresh = function(curr) {
+
+    }
+
+    this.getLastPage = function() {
+        return Math.ceil(parseInt(this.options.count) / parseInt(this.options.limit));
+    }
+
+    this.setPageStat = function(stat) {
+        if (stat == undefined) stat = 1;
+        if (stat == 1) {
+            $(this.pdiv).find(".pPageStat").html("数据加载中，请稍后...");
+        } else {
+            $(this.pdiv).find(".pPageStat").html("显示从 "+ (((this.options.curr-1) * this.options.limit) + 1) +" 条数据到 "+ (this.options.curr * this.options.limit) +" 条数据，共 "+ this.options.count +" 条数据");
+        }
+    }
+    
+    // 调用构造函数
+    if (typeof this.__construct == 'function') {
+        this.__construct();
     }
 }
 
