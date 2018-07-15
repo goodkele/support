@@ -4,7 +4,10 @@
         "illuminate/database" : "*",
         "illuminate/events": "*",
         "doctrine/dbal" : "*",
-        "ramsey/uuid" : "*"
+        "ramsey/uuid" : "*",
+        "illuminate/validation" : "*",
+        "illuminate/pagination" : "*",
+        "illuminate/support" : "*"
     },
     "repositories": {
         "packagist": {

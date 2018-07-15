@@ -587,7 +587,10 @@
 
     
 
-    aku.table.render({elem : '#bodyDiv', cols : [
+    var table = aku.table.render({elem : '#bodyDiv', 
+        url : "/opacity/examplelist/list",
+        curr : 1,
+        cols : [
         {field : 'opt', title : '操作'},
         {field : 'name', title : '名字', sort : true},
         {field : 'title', title : '标题', width:200, columnPannel : {type : 'text'}},
@@ -675,6 +678,9 @@
 
     ]});
 
+    
+
+    table.loadList();
 
 
     // console.log(aku.table.Tables);

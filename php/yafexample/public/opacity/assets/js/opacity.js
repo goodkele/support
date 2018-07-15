@@ -102,6 +102,7 @@ function ListTableManager() {
     this.render = function(obj) {
         var objTable = new ListTable(obj);
         this.Tables.push(objTable);
+        return objTable;
     }
     
     this.findTable = function(tableId) {
@@ -140,6 +141,7 @@ function ListTable(obj) {
         //initSort :'',   // Object 初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
 
         url : '',   // 接口地址。默认会自动传递两个参数：?page=1&limit=30（该参数可通过 request 自定义） page 代表当前页码、limit 代表每页数据量
+        curr : 1,
         method : 'get',    // 接口http请求类型，默认：get
         where : {}, // 接口的其它参数。如：where: {token: 'sasasas', id: 123}
         headers : {},   // 接口的请求头。如：headers: {token: 'sasasas'}。注：该参数为 layui 2.2.6 开始新增
@@ -728,6 +730,14 @@ function ListTable(obj) {
     }
 
     this.loadList = function() {
+
+        // console.log("this.loadList");
+
+        // console.log(this.options.curr);
+        // console.log(this.options.url);
+
+        
+
 
     }
 
