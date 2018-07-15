@@ -162,25 +162,6 @@ function ListTable(obj) {
             toName : 'to'   // 到第几条数据
         },
 
-//         "total": 50,
-//    "per_page": 15,
-//    "current_page": 1,
-//    "last_page": 4,
-//    "first_page_url": "http://laravel.app?page=1",
-//    "last_page_url": "http://laravel.app?page=4",
-//    "next_page_url": "http://laravel.app?page=2",
-//    "prev_page_url": null,
-//    "path": "http://laravel.app",
-//    "from": 1,
-//    "to": 15,
-//    "data":[
-//         {
-//             // 结果集
-//         },
-//         {
-//             // 结果集
-//         }
-//    ]
     };
 
     var colsOptions = {
@@ -740,16 +721,14 @@ function ListTable(obj) {
         $("#bodyDiv").css("height", bodyDivHeight + "px");
         $("#" + this.options.id).css("height", bodyDivHeight + "px");
     }
-
-
+    
     this.loadShade = function() {
-        
         var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
         this.flexigrid.append(shade);
     }
 
     this.loadList = function() {
-        
+
     }
 
     this.on = function() {
