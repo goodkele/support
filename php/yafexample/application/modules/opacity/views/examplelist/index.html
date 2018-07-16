@@ -109,9 +109,6 @@
 
 
 
-
-
-
         <!-- etmlinksNormalBg -->
         <div id="linkContent">
             <div class="etmlinks etmlinksHoverBg ">快速筛选：
@@ -127,456 +124,19 @@
             </div>
         </div>
 
-
-
-        
-
-
         <div id="loading-mask" class="hidden"></div>
 
     </div>
 
 
 
-    <div id="bodyDiv">
-        
-        <div class="flexigrid" >
-            <!-- <div class="nBtn" style="display: none;">
-                <div>&nbsp;123123</div>
-            </div> -->
 
-            <!-- 隐藏菜单栏 -->
-            <div class="nDiv" style="margin-bottom: -584px; display: none; top: 30px; overflow-y: hidden; outline: none;" tabindex="5001">
-                <table cellpadding="0" cellspacing="0" style="width: 150px;">
-                    <tbody>
-                        <tr etmname="MobileCheckBox">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="0">
-                            </td>
-                            <td class="ndcol2">
-                                <input type="checkbox" class="selectAll" disabled="">
-                            </td>
-                        </tr>
-                        <tr etmname="ID">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="1">
-                            </td>
-                            <td class="ndcol2">编号</td>
-                        </tr>
-                        <tr etmname="GetRealNameLink">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="2">
-                            </td>
-                            <td class="ndcol2">学员姓名</td>
-                        </tr>
-                        <tr etmname="BirthDate">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="3">
-                            </td>
-                            <td class="ndcol2">生日</td>
-                        </tr>
-                        <tr etmname="Sex">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="4">
-                            </td>
-                            <td class="ndcol2">性别</td>
-                        </tr>
-                        <tr etmname="Age">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="5">
-                            </td>
-                            <td class="ndcol2">年龄</td>
-                        </tr>
-                        <tr etmname="Guardian">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="6">
-                            </td>
-                            <td class="ndcol2">家长姓名</td>
-                        </tr>
-                        <tr etmname="Mobile">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="7">
-                            </td>
-                            <td class="ndcol2">手机号码</td>
-                        </tr>
-                        <tr etmname="MemberStatus">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="8">
-                            </td>
-                            <td class="ndcol2">学员状态</td>
-                        </tr>
-                        <tr etmname="IntentionLesson">
-                            <td class="ndcol1">
-                                <input type="checkbox" checked="checked" class="togCol" value="9">
-                            </td>
-                            <td class="ndcol2">意向课程</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div id="bodyDiv"></div>
 
-            
-            
-            
-
-
-            <div class="hDiv">
-                <div class="hDivBox">
-                    <table cellpadding="0" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th align="right" >
-                                <div style="text-align: center; width: 100px;">操作</div>
-                            </th>
-                            <th align="Center"  class="">
-                                <div style="text-align: center; width: 100px;">学员姓名</div>
-                            </th>
-                            <th align="Center"  class="">
-                                <div style="text-align: center; width: 100px;">手机号码</div>
-                            </th>
-                            <th align="Center" class="">
-                                <div style="text-align: center; width: 100px;">跟进方式</div>
-                            </th>
-                            <th align="left" >
-                                <div style="text-align: center; width: 260px;">跟进内容</div>
-                            </th>
-                            <th align="Center" class="sorted">
-                                <div class="sdesc" style="text-align: center; width: 120px;">跟进时间</div>
-                            </th>
-                            <th align="Center">
-                                <div style="text-align: center; width: 120px;">预计下次跟进时间</div>
-                            </th>
-                            <th align="Center"  class="">
-                                <div style="text-align: center; width: 100px;">跟进人</div>
-                            </th>
-                            <th align="Center" >
-                                <div style="text-align: center; width: 100px;">状态</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    </table>
-                </div>
-
-                <div id="btnShowOrHide" style="
-                background-image: url('/opacity/images/more.png'); 
-                background-repeat: no-repeat; 
-                width: 24px; 
-                height: 28px; 
-                z-index: 999; 
-                position: absolute; top: 3px; left: 1174px; 
-                cursor: default;
-                cursor:hand;
-                "
-                title="隐藏/显示列">&nbsp;</div>
-
-            </div>
-
-
-            
-            
-
-
-            <!-- <div id="cDrag" class="cDrag" style="top: 1px;">
-                <div style="height: 613px; display: block; left: 39px;"></div>
-                <div style="height: 613px; display: block; left: 151px;"></div>
-                <div style="height: 613px; display: block; left: 263px;"></div>
-                <div style="height: 613px; display: block; left: 375px;"></div>
-                <div style="height: 613px; display: block; left: 437px;"></div>
-                <div style="height: 613px; display: block; left: 549px;"></div>
-                <div style="height: 613px; display: block; left: 661px;"></div>
-                <div style="height: 613px; display: block; left: 773px;"></div>
-                <div style="height: 613px; display: block; left: 885px;"></div>
-                <div style="height: 613px; display: block; left: 1047px;"></div>
-            </div> -->
+    <div id="footDiv"></div>
 
 
 
-
-            <div id="bDiv" class="bDiv" style="height: 484px; overflow: auto; outline: none;" tabindex="5002" >
-                <table id="Test" style="width: auto;" cellpadding="0" cellspacing="0" border="0" >
-                    <tbody>
-                        <tr>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="|亮贝||"></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">3295</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('4e478700-05f6-4cbf-b8d0-a379e5a37174')">亮贝</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=4e478700-05f6-4cbf-b8d0-a379e5a37174');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:100px; ">&nbsp;</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <!-- <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">签约会员</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                            </td> -->
-                        </tr>
-                        <tr class="erow">
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="18608163587|TOM||"></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">3294</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('9efdb737-0247-4cdc-98ab-551c5d7b1dcb')">TOM</a></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div></td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div></td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:100px; ">&nbsp;</div></td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div></td>
-                            <!-- <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">18608163587</div></td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">签约会员</div></td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                            </td> -->
-                        </tr>
-                            
-
-                            
-                        <tr>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <!-- <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                            </td> -->
-                        </tr>
-
-                        <tr>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <!-- <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                            </td> -->
-                        </tr>
-
-                        <tr>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                            </td>
-                            <!-- <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
-                            </td>
-                            <td align="Center" style="" abbr="">
-                                <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
-                            </td>
-                            <td align="left" style="" abbr="">
-                                <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                            </td> -->
-                        </tr>
-
-                        
-
-                    
-                
-                    </tbody>
-
-
-
-
-                </table>
-                    
-                <!-- <div class="iDiv" style="display: none;">123</div> -->
-            </div>
-                
-
-
-
-
-
-
-
-
-
-            <div  class="flexigridTips">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>
-
-
-            <div id="pDiv" class="pDiv">
-                <div class="pDiv2">
-                    <div class="pGroup fixselect"> 
-                        显示 <span style="display: inline-block;width:60px;"></span> 
-                        <select id="rp" name="rp">
-                            <option value="20">20&nbsp;&nbsp;</option>
-                            <option value="30" selected="selected">30&nbsp;&nbsp;</option>
-                            <option value="50">50&nbsp;&nbsp;</option>
-                            <option value="100">100&nbsp;&nbsp;</option>
-                            <option value="200">200&nbsp;&nbsp;</option>
-                        </select> 条/页 
-                    </div> 
-
-                    <div class="btnseparator"></div> 
-
-                        <div class="pGroup"> 
-                            <div class="pFirst pButton">首页</div>
-                            <div class="pPrev pButton">上一页</div> 
-                        </div> 
-                        <div class="btnseparator"></div> 
-                        <div class="pGroup">
-                            <span class="pcontrol">第 <input type="text" class="int" style="width:50px;height:15px;" value="1"> 页 <span class="pGoto button">转&nbsp;到</span> 共 <span class="pageCount">61</span> 页 </span>
-                        </div> 
-                        <div class="btnseparator"></div> 
-
-                        <div class="pGroup"> 
-                            <div class="pNext pButton">下一页</div>
-                            <div class="pLast pButton">末页</div> 
-                        </div> 
-                        <div class="btnseparator"></div> 
-                        <div class="pGroup"> 
-                            <div class="pReload button">刷&nbsp;新</div> 
-                        </div> 
-                        <div class="btnseparator"></div> 
-                        <div class="pGroup"><span class="pPageStat">显示从 1 条数据到 30 条数据，共 1823 条数据</span></div>
-                </div>
-                <div style="clear:both"></div>
-            </div>
-
-            
-
-
-            <div class="vGrip"><span>123</span></div>
-
-
-
-
-        </div>
-                
-
-
-
-
-    </div>
-        
-
-    <div id="footDiv">
-
-            
-
-        <table class="search">
-            <tbody>
-                <tr>
-                    <td class="textAlignRight" style="width:80px;">短信内容：
-                    </td>
-                    <td class="">
-                        <textarea class="int" style="width:550px;height: 50px; " onkeyup="count();" name="txtContent" id="txtContent"></textarea>
-                        <span id="msg" class="words" style="margin-left:10px;">0</span> &nbsp;&nbsp;
-                        <span style="display:none"><input id="cbRecv" name="cbRecv" type="checkbox">接收回复</span>&nbsp;
-                        <input type="button" class="button" id="btnSelectSend" value="选中发送">&nbsp;
-                        <input type="button" class="button" id="btnAllSend" value="搜索结果发送">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="textAlignRight">可用参数：</td>
-                    <td>
-                        [家长姓名]&nbsp;&nbsp;[学员姓名]&nbsp;&nbsp;[学员昵称]&nbsp;&nbsp;
-                            <a href="javascript:void(0);" class="mouseTips">[?]</a>
-                        <div class="tips" style="display:none;">
-                            注：适当加上参数，可提高短信质量和避免被归类为垃圾短信的概率。
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="textAlignRight">发送结果：</td>
-                    <td>
-                    <span id="lbSendResult"></span>
-                        <span id="lbFailMobile" class="words">123123</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    
-    </div>
-
-    <!-- </form> -->
 
 </body>
 
@@ -611,62 +171,63 @@
             {title:'状态8', value:'status8'},
             {title:'状态9', value:'status9'},
             {title:'状态10', value:'status10'},
-        ] }},
+            ] }
+        },
         {field : 'custom', title : '自定义', width:100, columnPannel : {
             type : 'between-custom',
             width : 400,
             height: 61,
             getHtml : function(option) {
 
-        var html = "<select class=\"int\" id=\"ddlStartYear\" name=\"ddlStartYear\" style=\"width: 94px;\">"+
+                var html = "<select class=\"int\" id=\"ddlStartYear\" name=\"ddlStartYear\" style=\"width: 94px;\">"+
                 "<option value=\"-1\">请选择</option>"+
-            "<option value=\"0\">0岁</option>"+
-            "<option value=\"1\">1岁</option>"+
-            "<option value=\"2\">2岁</option>"+
-            "<option value=\"3\">3岁</option>"+
-            "<option value=\"4\">4岁</option>"+
-            "<option value=\"5\">5岁</option>"+
-            "<option value=\"6\">6岁</option>"+
-            "</select>" +  
-        "<select class=\"int\" id=\"ddlStartMonth\" name=\"ddlStartMonth\" style=\"width: 94px;\">"+
+                "<option value=\"0\">0岁</option>"+
+                "<option value=\"1\">1岁</option>"+
+                "<option value=\"2\">2岁</option>"+
+                "<option value=\"3\">3岁</option>"+
+                "<option value=\"4\">4岁</option>"+
+                "<option value=\"5\">5岁</option>"+
+                "<option value=\"6\">6岁</option>"+
+                "</select>" +  
+                "<select class=\"int\" id=\"ddlStartMonth\" name=\"ddlStartMonth\" style=\"width: 94px;\">"+
                 "<option value=\"-1\">请选择</option>"+
-            "<option value=\"1\">1个月</option>"+
-            "<option value=\"2\">2个月</option>"+
-            "<option value=\"3\">3个月</option>"+
-            "<option value=\"4\">4个月</option>"+
-            "<option value=\"5\">5个月</option>"+
-            "<option value=\"6\">6个月</option>"+
-            "<option value=\"7\">7个月</option>"+
-            "<option value=\"8\">8个月</option>"+
-            "<option value=\"9\">9个月</option>"+
-            "<option value=\"10\">10个月</option>"+
-            "<option value=\"11\">11个月</option>"+
-            "</select>"+
-        "-"+
-        "<select class=\"int\" id=\"ddlendYear\" name=\"ddlendYear\" style=\"width: 94px;\">"+
+                "<option value=\"1\">1个月</option>"+
+                "<option value=\"2\">2个月</option>"+
+                "<option value=\"3\">3个月</option>"+
+                "<option value=\"4\">4个月</option>"+
+                "<option value=\"5\">5个月</option>"+
+                "<option value=\"6\">6个月</option>"+
+                "<option value=\"7\">7个月</option>"+
+                "<option value=\"8\">8个月</option>"+
+                "<option value=\"9\">9个月</option>"+
+                "<option value=\"10\">10个月</option>"+
+                "<option value=\"11\">11个月</option>"+
+                "</select>"+
+                "-"+
+                "<select class=\"int\" id=\"ddlendYear\" name=\"ddlendYear\" style=\"width: 94px;\">"+
                 "<option value=\"-1\">请选择</option>"+
-            "<option value=\"0\">0岁</option>"+
-            "<option value=\"1\">1岁</option>"+
-            "<option value=\"2\">2岁</option>"+
-            "<option value=\"3\">3岁</option>"+
-            "<option value=\"4\">4岁</option>"+
-            "<option value=\"5\">5岁</option>"+
-            "<option value=\"6\">6岁</option>"+
-            "</select>" +  
-        "<select class=\"int\" id=\"ddlEndMonth\" name=\"ddlEndMonth\" style=\"width: 94px;\">"+
+                "<option value=\"0\">0岁</option>"+
+                "<option value=\"1\">1岁</option>"+
+                "<option value=\"2\">2岁</option>"+
+                "<option value=\"3\">3岁</option>"+
+                "<option value=\"4\">4岁</option>"+
+                "<option value=\"5\">5岁</option>"+
+                "<option value=\"6\">6岁</option>"+
+                "</select>" +  
+                "<select class=\"int\" id=\"ddlEndMonth\" name=\"ddlEndMonth\" style=\"width: 94px;\">"+
                 "<option value=\"-1\">请选择</option>"+
-            "<option value=\"1\">1个月</option>"+
-            "<option value=\"2\">2个月</option>"+
-            "<option value=\"3\">3个月</option>"+
-            "<option value=\"4\">4个月</option>"+
-            "<option value=\"5\">5个月</option>"+
-            "<option value=\"6\">6个月</option>"+
-            "<option value=\"7\">7个月</option>"+
-            "<option value=\"8\">8个月</option>"+
-            "<option value=\"9\">9个月</option>"+
-            "<option value=\"10\">10个月</option>"+
-            "<option value=\"11\">11个月</option>"+
-            "</select>";
+                "<option value=\"1\">1个月</option>"+
+                "<option value=\"2\">2个月</option>"+
+                "<option value=\"3\">3个月</option>"+
+                "<option value=\"4\">4个月</option>"+
+                "<option value=\"5\">5个月</option>"+
+                "<option value=\"6\">6个月</option>"+
+                "<option value=\"7\">7个月</option>"+
+                "<option value=\"8\">8个月</option>"+
+                "<option value=\"9\">9个月</option>"+
+                "<option value=\"10\">10个月</option>"+
+                "<option value=\"11\">11个月</option>"+
+                "</select>";
 
                 return html;
             },
@@ -677,7 +238,9 @@
 
                 return data;
             }
-            }},
+            }
+
+        },
 
     ]});
 

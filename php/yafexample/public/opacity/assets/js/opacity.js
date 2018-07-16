@@ -240,6 +240,8 @@ function ListTable(obj) {
         this.nautoResize();
 
         this.loadList();
+
+        
     }
 
 
@@ -657,520 +659,20 @@ function ListTable(obj) {
         $(tr).append("<th style=\"width:100%\"></th>");
     }
 
-
     this.nrenderPdiv = function() {
-        // var pdiv = "<div class=\"pDiv\"></div>";
-        // pdiv = $.parseHTML(pdiv);
-        // pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
-        // this.flexigrid.append(pdiv);
-
         this.listPage = new ListPage({elem : "#"+ this.options.id +" .pDiv"});
-
         this.listPage.render();
     }
 
-
-
     this.nautoResize = function() {
-
         var bodyHeight = $(document.body).outerHeight();
         var bodyDivHeight = bodyHeight - ($("#headDiv").outerHeight() + $("#footDiv").outerHeight())
         $("#bodyDiv").css("height", bodyDivHeight + "px");
-
         var width = 0;
         width = width + (this.flexigrid.find(".flexigridTips").length > 0 ? this.flexigrid.find(".flexigridTips").outerHeight() : 0);
         width = width + (this.flexigrid.find(".pDiv").length > 0 ? this.flexigrid.find(".pDiv").outerHeight() : 0);
         width = width + (this.flexigrid.find(".vGrip").length > 0 ? this.flexigrid.find(".vGrip").outerHeight() : 0);
-
-        this.flexigrid.find(".bDiv").css("height", bodyDivHeight-width + "px");
-    }
-
-
-
-    this.renderHdiv = function() {
-
-        this.flexigrid.find(".hDiv").html('');
-
-        var ths = [];
-        for (var i=0; i < this.options.cols.length; i++)  {
-
-        // if ($.isEmptyObject(this.listPage)) {
-
-            var cursor = "";
-            if (this.options.cols[i].sort || !$.isEmptyObject(this.options.cols[i].columnPannel)) {
-                cursor = "cursor: pointer;";
-            }
-            var width = "";
-            if (this.options.cols[i].width) {
-                width = "width:" + (aku.isPercent(this.options.cols[i].width) ? this.options.cols[i].width : this.options.cols[i].width + "px") + ";";
-            }
-            var minWidth = "";
-            if (this.options.cols[i].minWidth) {
-                minWidth = "min-width:" + (aku.isPercent(this.options.cols[i].minWidth) ? this.options.cols[i].minWidth : this.options.cols[i].minWidth + "px") + ";";
-            }
-            var center = "";
-            if (this.options.cols[i].align) {
-                center = "text-align:" + this.options.cols[i].align + ";";
-            }
-
-            var thclass = "";
-            var thdivclass = "";
-            if (!$.isEmptyObject(this.options.cols[i].columnPannel)) {
-                thclass = "thOver dropdownStatus";
-            } else if (this.options.cols[i].sort ) {
-                thclass = "thOver "
-                if (this.options.cols[i].initSort) {
-                    thdivclass = "s" + this.options.cols[i].initSort;
-                }
-            }
-
-            // sasc
-            // sdesc
-
-            
-            if (this.options.cols[i]['type'] == "checkbox") {
-                var thValue = "<input type=\"checkbox\" class=\"selectAll\">";
-            } else {
-                var thValue = this.options.cols[i].title;
-            }
-
-            
-            var th = "<th align=\""+ this.options.cols[i].align +"\" class=\""+ thclass +"\" data-field=\""+ this.options.cols[i].field +"\" data-sort=\""+ this.options.cols[i].sort +"\" data-initsort=\""+ this.options.cols[i].initSort +"\" data-tableid=\""+ this.options.id +"\" data-colsid=\""+ i +"\" >" +
-                        "<div class=\""+ thdivclass +"\"  style=\""+ center + cursor + width + minWidth +" \">"+ thValue +"</div>" +
-                    "</th>";
-
-
-
-            th = $.parseHTML(th);
-            th = ($.isArray(th) && th.length > 0) ? th[0] : {};
-            if ($.isEmptyObject(th)) {
-                return;
-            }
-
-            // 绑定排序事件
-            if (this.options.cols[i].sort && $.isEmptyObject(this.options.cols[i].columnPannel)) {
-                $(th).on("mouseover", function() {
-                    if ($(this).data('initsort')) {
-                        
-                        if ($(this).data('initsort') == "asc") {
-                            $(this).find("div").removeClass("sasc");
-                            $(this).find("div").addClass("sdesc");
-                        } else {
-                            $(this).find("div").removeClass("sdesc");
-                            $(this).find("div").addClass("sasc");
-                        }
-
-                    } else {
-                        $(this).find("div").addClass("sasc");
-                    }
-                });
-                $(th).on("mouseleave", function() {
-                    if (!$(this).data('initsort')) {
-                        $(this).find("div").removeClass("sasc");
-                        $(this).find("div").removeClass("sdesc");
-                    } else {
-                        $(this).find("div").removeClass("sasc");
-                        $(this).find("div").removeClass("sdesc");
-                        $(this).find("div").addClass("s" + $(this).data('initsort'));
-                    }
-                });
-
-                // 切换排序
-                $(th).on("click", function() {
-                    var table = aku.table.findTable($(this).data("tableid"));
-                    var colsid = $(this).data("colsid");
-                    if (table) {
-                        if ($(this).data("initsort")) {
-                            if ($(this).data('initsort') == "asc") {
-                                $(this).find("div").removeClass("sasc");
-                                $(this).find("div").addClass("sdesc");
-                                table.options.cols[colsid].initSort = "desc";
-                                $(this).data("initsort", "desc");
-                            } else {
-                                $(this).find("div").removeClass("sdesc");
-                                $(this).find("div").addClass("sasc");
-
-                                table.options.cols[colsid].initSort = "asc";
-                                $(this).data("initsort", "asc");
-                            }
-                        } else {
-                            table.options.cols[colsid].initSort = "asc";
-                            $(this).data("initsort", "asc");
-                        }
-                    }
-                });
-            }
-
-            // 绑定列面板事件
-            if (!$.isEmptyObject(this.options.cols[i].columnPannel)) {
-
-                $(th).on("click", function(table) {
-                    var options = table.options;
-                    var i = i;
-                    return (function() {
-                        
-                        var tableid = $(this).data("tableid"); 
-                        var currentTable = aku.table.findTable(tableid);
-                        var colsid = $(this).data("colsid");
-                        var offset = $(this).offset();
-                        
-                        if ($(".flexigridColumnHeader").length > 0) {
-                            $(".flexigridColumnHeader").remove();
-                            return false;
-                        }
-
-                        // 文本
-                        if (options.cols[colsid].columnPannel.type == "text") {
-
-                            var width = "";
-                            if (table.options.cols[colsid].width) {
-                                width = "width:" + (aku.isPercent(table.options.cols[colsid].width) ? table.options.cols[colsid].width : table.options.cols[colsid].width + "px") + ";";
-                            }
-                            if (width == "") width = "width : 100px;";
-
-                            var minWidth = "";
-                            if (table.options.cols[colsid].minWidth) {
-                                minWidth = "min-width:" + (aku.isPercent(table.options.cols[colsid].minWidth) ? table.options.cols[colsid].minWidth : table.options.cols[colsid].minWidth + "px") + "; ";
-                            }
-
-                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; height: 61px; "+ width + minWidth +"  \" > " +
-                            "<form class=\"flexigridColumnHeaderForm\">" + 
-                            "<div class=\"tmpContainer\" style=\"padding-top:5px;text-align:center;\">" +
-                            "<input type=\"text\" class=\"int\" name=\"flexTitle\" style=\"width:90%\"> " +
-                            "</div> " +
-                            "<div class=\"tmpContainer\" style=\"width:100%;padding-top:5px; text-align: right;\"> " +
-                            "<input type=\"button\" class=\"button\" style=\"margin-right:5px;\" value=\"确定\">  " +
-                            "</div> " +
-                            "</form>" + 
-                            "</div> ";
-                            html = $.parseHTML(html);
-                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
-                            
-                            $(html).css("left", offset.left + "px");
-                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
-
-                            if (!$.isEmptyObject(currentTable.options.cols[colsid].columnPannel.data)) { 
-                                $(html).find("input[type=text]").val(currentTable.options.cols[colsid].columnPannel.data.flexTitle);
-                            }
-
-                            $(html).find("input[type=button]").on("click", function() {
-                                var query = $(html).find(".flexigridColumnHeaderForm").serialize();
-                                var data = aku.queryToJson(query);
-                                if (data.flexTitle) {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(data.flexTitle)
-                                } else {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title)
-                                }
-                                currentTable.options.cols[colsid].columnPannel.data = data;
-                                $(".flexigridColumnHeader").remove();
-                            });
-
-                            $(document.body).append(html);
-                        }
-
-                        // 文本区间
-                        if (options.cols[colsid].columnPannel.type == "between") {
-
-                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; height: 61px; width:150px;  \" > " +
-                            "<form class=\"flexigridColumnHeaderForm\">" + 
-                            "<div class=\"tmpContainer\" style=\"padding-top:5px;text-align:center;\">" +
-                            "<input type=\"text\" class=\"int\" name=\"flexMin\" style=\"width:64px\"> - " +
-                            "<input type=\"text\" class=\"int\" name=\"flexMax\" style=\"width:64px\">" +
-                            "</div> " +
-                            "<div class=\"tmpContainer\" style=\"width:100%;padding-top:5px; text-align: right;\"> " +
-                            "<input type=\"button\" class=\"button\" style=\"margin-right:5px;\" value=\"确定\">  " +
-                            "</div> " +
-                            "</form>" + 
-                            "</div> ";
-                            html = $.parseHTML(html);
-                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
-                            
-                            $(html).css("left", offset.left + "px");
-                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
-
-                            if (!$.isEmptyObject(currentTable.options.cols[colsid].columnPannel.data)) { 
-                                $(html).find("input[name=flexMin]").val(currentTable.options.cols[colsid].columnPannel.data.flexMin);
-                                $(html).find("input[name=flexMax]").val(currentTable.options.cols[colsid].columnPannel.data.flexMax);
-                            }
-
-                            $(html).find("input[type=button]").on("click", function() {
-                                var query = $(html).find(".flexigridColumnHeaderForm").serialize();
-                                var data = aku.queryToJson(query);
-                                if (data.flexMin || data.flexMax) {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(data.flexMin + " 至 " + data.flexMax);
-                                } else {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title)
-                                }
-                                currentTable.options.cols[colsid].columnPannel.data = data;
-                                $(".flexigridColumnHeader").remove();
-                                $(".flexigridColumnHeader").remove();
-                            });
-
-                            $(document.body).append(html);
-                        }
-
-                        // 文本区间-日期
-                        if (options.cols[colsid].columnPannel.type == "between-date") {
-                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; height: 61px; width:150px;  \" > " +
-                            "<form class=\"flexigridColumnHeaderForm\">" + 
-                            "<div class=\"tmpContainer\" style=\"padding-top:5px;text-align:center;\">" +
-                            "<input type=\"text\" class=\"int\" id=\"flexMin\" name=\"flexMin\" style=\"width:64px\"> - " +
-                            "<input type=\"text\" class=\"int\" id=\"flexMax\" name=\"flexMax\" style=\"width:64px\">" +
-                            "</div> " +
-                            "<div class=\"tmpContainer\" style=\"width:100%;padding-top:5px; text-align: right;\"> " +
-                            "<input type=\"button\" class=\"button\" style=\"margin-right:5px;\" value=\"确定\">  " +
-                            "</div> " +
-                            "</form>" + 
-                            "</div> ";
-                            html = $.parseHTML(html);
-                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
-                            
-                            $(html).css("left", offset.left + "px");
-                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
-
-                            if (!$.isEmptyObject(currentTable.options.cols[colsid].columnPannel.data)) { 
-                                $(html).find("input[name=flexMin]").val(currentTable.options.cols[colsid].columnPannel.data.flexMin);
-                                $(html).find("input[name=flexMax]").val(currentTable.options.cols[colsid].columnPannel.data.flexMax);
-                            }
-
-                            $(html).find("input[type=button]").on("click", function() {
-                                var query = $(html).find(".flexigridColumnHeaderForm").serialize();
-                                var data = aku.queryToJson(query);
-                                if (data.flexMin || data.flexMax) {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(data.flexMin + " 至 " + data.flexMax);
-                                } else {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title)
-                                }
-                                currentTable.options.cols[colsid].columnPannel.data = data;
-                                
-                                $(".flexigridColumnHeader").remove();
-                            });
-
-                            $(document.body).append(html);
-
-                            laydate.render({elem: "#flexMin",});
-                            laydate.render({elem: "#flexMax",});
-                        }
-
-                        // 状态列表
-                        if (options.cols[colsid].columnPannel.type == "status") {
-
-                            var width = "";
-                            if (table.options.cols[colsid].width) {
-                                width = "width:" + (aku.isPercent(table.options.cols[colsid].width) ? table.options.cols[colsid].width : table.options.cols[colsid].width + "px") + ";";
-                            }
-                            if (width == "") width = "width : 100px;";
-
-                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; max-height: 220px; "+ width +"  \" > " +
-                            "<table cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;\">" +
-                            "<tbody>" +
-                            "<tr><td data-value=\"\" >全部</td></tr>" + 
-                            "</tbody>" +
-                            "</table>" +
-                            "</div> ";
-
-                            html = $.parseHTML(html);
-                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
-
-                            $(html).css("left", offset.left + "px");
-                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
-
-                            for (var opi=0; opi < options.cols[colsid].columnPannel.options.length; opi++) {
-                                var opdata = options.cols[colsid].columnPannel.options[opi];
-                                var tr = "<tr><td  data-value=\""+ opdata.value +"\" >"+ opdata.title +"</td></tr>";
-                                $(html).find("tbody").append(tr);
-                            }
-
-                            $(html).find("td").on("click", function() {
-                                if ($(this).data("value")) {
-                                    currentTable.options.cols[colsid].columnPannel.data = $(this).data("value");
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html($(this).html());
-                                } else {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title);
-                                }
-                            })
-
-                            $(document.body).append(html);
-
-                        }
-
-                        // 自定义
-                        if (options.cols[colsid].columnPannel.type == "between-custom") {
-                            
-                            var width = "";
-                            if (table.options.cols[colsid].columnPannel.width) {
-                                width = "width:" + (aku.isPercent(table.options.cols[colsid].columnPannel.width) ? table.options.cols[colsid].columnPannel.width : table.options.cols[colsid].columnPannel.width + "px") + ";";
-                            }
-                            if (width == "") width = "width : 100px;";
-
-                            var height = "";
-                            if (table.options.cols[colsid].columnPannel.height) {
-                                height = "height:" + (aku.isPercent(table.options.cols[colsid].columnPannel.height) ? table.options.cols[colsid].columnPannel.height : table.options.cols[colsid].columnPannel.height + "px") + ";";
-                            }
-                            if (height == "") height = "height : 100px;";
-
-                            var html = "<div class=\"flexigridColumnHeader\" style=\"background-color: rgb(249, 249, 249); border-left: 1px solid rgb(218, 216, 212); border-right: 1px solid rgb(218, 216, 212); border-bottom: 1px solid rgb(218, 216, 212); overflow-x: hidden; overflow-y: auto; position: absolute; "+ width + height +" \" > " +
-                            "<form class=\"flexigridColumnHeaderForm\">" + 
-                            "<div class=\"tmpContainer tmpContent\" style=\"padding-top:5px;text-align:center;\">" +
-                            "</div> " +
-                            "<div class=\"tmpContainer\" style=\"width:100%;padding-top:5px; text-align: right;\"> " +
-                            "<input type=\"button\" class=\"button\" style=\"margin-right:5px;\" value=\"确定\">  " +
-                            "</div> " +
-                            "</form>" + 
-                            "</div> ";
-
-                            html = $.parseHTML(html);
-                            html = ($.isArray(html) && html.length > 0) ? html[0] : {};
-                            
-                            $(html).css("left", offset.left + "px");
-                            $(html).css("top", offset.top-10 + $(this).outerHeight()+1 + "px");
-
-                            var tmpContainerHtml = options.cols[colsid].columnPannel.getHtml(currentTable.options.cols[colsid]);
-
-                            $(html).find(".tmpContent").append(tmpContainerHtml);
-
-                            $(html).find("input[type=button]").on("click", function() {
-                                var data = currentTable.options.cols[colsid].columnPannel.btn();
-                                if ($.isEmptyObject(data)) {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(options.cols[colsid].title);
-                                } else {
-                                    $(".hDivBox").find("th[data-colsid="+ colsid +"]").find("div").html(data.title);
-                                }
-                                currentTable.options.cols[colsid].columnPannel.data = data;
-                            });
-
-                            $(document.body).append(html);
-                        }
-          
-                        return false;
-
-                    });
-
-                }(this));
-                
-            }
-            
-            ths.push(th);
-
-        }
-
-        // console.log(ths.toString());
-
-        var hdiv = $.parseHTML("<div class=\"hDiv\">" +
-        "<div class=\"hDivBox\">" +
-            "<table cellpadding=\"0\" cellspacing=\"0\">" +
-            "<thead>" +
-                "<tr>" +
-                // ths.join("") +
-                "</tr>" +
-            "</thead>" +
-            "</table>" +
-        "</div>" +
-        "</div>");
-
-        for (var i=0; i<ths.length; i++) {
-            $(hdiv).find('tr').append(ths[i]);
-        }
-
-        var btnShowOrHide = "<div class=\"btnShowOrHide\" style=\"position: absolute; background-image: url('/opacity/images/more.png'); background-repeat: no-repeat; width: 24px; height: 28px; cursor:pointer;\" title=\"隐藏/显示列\" tips=\"隐藏/显示列\"></div>";
-
-        btnShowOrHide = $.parseHTML(btnShowOrHide);
-        btnShowOrHide = ($.isArray(btnShowOrHide) && btnShowOrHide.length > 0) ? btnShowOrHide[0] : {};
-
-        $(btnShowOrHide).on("click", function() {
-
-            if ($(".flexigrid").find(".nDiv").length > 0) {
-                $(".flexigrid").find(".nDiv").remove();
-                return;
-            }
-
-            var ndiv = "<div class=\"nDiv\" style=\"  position:absolute; top:29px; display: block; overflow-y: hidden; outline: none;\" >" + 
-            "<table cellpadding=\"0\" cellspacing=\"0\" style=\"width: 150px;\">" +
-            "<tbody>" +
-            "<tr >" +
-            "<td class=\"ndcol1\">" +
-            "<input type=\"checkbox\" checked=\"checked\" class=\"togCol\" value=\"0\">" +
-            "</td>" +
-            "<td class=\"ndcol2\">" +
-            "<input type=\"checkbox\" class=\"selectAll\" disabled=\"\">" +
-            "</td>" +
-            "</tr>" +
-            "<tr >" +
-            "<td class=\"ndcol1\">" +
-            "<input type=\"checkbox\" checked=\"checked\" class=\"togCol\" value=\"1\">" +
-            "</td>" +
-            "<td class=\"ndcol2\">编号</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</div>";
-
-            ndiv = $.parseHTML(ndiv);
-            ndiv = ($.isArray(ndiv) && ndiv.length > 0) ? ndiv[0] : {};
-
-            $(ndiv).css("left", $(hdiv).find(".hDivBox").width()-120 + "px");
-            $(".flexigrid").prepend(ndiv);
-        });
-
-        $(hdiv).append(btnShowOrHide);
-
-        this.flexigrid.append(hdiv);
-
-        $(btnShowOrHide).css("top", "3px");
-        $(btnShowOrHide).css("left", $(hdiv).find(".hDivBox").width() + "px");
-    }
-
-
-    this.renderBdiv = function() {
-
-        var bdiv = "<div id=\"bDiv\" class=\"bDiv\" style=\"height: 484px; overflow: auto; outline: none;\"  >" +
-        "<table  style=\"width: auto;\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" >" +
-        "<tbody>" +
-        "</tbody>" +
-        "</table>" +
-        "</div>";
-
-        bdiv = $.parseHTML(bdiv);
-        bdiv = ($.isArray(bdiv) && bdiv.length > 0) ? bdiv[0] : {};
-
-        this.flexigrid.append(bdiv);
-    }
-
-    this.renderTips = function() {
-        var tips = "<div  class=\"flexigridTips\">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>";
-        tips = $.parseHTML(tips);
-        tips = ($.isArray(tips) && tips.length > 0) ? tips[0] : {};
-        this.flexigrid.append(tips);
-    }
-
-    this.renderPdiv = function() {
-        var pdiv = "<div class=\"pDiv\"></div>";
-        pdiv = $.parseHTML(pdiv);
-        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
-        this.flexigrid.append(pdiv);
-
-        this.listPage = new ListPage({elem : "#"+ this.options.id +" .pDiv"});
-
-        this.listPage.render();
-    }
-
-    this.renderVgrip = function() {
-        var vgrip = "<div class=\"vGrip\"><span></span></div>";
-        vgrip = $.parseHTML(vgrip);
-        vgrip = ($.isArray(vgrip) && vgrip.length > 0) ? vgrip[0] : {};
-        this.flexigrid.append(vgrip);
-    }
-
-    this.autoResize = function() {
-        var bodyHeight = $(document.body).outerHeight();
-        var bodyDivHeight = bodyHeight - ($("#headDiv").outerHeight() + $("#footDiv").outerHeight())
-        $("#bodyDiv").css("height", bodyDivHeight + "px");
-        $("#" + this.options.id).css("height", bodyDivHeight + "px");
-    }
-    
-    this.loadShade = function() {
-        var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
-        this.flexigrid.append(shade);
+        this.flexigrid.find(".bDiv").css("height", bodyDivHeight-width-10 + "px");
     }
 
     this.loadList = function() {
@@ -1178,23 +680,22 @@ function ListTable(obj) {
         var table = this;
         var options = this.options;
 
+        // post data
         var data = { };
         data[options.request.pageName] = options.curr;
         data[options.request.limitName] = options.limit;
 
+        table.loadShade(true);
         
-
         $.ajax({
             type: this.options.method,
             url : this.options.url,
             data : data, // sQueryString,
             dataType : 'json',
             success : function(data) {
-
-                console.log(data);
-
-                console.log(data['code']);
                 
+
+
                 if (data[options.response.statusName] != options.response.statusCode) {
                     console.log("loadList error");
                     console.log(data);
@@ -1208,48 +709,12 @@ function ListTable(obj) {
 
                 var listData = data[options.response.dataName][options.response.listName];
                 var dataLength = listData.length;
+                var tbody = table.flexigrid.find(".bDiv table tbody")
 
-                // <tr>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
-                //             </td>
-                //             <td align="left" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
-                //             </td>
-                //             <!-- <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
-                //             </td>
-                //             <td align="Center" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
-                //             </td>
-                //             <td align="left" style="" abbr="">
-                //                 <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                //             </td> -->
-                //         </tr>
 
                 for (var y=0; y<dataLength; y++) {
 
-                    //listData[i]
-
-                    var tr = "<tr></tr>";
-
-                    tr = $.parseHTML(tr);
-                    tr = ($.isArray(tr) && tr.length > 0) ? tr[0] : {};
+                    var tr = document.createElement("tr");
 
                     for (var i=0; i<options.cols.length; i++) {
 
@@ -1268,10 +733,6 @@ function ListTable(obj) {
                             center = "text-align:" + options.cols[i].align + ";";
                         }
 
-                        
-                        // console.log(listData[y]);
-                        // console.log(listData[y][col['field']]);
-
                         if (col['type'] == "checkbox") {
                             var tdValue = "<input type=\"checkbox\" class=\"selectItem\" name=\"selectItem\" value=\"17682304378|小杨||\">";
                         } else if (col['type'] == "edit") {
@@ -1280,65 +741,19 @@ function ListTable(obj) {
                             var tdValue = listData[y][col['field']];
                         }
 
-                        
-
-
                         var td = "<td align=\""+ options.cols[i].align +"\"  data-tableid=\""+ options.id +"\" data-colsid=\""+ i +"\" >" +
                         "<div class=\"wordwrap\"  style=\""+ center +  width + minWidth +" \">"+ tdValue  +"</div>" +
                         "</td>";
-
-                        td = $.parseHTML(td);
-                        td = ($.isArray(td) && td.length > 0) ? td[0] : {};
                         
-                        tr.append(td);
+                        $(tr).append(td);
 
                     }
 
-
-                    //console.log(table.flexigrid.find(".bDiv table tbody"));
-
-                    table.flexigrid.find(".bDiv table tbody").append(tr);
-
-
+                    tbody.append(tr);
                 }
 
-
-
-        //         var obj;
-        //         try {
-        //             obj=JSON.parse(data);
-        //         } catch (err) { obj = data; }
-                
-        //         if(typeof obj == 'object' && obj ){
-        //             // 返回 json
-        //             if (obj.auto_script) {
-        //                 eval(obj.auto_script);
-        //             }
-
-        //             window.parent.layer.open({
-        //                 closeBtn : 0,
-        //                 title: title
-        //                 ,content: obj.data,
-        //                 btn1 : function(index, layero) {
-        //                     // console.log(index, layero);
-        //                     window.parent.layer.close(index);
-        //                     if (obj.script_code) {
-        //                         eval(obj.script_code);
-        //                     }
-        //                 }
-        //               }); 
-        //         }else{
-        //             // 返回 html
-        //             window.parent.layer.open({
-        //                 title: title
-        //                 ,content: obj,
-        //                 btn : []
-        //             });
-        //         }
             },
             error : function(xhr, textStatus, errorThrown) {
-                
-                // throw errorThrown;
                 layer.alert(
                     textStatus + "/" + errorThrown, {closeBtn: 0}
                     , function(){
@@ -1346,26 +761,32 @@ function ListTable(obj) {
                 );
             },
             complete : function(xhr, textStatus) {
-        //         aku.layerShadeLoadingClose(aku.layerShadeLoadingIndex);
+                table.loadShade(false);
             }
         });
 
-
     }
 
-    this.on = function() {
-
+    this.loadShade = function(show) {
+        if (show) {
+            var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
+            this.flexigrid.find(".bDiv").append(shade);
+        } else {
+            if (this.flexigrid.find(".loadingimg").length > 0) {
+                this.flexigrid.find(".loadingimg").remove();
+            }
+        }
+        
     }
 
     this.calcTableId = function() {
         return "table_" + Math.floor(Math.random() * 100000 + 1)
     }
     
-    // 调用构造函数
+    // 构造函数
     if (typeof this.__construct == 'function') {
         this.__construct();
     }
-
 }
 
 /**
