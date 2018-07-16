@@ -201,8 +201,8 @@ function ListTable(obj) {
     this.listPage = {}; // 分页
 
     this.__construct = function() {
-
-        $.extend(this.options, obj);
+        
+        this.options = $.extend({}, this.options, obj);
 
         if (!this.options.id) {
             this.options.id = this.calcTableId();
@@ -213,20 +213,6 @@ function ListTable(obj) {
                 this.options.cols[i] = $.extend({}, colsOptions, this.options.cols[i]);
             }
         }
-
-        // // 实例化分页
-        // if ($.isEmptyObject(this.listPage)) {
-        //     this.listPage = new ListPage(this, {
-        //         url : this.options.url, 
-        //         method : this.options.method,
-        //         where : this.options.where,
-        //         headers : this.options.headers,
-        //         request : this.options.request,
-        //         response : this.options.response,
-        //     });
-        // }
-
-
 
         var flexigrid = $.parseHTML("<div id=\""+ this.options.id +"\" class=\"flexigrid\" >" + 
         "<div class=\"bDiv\" style=\"outline: none;\">" +
@@ -253,23 +239,7 @@ function ListTable(obj) {
 
         this.nautoResize();
 
-        // this.nrenderBdiv();
-
-        // this.renderHdiv();
-
-        // this.renderBdiv();
-
-        // this.renderPdiv();
-
-        // this.renderTips();
-
-        // this.renderVgrip();
-
-        // this.autoResize();
-
-        // this.loadShade();
-
-        // this.loadList();
+        this.loadList();
     }
 
 
@@ -717,7 +687,6 @@ function ListTable(obj) {
 
 
 
-
     this.renderHdiv = function() {
 
         this.flexigrid.find(".hDiv").html('');
@@ -1152,7 +1121,6 @@ function ListTable(obj) {
     }
 
 
-
     this.renderBdiv = function() {
 
         var bdiv = "<div id=\"bDiv\" class=\"bDiv\" style=\"height: 484px; overflow: auto; outline: none;\"  >" +
@@ -1206,46 +1174,15 @@ function ListTable(obj) {
     }
 
     this.loadList = function() {
-
-        // console.log("this.loadList");
-
-        // console.log(this.options.curr);
-        // console.log(this.options.url);
-
-        // url : '',   // 接口地址。默认会自动传递两个参数：?page=1&limit=30（该参数可通过 request 自定义） page 代表当前页码、limit 代表每页数据量
-        // curr : 1,
-        // method : 'get',    // 接口http请求类型，默认：get
-        // where : {}, // 接口的其它参数。如：where: {token: 'sasasas', id: 123}
-        // headers : {},   // 接口的请求头。如：headers: {token: 'sasasas'}。注：该参数为 layui 2.2.6 开始新增
-        // request : { // 用于对分页请求的参数：page、limit重新设定名称，如：
-        //     pageName : 'pn',  //页码的参数名称，默认：page
-        //     limitName : 'limit',    //每页数据量的参数名，默认：limit
-        // },
-        // response : {    // 用于对返回的数据格式的自定义，如：
-        //     statusName: 'code', //数据状态的字段名称，默认：code
-        //     statusCode: 0, //成功的状态码，默认：0
-        //     msgName: 'error', //状态信息的字段名称，默认：msg
-        //     dataName: 'data', //数据列表的字段名称，默认：data
-        //     listName : 'data',  // 结果集名字
-        //     countName: 'total', //数据总数的字段名称，默认：total
-        //     pageStatName : 'page_stat', // 分页状态信息,例如：显示从 1 条数据到 30 条数据，共 1823 条数据
-        //     currentPageName : 'current_page',   // 当前页
-        //     lastPageName : 'last_page',     // 最后一页
-        //     currentLimit : 'current_limit', // 每页记录数
-        //     fromName : 'from',  // 从第几条数据开始
-        //     toName : 'to'   // 到第几条数据
-        // },
-
-        // if ($(sQueryString).is("form")) {
-        //     sQueryString = $(sQueryString).serialize();
-        // }
-
+        
         var table = this;
         var options = this.options;
 
         var data = { };
         data[options.request.pageName] = options.curr;
         data[options.request.limitName] = options.limit;
+
+        
 
         $.ajax({
             type: this.options.method,
@@ -1400,6 +1337,7 @@ function ListTable(obj) {
         //         }
             },
             error : function(xhr, textStatus, errorThrown) {
+                
                 // throw errorThrown;
                 layer.alert(
                     textStatus + "/" + errorThrown, {closeBtn: 0}

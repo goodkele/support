@@ -13,6 +13,7 @@ class ExampleListController extends Base_OpacityController
     
     public function listAction()
     {
+        
         \Yaf\Dispatcher::getInstance()->autoRender(false);
 
         // var_dump($this->getRequest()->isXmlHttpRequest());
@@ -28,6 +29,7 @@ class ExampleListController extends Base_OpacityController
 
         //echo json_encode();
 
+        
         
 
         \Tool::show_message($users->toArray());
