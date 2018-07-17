@@ -135,18 +135,19 @@ function ListTable(obj) {
         data : '',  // Array 直接赋值数据。既适用于只展示一页数据，也非常适用于对一段已知数据进行多页展示。	
         page : true,  // Boolean 开启分页（默认：true）
         limit : 10, // Number 每页显示的条数（默认：10）。值务必对应 limits 参数的选项。优先级低于 page 参数中的 limit 参数。
-        limits : [10,20,30,40,50,60,70,80,90],    // Array 每页条数的选择项，默认：[10,20,30,40,50,60,70,80,90]。优先级低于 page 参数中的 limits 参数。
+        limits : [20,30,50,100,200],    // Array 每页条数的选择项，默认：[10,20,30,40,50,60,70,80,90]。优先级低于 page 参数中的 limits 参数。
         loading : true,   //  Boolean 是否显示加载条（默认：true）。如果设置 false，则在切换分页时，不会出现加载条。该参数只适用于 url 参数开启的方式
         text : {},  // Object 自定义文本，如空数据时的异常提示等。注：layui 2.2.5 开始新增。例:{none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增}
         //initSort :'',   // Object 初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
 
         url : '',   // 接口地址。默认会自动传递两个参数：?page=1&limit=30（该参数可通过 request 自定义） page 代表当前页码、limit 代表每页数据量
         curr : 1,
+        limit : 20,
         method : 'get',    // 接口http请求类型，默认：get
         where : {}, // 接口的其它参数。如：where: {token: 'sasasas', id: 123}
         headers : {},   // 接口的请求头。如：headers: {token: 'sasasas'}。注：该参数为 layui 2.2.6 开始新增
         request : { // 用于对分页请求的参数：page、limit重新设定名称，如：
-            pageName : 'page',  //页码的参数名称，默认：page
+            pageName : 'pn',  //页码的参数名称，默认：page
             limitName : 'limit',    //每页数据量的参数名，默认：limit
         },
         response : {    // 用于对返回的数据格式的自定义，如：
@@ -171,7 +172,7 @@ function ListTable(obj) {
          title : '', //    String  （必填项）设定标题名称
          width : 0, //    Number/String   设定列宽（默认自动分配）。支持填写：数字、百分比。请结合实际情况，对不同列做不同设定。注意：如果是 layui 2.2.0 之前的版本，列宽必须设定一个固定数字
          minWidth : 60, // Number  （layui 2.2.1 新增）局部定义当前常规单元格的最小宽度（默认：60），一般用于列宽自动分配的情况。其优先级高于基础参数中的 cellMinWidth
-         type : '', // String  设定列类型。可选值有：normal（常规列，无需设定）、checkbox（复选框列）、space（空列）、numbers（序号列）。注意：该参数为 layui 2.2.0 新增。而如果是之前的版本，复选框列采用 checkbox: true、空列采用 space: true
+         type : '', // String  设定列类型。可选值有：normal（常规列，无需设定）、checkbox（复选框列）、space（空列）、edit (可编辑区域)、 。注意：该参数为 layui 2.2.0 新增。而如果是之前的版本，复选框列采用 checkbox: true、空列采用 space: true
          sort : false, // Boolean 是否允许排序（默认：false）。如果设置 true，则在对应的表头显示排序icon，从而对列开启排序功能。注意：不推荐对值同时存在“数字和普通字符”的列开启排序，因为会进入字典序比对。比如：'贤心' > '2' > '100'，这可能并不是你想要的结果，但字典序排列算法（ASCII码比对）就是如此。
          initSort : '', // string   ASC or DESC  初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
          unresize : false, // Boolean 是否禁用拖拽列宽（默认：false）。默认情况下会根据列类型（type）来决定是否禁用，如复选框列，会自动禁用。而其它普通列，默认允许拖拽列宽，当然你也可以设置 true 来禁用该功能。
@@ -200,8 +201,8 @@ function ListTable(obj) {
     this.listPage = {}; // 分页
 
     this.__construct = function() {
-
-        $.extend(this.options, obj);
+        
+        this.options = $.extend({}, this.options, obj);
 
         if (!this.options.id) {
             this.options.id = this.calcTableId();
@@ -213,21 +214,18 @@ function ListTable(obj) {
             }
         }
 
-        // // 实例化分页
-        // if ($.isEmptyObject(this.listPage)) {
-        //     this.listPage = new ListPage(this, {
-        //         url : this.options.url, 
-        //         method : this.options.method,
-        //         where : this.options.where,
-        //         headers : this.options.headers,
-        //         request : this.options.request,
-        //         response : this.options.response,
-        //     });
-        // }
+        var flexigrid = $.parseHTML("<div id=\""+ this.options.id +"\" class=\"flexigrid\" >" + 
+        "<div class=\"bDiv\" style=\"outline: none;\">" +
+        "<table style=\"width:auto;\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" >" + 
+            "<thead></thead>" + 
+            "<tbody></tbody>" + 
+        "</table>" +
+        "</div>" +
 
-
-
-        var flexigrid = $.parseHTML("<div id=\""+ this.options.id +"\" class=\"flexigrid\" ></div>");
+        "<div class=\"flexigridTips\"></div>" +
+        "<div class=\"pDiv\"></div>" + 
+        "<div class=\"vGrip\"><span></span></div>" + 
+        "</div>");
 
         $(this.options.elem).html('');
         $(this.options.elem).append(flexigrid);
@@ -235,32 +233,25 @@ function ListTable(obj) {
         this.flexigrid = $("#" + this.options.id);
 
         
+        this.nrenderHdiv();
 
-        this.renderHdiv();
+        this.nrenderPdiv();
 
-        this.renderBdiv();
+        this.nautoResize();
 
-        this.renderPdiv();
+        this.loadList();
 
-        this.renderTips();
-
-        this.renderVgrip();
-
-        this.autoResize();
-
-        // this.loadShade();
+        
     }
 
 
-    this.renderHdiv = function() {
+    this.nrenderHdiv = function() {
 
-        this.flexigrid.find(".hDiv").html('');
+        var table = this;
 
-        var ths = [];
+        var tr = document.createElement("tr");
+
         for (var i=0; i < this.options.cols.length; i++)  {
-
-        // if ($.isEmptyObject(this.listPage)) {
-
             var cursor = "";
             if (this.options.cols[i].sort || !$.isEmptyObject(this.options.cols[i].columnPannel)) {
                 cursor = "cursor: pointer;";
@@ -291,9 +282,15 @@ function ListTable(obj) {
 
             // sasc
             // sdesc
-            
+
+            if (this.options.cols[i]['type'] == "checkbox") {
+                var thValue = "<input type=\"checkbox\" class=\"selectAll\">";
+            } else {
+                var thValue = this.options.cols[i].title;
+            }
+
             var th = "<th align=\""+ this.options.cols[i].align +"\" class=\""+ thclass +"\" data-field=\""+ this.options.cols[i].field +"\" data-sort=\""+ this.options.cols[i].sort +"\" data-initsort=\""+ this.options.cols[i].initSort +"\" data-tableid=\""+ this.options.id +"\" data-colsid=\""+ i +"\" >" +
-                        "<div class=\""+ thdivclass +"\"  style=\""+ center + cursor + width + minWidth +" \">"+ this.options.cols[i].title +"</div>" +
+                        "<div class=\""+ thdivclass +"\"  style=\""+ center + cursor + width + minWidth +" \">"+ thValue +"</div>" +
                     "</th>";
 
             th = $.parseHTML(th);
@@ -604,38 +601,24 @@ function ListTable(obj) {
                 }(this));
                 
             }
-            
-            ths.push(th);
+
+            $(tr).append(th);
 
         }
 
-        // console.log(ths.toString());
-
-        var hdiv = $.parseHTML("<div class=\"hDiv\">" +
-        "<div class=\"hDivBox\">" +
-            "<table cellpadding=\"0\" cellspacing=\"0\">" +
-            "<thead>" +
-                "<tr>" +
-                // ths.join("") +
-                "</tr>" +
-            "</thead>" +
-            "</table>" +
-        "</div>" +
-        "</div>");
-
-        for (var i=0; i<ths.length; i++) {
-            $(hdiv).find('tr').append(ths[i]);
-        }
-
-        var btnShowOrHide = "<div class=\"btnShowOrHide\" style=\"position: absolute; background-image: url('/opacity/images/more.png'); background-repeat: no-repeat; width: 24px; height: 28px; cursor:pointer;\" title=\"隐藏/显示列\" tips=\"隐藏/显示列\"></div>";
-
-        btnShowOrHide = $.parseHTML(btnShowOrHide);
-        btnShowOrHide = ($.isArray(btnShowOrHide) && btnShowOrHide.length > 0) ? btnShowOrHide[0] : {};
-
+        var btnShowOrHide = document.createElement("div");
+        $(btnShowOrHide).addClass("btnShowOrHide");
+        $(btnShowOrHide).css("position", "absolute");
+        $(btnShowOrHide).css("background-image", "url('/opacity/images/more.png')");
+        $(btnShowOrHide).css("background-repeat", "no-repeat");
+        $(btnShowOrHide).css("width", "24px");
+        $(btnShowOrHide).css("height", "28px");
+        $(btnShowOrHide).css("cursor", "pointer");
+        
         $(btnShowOrHide).on("click", function() {
 
-            if ($(".flexigrid").find(".nDiv").length > 0) {
-                $(".flexigrid").find(".nDiv").remove();
+            if (table.flexigrid.find(".nDiv").length > 0) {
+                table.flexigrid.find(".nDiv").remove();
                 return;
             }
 
@@ -663,99 +646,147 @@ function ListTable(obj) {
             ndiv = $.parseHTML(ndiv);
             ndiv = ($.isArray(ndiv) && ndiv.length > 0) ? ndiv[0] : {};
 
-            $(ndiv).css("left", $(hdiv).find(".hDivBox").width()-120 + "px");
-            $(".flexigrid").prepend(ndiv);
+            $(ndiv).css("left", table.flexigrid.find("table thead").width()-120 + "px");
+            table.flexigrid.prepend(ndiv);
         });
 
-        $(hdiv).append(btnShowOrHide);
-
-        this.flexigrid.append(hdiv);
+        this.flexigrid.find("table thead").append(tr);
+        this.flexigrid.append(btnShowOrHide);
 
         $(btnShowOrHide).css("top", "3px");
-        $(btnShowOrHide).css("left", $(hdiv).find(".hDivBox").width() + "px");
+        $(btnShowOrHide).css("left", this.flexigrid.find("table thead").width() + "px");
+
+        $(tr).append("<th style=\"width:100%\"></th>");
     }
 
-
-
-    this.renderBdiv = function() {
-
-        var bdiv = "<div id=\"bDiv\" class=\"bDiv\" style=\"height: 484px; overflow: auto; outline: none;\"  >" +
-        "<table  style=\"width: auto;\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" >" +
-        "<tbody>" +
-        "</tbody>" +
-        "</table>" +
-        "</div>";
-
-        bdiv = $.parseHTML(bdiv);
-        bdiv = ($.isArray(bdiv) && bdiv.length > 0) ? bdiv[0] : {};
-
-        this.flexigrid.append(bdiv);
-    }
-
-    this.renderTips = function() {
-        var tips = "<div  class=\"flexigridTips\">共查到 0 条数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加 / 扣减课时统计结果为 0</div>";
-        tips = $.parseHTML(tips);
-        tips = ($.isArray(tips) && tips.length > 0) ? tips[0] : {};
-        this.flexigrid.append(tips);
-    }
-
-    this.renderPdiv = function() {
-        var pdiv = "<div class=\"pDiv\"></div>";
-        pdiv = $.parseHTML(pdiv);
-        pdiv = ($.isArray(pdiv) && pdiv.length > 0) ? pdiv[0] : {};
-        this.flexigrid.append(pdiv);
-
+    this.nrenderPdiv = function() {
         this.listPage = new ListPage({elem : "#"+ this.options.id +" .pDiv"});
-
         this.listPage.render();
     }
 
-    this.renderVgrip = function() {
-        var vgrip = "<div class=\"vGrip\"><span></span></div>";
-        vgrip = $.parseHTML(vgrip);
-        vgrip = ($.isArray(vgrip) && vgrip.length > 0) ? vgrip[0] : {};
-        this.flexigrid.append(vgrip);
-    }
-
-    this.autoResize = function() {
+    this.nautoResize = function() {
         var bodyHeight = $(document.body).outerHeight();
         var bodyDivHeight = bodyHeight - ($("#headDiv").outerHeight() + $("#footDiv").outerHeight())
         $("#bodyDiv").css("height", bodyDivHeight + "px");
-        $("#" + this.options.id).css("height", bodyDivHeight + "px");
-    }
-    
-    this.loadShade = function() {
-        var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
-        this.flexigrid.append(shade);
+        var width = 0;
+        width = width + (this.flexigrid.find(".flexigridTips").length > 0 ? this.flexigrid.find(".flexigridTips").outerHeight() : 0);
+        width = width + (this.flexigrid.find(".pDiv").length > 0 ? this.flexigrid.find(".pDiv").outerHeight() : 0);
+        width = width + (this.flexigrid.find(".vGrip").length > 0 ? this.flexigrid.find(".vGrip").outerHeight() : 0);
+        this.flexigrid.find(".bDiv").css("height", bodyDivHeight-width-10 + "px");
     }
 
     this.loadList = function() {
-
-        // console.log("this.loadList");
-
-        // console.log(this.options.curr);
-        // console.log(this.options.url);
-
         
+        var table = this;
+        var options = this.options;
 
+        // post data
+        var data = { };
+        data[options.request.pageName] = options.curr;
+        data[options.request.limitName] = options.limit;
+
+        table.loadShade(true);
+        
+        $.ajax({
+            type: this.options.method,
+            url : this.options.url,
+            data : data, // sQueryString,
+            dataType : 'json',
+            success : function(data) {
+                
+
+
+                if (data[options.response.statusName] != options.response.statusCode) {
+                    console.log("loadList error");
+                    console.log(data);
+                    return;
+                }
+
+                if (data[options.response.dataName] == undefined) {
+                    throw  "data[options.response.dataName] is undefined";
+                }
+                
+
+                var listData = data[options.response.dataName][options.response.listName];
+                var dataLength = listData.length;
+                var tbody = table.flexigrid.find(".bDiv table tbody")
+
+
+                for (var y=0; y<dataLength; y++) {
+
+                    var tr = document.createElement("tr");
+
+                    for (var i=0; i<options.cols.length; i++) {
+
+                        var col = options.cols[i];
+
+                        var width = "";
+                        if (options.cols[i].width) {
+                            width = "width:" + (aku.isPercent(options.cols[i].width) ? options.cols[i].width : options.cols[i].width + "px") + ";";
+                        }
+                        var minWidth = "";
+                        if (options.cols[i].minWidth) {
+                            minWidth = "min-width:" + (aku.isPercent(options.cols[i].minWidth) ? options.cols[i].minWidth : options.cols[i].minWidth + "px") + ";";
+                        }
+                        var center = "";
+                        if (options.cols[i].align) {
+                            center = "text-align:" + options.cols[i].align + ";";
+                        }
+
+                        if (col['type'] == "checkbox") {
+                            var tdValue = "<input type=\"checkbox\" class=\"selectItem\" name=\"selectItem\" value=\"17682304378|小杨||\">";
+                        } else if (col['type'] == "edit") {
+                            var tdValue = "<input type=\"text\" name=\"MemberName\" class=\"int\" style=\"width:90%;\" value=\""+ listData[y][col['field']] +"\">";
+                        } else {
+                            var tdValue = listData[y][col['field']];
+                        }
+
+                        var td = "<td align=\""+ options.cols[i].align +"\"  data-tableid=\""+ options.id +"\" data-colsid=\""+ i +"\" >" +
+                        "<div class=\"wordwrap\"  style=\""+ center +  width + minWidth +" \">"+ tdValue  +"</div>" +
+                        "</td>";
+                        
+                        $(tr).append(td);
+
+                    }
+
+                    tbody.append(tr);
+                }
+
+            },
+            error : function(xhr, textStatus, errorThrown) {
+                layer.alert(
+                    textStatus + "/" + errorThrown, {closeBtn: 0}
+                    , function(){
+                    }
+                );
+            },
+            complete : function(xhr, textStatus) {
+                table.loadShade(false);
+            }
+        });
 
     }
 
-    this.on = function() {
-
+    this.loadShade = function(show) {
+        if (show) {
+            var shade = "<div class=\"loadingimg\" style=\"position:absolute;left:0px;top:0px; background-color:rgba(255,255,255,0.5)\"></div>";
+            this.flexigrid.find(".bDiv").append(shade);
+        } else {
+            if (this.flexigrid.find(".loadingimg").length > 0) {
+                this.flexigrid.find(".loadingimg").remove();
+            }
+        }
+        
     }
-
-
 
     this.calcTableId = function() {
         return "table_" + Math.floor(Math.random() * 100000 + 1)
     }
-
-    // 调用构造函数
+    
+    // 构造函数
     if (typeof this.__construct == 'function') {
         this.__construct();
     }
-
 }
 
 /**

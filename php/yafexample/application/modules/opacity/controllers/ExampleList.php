@@ -1,6 +1,7 @@
 <?php
 
 use Aku\Models\Admin\Example;
+//use Aku\Models\Admin\Example;
 
 class ExampleListController extends Base_OpacityController
 {
@@ -12,6 +13,7 @@ class ExampleListController extends Base_OpacityController
     
     public function listAction()
     {
+        
         \Yaf\Dispatcher::getInstance()->autoRender(false);
 
         // var_dump($this->getRequest()->isXmlHttpRequest());
@@ -19,13 +21,23 @@ class ExampleListController extends Base_OpacityController
         // $a = Example::all();
 
         $page = $_GET['pn'];
+        $limit = $_GET['limit'];
 
-        $users = Example::paginate(5, ['*'], 'pn', $page);
-
-        echo json_encode($users->toArray());
-        exit();
+        $users = Example::paginate($limit, ['*'], 'pn', $page);
 
         
+
+        //echo json_encode();
+
+        
+        
+
+        \Tool::show_message($users->toArray());
+
+
+        //exit();
+
+        // [20,30,50,100,200]
 
 
         // var_dump($a);

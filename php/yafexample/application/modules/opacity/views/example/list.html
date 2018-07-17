@@ -6,8 +6,9 @@
     <title>opacity</title>
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/etm.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/theme2/etm.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $HTTP_STATIC_URL?>/assets/css/opacity.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer.js"></script>
+    <script type="text/javascript" src="<?php echo $HTTP_STATIC_URL?>/assets/js/layer.js"></script>    
   </head>
 
 
@@ -133,9 +134,7 @@
 
             
             <div class="flexigrid" >
-                <div class="nBtn" style="display: none;">
-                    <div>&nbsp;</div>
-                </div>
+
 
 
                 <!-- 隐藏菜单栏 -->
@@ -209,6 +208,7 @@
                 </div>
 
                 
+<!-- 
 
                 <div class="hDiv">
                     <div class="hDivBox">
@@ -252,7 +252,7 @@
 
                 </div>
 
-
+-->
                 
 
 
@@ -273,9 +273,40 @@
 
 
                 
-
-                <div class="bDiv" style="height: 484px; overflow: auto; outline: none;" tabindex="5002" >
+                <!-- overflow: auto;  -->
+                <div class="bDiv" style="height: 484px; outline: none;" tabindex="5002" >
                     <table id="Test" style="width: auto;" cellpadding="0" cellspacing="0" border="0" width="undefined">
+                        <thead>
+                                        <tr>
+                                            <th axis="col0" etmname="FollowAct" align="right" width="undefined">
+                                                <div style="text-align: center; width: 100px;">操作</div>
+                                            </th>
+                                            <th axis="col1" etmname="MemberName" align="Center" width="undefined" class="thOver">
+                                                <div class="sasc" style="text-align: center; width: 100px;">学员姓名</div>
+                                            </th>
+                                            <th axis="col2" etmname="Mobile" align="Center" width="undefined" class="">
+                                                <div class="dropdownStatus" style="text-align: center; width: 100px;">手机号码</div>
+                                            </th>
+                                            <th axis="col3" etmname="FollowWayInfo" align="Center" width="undefined" class="">
+                                                <div style="text-align: center; width: 100px;">跟进方式</div>
+                                            </th>
+                                            <th axis="col4" etmname="FollowContent" align="left" width="undefined">
+                                                <div style="text-align: center; width: 260px;">跟进内容</div>
+                                            </th>
+                                            <th axis="col5" abbr="CreateTime" etmname="CreateTime" align="Center" width="undefined" class="sorted">
+                                                <div class="sdesc" style="text-align: center; width: 120px;">跟进时间</div>
+                                            </th>
+                                            <th axis="col6" abbr="NextFollowTime" etmname="NextFollowTime" align="Center" width="undefined">
+                                                <div style="text-align: center; width: 120px;">预计下次跟进时间</div>
+                                            </th>
+                                            <th axis="col7" etmname="AdvisorName" align="Center" width="undefined" class="">
+                                                <div style="text-align: center; width: 100px;">跟进人</div>
+                                            </th>
+                                            <th axis="col8" etmname="FollowStatus" align="Center" width="undefined">
+                                                <div style="text-align: center; width: 100px;">状态</div>
+                                            </th>
+                                        </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <td align="Center" style="" abbr="">
@@ -299,7 +330,7 @@
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
                                 </td>
-                                <!-- <td align="Center" style="" abbr="">
+                                <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
                                 </td>
                                 <td align="Center" style="" abbr="">
@@ -307,7 +338,7 @@
                                 </td>
                                 <td align="left" style="" abbr="">
                                     <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                                </td> -->
+                                </td>
                             </tr>
                             <tr class="erow">
                                 <td align="Center" style="" abbr="">
@@ -327,13 +358,13 @@
                                     <div class="wordwrap" style="text-align:left;width:100px; ">&nbsp;</div></td>
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div></td>
-                                <!-- <td align="Center" style="" abbr="">
+                                <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">18608163587</div></td>
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">签约会员</div></td>
                                 <td align="left" style="" abbr="">
                                     <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                                </td> -->
+                                </td>
                             </tr>
                                 
 
@@ -360,7 +391,7 @@
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
                                 </td>
-                                <!-- <td align="Center" style="" abbr="">
+                                <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
                                 </td>
                                 <td align="Center" style="" abbr="">
@@ -368,7 +399,7 @@
                                 </td>
                                 <td align="left" style="" abbr="">
                                     <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                                </td> -->
+                                </td>
                             </tr>
 
                             <tr>
@@ -393,7 +424,7 @@
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
                                 </td>
-                                <!-- <td align="Center" style="" abbr="">
+                                <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
                                 </td>
                                 <td align="Center" style="" abbr="">
@@ -401,7 +432,7 @@
                                 </td>
                                 <td align="left" style="" abbr="">
                                     <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                                </td> -->
+                                </td>
                             </tr>
 
                             <tr>
@@ -426,7 +457,7 @@
                                 <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
                                 </td>
-                                <!-- <td align="Center" style="" abbr="">
+                                <td align="Center" style="" abbr="">
                                     <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
                                 </td>
                                 <td align="Center" style="" abbr="">
@@ -434,9 +465,400 @@
                                 </td>
                                 <td align="left" style="" abbr="">
                                     <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
-                                </td> -->
+                                </td>
+                            </tr>
+<tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
                             </tr>
 
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:30px; "><input type="checkbox" class="selectItem" name="selectItem" value="17682304378|小杨||"></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">3293</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; "><a href="javascript:showUserInfo('7a95a4d0-ca66-4a43-aaef-2690bd635804')">小杨</a><a href="#" onclick="parent.open('../K_User/UserDetail.aspx?memberGuid=7a95a4d0-ca66-4a43-aaef-2690bd635804');" title="点我在新窗口打开"><img src="../Images/msg.png" style="vertical-align: middle;"></a></div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">2013-07-01</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:50px; ">&nbsp;</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:100px; ">4岁11个月</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">&nbsp;</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">17682304378</div>
+                                </td>
+                                <td align="Center" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:Center;width:100px; ">新客户</div>
+                                </td>
+                                <td align="left" style="" abbr="">
+                                    <div class="wordwrap" style="text-align:left;width:150px; ">&nbsp;</div>
+                                </td>
+                            </tr>
                             
 
                         
@@ -451,7 +873,6 @@
                     <!-- <div class="iDiv" style="display: none;">123</div> -->
                 </div>
                     
-
 
 
 
