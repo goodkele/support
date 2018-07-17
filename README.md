@@ -56,9 +56,13 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * netstat -an|grep 3306
 
 
-
-
-
+* apt-get install postgresql-10
+* apt-get install pgadmin3
+* apt-get install postgresql-10-postgis-2.4
+* apt-get install postgresql-server-dev-10
+* apt-get install install postgresql-common
+* apt-get install postgresql-10-plr
+* apt-get install postgresql-contrib
 
 # 后端
 
