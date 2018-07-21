@@ -28,7 +28,7 @@ class IndexController extends Base_V1Controller {
 
         // APP_PATH . "/application/modules/v1/views/homepage/index.html"
 
-        exit();
+        // exit();
         
     }
 

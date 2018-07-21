@@ -14,16 +14,16 @@ class HomepageController extends Base_V1Controller {
 //            return;
 
 
-        $this->getView()->assign('content', 'asdf');
+//         $this->getView()->assign('content', 'asdf');
 
 
-//        Admin_UserModel::getInstance()->sayHello();
+// //        Admin_UserModel::getInstance()->sayHello();
 
-        $a = Admin_UserModel::all();
+//         $a = Admin_UserModel::all();
 
-        foreach ($a as $aa) {
-            vaR_dump($aa->name);
-        }
+//         foreach ($a as $aa) {
+//             vaR_dump($aa->name);
+//         }
 
 
 
