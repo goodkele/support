@@ -1,746 +1,534 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head id="Head1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> -->
-
   <title>ETM早教管家1</title>
+  <link rel="stylesheet" href="/assets/themes/mainicon/iconfont.css?v=1" />
+  <link rel='stylesheet' href='/assets/themes/theme2/etm.css' />
 
-  <link rel="stylesheet" href="/assets/themes/mainicon/iconfont.css?v=1" />  
-  <link rel='stylesheet' href='/assets/themes/theme2/etm.css'  />
+  <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/assets/js/jquery.cookie.js"></script>
 
   <style type="text/css">
-  
-@font-face { font-family: "iconfont"; src: url('/assets/font/iconfont.eot'); /* IE9*/ src: url('/assets/font/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */ url('/assets/font/iconfont.woff') format('woff'), /* chrome, firefox */ url('/assets/font/iconfont.ttf') format('truetype'); }
-
-.iconfont { font-family: "iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
-
-
-.barIcon {
-    font-size: 40px;
-}
-
-.iconfont {
-  font-family:"iconfont" !important; 
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon {
-    font-size: 30px;
-    line-height: 40px; 
-     -webkit-transition: font-size 0.25s ease-out 0s;
-     -moz-transition: font-size 0.25s ease-out 0s;
-     transition: font-size 0.25s ease-out 0s;
-}
-
-.icon-bangongguanli-hover:before { content: "\e698"; }
-
-.icon-caiwuguanli-hover:before { content: "\e699"; }
-
-.icon-bangongguanli:before { content: "\e69a"; }
-
-.icon-gerenkaoqin:before { content: "\e69b"; }
-
-.icon-hujiaozhongxin-hover:before { content: "\e69c"; }
-
-.icon-geren-hover:before { content: "\e69d"; }
-
-.icon-caiwuguanli:before { content: "\e69e"; }
-
-.icon-gerenzhongxin:before { content: "\e69f"; }
-
-.icon-geren:before { content: "\e6a0"; }
-
-.icon-huodongzhongxin-hover:before { content: "\e6a1"; }
-
-.icon-hujiaozhongxin:before { content: "\e6a2"; }
-
-.icon-huodongzhongxin:before { content: "\e6a3"; }
-
-.icon-jiaowujiaoxue-hover:before { content: "\e6a4"; }
-
-.icon-jiaxiaohulian-hover:before { content: "\e6a5"; }
-
-.icon-jifenshangcheng-hover:before { content: "\e6a6"; }
-
-.icon-jiaowujiaoxue:before { content: "\e6a7"; }
-
-.icon-mima:before { content: "\e6a8"; }
-
-.icon-jiaxiaohulian:before { content: "\e6a9"; }
-
-.icon-pifu:before { content: "\e6aa"; }
-
-.icon-renshihangzheng-hover:before { content: "\e6ab"; }
-
-.icon-renshihangzheng:before { content: "\e6ac"; }
-
-.icon-shouye-hover:before { content: "\e6ad"; }
-
-.icon-pifu-hover:before { content: "\e6ae"; }
-
-.icon-shouji:before { content: "\e6af"; }
-
-.icon-shouye:before { content: "\e6b0"; }
-
-.icon-shuaxin:before { content: "\e6b1"; }
-
-.icon-tuichuzhanghu:before { content: "\e6b2"; }
-
-.icon-tongjibaobiao-hover:before { content: "\e6b3"; }
-
-.icon-weishengbaojian-hover:before { content: "\e6b5"; }
-
-.icon-weishengbaojian:before { content: "\e6b7"; }
-
-.icon-xiaoxi-hover:before { content: "\e6b8"; }
-
-.icon-xiaoxi:before { content: "\e6b9"; }
-
-.icon-xiaocheguanli-hover:before { content: "\e6ba"; }
-
-.icon-xiaojianpan:before { content: "\e6bb"; }
-
-.icon-xiaocheguanli:before { content: "\e6bc"; }
-
-.icon-yinshiguanli-hover:before { content: "\e6bd"; }
-
-.icon-xueyuanguanli-hover:before { content: "\e6be"; }
-
-.icon-xueyuanguanli:before { content: "\e6bf"; }
-
-.icon-yinshiguanli:before { content: "\e6c0"; }
-
-.icon-youerguanli-hover:before { content: "\e6c1"; }
-
-.icon-tongjibaobiao:before { content: "\e6c2"; }
-
-.icon-zhaoshengtuiguang-hover:before { content: "\e6c3"; }
-
-.icon-yuangongguanli-hover:before { content: "\e6c4"; }
-
-.icon-yuangongguanli:before { content: "\e6c5"; }
-
-.icon-zhaoshengtuiguang:before { content: "\e6c7"; }
-
-.icon-zichanguanli-hover:before { content: "\e6c8"; }
-
-.icon-zichanguanli:before { content: "\e6c9"; }
-
-.icon-jifenshangcheng:before { content: "\e6ca"; }
-
-.icon-shiyongbangzhu:before { content: "\e6cb"; }
-
-.icon-wodezhuomian:before { content: "\e6cc"; }
-
-.icon-wodezhuomian-hover:before { content: "\e6cd"; }
-
-.icon-xitongsuoping:before { content: "\e6ce"; }
-
-.icon-gerenziliao:before { content: "\e6cf"; }
-
-.icon-shiyongbangzhu-hover:before { content: "\e6d0"; }
-
-.icon-gerenziliao-hover:before { content: "\e6d1"; }
-
-.icon-xitongsuoping-hover:before { content: "\e6d2"; }
-
-.icon-xitongpeizhi:before { content: "\e6b4"; }
-
-.icon-youerguanli:before { content: "\e6b6"; }
-
-.icon-xitongpeizhi-hover:before { content: "\e6c6"; }
-
-.icon-hetongqianyue-hover:before { content: "\e6d3"; }
-
-.icon-hetongqianyue:before { content: "\e6d4"; }
-
-.icon-yuanquguanli-hover:before { content: "\e6d7"; }
-
-.icon-yuanquguanli:before { content: "\e6d8"; }
-
-.icon-qiehuanxiaoqu-hover:before { content: "\e6d5"; }
-
-.icon-qiehuanxiaoqu:before { content: "\e6d6"; }
-
-
+    body {
+      overflow: hidden;
+    }
+
+    .btnChangeSkin img {
+      width: 77px;
+      height: 60px;
+    }
+
+    .clock {
+      margin-left: -160px;
+      color: #fff;
+    }
+
+    ul {
+      width: 600px;
+      margin: 0 auto;
+      padding: 0px;
+      list-style: none;
+      text-align: center;
+    }
+
+    ul li {
+      display: inline;
+      font-size: 10em;
+      text-align: center;
+      font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+      font-size: 56px;
+      color: #808080;
+    }
+
+    #point {
+      position: relative;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    @-webkit-keyframes mymove {
+      0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+      }
+      50% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+      }
+    }
+
+    @-moz-keyframes mymove {
+      0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+      }
+      50% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+      }
+    }
+
+    .etmlogo {
+      width: 504px;
+      height: 508px;
+      position: absolute;
+      top: 60px;
+      left: 90px;
+      -ms-opacity: 0.3;
+      -moz-opacity: 0.3;
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+    }
+
+    .kf {
+      width: 730px;
+      margin: 0 auto;
+    }
+
+    .kefu {
+      width: 750px;
+      height: 300px;
+      background: #fff url(/assets/img/kfp.png) no-repeat right bottom;
+      background: rgba(255, 255, 255, 0.9) url(/assets/img/kfp.png) no-repeat right bottom;
+      filter: alpha(opacity=90);
+      position: fixed;
+      top: -500px;
+      z-index: 9999999;
+      border-radius: 10px;
+      padding-top: 55px;
+      padding-left: 55px;
+      box-shadow: 0px 0px 12px 0px #ccc;
+    }
+
+    .kf-close {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 30px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    .kf-close:hover {
+      color: #666;
+    }
+
+    .kefu>h3 {
+      color: #444;
+      font-size: 20px;
+    }
+
+    .kf-li {
+      height: 42px;
+      line-height: 42px;
+      background: url(/assets/img/kfpic.png) no-repeat left;
+      margin: 30px 0;
+      padding-left: 60px;
+    }
+
+    .kf-dh {
+      margin-top: 20px;
+      background-position: 0 0;
+      font-size: 24px;
+      color: #fe8431;
+    }
+
+    .kf-qq {
+      margin-bottom: 20px;
+    }
+
+    .kf-wx {
+      background-position: 0 -105px;
+      position: relative;
+    }
+
+    .kf-wxhm {
+      position: absolute;
+      left: 210px;
+      top: -64px;
+      display: none;
+    }
+
+    .kf-wx>.kf-a:hover+.kf-wxhm {
+      display: block;
+    }
+
+    a.kf-a {
+      display: inline-block;
+      width: 148px;
+      height: 36px;
+      color: #fff;
+      text-align: center;
+      line-height: 36px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    a.a-blue {
+      background: #3770c7;
+    }
+
+    a.a-orange {
+      background: #fe8431;
+    }
+
+    a.a-green {
+      background: #67C737;
+    }
+
+    a.a-gray {
+      background: #666;
+      margin-left: 20px;
+    }
+
+    .kf input.yourtel {
+      width: 150px;
+      height: 36px;
+      line-height: 34px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      background: none;
+      padding: 0 10px;
+      border-radius: 4px;
+      margin: -4px 20px 0 0;
+    }
+
+    .kf button,
+    a,
+    input {
+      outline: none !important;
+    }
+
+    .kf-sure {
+      width: 360px;
+      margin: 0 auto;
+    }
+
+    .kefu-wrong {
+      width: 360px;
+      height: 130px;
+      background: #f5f5f5;
+      position: fixed;
+      top: 280px;
+      z-index: 9999999;
+      border-radius: 10px;
+      box-shadow: 0px 0px 6px 0px #bbb;
+      text-align: center;
+    }
+
+    .wrong-text {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .clearfix:after {
+      content: " ";
+      display: block;
+      clear: both;
+      height: 0;
+    }
+
+    .clearfix {
+      zoom: 1;
+    }
   </style>
 
-    <style type="text/css">
-        body {
-            overflow: hidden;
-        }
+  <style type="text/css">
+    .op {
+      opacity: 0;
+      -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+      filter: 'alpha(opacity=50)';
+    }
 
-        .btnChangeSkin img {
-            width: 77px;
-            height: 60px;
-        }
-
-        .clock {margin-left:-160px;color: #fff;}
-        ul {width: 600px;margin: 0 auto;padding: 0px;list-style: none;text-align: center;}
-        ul li {display: inline;font-size: 10em;text-align: center;font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;font-size:56px;color:#808080;}
-        #point {position: relative;padding-left: 5px;padding-right: 5px;}
-        @-webkit-keyframes mymove {
-            0% {opacity: 1.0;text-shadow: 0 0 20px #00c6ff;}
-            50% {opacity: 0;text-shadow: none;}
-            100% {opacity: 1.0;text-shadow: 0 0 20px #00c6ff;}
-        }
-        @-moz-keyframes mymove {
-            0% {opacity: 1.0;text-shadow: 0 0 20px #00c6ff;}
-            50% {opacity: 0;text-shadow: none;}
-            100% {opacity: 1.0;text-shadow: 0 0 20px #00c6ff;}
-        }
-        .etmlogo {width: 504px;height: 508px;position: absolute;top: 60px;left: 90px;-ms-opacity: 0.3;-moz-opacity: 0.3;opacity: 0.3;filter: alpha(opacity = 30);}
-
-        .kf{width: 730px;margin:0 auto;}
-        .kefu{width: 750px;height: 300px;background: #fff url(/assets/img/kfp.png) no-repeat right bottom;background: rgba(255,255,255,0.9)  url(/assets/img/kfp.png) no-repeat right bottom;
-                filter: alpha(opacity=90);position:fixed;top:-500px; z-index: 9999999; border-radius: 10px;
-               padding-top:55px;padding-left:55px;box-shadow:0px 0px 12px 0px #ccc;}
-        .kf-close{position: absolute;top:0;right:10px;font-size: 30px;color: #999;cursor: pointer;}
-        .kf-close:hover{color: #666;}
-        .kefu>h3{color: #444;font-size: 20px;}
-        .kf-li{height: 42px;line-height: 42px;background: url(/assets/img/kfpic.png) no-repeat left;margin:30px 0;padding-left: 60px;}
-        .kf-dh{margin-top: 20px;background-position: 0 0;font-size: 24px;color: #fe8431;}
-        .kf-qq{margin-bottom: 20px;}
-        .kf-wx{background-position: 0 -105px;position: relative;}
-        .kf-wxhm{position: absolute;left:210px;top:-64px;display: none;}
-        .kf-wx>.kf-a:hover + .kf-wxhm{display: block;}
-        a.kf-a{display: inline-block;width: 148px;height: 36px;color: #fff;text-align: center;line-height: 36px;border-radius: 4px;font-size: 16px;cursor:pointer;}
-        a.a-blue {background: #3770c7;}
-        a.a-orange {background: #fe8431;}
-        a.a-green{background:#67C737;}
-        a.a-gray {background: #666;margin-left: 20px;}
-        .kf input.yourtel {width: 150px;height: 36px;line-height: 34px;font-size: 16px;border: 1px solid #ccc;background: none;padding: 0 10px;border-radius: 4px;margin: -4px 20px 0 0;}
-        .kf button, a, input {outline: none !important;}
-        .kf-sure{width: 360px;margin:0 auto;}
-        .kefu-wrong{width: 360px;height: 130px;background: #f5f5f5;position: fixed;top:280px;z-index: 9999999;border-radius: 10px;box-shadow:0px 0px 6px 0px #bbb;text-align: center;}
-        .wrong-text{font-size: 18px;margin: 20px 0;}
-        .clearfix:after {content: " ";display: block;clear: both;height: 0;}
-        .clearfix {zoom: 1;}
-    </style>
-
-    <!-- <script src="http://zjdemo.etmcn.com/JS/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="http://zjdemo.etmcn.com/JS/jquery.cookie.js" type="text/javascript"></script>
-    <script src="http://zjdemo.etmcn.com/JS/jQuery.Ex.js" type="text/javascript"></script>
-    <script src="http://zjdemo.etmcn.com/JS/jquery.nicescroll.min.js" type="text/javascript"></script>
-    
-    <script type="text/javascript" src="../JS/dialog.js"></script>
-    <script src="JS/main.js" type="text/javascript"></script> -->
-    
-    <script type="text/javascript">
-//         function setCardNoInputFocus() {
-//             setTimeout(function () {
-//                 $("#txtCardNo", window.content.document).val("").focus();
-//                 $("iframe", window.content.document).each(function () {
-//                     $(this).contents().find("#txtCardNo").val("").focus();
-//                 });
-//             }, 300);
-//         }
-
-
-//         $(function () {
-            
-//             $("#btnRefresh").click(function () {
-//                 window.location.href = window.location.href;
-//             });
-//         });
-
-        
-//         // var hostUrl = 'http://zjdemo.etmcn.com';
+    #btnRefresh {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+    }
+  </style>
 
 
 
-//         function resize(b) {
- 
-//             if (typeof setLock != "undefined") {
-//                 setLock();
-//             }
-//             if ($("#content").attr("src").toLocaleLowerCase().indexOf("myindex.aspx") != -1) {
-//                 // $("#content").height($(window).height() - 0);
-//                 //$("#content").height($(window).height() - 0);
-//             } else {
-//                 $("#content").height($(window).height() - 65);
-//             }
+  <script>
 
-//             $(".firstMenuBg").remove();
-//             var tmpheight = $(window).height() - 60;
-//             if (tmpheight > ($(".firstMenu").size() * 35)) {
-//                 var firstMenuHeight = (tmpheight / $(".firstMenu").size()) - 17;
-// //                if (firstMenuHeight > 45) {
-// //                    firstMenuHeight = 45;
-// //                    $(".firstMenu").css("background", "url(/assets/img/test.png) no-repeat center 5px ");
-//                 //                }
-//                 //$(".firstMenu").height(firstMenuHeight).css({ "line-height": firstMenuHeight + "px" });//padding 8px;  8*@
-                
-//                 if (firstMenuHeight > 50) {
-//                     firstMenuHeight = 50;
-//                     $(".firstMenu").each(function() {
-//                         var ico = $(this).attr("ico");
-//                         if(ico.indexOf(".png")>0)
-//                             $(this).append("<span class='firstMenuBg' style='background: url(/assets/img/firstmenu/" + $(this).attr("ico") + ") no-repeat 13px 3px; '>&nbsp;</span>");
-//                         else 
-//                             $(this).append("<i class='firstMenuBg icon iconfont "+ ico +"' sourceclass='"+ ico +"' hoverclass='"+ ico +"-hover'></i>"); 
-//                     });
-//                     $(".firstMenu").height(50).css({ "line-height": "82px" });//padding 8px;  8*@
-//                 }
-//                 else {
-//                     $(".firstMenu").height(firstMenuHeight).css({ "line-height": firstMenuHeight + "px" });//padding 8px;  8*@
-//                 }
-                
+  </script>
 
-//                 var tmpTop = (firstMenuHeight - 16) / 2 + 9;
-//                 $(".firstMenuSelectedTips").css({ "top": tmpTop + "px" });
-//             }
-
-//             var $Index = $("#firstMenu .currentSelected");
-//             if ($Index.attr("id") != undefined && $Index.attr("id") == "logo") {
-
-//                 $(".firstMenuSelectedTips").css({ "top": "22px" });
-//             }
-
-//             $("#menuhover,#menuNormal").height(tmpheight - 13);
-//             if ($.browser.msie && $.browser.version == 7) {
-//                 $("#menuNormal").width(155);
-//             }
-//             $('#menuhover,#menuNormal').niceScroll({cursorcolor: '#F18D00',horizrailenabled:false });
-//             fixScrollbarLeft();
-//         }
-
-//         var animateTimer;
-
-//         function animateWebIMIcon() {
-//             //            $("#webIM #animateImg").animate({ "width": "34px", "height": "34px" ,"top":"-4px","left":"-4px"}, 150, function () {
-//             //                $("#webIM #animateImg").animate({ "width": "26px", "height": "26px", "top": "0px", "left": "0px" }, 200);
-//             //            });
-//             //visibility: hidden;visibility: visible
-//             if ($.browser.msie && $.browser.version <= 8) {
-//                 if ($("#webIM #animateImg").css("visibility") == "hidden") {
-//                     $("#webIM #animateImg").css("visibility", "visible");
-//                 }
-//                 else {
-//                     $("#webIM #animateImg").css("visibility", "hidden");
-//                 }
-//             }
-//             else {
-//                 $("#webIM #animateImg").animate({ "opacity": "0" }, 150, function () {
-//                     $("#webIM #animateImg").animate({ "opacity": "1" }, 200);
-//                 });
-//             }
-//         }
-
-//         function setTimer() {
-//             $("#webimicon").css("visibility", "hidden");
-//             if (animateTimer == null) {
-//                 if ($.browser.msie && $.browser.version <= 8) {
-//                     animateTimer = setInterval("animateWebIMIcon()", 500);
-//                 }
-//                 else {
-//                     animateTimer = setInterval("animateWebIMIcon()", 1000);
-//                 }
-//             }
-//         }
-
-//         function stopTimer() {
-//             try {
-//                 $("#webimicon").css("visibility", "visible");
-//                 clearInterval(animateTimer);
-//                 animateTimer = null;
-//             }
-//             catch (e) {
-
-//             }
-//         }
-
-//         var $frame;
-
-//         function hasNewMessage(form, msg) {
-
-//             //console.log(form);
-//             //console.log(msg);
-//             //console.log(333);
-//             //console.log(Core.Session.GetGlobal("WindowManagement").GetAll());
-//             //判断是否当前已打开聊天窗口并且窗口置顶
-//             var currentWindowIsTop = false;
-//             var tmp = Core.Session.GetGlobal("WindowManagement").GetAll();
-
-//             for (var i = 0; i < tmp.length; i++) {
-//                 var title = tmp[i].GetTitle();
-//                 if (title.indexOf("输 出") == -1 && title.indexOf("欢迎你") == -1 && title.indexOf("聊天窗口") == -1 && tmp[i].getWindowID() == form.getWindowID() && tmp[i].IsVisible() && tmp[i].IsTop()) {
-//                     currentWindowIsTop = true;
-//                     break;
-//                 }
-//             }
-//             if (currentWindowIsTop) {
-//                 return;
-//             }
-//             //
-
-//             setTimer();
-//             if ($frame == null) {
-//                 $("iframe").each(function () {
-//                     if ($(this).attr("src").toLowerCase().indexOf("friendform.aspx") != -1) {
-//                         $frame = $(this);
-//                         return;
-//                     }
-//                 });
-//                 //msg.Sender.ID
-//             }
-
-//             var isTop = false;
-//             var isGroupMsg = msg.Receiver.ID.toLowerCase() != "66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc";
-//             //isGroupMsg = msg.Receiver.ID.toLowerCase() != "66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc";
-//             if ($(".window").size() != 3) {
-//                 var topZIndex = 0;
-//                 var lastZIndex = 0;
-//                 $(".window").each(function () {
-//                     if ($(this).css("display") != "none") {
-//                         if (msg.Sender.ID.toLowerCase() == $(this).attr("guid") || (msg.Receiver.ID.toLowerCase() != "66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc" && msg.Receiver.ID.toLowerCase() == $(this).attr("guid"))) {
-//                             topZIndex = parseInt($(this).css("z-index"));
-//                         }
-//                     }
-//                     lastZIndex = parseInt($(this).css("z-index"));
-//                 });
-
-//                 isTop = topZIndex > 0 && topZIndex == lastZIndex;
-//             }
-//             //console.log(msg);
-//             if (!isTop) {
-//                 try {
-//                     if (isGroupMsg) {
-//                         $frame[0].contentWindow.SetNewMessage(msg.Receiver.ID);
-//                     }
-//                     else {
-//                         $frame[0].contentWindow.SetNewMessage(msg.Sender.ID);
-//                     }
-
-//                 }
-//                 catch (e) {
-
-//                 }
-//             }
-//             else {
-//                 stopTimer();
-//             }
-
-//         }
-
-//         function onWindowShow(id) {
-//             try {
-//                 $frame[0].contentWindow.stopAnimate(id);
-//                 var count = $frame[0].contentWindow.getCount();
-//                 if (count == 0) {
-//                     stopTimer();
-//                 }
-//             }
-//             catch (e) {
-
-//             }
-//         }
-// //        
-// //        function onWindowHid(id) {
-// //            console.log(id);
-//         //        }
-
-//         function refreshTaskList() {
-//             if (typeof $("#content")[0].contentWindow.getTaskList != "undefined") {
-//                 $("#content")[0].contentWindow.getTaskList();
-//             }
-//         }
-
-//         function refreshMyTaskList() {
-//             if (typeof $("#content")[0].contentWindow.getMyTaskList != "undefined") {
-//                 $("#content")[0].contentWindow.getMyTaskList();
-//             }
-//         }
-
-//         function getSelectedManagerList(guidList, nameList,fileReadOnly) {
-//             if (typeof $("#content")[0].contentWindow.getSelectedManagerList != "undefined") {
-//                 $("#content")[0].contentWindow.getSelectedManagerList(guidList, nameList,fileReadOnly);
-//                 BoxClose();
-//             }
-//         }
-
-
-
-//         function showDialogForTree(str) {
-//             $.cookie("managerGuid", str);
-//             showDialog("收件人", "/k_info/tree.aspx", 330, 390);
-//         }
-        
-//         function showDialogForTree1(str) {
-//             $.cookie("managerGuid", str);
-//             showDialog("共享给", "/k_info/tree.aspx", 330, 390);
-//         }
-
-//         function showDialogForTree(str,title) {
-//             $.cookie("managerGuid", str);
-//             showDialog(title, "/k_info/tree.aspx", 330, 390);
-//         }
-
-//         function RefreshGrid() {
-//             if (typeof $("#content")[0].contentWindow.RefreshGrid != "undefined") {
-//                 $("#content")[0].contentWindow.RefreshGrid();
-//                 BoxClose();
-//             }
-//         }
-
-//         function RefreshMyFileList() {
-//             if (typeof $("#content")[0].contentWindow.getList != "undefined") {
-//                 $("#content")[0].contentWindow.getList();
-//                 BoxClose();
-//             }
-//         }
-
-//         function setCustomCookie(name,value) {
-//             $.cookie(name, value);
-//         }
-        
-//         function setFolderInfoGuid(guid, folderName) {
-//             if (typeof $("#content")[0].contentWindow.setFolderInfoGuid != "undefined") {
-//                 $("#content")[0].contentWindow.setFolderInfoGuid(guid, folderName);
-//                 BoxClose();
-//             }
-//         }
-
-//         function finish(path, obj) {
-//             $(".floatBox iframe").each(function () {
-//                 if (typeof $(this)[0].contentWindow.finish != "undefined") {
-//                     $(this)[0].contentWindow.finish(path, obj);
-//                 }
-//             });
-//         }
-
-//         function jsExcute(p1, p2) {
-//             if (typeof $("#content")[0].contentWindow.jsExcute != "undefined") {
-//                 $("#content")[0].contentWindow.jsExcute(p1, p2);
-//                 BoxClose();
-//             }
-//         }
-
-//         function RefreshGridACloseAll() {
-//             BoxCloseAll();
-//             RefreshGrid();
-//         }
-
-//         $(function() {
-//             if (0>0) {
-//                 setTimeout(function() {
-//                     var htmlStr = "<div class='remind' style='bottom:0px;'>";
-//                     htmlStr += "<a class='btnColseRemind' href='javascript:void(0);'>×</a>";
-//                     htmlStr += "<img src='/assets/img/remind.png' style='width: 60px;height: 60px;'/>";
-//                     htmlStr += "<div class='remindTitle'>需要快递的商品包</div>";
-//                     htmlStr += "<div class='remindContent'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一周内需要快递的商品包有0条数据</div>";
-//                     htmlStr += "<div class='remindBtns'>";
-//                     htmlStr += "<input type='button' value='查&nbsp;&nbsp;看' class='button btnViewExpress'/>";
-//                     //htmlStr += "<input type='button' value='关&nbsp;&nbsp;闭' class='button btnColseRemind' guid='" + m.Guid + "' isnote='" + m.IsNote + "'/>";
-//                     htmlStr += "</div>";
-//                     htmlStr += "</div>";
-//                     $("#remindContainer").append(htmlStr);
-
-//                     $(".btnViewExpress").click(function() {
-//                         $("#content").attr("src", "/K_Mall/ProductPackExpressList.aspx");
-//                         $(this).parents(".remind").remove();
-//                         $(".pagetitle").html("需要快递的商品包");
-//                         //showDialog("需要快递的商品包", "/K_Mall/ProductPackExpressList.aspx", 980, 500);
-//                     });
-//                 }, 1000);
-//             }
-            
-//         });
-    </script>
-    <!-- <script src="JS/remind.js" type="text/javascript"></script> -->
-
-    <style type="text/css">
-        .op {opacity: 0;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
-            filter: 'alpha(opacity=50)';
-        }
-        #btnRefresh{ position: fixed;top: 10px;left: 10px;z-index: 9999;}
-    </style>
-
-     <!--[if IE 8]> <link href='/Themes/Theme2/ie8Fix.css?20180721192307' rel='stylesheet' /> <![endif]--> <!--[if IE 7]> <link href='/Themes/Theme2/ie7Fix.css?20180721192307' rel='stylesheet' /> <![endif]--> <!--[if IE 6]> <link href='/Themes/Theme2/ie6Fix.css?20180721192307' rel='stylesheet' /> <![endif]-->
-    <!--[if IE 6]>
-	<script src="/update/png.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
-	    DD_belatedPNG.fix('img');
-	</script>
-        <![endif]-->
 
 </head>
 
-<body scroll="no"  unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
+<body scroll="no" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
 
-    <!-- <iframe class="hidden" src="RefreshSession.aspx"></iframe> -->
+  <!-- <iframe class="hidden" src="RefreshSession.aspx"></iframe> -->
 
-    <form name="form1" method="post" action="main.aspx" id="form1">
-<div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk4ODM2NzcwMGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFC2J0bkxvZ091dDExuhrMTKACJxMm1bXcD/brlAdldvs=" />
-</div>
+  <form name="form1" method="post" action="main.aspx" id="form1">
 
-<div>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="202EA31B" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwKip4DVBQLB/Y76CALbwNXeAm02C9iAeA4Xt3fndKEBdFgK/Djh" />
-</div>
-        <div id="lockScreen" class="hidden">
-            <img src="/assets/img/etm_logo.png" class="etmlogo" alt="" style="width:424.444px;height:424.444px">
-            <div id="moveLock" class="lockNormal">&nbsp;</div>
+
+    <div id="lockScreen" class="hidden">
+      <img src="/assets/img/etm_logo.png" class="etmlogo" alt="" style="width:424.444px;height:424.444px">
+      <div id="moveLock" class="lockNormal">&nbsp;</div>
+    </div>
+
+    <div id="hasUpdate" class="hidden" hasupdate="false"></div>
+
+
+
+
+
+    <div id='loading-mask' class="hidden">
+    </div>
+    <div id="loading" class="hidden">
+      <div class="loading-indicator">
+        <img src="/assets/img/loading.gif" style="margin-right: 8px; float: left; vertical-align: top; margin-left: 136px" />
+        <div id="loading-msg" style="font-size: 12px; font-weight: normal;">
+          执行中，请耐心等待 ...
         </div>
-        
-        <div id="hasUpdate" class="hidden" hasupdate="false"></div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      </div>
+    </div>
 
-        <div id='loading-mask' class="hidden">
+
+
+
+
+    <div id="setting" class="borderRight textAlignLeft borderBottom borderLeft hidden" style="padding:0 1px 0 1px;">
+      <div class="skins">
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#13B3FD' title='蔚蓝天空' skin='8b50ef5e-2c47-426c-b1d6-d6e7c1b27f38'
+          folder='Theme1'>
+          <img src='/assets/themes/theme1/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#F18D00' title='活力鲜橙' skin='bfd0f9e3-1284-4a38-9ca1-f1d86d39549c'
+          folder='Theme2'>
+          <img src='/assets/themes/theme2/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#75A801' title='青草绿原' skin='3c4bb412-6dde-4364-b642-671951a0074b'
+          folder='Theme3'>
+          <img src='/assets/themes/theme3/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#512250' title='黎明曙光' skin='91212ac4-a4fb-481e-8bd2-b52e6e392236'
+          folder='Theme4'>
+          <img src='/assets/themes/theme4/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#53B5D0' title='回忆空间' skin='39573c83-f83c-40b7-99a4-cb5be0455648'
+          folder='Theme5'>
+          <img src='/assets/themes/theme5/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#D2B384' title='天际树影' skin='8a34b061-5079-4fa9-ae90-e323508831c1'
+          folder='Theme6'>
+          <img src='/assets/themes/theme6/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#D7420A' title='ali' skin='2baa3d20-749e-4b1c-a1be-7c98ab4afc1e'
+          folder='Theme8'>
+          <img src='/assets/themes/theme7/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#EC9CB9' title='HelloKitty' skin='ed9f81b2-56e3-4d61-901a-03da4df2433f'
+          folder='Theme9'>
+          <img src='/assets/themes/theme8/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#fe2a89' title='梦幻紫色' skin='31212ac4-34fb-481e-3bd2-b52e6e392236'
+          folder='Theme12'>
+          <img src='/assets/themes/theme9/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#ff9900' title='梦幻橙色' skin='1a34b061-1079-4fa9-ae90-e323508831c1'
+          folder='Theme10'>
+          <img src='/assets/themes/theme10/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#669900' title='梦幻绿色' skin='4b50ef5e-4c47-426c-b1d6-d6e7c1b27f38'
+          folder='Theme13'>
+          <img src='/assets/themes/theme11/img/theme.jpg' />
+        </a>
+        <a href='javascript:void(0);' class='btnChangeSkin' color='#9dddf9' title='梦幻蓝色' skin='252299b6-2ba5-4242-a8d9-1812d07b4587'
+          folder='Theme11'>
+          <img src='/assets/themes/theme12/img/theme.jpg' />
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="floatMenu" class="borderBottom borderRight borderTop ">
+      <img src="/assets/img/floatNormal.png" id="btnFloatNormal" title="停靠" />
+      <div class="firstMenuContent">学员管理</div>
+      <div class="otherMenuContent">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td valign="top" class="floatSecMenu borderBottom">学员信息管理</td>
+              <td class="borderBottom">
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserEdit.aspx?navId=8e5f7ad0-28f0-488f-9b45-0b46d4a9fe57">添加学员</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/ImportData.aspx?navId=3c43cdad-9e2e-47d7-87e7-1b6d7a6e86b6">批量导入学员</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/ImportHistory.aspx?navId=93c18cb1-b3a9-43ee-960c-3fbf738cd7a0">导入批次管理</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserSuperEdit.aspx?navId=ef809cd1-8557-4b91-9846-7dfa9bb186fc">学员核心资料维护</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserList.aspx?navId=e8082491-e1bf-4aeb-80bf-d48cd0224134">我的学员</a>
+                <div class="clear"></div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" class="floatSecMenu borderBottom">学员分配管理</td>
+              <td class="borderBottom">
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserAssign.aspx?navId=2551206f-ff67-4a99-848e-41a385c0abe3">分配学员</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/AssignList.aspx?navId=a5d1fae5-6cb1-45e3-867a-05f81be420d3">分配记录查看</a>
+                <div class="clear"></div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" class="floatSecMenu borderBottom">跟进预约到访</td>
+              <td class="borderBottom">
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserAppointment.aspx?navId=be8c6973-1713-427c-a64d-26d18285ca0b">学员跟进管理</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/FollowList.aspx?navId=80aad382-0213-412f-a549-6156fd6ecfc0">历史跟进记录</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/FollowCurve.aspx?navId=6f53871d-067e-4a99-8d8e-fa4a367736b0">跟进曲线查看</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/FaqList.aspx?navId=76b695fa-7b49-4b69-b91c-6f5244d806a2">常用销售话术</a>
+                <div class="clear"></div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" class="floatSecMenu borderBottom">销售价值评估</td>
+              <td class="borderBottom">
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Report/AdvisorAssessmentReport.aspx?navId=dd6a7802-7a00-464f-8b4b-6d67217d83c5">销售效率评估</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Report/MarketNodeReport.aspx?navId=85a7fc69-258e-4d03-9dc5-6736bf4e54f7">销售漏斗分析</a>
+                <div class="clear"></div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" class="floatSecMenu ">基础信息设置</td>
+              <td class="">
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/MemberSource.aspx?navId=a52e397d-1701-4173-be91-cedbbea3e2dc">学员来源设置</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/ParamConfig.aspx?navId=402c3c16-851a-4223-889b-9e1b84613b29&amp;ParentGuid=7b7d74b3-dd45-4bfc-8ab5-24799ab7f30b">状态标签设置</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/AssessRule.aspx?navId=0ec278a8-e3b7-4790-b121-b13c48a715e1">问卷调查设置</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/MarketNode.aspx?navId=476ebdcf-cfa0-46a1-81f1-1d4d7c8b5cfa">销售阶段设置</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/Area.aspx?navId=36dba401-8f70-4716-b434-04bfef901317">学员地区设置</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_System/UDFManage.aspx?navId=8a43d9e2-a04c-463f-9af0-23089e613961&amp;udftb=MemberUD">学员字段设置</a>
+                <div class="clear"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">
+      <div class="settingNormal1">
+        <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;"
+        />
+
+        <div class="bottomBarForSetting">
+          <span class="userNameStr" style='font-size:16px;'>18616126092</span>
+          <span class="otherInfo userico">校长</span>
+          <span class="otherInfo signtimeico">个人考勤</span>
         </div>
-        <div id="loading" class="hidden">
-            <div class="loading-indicator">
-                <img src="/assets/img/loading.gif" style="margin-right: 8px; float: left; vertical-align: top; margin-left: 136px" />
-                <div id="loading-msg" style="font-size: 12px; font-weight: normal;">
-                    执行中，请耐心等待 ...
+
+        <div class="borderBottom">
+          <table cellpadding="0" cellspacing="0" class="settingHeader">
+            <tr>
+              <td id="btnHelp">
+                <i class="icon iconfont icon-shiyongbangzhu" sourceclass="icon-shiyongbangzhu" hoverclass="icon-shiyongbangzhu-hover" style="font-size: 40px;"></i>
+                <div class="name">使用帮助</div>
+              </td>
+              <td id="btnUserCenter" class="borderRight borderLeft">
+                <i class="icon iconfont icon-gerenziliao" sourceclass="icon-gerenziliao" hoverclass="icon-gerenziliao-hover" style="font-size: 40px;"></i>
+                <div class="name">个人中心</div>
+              </td>
+              <td id="btnHome" class="borderRight">
+                <i class="icon iconfont icon-wodezhuomian" sourceclass="icon-wodezhuomian" hoverclass="icon-wodezhuomian-hover" style="font-size: 40px;"></i>
+                <div class="name">我的桌面</div>
+              </td>
+              <td id="btnLockScreen">
+                <i class="icon iconfont icon-xitongsuoping" sourceclass="icon-xitongsuoping" hoverclass="icon-xitongsuoping-hover" style="font-size: 40px;"></i>
+
+                <div class="name">系统锁屏</div>
+              </td>
+
+            </tr>
+          </table>
+        </div>
+
+        <div class="info">
+          <div class="borderBottom" style="margin-bottom: 10px; margin-top: 0px;">
+            <img src="/assets/img/logo.gif" id="img_logo" style="margin-bottom: 10px;" />
+          </div>
+
+          <div>ETM早教管家</div>
+          <div>当前版本：v11.0.0.0</div>
+
+
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="left" class='langbtn'>
+
+              </td>
+              <td align="center">
+                <div id="langContainer" style='display:none;'>
+                  <input type='button' id="langSelect" value='简体中文' class='button' />
+                  <img src="/assets/img/ArrowDown2.png" />
                 </div>
+              </td>
+              <td align="right" class='langbtn'>
+
+              </td>
+
+            </tr>
+          </table>
+          <div class="cc">Copyright © 2018</div>
+          <div class="clear"></div>
+        </div>
+
+        <div class="settingNormal2 hidden">
+          <div class="bottomBarForSetting">
+            <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
+            <div id="btnReturn1" title="返回">&nbsp;</div>
+          </div>
+          <div class="borderBottom" style="width: 100%;overflow: hidden;">
+
+            <div class="clock">
+              <ul>
+                <li id="hours" class="font"></li>
+                <li id="point" class="font">:</li>
+                <li id="min" class="font"></li>
+                <li id="point" class="font">:</li>
+                <li id="sec" class="font"></li>
+              </ul>
             </div>
-        </div>
-        <div id="setting" class="borderRight textAlignLeft borderBottom borderLeft hidden" style="padding:0 1px 0 1px;">
-            <div class="skins">
-                <a href='javascript:void(0);' class='btnChangeSkin' color='#13B3FD' title='蔚蓝天空' skin='8b50ef5e-2c47-426c-b1d6-d6e7c1b27f38' folder='Theme1'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#F18D00' title='活力鲜橙' skin='bfd0f9e3-1284-4a38-9ca1-f1d86d39549c' folder='Theme2'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#75A801' title='青草绿原' skin='3c4bb412-6dde-4364-b642-671951a0074b' folder='Theme3'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#512250' title='黎明曙光' skin='91212ac4-a4fb-481e-8bd2-b52e6e392236' folder='Theme4'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#53B5D0' title='回忆空间' skin='39573c83-f83c-40b7-99a4-cb5be0455648' folder='Theme5'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#D2B384' title='天际树影' skin='8a34b061-5079-4fa9-ae90-e323508831c1' folder='Theme6'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#D7420A' title='ali' skin='2baa3d20-749e-4b1c-a1be-7c98ab4afc1e' folder='Theme8'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#EC9CB9' title='HelloKitty' skin='ed9f81b2-56e3-4d61-901a-03da4df2433f' folder='Theme9'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#fe2a89' title='梦幻紫色' skin='31212ac4-34fb-481e-3bd2-b52e6e392236' folder='Theme12'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#ff9900' title='梦幻橙色' skin='1a34b061-1079-4fa9-ae90-e323508831c1' folder='Theme10'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#669900' title='梦幻绿色' skin='4b50ef5e-4c47-426c-b1d6-d6e7c1b27f38' folder='Theme13'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a><a href='javascript:void(0);' class='btnChangeSkin' color='#9dddf9' title='梦幻蓝色' skin='252299b6-2ba5-4242-a8d9-1812d07b4587' folder='Theme11'><img src='/assets/thtmes/theme1/img/theme.jpg' /></a>
+          </div>
+          <div id="countInfo">
+            <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
+            <div>
+              准&nbsp;&nbsp;&nbsp;&nbsp;时：
+              <span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次， 迟&nbsp;&nbsp;&nbsp;&nbsp;到：
+              <span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次， 早&nbsp;&nbsp;&nbsp;&nbsp;退：
+              <span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
             </div>
-        </div>
-        
-        <div id="floatMenu" class="borderBottom borderRight borderTop hidden">
-            <img src="/assets/img/floatNormal.png" id="btnFloatNormal" title="停靠"/>
-            <div class="firstMenuContent"></div>
-            <div class="otherMenuContent"><table cellpadding="0" cellspacing="0"></table></div>
-        </div>
+          </div>
+          <div class="borderTop" style="margin-top:10px;padding-top:5px;">
+            <span id="lbSignInfo"></span>
+          </div>
+          <div class="info">
+            <div class="cc">Copyright © 2017</div>
+            <div class="clear"></div>
+          </div>
 
-        
-
-
-        <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">    
-            <div class="settingNormal1">
-                <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;" />
-
-                <div class="bottomBarForSetting">
-                    <span class="userNameStr" style='font-size:16px;'>18616126092</span>
-                    <span class="otherInfo userico">校长</span>
-                    <span class="otherInfo signtimeico">个人考勤</span>
-                </div>
-
-                <div class="borderBottom">
-                    <table cellpadding="0" cellspacing="0" class="settingHeader">
-                        <tr>
-                            <td id="btnHelp">
-                                <i class="icon iconfont icon-shiyongbangzhu" sourceclass="icon-shiyongbangzhu" hoverclass="icon-shiyongbangzhu-hover" style="font-size: 40px;"></i>
-                                <div class="name">使用帮助</div>
-                            </td>
-                            <td id="btnUserCenter" class="borderRight borderLeft">
-                                <i class="icon iconfont icon-gerenziliao" sourceclass="icon-gerenziliao" hoverclass="icon-gerenziliao-hover" style="font-size: 40px;"></i>
-                                <div class="name">个人中心</div>
-                            </td>
-                            <td id="btnHome" class="borderRight">
-                                <i class="icon iconfont icon-wodezhuomian" sourceclass="icon-wodezhuomian" hoverclass="icon-wodezhuomian-hover" style="font-size: 40px;"></i>
-                                <div class="name">我的桌面</div>
-                            </td>
-                            <td id="btnLockScreen">
-                                <i class="icon iconfont icon-xitongsuoping" sourceclass="icon-xitongsuoping" hoverclass="icon-xitongsuoping-hover" style="font-size: 40px;"></i>
-                                
-                                <div class="name">系统锁屏</div>
-                            </td>
-
-                        </tr>
-                    </table>
-                </div>
-        
-                <div class="info">
-                    <div class="borderBottom" style="margin-bottom: 10px; margin-top: 0px;">
-                        <img src="/assets/img/logo.gif" id="img_logo" style="margin-bottom: 10px;" />
-                    </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <div>ETM早教管家</div>
-                    <div>当前版本：v11.0.0.0</div>
-                    
-                    
-                    <table cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td align="left" class='langbtn'>
-                                
-                            </td>
-                            <td align="center">
-                             <div id="langContainer" style='display:none;'>
-                                    <input type='button' id="langSelect" value='简体中文' class='button'/>
-                                    <img src="/assets/img/ArrowDown2.png"/>
-                                </div>
-                            </td>
-                            <td align="right" class='langbtn'>
-                               
-                            </td>
-
-                        </tr>
-                    </table>
-                    <div class="cc">Copyright ©  2018</div>
-                    <div class="clear"></div>
-                </div>
-            
-            <div class="settingNormal2 hidden">
-                <div class="bottomBarForSetting">
-                    <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
-                    <div id="btnReturn1" title="返回">&nbsp;</div>
-                </div>
-                <div class="borderBottom" style="width: 100%;overflow: hidden;">
-                    
-                    <div class="clock">
-                        <ul>
-                            <li id="hours" class="font"></li>
-                            <li id="point" class="font">:</li>
-                            <li id="min" class="font"></li>
-                            <li id="point" class="font">:</li>
-                            <li id="sec" class="font"></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="countInfo">
-                    <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
-                    <div>
-                        准&nbsp;&nbsp;&nbsp;&nbsp;时：<span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次，
-                        迟&nbsp;&nbsp;&nbsp;&nbsp;到：<span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次，
-                        早&nbsp;&nbsp;&nbsp;&nbsp;退：<span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
-                    </div>
-                </div>
-                <div class="borderTop" style="margin-top:10px;padding-top:5px;">
-                    <span id="lbSignInfo"></span>
-                </div>
-                <div class="info">
-                    <div class="cc">Copyright ©  2017</div>
-                    <div class="clear"></div>
-                </div>
-
-                    <script type="text/javascript">
+          <script type="text/javascript">
                         // function showSignInfo() {
                         //     $.post("/Ashx/GetCurrentTime.ashx", { "act": "signrpt" },
                         //         function (result) {
@@ -753,151 +541,1180 @@
                         //         }, "json");
                         // }
                         // showSignInfo();
-                    </script>
+          </script>
 
-                </div>
-            </div>
         </div>
-        <div class="kf hidden">
-            <div class="kefu" style="top: 200px;">
-                <div class="kf-close">×</div>
-                <h3>尊敬的客户您好！您的一对一客服已在线上</h3>
-                <div class="kf-li kf-dh">4000-313-400</div>
-                <div class="kf-li kf-wx"><a class="kf-a a-green">微信咨询</a><img class="kf-wxhm" src="/assets/img/etm-wx.png" style="width:180px; height:180px;" alt=""></div>
-                <div class="kf-li kf-qq"><a class="kf-a a-blue" href="http://b.qq.com/webc.htm?new=0&sid=4000313400&o=etmcn.com&q=7" target="_blank">QQ咨询</a></div>
-                
-                
-            </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="kf hidden">
+      <div class="kefu" style="top: 200px;">
+        <div class="kf-close">×</div>
+        <h3>尊敬的客户您好！您的一对一客服已在线上</h3>
+        <div class="kf-li kf-dh">4000-313-400</div>
+        <div class="kf-li kf-wx">
+          <a class="kf-a a-green">微信咨询</a>
+          <img class="kf-wxhm" src="/assets/img/etm-wx.png" style="width:180px; height:180px;" alt="">
         </div>
-        <div class="kf-sure">
-            <div class="kefu-wrong hidden" id="kefu-wrong">
-                    <div class="wrong-text">请输入正确的手机号或者固定电话</div>
-                    <a class="kf-a a-gray rewriteit">确定</a>
-            </div>
+        <div class="kf-li kf-qq">
+          <a class="kf-a a-blue" href="http://b.qq.com/webc.htm?new=0&sid=4000313400&o=etmcn.com&q=7" target="_blank">QQ咨询</a>
         </div>
 
-        <table id="maintable" border="0" cellpadding="0" cellspacing="0">
-            <tr>
-                <td id="firstMenu">
 
-                    
-                    <a d='&nbsp;|&nbsp;校长' u='<a href="../K_Department/WorkerInfo.aspx?ManagerGuid=66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc&navId=d00ca3d2-27c4-4f92-b910-c1d7b2332d2e" target="content">18616126092</a>' isindex='true' title1='我的桌面' id='logo' href='javascript:void(0);' class='aWhite selected currentSelected'  style='width:60px;height:60px; padding: 0 3px 0 2px;'>
-                    
-                    
-                    
-                    <img class='sex' style="border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;" src="/assets/img/icon.jpg" hasupdate="false"/>
-                    <span class='firstMenuSelectedTips'><img src='/assets/img/ArrowLeft.png'></span></a>
-                    
-                    <!--一级菜单Start-->
-                     <a class='aWhite firstMenu ' href='javascript:void(0);' title1='招生推广' isIndex='false' u='18616126092' d='' i='yxtg.jpg' ico='icon-zhaoshengtuiguang' style='text-align: center;'>招生推广</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>微信公众账号<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/SubscribeUserList.aspx?navId=b06734bc-7263-4ab8-a8cc-ecf1bc4c3839'>微关注学员</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/SubscribeUserListForSend.aspx?navId=b356d405-d445-435f-86ee-6164701e62bd'>微信息群发</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/Welcome.aspx?navId=813c333c-b50b-41cf-a7b3-e4403568d5d5'>欢迎词管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/KeywordList.aspx?navId=35ad844e-956c-4aa4-8f87-a26f6dd6e77d'>关键词管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPDoList.aspx?navId=f3c5dd5a-cfcb-4e36-8501-b4ed595014ce'>微推广管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPWebBase.aspx?navId=f338637e-124d-42ca-872d-7ea3d8daaee7'>微官网管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_weixin/MPWebPhotos.aspx?navId=07ed0b28-4f52-4929-b38d-e372b2838bc1'>微相册管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_weixin/CourseInfoList.aspx?navId=fd065372-32e0-4eb2-8420-d0ddf2ad4204'>微约课管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/WxMenuEdit.aspx?navId=33eb781e-b292-42f0-81b1-e09f39deae09'>自定义菜单</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>手机短信管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f'>学员短信发送</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendMsg.aspx?navId=ac6a8920-e708-40e1-86a1-5df7ec49cede'>通用短信发送</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgList.aspx?navId=8f5675bd-b351-4b50-977a-67c2a71edc1c'>短信发送记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/RecvMsgList.aspx?navId=f21ad3e8-a2e5-1031-8e4c-7d8c47bee644'>回复短信查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgParam.aspx?navId=81843360-1191-4f58-b996-63dd94a5cf8f'>短信余额查询</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>企业邮件管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendUserMail.aspx?navId=45e92ecf-2c41-43ea-85d6-e3482b87ae29'>学员邮件发送</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendMail.aspx?navId=fcad5078-26c5-4863-b5fc-7f12c2f84919'>通用邮件发送</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailLogList.aspx?navId=0ac43bf7-cc2d-4003-9fd8-7f3de105ebea'>邮件发送记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>推广分析曲线<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_info/TimePromotionCurve.aspx?navId=401c2752-4bf3-4257-b0af-4cacd33447e6'>时间推广曲线</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_info/EfficiencyPromotionCurve.aspx?navId=56ab64e8-83c6-4859-aacf-f92a2cc358e5'>效率推广曲线</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPSetting.aspx?navId=30fe26ae-1ffe-4a57-b1a4-53155f2be065'>公众帐号设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgTemplate.aspx?navId=93b87308-a08a-4ae1-bf54-191d257a3083'>短信模板设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgConfig.aspx?navId=c3ebec36-7148-4f0e-84b7-5b1053f96747'>短信参数设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailTemplateList.aspx?navId=4cd292b3-9ab5-4979-85e1-e223f00673be'>邮件模板管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailType.aspx?navId=bf2e4d7a-576c-4b65-941d-0dc63beaa27d'>邮件类型设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailParam.aspx?navId=42794508-c8f5-416d-b153-248df0e5d1a6'>邮件参数设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='呼叫中心' isIndex='false' u='18616126092' d='' i='hjzx.jpg' ico='icon-hujiaozhongxin' style='text-align: center;'>呼叫中心</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>呼叫通话管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/StartDialing.aspx?navId=54e03372-5718-4843-a619-7ee49b80f99b'>拨打电话</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/CallRecords.aspx?navId=6f3a9084-5710-40bc-adf1-06f3030d69b8'>查询通话记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/CallRecordList.aspx?navId=ecee1549-52ad-4b56-822a-386feb050476'>通话记录管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/MemberList.aspx?navId=7742065a-2b93-4953-a0eb-7a4d7f64cd0f'>通讯录电话本</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_CallCenter/VoipBalance.aspx?navId=0fe1765b-fb61-4410-90b9-6636c60496eb'>通话余额查询</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员服务管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/AddComplaintsInfo.aspx?navId=232f54b9-a96f-4bca-b27a-481b3d402e50'>投诉意见登记</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ComplaintsInfos.aspx?navId=b52a4f70-f484-4f76-87b0-9cb78bcc46ea&view=1'>投诉意见查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ComplaintsInfos.aspx?navId=fd735499-eebf-400b-9053-8685b6d0cff4'>投诉意见处理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ContractList.aspx?navId=213d1edd-94b2-416f-880b-c00226517faa'>定期回访管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ReviewList.aspx?navId=0dd51159-b0b0-4130-8f47-fb7e92bc6a06'>回访效果查询</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/RecordSetting.aspx?navId=a4128c86-4a67-40bb-93f4-1cc9d22ccb7f'>电话录音设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ReviewSetting.aspx?navId=2e1a2d36-cac7-402f-a87d-8d46116e5d9c'>回访参数设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_CallCenter/VoipConfig.aspx?navId=63260209-eb81-4e4a-8b4b-302cbb1f49b4'>呼叫中心设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='学员管理' isIndex='false' u='18616126092' d='' i='khgl.jpg' ico='icon-xueyuanguanli' style='text-align: center;'>学员管理</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员信息管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserEdit.aspx?navId=8e5f7ad0-28f0-488f-9b45-0b46d4a9fe57'>添加学员</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ImportData.aspx?navId=3c43cdad-9e2e-47d7-87e7-1b6d7a6e86b6'>批量导入学员</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ImportHistory.aspx?navId=93c18cb1-b3a9-43ee-960c-3fbf738cd7a0'>导入批次管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserSuperEdit.aspx?navId=ef809cd1-8557-4b91-9846-7dfa9bb186fc'>学员核心资料维护</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserList.aspx?navId=e8082491-e1bf-4aeb-80bf-d48cd0224134'>我的学员</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员分配管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserAssign.aspx?navId=2551206f-ff67-4a99-848e-41a385c0abe3'>分配学员</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/AssignList.aspx?navId=a5d1fae5-6cb1-45e3-867a-05f81be420d3'>分配记录查看</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>跟进预约到访<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserAppointment.aspx?navId=be8c6973-1713-427c-a64d-26d18285ca0b'>学员跟进管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FollowList.aspx?navId=80aad382-0213-412f-a549-6156fd6ecfc0'>历史跟进记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FollowCurve.aspx?navId=6f53871d-067e-4a99-8d8e-fa4a367736b0'>跟进曲线查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FaqList.aspx?navId=76b695fa-7b49-4b69-b91c-6f5244d806a2'>常用销售话术</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>销售价值评估<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/AdvisorAssessmentReport.aspx?navId=dd6a7802-7a00-464f-8b4b-6d67217d83c5'>销售效率评估</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MarketNodeReport.aspx?navId=85a7fc69-258e-4d03-9dc5-6736bf4e54f7'>销售漏斗分析</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/MemberSource.aspx?navId=a52e397d-1701-4173-be91-cedbbea3e2dc'>学员来源设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ParamConfig.aspx?navId=402c3c16-851a-4223-889b-9e1b84613b29&ParentGuid=7b7d74b3-dd45-4bfc-8ab5-24799ab7f30b'>状态标签设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/AssessRule.aspx?navId=0ec278a8-e3b7-4790-b121-b13c48a715e1'>问卷调查设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/MarketNode.aspx?navId=476ebdcf-cfa0-46a1-81f1-1d4d7c8b5cfa'>销售阶段设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/Area.aspx?navId=36dba401-8f70-4716-b434-04bfef901317'>学员地区设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/UDFManage.aspx?navId=8a43d9e2-a04c-463f-9af0-23089e613961&udftb=MemberUD'>学员字段设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='合同签约' isIndex='false' u='18616126092' d='' i='htqy.jpg' ico='icon-hetongqianyue' style='text-align: center;'>合同签约</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>合同签约管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractDeposit.aspx?navId=3c343848-2177-418f-99c2-55800557b1f4'>订金管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/UserSign.aspx?navId=8a3634eb-bfdb-462f-983f-d7cf650b407e'>签订合同</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractCheckList.aspx?navId=7767cdc8-1de7-4f20-abf9-1a1226c48499'>合同审核</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractListInfo.aspx?navId=5171b5e1-7a7b-409b-b78a-b82848247e47'>合同查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractList.aspx?navId=ff42c6da-4700-40c7-b842-8347564f3be8'>合同管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractQuery.aspx?navId=dc232931-1f49-4739-be39-a7d7e3260e25'>历史合同</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>会员卡资费管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardList.aspx?navId=3559eede-4a1a-4709-a4ac-4ba3e68f2e7f'>会员卡资费查询</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardListForGift.aspx?navId=9ea8929d-23d9-4b8e-bf6f-0f96385777a7'>会员卡课时变动</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardTransform.aspx?navId=4eac04ce-f32a-49b9-9771-3c5ba80dd2a3'>会员卡资费变动</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardTransformLogs.aspx?navId=a0992bdd-137e-4371-975c-94544a6f03b3'>会员卡变动记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCashQuery.aspx?navId=c2f07a0b-a769-46dc-8796-a6ca3a153ce9'>会员卡消费记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>会员卡维护管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardListForSupplementaryCard.aspx?navId=737b2e28-c0e9-4774-abae-5e49e1efe100'>附属卡开卡</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardChangeList.aspx?navId=25fe8e8d-e658-4936-acca-54226f71c7b6'>会员卡修改</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardFreeze.aspx?navId=44476723-e57e-470d-b1fd-cca55c2cce69'>会员卡冻结</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardFreezeLog.aspx?navId=be476f55-c7ec-49b3-af7f-94fd5c07f462'>会员卡冻结记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ClassHour.aspx?navId=52ca1bf9-b139-4a35-af8e-132f4cc56c57'>合同套餐设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d3c0a6ad-5ecc-4652-ab49-32c799b72ecb&ParentGuid=c177b3f2-a793-4e3e-a647-876f2578d2ea'>支付方式设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardType.aspx?navId=b3661fbf-0488-438a-ba01-769d3638a623'>会员卡类型设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=0edba5c3-12f4-4953-b362-bdd920b3a8ce&printguid=9c6a660a-ad16-1031-b050-054c71544e8c'>资费小票设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/UDFManage.aspx?navId=77bb5f89-ae71-439a-aaca-6d0d9913bdef&udftb=ContractUD'>合同字段设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=799e6afc-b389-4796-94dc-de98c4b13637&printguid=3e6468a1-ab61-1030-bf6e-400f8b8d1ff4'>合同模版设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='教学管理' isIndex='false' u='18616126092' d='' i='jxgl.jpg' ico='icon-jiaowujiaoxue' style='text-align: center;'>教学管理</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>班级排课管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSchedule.aspx?navId=67bd7f4e-8480-4c81-8276-f82b1eeda271'>人工排课</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/AutoCourse.aspx?navId=3b52f9f5-7770-436c-bff7-f74d1e8cef98'>智能排课</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseLotSchedule.aspx?navId=af4510b5-f77a-4079-84f5-55030a003561'>批量排课</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseCopy.aspx?navId=01c6299e-22cd-411d-ba10-5f8612efe70d'>排课复制</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseConflat.aspx?navId=b29fe2d5-3ad0-4c9b-a58e-8bd19ca58a6d'>班级合并</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseList.aspx?navId=eab4262f-2548-48ef-8626-a27e57d778b4'>排队管理</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>上课签到管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSigning.aspx?navId=9d85f94c-d118-4344-ba84-7875ccaf872b'>当天上课签到</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Course.aspx?navId=65893f1e-33cb-4fcf-a7dc-9de55195a990'>签到批量修改</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseQuery.aspx?navId=02230938-b83f-4222-b0d1-e961810a7c8c'>上课签到记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberCourseDayReport.aspx?navId=8c6abe04-4626-4fc5-8f46-bbb5b98d44ee'>打印上课名单</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>托班事务管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/DaycareSign.aspx?navId=d5d556bd-974d-4919-8620-f0e8cec3bfd7'>托班学员签到</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/DaycareSignList.aspx?navId=343e7da3-0964-4679-b03f-27672e0e1b59'>托班签到记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>日常教务管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/TeacherWork.aspx?navId=c9b7a31d-b3a0-4e61-825c-4a102ecac874'>老师排班表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/AchievementEdit.aspx?navId=250ae00c-b7d6-456b-bd3d-fb6d6ae33d71'>老师价值评估</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/FeedbackList.aspx?navId=0c746996-3c51-4a00-997a-3a2bccb135b6'>学员课评管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/MemberLeave.aspx?navId=b1b905cd-6fc5-4456-99e9-ffbda8af91d4'>学员上课请假</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/LeaveView.aspx?navId=f6ea20d5-7ea8-440b-8ae5-4deaa8b2e9e5'>请假记录查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/RiseClassAppoint.aspx?navId=ed6e66cd-a562-4222-a6b3-ef6515f32454'>会员升班测评</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/RiseClassList.aspx?navId=217260a8-f46b-49bb-8ee5-58c978ae6beb'>升班记录查看</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Lesson.aspx?navId=abcabc9d-def0-4712-91fc-a46dbe848b5d'>课程信息设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Classroom.aspx?navId=84b99494-46df-45e3-bf34-ad309675fd84'>上课信息设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSetting.aspx?navId=500a5030-8a79-4a54-b858-9fd3ec3b9d01'>上课规定设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardSignRoleList.aspx?navId=b5b04b5c-f0b3-4583-a24e-ff6eb85df90b'>按次刷卡规则设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseScoreConfig.aspx?navId=a6f2a31f-8675-4e75-8cdc-5220a16baabb'>课评分值设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/PrintModelEdit.aspx?navId=5d286462-e25f-43ea-a6b3-91b7109e3cd3&printguid=CA1D06AC-2BC1-44B9-BCDE-50DEE83DC4E5'>签到小票设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='活动中心' isIndex='false' u='18616126092' d='' i='hdgl.jpg' ico='icon-huodongzhongxin' style='text-align: center;'>活动中心</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>活动计划安排<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoEdit.aspx?navId=029a44ca-8da2-4c90-a482-2235d5ce9b95'>活动添加</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoList.aspx?navId=d17dc2f5-49d4-497c-80fd-ec8348adf67b'>活动管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoListInfo.aspx?navId=7af51df0-52b7-4de8-bbac-62d5c06f56f6'>活动查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoSignList.aspx?navId=727428d5-6cf8-43ad-a2a9-80b5c11de595'>活动签到</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoCourseQuery.aspx?navId=20010065-438f-4407-aed3-300c26f1cb7c'>活动签到记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoPrintList.aspx?navId=961a5a3b-9a89-4aa6-9724-57bb462647a9'>活动签到打印</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>活动宣传管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_doing/MsgTemplate.aspx?navId=e3738fb9-57e2-4e44-b4b0-d1fb3bb417cd'>创建宣传主题</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/MsgTemplateList.aspx?navId=16990b8c-faa5-49fb-bdf6-f0465e96b86c'>管理宣传主题</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/SendUserMsg.aspx?navId=b78a6877-d4d8-40d1-8b83-56f1a764781c'>宣传发送</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/PublicityEffect.aspx?navId=04821c78-a066-4dd7-8195-a648331b4323'>宣传效果</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoType.aspx?navId=b7c32e04-a000-43b4-a178-431d704f1d65'>活动类别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoMsgTemplateType.aspx?navId=922dd6b2-12f8-49f6-a08f-f03a5144259a'>主题类别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=2725c719-eeee-4fd8-9bb0-ed434f06b169&printguid=7e5d0483-57f4-4396-9494-df15bd1b974d'>活动小票设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='资产管理' isIndex='false' u='18616126092' d='' i='zcgl.jpg' ico='icon-zichanguanli' style='text-align: center;'>资产管理</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>物品管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductEdit.aspx?navId=d37fdf3c-f923-4a5a-9090-788fac4ab68e'>物品添加</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductList.aspx?navId=76e14302-3309-4148-afff-e7a178360670'>物品管理</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>采购管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillEdit.aspx?navId=43105886-99e9-4e60-aae3-0dba64918880'>采购单申请</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillList.aspx?navId=0f48a496-8446-407a-8c66-014b7efa75b4'>采购单管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillCheck.aspx?navId=c8322db5-e4e4-475f-9be3-c9e332e017d6'>采购单审批</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillInstore.aspx?navId=995e3dab-dc0a-4fbd-bc7a-67c7dcb54509'>采购单入库</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillHistory.aspx?navId=4dfca641-0efc-41cc-96c7-35553ca0307c'>历史采购单</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>库存管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryList.aspx?navId=914d448e-db5c-4e0a-916c-cf8ff9c65458'>查看库存</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/ProductDepreciation.aspx?navId=5067bd7f-f02b-4361-927f-368b431a4c64'>折旧处理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/StorehouseChange.aspx?navId=7657169d-8090-4160-b9a5-4100d4ba8d38'>移库管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/StorehouseChangeLog.aspx?navId=2e9035e6-4c22-4aa0-bafe-5051789da239'>移库记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryCheck.aspx?navId=c6899723-5ad1-4554-befd-7fefa74a105b'>库存盘点</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InOutStoreList.aspx?navId=038e0735-186b-4a3f-b590-f0933333779b'>其它入库</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/AssetsInfo.aspx?navId=1eb7f3df-37c7-48e7-8068-e5d220952560'>资产总表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryChangeLog.aspx?navId=2fb04ec6-f76d-48b8-9411-91389b0c217d'>库存变动记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductCategory.aspx?navId=f57b7ffe-518f-464b-8489-9ba05426b384'>物品分类设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d5d71e89-48af-4fec-89e6-3190a481e35a&ParentGuid=5952d617-d8f7-4dc8-8775-49fd8cea7e43'>仓库信息设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=c4393a65-8569-4181-813c-2b7ed1033517&ParentGuid=49c27927-fc64-4f41-ba6d-00cde8b46066'>物品折旧设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='积分商城' isIndex='false' u='18616126092' d='' i='scjf.jpg' ico='icon-jifenshangcheng' style='text-align: center;'>积分商城</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商品信息管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemEdit.aspx?navId=48a8812d-54d6-4b24-af9c-c2670be2e9e0'>商品添加</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ImportProduct.aspx?navId=7d5bd523-050a-4c2d-a653-5f9a42e23a3e'>商品批量导入</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=39cc9140-fdec-4ab3-90d0-9c5291ef45a1&act=view'>商品查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=fc77277b-c8b9-4d62-9622-3ab12b1a070d&act=manage'>商品管理</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商城运营管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductListForOutStoreBill.aspx?navId=790d3190-d9ea-4748-aaf9-09ac090851c8'>商品销售</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/OutStoreBillList.aspx?navId=02aa98dc-01bd-4dc1-9233-8696444bf745&act=reexch'>商品退换</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=f6015309-800e-48fe-8075-40415e83d9a1&act=rent'>商品租赁</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/RentList.aspx?navId=f28ec9c6-cbc7-465a-b080-4658816a6272&act=return'>商品归还</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/OutStoreBillList.aspx?navId=77931f7a-ffd9-479f-be05-9e88fc01248a&act=view'>销售记录查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ReExchList.aspx?navId=fd24d218-764f-474f-ad50-0dbb3724cd69'>退换记录查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/RentList.aspx?navId=ed29390b-0fd3-4ab4-9b64-5bda0e21b4dd&act=view'>商品租赁历史</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductPackExpressList.aspx?navId=474fd3c4-bd21-49bc-aa13-79eef568d686'>需要快递的商品包</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExpressInfoList.aspx?navId=49092fe0-8c09-4f5d-8a0e-6aed04c2aca8'>快递发货记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商城积分管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExchangeMemberList.aspx?navId=f31844e9-a527-4f53-93e8-4119a23b3d99'>积分兑换</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExchangeProductLog.aspx?navId=d25f7213-8c64-43fd-842e-17ca1da3690f'>积分兑换记录</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointChangeMemberList.aspx?navId=a11a140e-2b82-4909-a9aa-d68f2fdcbd76'>积分变动</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointChangeLog.aspx?navId=7eefeeb0-72b4-45d8-9bc0-d23d25d8ecc8'>积分变动记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductCategory.aspx?navId=0c9764ab-b6b7-4793-84a2-8c1c5125ec2c'>商品分类设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointRule.aspx?navId=b86b69f9-96a0-49c8-9784-bb53e8b230bc'>积分规则设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=c945d4e9-e6f4-4816-983d-3a3a03e939d3&printguid=8ab2db52-9fbe-1031-a5e2-dc61537b70be'>销售小票设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='财务管理' isIndex='false' u='18616126092' d='' i='cwgl.jpg' ico='icon-caiwuguanli' style='text-align: center;'>财务管理</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>流水记账<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookEdit.aspx?navId=7e815023-d4c4-47c7-87f4-cd3a5a71e01b'>新增流水账</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookCheckList.aspx?navId=be5af13f-a3ec-4c07-bb79-9cd73b912f13'>流水账审批</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookListInfo.aspx?navId=4688343f-6f0e-4899-9d33-9e2530d68917'>流水账管理</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>收入管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookInDetail.aspx?navId=39272478-21e7-4beb-990b-3d8630335e97'>收入明细账</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetDetail.aspx?navId=31332c3b-ac0b-4d51-b47b-97ef16982d8e'>收入余额账</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetSum.aspx?navId=fb268b56-563b-4262-8333-9af0b0ee6aa3'>收入总账</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>支出管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookOutDetail.aspx?navId=898a20ac-6559-4400-a1e2-9b3eca5431e7'>支出明细账</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/OutBudgetDetail.aspx?navId=9bfe914d-c4b3-4166-9705-6c749995039a'>支出余额账</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/OutBudgetSum.aspx?navId=30e82ca0-dd7f-4db9-873c-1618ea50fc96'>支出总账</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>总账管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/Chart_Sum.aspx?navId=e1218b10-62ca-42b3-b7b6-e7098c3850e9'>总账图表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookCheckDetail.aspx?navId=a73ad044-6423-4af8-8c65-37073bf191fd'>对账明细表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/Chart_InOut.aspx?navId=66116783-11ad-419e-a180-da72dcabbb80'>收支趋势图</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/DepartmentSum.aspx?navId=62511193-e560-4131-93e9-c3417d9ca8f4'>部门收支统计表</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>员工工资管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesCreate.aspx?navId=d7574597-0c65-4168-a0b2-6eb3c0756398'>月度工资生成</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesChange.aspx?navId=f507b284-1933-4a13-a3f4-53b9401a15c3'>手动调整工资</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesInfo.aspx?navId=33ff7eea-3e90-48af-9555-9a58dac3a468'>工资明细查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesCheck.aspx?navId=2a6c3857-ec66-4837-a7c2-82e471ac9354'>员工工资审批</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesPayOff.aspx?navId=1b67e2d5-9620-4716-abd6-add8ba34f496'>员工工资发放</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesPayOffList.aspx?navId=6016f4a4-ce98-46d8-923f-ea248c1e1a9b'>发放历史记录</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d6accfed-ef20-446e-b871-eabebdc35b61&ParentGuid=edef48cd-709e-4a08-8a7a-4462d28e68bd'>科目分类设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=58cae690-0852-4f1c-a7d8-cc1560950740&ParentGuid=283421e0-4d14-4df9-b5db-2220589468ed'>收入类别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=7c9f21c0-2a7f-4ab8-86b9-87a0a3c3a96f&ParentGuid=fdb49308-0865-428b-b235-15854366c626'>支出类别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetConfig.aspx?navId=c9edaca5-f731-4c62-98e7-98da8cfd7288'>财务预算设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WagesConfig.aspx?navId=fe78556f-2362-487f-96f2-5566f9b24d5e'>老师提成设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/BasicWagesConfig.aspx?navId=0d143a7f-5e4f-42fa-b331-83f01ab71df9'>员工工资设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='协同办公' isIndex='false' u='18616126092' d='' i='xtbg.jpg' ico='icon-bangongguanli' style='text-align: center;'>协同办公</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>个人事务管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/WorkLog.aspx?navId=c0a7ec07-33f5-4ed6-beca-ce2b94f863ae'>工作日志</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Content.aspx?navId=459c4189-c7aa-4008-9ec3-236839038f56'>工作计划</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/Task.aspx?navId=b07c8c5c-64d3-43c3-aa67-79fef8eaae81&status=0'>我的工作</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>通知公告管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoEdit.aspx?navId=7e286d02-8923-4d0b-885b-bbe3eea3e56f'>通知公告添加</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoEditList.aspx?navId=b5603d22-c58f-4072-8b5d-8fc893eae630'>通知公告修改</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoList.aspx?navId=3d780072-2f22-4b3c-b12e-b819a981c249'>通知公告查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoDel.aspx?navId=122b9b31-0625-424c-aa7a-767d19912ec0'>通知公告删除</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>知识文库管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Appcenter/MyFileList.aspx?navId=8d862f44-c935-4fbe-b31d-0914fc60a7a8'>我的知识文库</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Appcenter/ShareFileList.aspx?navId=39e55b2d-9c7e-443e-8172-a00ef8c2ef86'>公共知识文库</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/MyIndex/MyFileList.aspx?navId=0aec7102-9f73-4cf5-8af6-1a4997715eb4'>教案库</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>行政办公管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Apply.aspx?navId=1a8250a9-0d3f-4019-a1d6-5f66e4a43a8c'>办公用品申请</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/ApplyProgress.aspx?navId=1249718e-29fc-4ad9-8c13-f6454f5a9970'>申请进度查看</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Audit.aspx?navId=26812cec-ec28-4726-bdb6-c7a88272c756'>办公用品审批</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Receive.aspx?navId=7db52030-e326-47cc-b236-0a0cd091834e'>办公用品领用</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/HistoryList.aspx?navId=011e7051-b29e-4ad9-aaee-19a1ee959a67'>领用登记查询</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>人力资源管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/StaffEdit.aspx?navId=0370777b-02f3-4690-bf23-d56bd6a1c0ae'>员工建档</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/StaffList.aspx?navId=3ddbe284-fc62-4450-8772-2ac17c7c0965'>档案管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/AttendanceList.aspx?navId=7c9a6619-fb50-4b30-a6ff-58ba81603075'>考勤查看</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoCategory.aspx?navId=133a5a79-85a9-48f0-a89d-e76bc0d56ab7'>公告类别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/WorkRule.aspx?navId=74905593-b5ff-4a16-8880-f8ee23a4a6b7'>考勤规定设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='员工管理' isIndex='false' u='18616126092' d='' i='xygl.jpg' ico='icon-yuangongguanli' style='text-align: center;'>员工管理</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>组织架构管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/Department.aspx?navId=9793c155-1405-4de2-add0-cac6445cda15'>部门信息管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/Position.aspx?navId=5d4ba9de-7ae0-4b38-b71d-2d47ae319225'>员工岗位管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/WorkerEdit.aspx?navId=f9e63389-b767-4a30-8ce4-fa1fe8525ccc'>员工信息添加</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/WorkerList.aspx?navId=d00ca3d2-27c4-4f92-b910-c1d7b2332d2e'>员工信息查看</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=2610ec56-ed40-42de-b8e8-e2f6e3a1f230&ParentGuid=5e0c8b6a-7d2d-42e6-852d-a22afa53e573'>老师级别设置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/RightList.aspx?navId=a78eb73c-63ac-459e-bc7a-6999025f7bbe'>员工权限设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='统计报表' isIndex='false' u='18616126092' d='' i='tjbb.jpg' ico='icon-tongjibaobiao' style='text-align: center;'>统计报表</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>统计报表分析<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MktRpt.aspx?navId=896010da-8d65-4964-86b9-7d69f378c845'>市场名单分析报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/SourceRpt1.aspx?navId=90c05629-a958-4e21-868a-e9136c0ffe74'>学员来源统计报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Chart/KHZTTJ_Report.aspx?navId=62a2b7cb-187f-446d-a4a1-93312ba052b1'>学员状态分类统计</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Chart/YDXZKH_Report.aspx?navId=65b45513-4dce-490c-8fb6-cf29940da6e8'>月度新增学员统计</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CourseInfo.aspx?navId=19babac9-0b6d-4126-99ef-a7c3141302aa'>上课预约课表明细</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/HYXK_Report.aspx?navId=9478eede-165a-49a4-a59b-74301643e5ac'>班级上课情况统计</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberClassHours.aspx?navId=46fd9d83-dc64-4510-85e1-24e9e0cc81f9'>学员消课详细表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CourseDayReport.aspx?navId=3915ccf2-f4ba-4653-977c-3125cfd6c05d'>会员当天消课报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/ClassHourDetail.aspx?navId=2892f252-5ef2-4df1-bdae-19ab24cb6848'>会员课时剩余报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberCourseStats.aspx?navId=bfd25acf-98ad-439a-85d7-c26f3fb6fa40'>会员出勤情况统计</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/Xiaoke.aspx?navId=a9549c4e-03a7-4118-99b7-8ba5e7874046'>课时统计报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberDoCourseList.aspx?navId=6aae0317-a1e8-40e9-984c-adc60bba050a'>活动详细报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CMAchievement.aspx?navId=de51d440-147e-4e3a-ab5c-7717fd340742'>顾问业绩统计报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/ProductBillList.aspx?navId=0a8ea5fd-e7aa-4269-a84f-cb215d8c272a'>商城销售统计报表</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/PosFlow.aspx?navId=cb415dc2-defe-408c-abaf-62072e82adaa'>Pos支付记录统计</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>个性定制报表<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/MyIndex/BBSLogin.aspx?navId=4f111155-4368-41e8-96b7-8a3f15991c8b&type=report'>提交个性定制需求</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='家校互联' isIndex='false' u='18616126092' d='' i='jxhl.png' ico='icon-jiaxiaohulian' style='text-align: center;'>家校互联</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>家校互联管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppCourseList.aspx?navId=0109c710-589d-44e6-b1c4-9e2b6d3696c6'>申请上课管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppDoList.aspx?navId=f2826be3-fa39-467d-b22b-ae555c053556'>申请活动管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppLeaveList.aspx?navId=88a42ca3-806c-4e64-a061-a23ebc67ff6d'>申请请假管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/SchoolNewsList.aspx?navId=29319faa-e5d9-4a8c-8de8-45462f1b4da3'>校园微网管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/TeachingAchievementList.aspx?navId=78001d65-2876-423e-87a2-452b8e359361'>教学成果管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/ClassPhotoList.aspx?navId=1489d465-16d6-48d7-bdba-a264580af8dc'>班级相册管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/QFNaireList.aspx?navId=325bb7b5-cfe6-4a75-a75f-9f076e73a406'>智汇测评管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/LessonList.aspx?navId=dda62959-b121-452a-97bd-0d65a34c8745'>特色课程管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/ManagerList.aspx?navId=89b897cc-b3f4-408e-a26b-c70f921d55d7'>优质老师管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/BBSNoteList.aspx?navId=b48817b2-d396-42ed-9b71-099247c4340a'>动态社区管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/CommentReplyList.aspx?navId=44c8ee54-946d-4b19-bf1a-bd035bc2af84'>用户评论管理</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/BindMemberList.aspx?navId=39074952-51a2-4ae1-9993-019b66a06958'>绑定会员管理</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/Setting.aspx?navId=8f21d9b7-978e-4c54-8b4d-98d117dc6b63'>家校互联设置</a></div><div class='bottomBar'>&nbsp;</div></div> <a class='aWhite firstMenu ' href='javascript:void(0);' title1='系统配置' isIndex='false' u='18616126092' d='' i='xtpz.jpg' ico='icon-xitongpeizhi' style='text-align: center;'>系统配置</a><div class='hidden'><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>系统菜单管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ColumnInfo.aspx?navId=4505923e-2d7b-4278-b016-85bd9fb564aa'>功能菜单设置</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>数据维护管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/DataBackUp.aspx?navId=4fcdeed2-4b10-4ac5-871d-024d843093a3'>数据安全备份</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/SystemConfig.aspx?navId=1b617b8c-69f1-4050-bc5c-792e5e9e0a19'>系统维护配置</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/Log.aspx?navId=df75187c-09ec-4c23-9114-8a6306afe95f'>系统操作日志</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/AppConfig.aspx?navId=0c8d1fde-c7e8-4e11-a7f3-16b592e1245d'>APP功能开通</a></div><div class='bottomBar'>&nbsp;</div><a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>系统更新管理<span class='secMenuSelectedTips'><img class='arrowRight' src='/assets/img/ArrowRight.png' /></span></a><div class='thirdMenus hidden'><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_system/update.aspx?navId=2d2a9b34-ad27-44cc-ba74-79840c44a142'>系统可用更新</a><a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_system/updateLog.aspx?navId=93233094-fce1-4087-ba60-3fb079ad06d3'>系统更新记录</a></div><div class='bottomBar'>&nbsp;</div></div>
-                    <!--一级菜单End-->
-                </td>
-                <td id="childMenu" style="border-right-width:0px;">
-
-                    
-                    <div class="fixIndex" style="position: relative;height: 80px;width: 3px;">
-                        <div style=" border-right: 1px solid #F18D00;height: 60px;position: absolute;right: -4px; top: 0; width: 13px;">&nbsp;</div>
-                    </div>
-                    <div class="childMenuTopBar hidden">
-                        <div class="d" source=""></div>
-                        <div class="i" source=""></div>
-                        
-                        <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动"/>
-                    </div>
-                    <div id="menuhover" class="hidden">
-                    </div>
-                    <div id="menuNormal" class="hidden">
-                        
-                    </div>
-                </td>
-                <td valign="top" class="rightMainContent">
-                    <div class="topBar">
-                        <div id="pagetitle">
-                            <img class="img1" src="/assets/img/icon.png" />
-                            <span class="pagetitle">我的桌面</span>
-                            
-                        </div>
-                        
-                        <a  id="weiXinTips" class="hidden" href="javascript:void(0);" target="content">有新微信消息[<span class="words" style="color: white;"></span>]</a>
-
-                        <div class="floatRight">
-                            <a href="javascript:void(0)" target='content' id="btnGoIndex"  style="margin-top:5px;margin-right: 15px; padding-top:5px;">
-                                
-                                <i class="icon iconfont icon-shouye" sourceclass="icon-shouye" hoverclass="icon-shouye-hover" style="font-size: 32px;"></i>
-                                <span class="fixTop hidden" style="top: 17px;">我的桌面</span>
-                                <span class="fixWidth hidden">&nbsp;</span>
-                            </a>
-                            <a href="javascript:void(0);" id="btnInfo" style="padding-top:5px;">
-                                
-                                <i class="icon iconfont icon-pifu" sourceclass="icon-pifu" hoverclass="icon-pifu-hover" style="font-size: 32px;"></i>
-                                <span class="fixTop hidden" style="top: 17px;">系统皮肤</span>
-                                <span class="fixWidth hidden">&nbsp;</span>
-                            </a>
+      </div>
+    </div>
+    <div class="kf-sure">
+      <div class="kefu-wrong hidden" id="kefu-wrong">
+        <div class="wrong-text">请输入正确的手机号或者固定电话</div>
+        <a class="kf-a a-gray rewriteit">确定</a>
+      </div>
+    </div>
 
 
-                            <a href="javascript:void(0)" class="webIm" id="webIM" style="margin-right: 0px; padding-top:5px;">
-                                
-                                <i class="icon iconfont icon-xiaoxi" sourceclass="icon-xiaoxi" hoverclass="icon-xiaoxi-hover" id="webimicon" style="font-size: 32px;"></i> 
-                                <span class="fixTop hidden" style="width: 95px;">
-                                    <span>
-                                        <span>18616126092</span>
-                                        <span style="overflow: hidden;">&nbsp;&nbsp;&nbsp;&nbsp;校长</span>
-                                    </span>
-                                </span>
-                                <span class="fixWidth hidden">&nbsp;</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-         
-                    <!-- <iframe name="content" width="100%" frameborder="0" id="content" scrolling="no" src="/v1/homepage/index"></iframe> -->
 
-                    <div id="shortcut" class="hidden" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
-                        <a class="item" href="uploadfile/etmprocess/process.html" target="content">
-                            <div class="icon">
-                                <img src="/assets/img/Index/cangjing.png" />
-                            </div>
-                            <div class="description aWhite">应用场景</div>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-        </table>
 
-      <!--WebIm-->
+
+
+
+
+    <table id="maintable" border="0" cellpadding="0" cellspacing="0" style="height:100%;">
+      <tr>
+
+        <td id="firstMenu">
+
+
+          <a d='&nbsp;|&nbsp;校长' u='<a href="../K_Department/WorkerInfo.aspx?ManagerGuid=66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc&navId=d00ca3d2-27c4-4f92-b910-c1d7b2332d2e" target="content">18616126092</a>'
+            isindex='true' title1='我的桌面' id='logo' href='javascript:void(0);' class=' aWhite selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>
+
+            <img class='sex' style="border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;" src="/assets/img/icon.jpg" hasupdate="false"
+            />
+            <span class='firstMenuSelectedTips' style="top: 24.3929px;">
+              <img src='/assets/img/ArrowLeft.png'>
+            </span>
+          </a>
+
+
+
+          <!--一级菜单Start-->
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='招生推广' isIndex='false' u='18616126092' d='' i='yxtg.jpg' ico='icon-zhaoshengtuiguang'
+            style='text-align: center;'>招生推广</a>
+
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>微信公众账号
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/SubscribeUserList.aspx?navId=b06734bc-7263-4ab8-a8cc-ecf1bc4c3839'>微关注学员</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/SubscribeUserListForSend.aspx?navId=b356d405-d445-435f-86ee-6164701e62bd'>微信息群发</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/Welcome.aspx?navId=813c333c-b50b-41cf-a7b3-e4403568d5d5'>欢迎词管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/KeywordList.aspx?navId=35ad844e-956c-4aa4-8f87-a26f6dd6e77d'>关键词管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPDoList.aspx?navId=f3c5dd5a-cfcb-4e36-8501-b4ed595014ce'>微推广管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPWebBase.aspx?navId=f338637e-124d-42ca-872d-7ea3d8daaee7'>微官网管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_weixin/MPWebPhotos.aspx?navId=07ed0b28-4f52-4929-b38d-e372b2838bc1'>微相册管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_weixin/CourseInfoList.aspx?navId=fd065372-32e0-4eb2-8420-d0ddf2ad4204'>微约课管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/WxMenuEdit.aspx?navId=33eb781e-b292-42f0-81b1-e09f39deae09'>自定义菜单</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>手机短信管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f'>学员短信发送</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendMsg.aspx?navId=ac6a8920-e708-40e1-86a1-5df7ec49cede'>通用短信发送</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgList.aspx?navId=8f5675bd-b351-4b50-977a-67c2a71edc1c'>短信发送记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/RecvMsgList.aspx?navId=f21ad3e8-a2e5-1031-8e4c-7d8c47bee644'>回复短信查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgParam.aspx?navId=81843360-1191-4f58-b996-63dd94a5cf8f'>短信余额查询</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>企业邮件管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendUserMail.aspx?navId=45e92ecf-2c41-43ea-85d6-e3482b87ae29'>学员邮件发送</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/SendMail.aspx?navId=fcad5078-26c5-4863-b5fc-7f12c2f84919'>通用邮件发送</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailLogList.aspx?navId=0ac43bf7-cc2d-4003-9fd8-7f3de105ebea'>邮件发送记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>推广分析曲线
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_info/TimePromotionCurve.aspx?navId=401c2752-4bf3-4257-b0af-4cacd33447e6'>时间推广曲线</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_info/EfficiencyPromotionCurve.aspx?navId=56ab64e8-83c6-4859-aacf-f92a2cc358e5'>效率推广曲线</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Weixin/MPSetting.aspx?navId=30fe26ae-1ffe-4a57-b1a4-53155f2be065'>公众帐号设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgTemplate.aspx?navId=93b87308-a08a-4ae1-bf54-191d257a3083'>短信模板设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MsgConfig.aspx?navId=c3ebec36-7148-4f0e-84b7-5b1053f96747'>短信参数设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailTemplateList.aspx?navId=4cd292b3-9ab5-4979-85e1-e223f00673be'>邮件模板管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailType.aspx?navId=bf2e4d7a-576c-4b65-941d-0dc63beaa27d'>邮件类型设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/MailParam.aspx?navId=42794508-c8f5-416d-b153-248df0e5d1a6'>邮件参数设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='呼叫中心' isIndex='false' u='18616126092' d='' i='hjzx.jpg' ico='icon-hujiaozhongxin'
+            style='text-align: center;'>呼叫中心</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>呼叫通话管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/StartDialing.aspx?navId=54e03372-5718-4843-a619-7ee49b80f99b'>拨打电话</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/CallRecords.aspx?navId=6f3a9084-5710-40bc-adf1-06f3030d69b8'>查询通话记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/CallRecordList.aspx?navId=ecee1549-52ad-4b56-822a-386feb050476'>通话记录管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/MemberList.aspx?navId=7742065a-2b93-4953-a0eb-7a4d7f64cd0f'>通讯录电话本</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_CallCenter/VoipBalance.aspx?navId=0fe1765b-fb61-4410-90b9-6636c60496eb'>通话余额查询</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员服务管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/AddComplaintsInfo.aspx?navId=232f54b9-a96f-4bca-b27a-481b3d402e50'>投诉意见登记</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ComplaintsInfos.aspx?navId=b52a4f70-f484-4f76-87b0-9cb78bcc46ea&view=1'>投诉意见查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ComplaintsInfos.aspx?navId=fd735499-eebf-400b-9053-8685b6d0cff4'>投诉意见处理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ContractList.aspx?navId=213d1edd-94b2-416f-880b-c00226517faa'>定期回访管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ReviewList.aspx?navId=0dd51159-b0b0-4130-8f47-fb7e92bc6a06'>回访效果查询</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/RecordSetting.aspx?navId=a4128c86-4a67-40bb-93f4-1cc9d22ccb7f'>电话录音设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_callcenter/ReviewSetting.aspx?navId=2e1a2d36-cac7-402f-a87d-8d46116e5d9c'>回访参数设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_CallCenter/VoipConfig.aspx?navId=63260209-eb81-4e4a-8b4b-302cbb1f49b4'>呼叫中心设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='学员管理' isIndex='false' u='18616126092' d='' i='khgl.jpg' ico='icon-xueyuanguanli'
+            style='text-align: center;'>学员管理</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员信息管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserEdit.aspx?navId=8e5f7ad0-28f0-488f-9b45-0b46d4a9fe57'>添加学员</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ImportData.aspx?navId=3c43cdad-9e2e-47d7-87e7-1b6d7a6e86b6'>批量导入学员</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ImportHistory.aspx?navId=93c18cb1-b3a9-43ee-960c-3fbf738cd7a0'>导入批次管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserSuperEdit.aspx?navId=ef809cd1-8557-4b91-9846-7dfa9bb186fc'>学员核心资料维护</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserList.aspx?navId=e8082491-e1bf-4aeb-80bf-d48cd0224134'>我的学员</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>学员分配管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserAssign.aspx?navId=2551206f-ff67-4a99-848e-41a385c0abe3'>分配学员</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/AssignList.aspx?navId=a5d1fae5-6cb1-45e3-867a-05f81be420d3'>分配记录查看</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>跟进预约到访
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/UserAppointment.aspx?navId=be8c6973-1713-427c-a64d-26d18285ca0b'>学员跟进管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FollowList.aspx?navId=80aad382-0213-412f-a549-6156fd6ecfc0'>历史跟进记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FollowCurve.aspx?navId=6f53871d-067e-4a99-8d8e-fa4a367736b0'>跟进曲线查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/FaqList.aspx?navId=76b695fa-7b49-4b69-b91c-6f5244d806a2'>常用销售话术</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>销售价值评估
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/AdvisorAssessmentReport.aspx?navId=dd6a7802-7a00-464f-8b4b-6d67217d83c5'>销售效率评估</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MarketNodeReport.aspx?navId=85a7fc69-258e-4d03-9dc5-6736bf4e54f7'>销售漏斗分析</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/MemberSource.aspx?navId=a52e397d-1701-4173-be91-cedbbea3e2dc'>学员来源设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/ParamConfig.aspx?navId=402c3c16-851a-4223-889b-9e1b84613b29&ParentGuid=7b7d74b3-dd45-4bfc-8ab5-24799ab7f30b'>状态标签设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/AssessRule.aspx?navId=0ec278a8-e3b7-4790-b121-b13c48a715e1'>问卷调查设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/MarketNode.aspx?navId=476ebdcf-cfa0-46a1-81f1-1d4d7c8b5cfa'>销售阶段设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/Area.aspx?navId=36dba401-8f70-4716-b434-04bfef901317'>学员地区设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/UDFManage.aspx?navId=8a43d9e2-a04c-463f-9af0-23089e613961&udftb=MemberUD'>学员字段设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='合同签约' isIndex='false' u='18616126092' d='' i='htqy.jpg' ico='icon-hetongqianyue'
+            style='text-align: center;'>合同签约</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>合同签约管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractDeposit.aspx?navId=3c343848-2177-418f-99c2-55800557b1f4'>订金管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/UserSign.aspx?navId=8a3634eb-bfdb-462f-983f-d7cf650b407e'>签订合同</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractCheckList.aspx?navId=7767cdc8-1de7-4f20-abf9-1a1226c48499'>合同审核</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractListInfo.aspx?navId=5171b5e1-7a7b-409b-b78a-b82848247e47'>合同查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractList.aspx?navId=ff42c6da-4700-40c7-b842-8347564f3be8'>合同管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ContractQuery.aspx?navId=dc232931-1f49-4739-be39-a7d7e3260e25'>历史合同</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>会员卡资费管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardList.aspx?navId=3559eede-4a1a-4709-a4ac-4ba3e68f2e7f'>会员卡资费查询</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardListForGift.aspx?navId=9ea8929d-23d9-4b8e-bf6f-0f96385777a7'>会员卡课时变动</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardTransform.aspx?navId=4eac04ce-f32a-49b9-9771-3c5ba80dd2a3'>会员卡资费变动</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardTransformLogs.aspx?navId=a0992bdd-137e-4371-975c-94544a6f03b3'>会员卡变动记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCashQuery.aspx?navId=c2f07a0b-a769-46dc-8796-a6ca3a153ce9'>会员卡消费记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>会员卡维护管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardListForSupplementaryCard.aspx?navId=737b2e28-c0e9-4774-abae-5e49e1efe100'>附属卡开卡</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardChangeList.aspx?navId=25fe8e8d-e658-4936-acca-54226f71c7b6'>会员卡修改</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardFreeze.aspx?navId=44476723-e57e-470d-b1fd-cca55c2cce69'>会员卡冻结</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardFreezeLog.aspx?navId=be476f55-c7ec-49b3-af7f-94fd5c07f462'>会员卡冻结记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Contract/ClassHour.aspx?navId=52ca1bf9-b139-4a35-af8e-132f4cc56c57'>合同套餐设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d3c0a6ad-5ecc-4652-ab49-32c799b72ecb&ParentGuid=c177b3f2-a793-4e3e-a647-876f2578d2ea'>支付方式设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/MemberCardType.aspx?navId=b3661fbf-0488-438a-ba01-769d3638a623'>会员卡类型设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=0edba5c3-12f4-4953-b362-bdd920b3a8ce&printguid=9c6a660a-ad16-1031-b050-054c71544e8c'>资费小票设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/UDFManage.aspx?navId=77bb5f89-ae71-439a-aaca-6d0d9913bdef&udftb=ContractUD'>合同字段设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=799e6afc-b389-4796-94dc-de98c4b13637&printguid=3e6468a1-ab61-1030-bf6e-400f8b8d1ff4'>合同模版设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='教学管理' isIndex='false' u='18616126092' d='' i='jxgl.jpg' ico='icon-jiaowujiaoxue'
+            style='text-align: center;'>教学管理</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>班级排课管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSchedule.aspx?navId=67bd7f4e-8480-4c81-8276-f82b1eeda271'>人工排课</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/AutoCourse.aspx?navId=3b52f9f5-7770-436c-bff7-f74d1e8cef98'>智能排课</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseLotSchedule.aspx?navId=af4510b5-f77a-4079-84f5-55030a003561'>批量排课</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseCopy.aspx?navId=01c6299e-22cd-411d-ba10-5f8612efe70d'>排课复制</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseConflat.aspx?navId=b29fe2d5-3ad0-4c9b-a58e-8bd19ca58a6d'>班级合并</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseList.aspx?navId=eab4262f-2548-48ef-8626-a27e57d778b4'>排队管理</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>上课签到管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSigning.aspx?navId=9d85f94c-d118-4344-ba84-7875ccaf872b'>当天上课签到</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Course.aspx?navId=65893f1e-33cb-4fcf-a7dc-9de55195a990'>签到批量修改</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseQuery.aspx?navId=02230938-b83f-4222-b0d1-e961810a7c8c'>上课签到记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberCourseDayReport.aspx?navId=8c6abe04-4626-4fc5-8f46-bbb5b98d44ee'>打印上课名单</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>托班事务管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/DaycareSign.aspx?navId=d5d556bd-974d-4919-8620-f0e8cec3bfd7'>托班学员签到</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/DaycareSignList.aspx?navId=343e7da3-0964-4679-b03f-27672e0e1b59'>托班签到记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>日常教务管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/TeacherWork.aspx?navId=c9b7a31d-b3a0-4e61-825c-4a102ecac874'>老师排班表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/AchievementEdit.aspx?navId=250ae00c-b7d6-456b-bd3d-fb6d6ae33d71'>老师价值评估</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/FeedbackList.aspx?navId=0c746996-3c51-4a00-997a-3a2bccb135b6'>学员课评管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/MemberLeave.aspx?navId=b1b905cd-6fc5-4456-99e9-ffbda8af91d4'>学员上课请假</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/LeaveView.aspx?navId=f6ea20d5-7ea8-440b-8ae5-4deaa8b2e9e5'>请假记录查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/RiseClassAppoint.aspx?navId=ed6e66cd-a562-4222-a6b3-ef6515f32454'>会员升班测评</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_User/RiseClassList.aspx?navId=217260a8-f46b-49bb-8ee5-58c978ae6beb'>升班记录查看</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Lesson.aspx?navId=abcabc9d-def0-4712-91fc-a46dbe848b5d'>课程信息设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/Classroom.aspx?navId=84b99494-46df-45e3-bf34-ad309675fd84'>上课信息设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseSetting.aspx?navId=500a5030-8a79-4a54-b858-9fd3ec3b9d01'>上课规定设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Card/CardSignRoleList.aspx?navId=b5b04b5c-f0b3-4583-a24e-ff6eb85df90b'>按次刷卡规则设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/CourseScoreConfig.aspx?navId=a6f2a31f-8675-4e75-8cdc-5220a16baabb'>课评分值设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Course/PrintModelEdit.aspx?navId=5d286462-e25f-43ea-a6b3-91b7109e3cd3&printguid=CA1D06AC-2BC1-44B9-BCDE-50DEE83DC4E5'>签到小票设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='活动中心' isIndex='false' u='18616126092' d='' i='hdgl.jpg' ico='icon-huodongzhongxin'
+            style='text-align: center;'>活动中心</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>活动计划安排
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoEdit.aspx?navId=029a44ca-8da2-4c90-a482-2235d5ce9b95'>活动添加</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoList.aspx?navId=d17dc2f5-49d4-497c-80fd-ec8348adf67b'>活动管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoListInfo.aspx?navId=7af51df0-52b7-4de8-bbac-62d5c06f56f6'>活动查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoSignList.aspx?navId=727428d5-6cf8-43ad-a2a9-80b5c11de595'>活动签到</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoCourseQuery.aspx?navId=20010065-438f-4407-aed3-300c26f1cb7c'>活动签到记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoPrintList.aspx?navId=961a5a3b-9a89-4aa6-9724-57bb462647a9'>活动签到打印</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>活动宣传管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_doing/MsgTemplate.aspx?navId=e3738fb9-57e2-4e44-b4b0-d1fb3bb417cd'>创建宣传主题</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/MsgTemplateList.aspx?navId=16990b8c-faa5-49fb-bdf6-f0465e96b86c'>管理宣传主题</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/SendUserMsg.aspx?navId=b78a6877-d4d8-40d1-8b83-56f1a764781c'>宣传发送</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/PublicityEffect.aspx?navId=04821c78-a066-4dd7-8195-a648331b4323'>宣传效果</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoType.aspx?navId=b7c32e04-a000-43b4-a178-431d704f1d65'>活动类别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Doing/DoMsgTemplateType.aspx?navId=922dd6b2-12f8-49f6-a08f-f03a5144259a'>主题类别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=2725c719-eeee-4fd8-9bb0-ed434f06b169&printguid=7e5d0483-57f4-4396-9494-df15bd1b974d'>活动小票设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='资产管理' isIndex='false' u='18616126092' d='' i='zcgl.jpg' ico='icon-zichanguanli'
+            style='text-align: center;'>资产管理</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>物品管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductEdit.aspx?navId=d37fdf3c-f923-4a5a-9090-788fac4ab68e'>物品添加</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductList.aspx?navId=76e14302-3309-4148-afff-e7a178360670'>物品管理</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>采购管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillEdit.aspx?navId=43105886-99e9-4e60-aae3-0dba64918880'>采购单申请</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillList.aspx?navId=0f48a496-8446-407a-8c66-014b7efa75b4'>采购单管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillCheck.aspx?navId=c8322db5-e4e4-475f-9be3-c9e332e017d6'>采购单审批</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillInstore.aspx?navId=995e3dab-dc0a-4fbd-bc7a-67c7dcb54509'>采购单入库</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/PurchaseBillHistory.aspx?navId=4dfca641-0efc-41cc-96c7-35553ca0307c'>历史采购单</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>库存管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryList.aspx?navId=914d448e-db5c-4e0a-916c-cf8ff9c65458'>查看库存</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/ProductDepreciation.aspx?navId=5067bd7f-f02b-4361-927f-368b431a4c64'>折旧处理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/StorehouseChange.aspx?navId=7657169d-8090-4160-b9a5-4100d4ba8d38'>移库管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/StorehouseChangeLog.aspx?navId=2e9035e6-4c22-4aa0-bafe-5051789da239'>移库记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryCheck.aspx?navId=c6899723-5ad1-4554-befd-7fefa74a105b'>库存盘点</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InOutStoreList.aspx?navId=038e0735-186b-4a3f-b590-f0933333779b'>其它入库</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/AssetsInfo.aspx?navId=1eb7f3df-37c7-48e7-8068-e5d220952560'>资产总表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_ERP/InventoryChangeLog.aspx?navId=2fb04ec6-f76d-48b8-9411-91389b0c217d'>库存变动记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductCategory.aspx?navId=f57b7ffe-518f-464b-8489-9ba05426b384'>物品分类设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d5d71e89-48af-4fec-89e6-3190a481e35a&ParentGuid=5952d617-d8f7-4dc8-8775-49fd8cea7e43'>仓库信息设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=c4393a65-8569-4181-813c-2b7ed1033517&ParentGuid=49c27927-fc64-4f41-ba6d-00cde8b46066'>物品折旧设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='积分商城' isIndex='false' u='18616126092' d='' i='scjf.jpg' ico='icon-jifenshangcheng'
+            style='text-align: center;'>积分商城</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商品信息管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemEdit.aspx?navId=48a8812d-54d6-4b24-af9c-c2670be2e9e0'>商品添加</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ImportProduct.aspx?navId=7d5bd523-050a-4c2d-a653-5f9a42e23a3e'>商品批量导入</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=39cc9140-fdec-4ab3-90d0-9c5291ef45a1&act=view'>商品查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=fc77277b-c8b9-4d62-9622-3ab12b1a070d&act=manage'>商品管理</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商城运营管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductListForOutStoreBill.aspx?navId=790d3190-d9ea-4748-aaf9-09ac090851c8'>商品销售</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/OutStoreBillList.aspx?navId=02aa98dc-01bd-4dc1-9233-8696444bf745&act=reexch'>商品退换</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ItemList.aspx?navId=f6015309-800e-48fe-8075-40415e83d9a1&act=rent'>商品租赁</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/RentList.aspx?navId=f28ec9c6-cbc7-465a-b080-4658816a6272&act=return'>商品归还</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/OutStoreBillList.aspx?navId=77931f7a-ffd9-479f-be05-9e88fc01248a&act=view'>销售记录查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ReExchList.aspx?navId=fd24d218-764f-474f-ad50-0dbb3724cd69'>退换记录查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/RentList.aspx?navId=ed29390b-0fd3-4ab4-9b64-5bda0e21b4dd&act=view'>商品租赁历史</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductPackExpressList.aspx?navId=474fd3c4-bd21-49bc-aa13-79eef568d686'>需要快递的商品包</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExpressInfoList.aspx?navId=49092fe0-8c09-4f5d-8a0e-6aed04c2aca8'>快递发货记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>商城积分管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExchangeMemberList.aspx?navId=f31844e9-a527-4f53-93e8-4119a23b3d99'>积分兑换</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ExchangeProductLog.aspx?navId=d25f7213-8c64-43fd-842e-17ca1da3690f'>积分兑换记录</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointChangeMemberList.aspx?navId=a11a140e-2b82-4909-a9aa-d68f2fdcbd76'>积分变动</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointChangeLog.aspx?navId=7eefeeb0-72b4-45d8-9bc0-d23d25d8ecc8'>积分变动记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/ProductCategory.aspx?navId=0c9764ab-b6b7-4793-84a2-8c1c5125ec2c'>商品分类设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Mall/PointRule.aspx?navId=b86b69f9-96a0-49c8-9784-bb53e8b230bc'>积分规则设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/PrintModelEdit.aspx?navId=c945d4e9-e6f4-4816-983d-3a3a03e939d3&printguid=8ab2db52-9fbe-1031-a5e2-dc61537b70be'>销售小票设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='财务管理' isIndex='false' u='18616126092' d='' i='cwgl.jpg' ico='icon-caiwuguanli'
+            style='text-align: center;'>财务管理</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>流水记账
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookEdit.aspx?navId=7e815023-d4c4-47c7-87f4-cd3a5a71e01b'>新增流水账</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookCheckList.aspx?navId=be5af13f-a3ec-4c07-bb79-9cd73b912f13'>流水账审批</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookListInfo.aspx?navId=4688343f-6f0e-4899-9d33-9e2530d68917'>流水账管理</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>收入管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookInDetail.aspx?navId=39272478-21e7-4beb-990b-3d8630335e97'>收入明细账</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetDetail.aspx?navId=31332c3b-ac0b-4d51-b47b-97ef16982d8e'>收入余额账</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetSum.aspx?navId=fb268b56-563b-4262-8333-9af0b0ee6aa3'>收入总账</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>支出管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookOutDetail.aspx?navId=898a20ac-6559-4400-a1e2-9b3eca5431e7'>支出明细账</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/OutBudgetDetail.aspx?navId=9bfe914d-c4b3-4166-9705-6c749995039a'>支出余额账</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/OutBudgetSum.aspx?navId=30e82ca0-dd7f-4db9-873c-1618ea50fc96'>支出总账</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>总账管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/Chart_Sum.aspx?navId=e1218b10-62ca-42b3-b7b6-e7098c3850e9'>总账图表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WasteBookCheckDetail.aspx?navId=a73ad044-6423-4af8-8c65-37073bf191fd'>对账明细表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/Chart_InOut.aspx?navId=66116783-11ad-419e-a180-da72dcabbb80'>收支趋势图</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/DepartmentSum.aspx?navId=62511193-e560-4131-93e9-c3417d9ca8f4'>部门收支统计表</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>员工工资管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesCreate.aspx?navId=d7574597-0c65-4168-a0b2-6eb3c0756398'>月度工资生成</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesChange.aspx?navId=f507b284-1933-4a13-a3f4-53b9401a15c3'>手动调整工资</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesInfo.aspx?navId=33ff7eea-3e90-48af-9555-9a58dac3a468'>工资明细查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesCheck.aspx?navId=2a6c3857-ec66-4837-a7c2-82e471ac9354'>员工工资审批</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesPayOff.aspx?navId=1b67e2d5-9620-4716-abd6-add8ba34f496'>员工工资发放</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/ManagerWagesPayOffList.aspx?navId=6016f4a4-ce98-46d8-923f-ea248c1e1a9b'>发放历史记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=d6accfed-ef20-446e-b871-eabebdc35b61&ParentGuid=edef48cd-709e-4a08-8a7a-4462d28e68bd'>科目分类设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=58cae690-0852-4f1c-a7d8-cc1560950740&ParentGuid=283421e0-4d14-4df9-b5db-2220589468ed'>收入类别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=7c9f21c0-2a7f-4ab8-86b9-87a0a3c3a96f&ParentGuid=fdb49308-0865-428b-b235-15854366c626'>支出类别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/InBudgetConfig.aspx?navId=c9edaca5-f731-4c62-98e7-98da8cfd7288'>财务预算设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/WagesConfig.aspx?navId=fe78556f-2362-487f-96f2-5566f9b24d5e'>老师提成设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Financial/BasicWagesConfig.aspx?navId=0d143a7f-5e4f-42fa-b331-83f01ab71df9'>员工工资设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='协同办公' isIndex='false' u='18616126092' d='' i='xtbg.jpg' ico='icon-bangongguanli'
+            style='text-align: center;'>协同办公</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>个人事务管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/WorkLog.aspx?navId=c0a7ec07-33f5-4ed6-beca-ce2b94f863ae'>工作日志</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Content.aspx?navId=459c4189-c7aa-4008-9ec3-236839038f56'>工作计划</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/Task.aspx?navId=b07c8c5c-64d3-43c3-aa67-79fef8eaae81&status=0'>我的工作</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>通知公告管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoEdit.aspx?navId=7e286d02-8923-4d0b-885b-bbe3eea3e56f'>通知公告添加</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoEditList.aspx?navId=b5603d22-c58f-4072-8b5d-8fc893eae630'>通知公告修改</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoList.aspx?navId=3d780072-2f22-4b3c-b12e-b819a981c249'>通知公告查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoDel.aspx?navId=122b9b31-0625-424c-aa7a-767d19912ec0'>通知公告删除</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>知识文库管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Appcenter/MyFileList.aspx?navId=8d862f44-c935-4fbe-b31d-0914fc60a7a8'>我的知识文库</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Appcenter/ShareFileList.aspx?navId=39e55b2d-9c7e-443e-8172-a00ef8c2ef86'>公共知识文库</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/MyIndex/MyFileList.aspx?navId=0aec7102-9f73-4cf5-8af6-1a4997715eb4'>教案库</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>行政办公管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Apply.aspx?navId=1a8250a9-0d3f-4019-a1d6-5f66e4a43a8c'>办公用品申请</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/ApplyProgress.aspx?navId=1249718e-29fc-4ad9-8c13-f6454f5a9970'>申请进度查看</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Audit.aspx?navId=26812cec-ec28-4726-bdb6-c7a88272c756'>办公用品审批</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/Receive.aspx?navId=7db52030-e326-47cc-b236-0a0cd091834e'>办公用品领用</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/HistoryList.aspx?navId=011e7051-b29e-4ad9-aaee-19a1ee959a67'>领用登记查询</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>人力资源管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/StaffEdit.aspx?navId=0370777b-02f3-4690-bf23-d56bd6a1c0ae'>员工建档</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/StaffList.aspx?navId=3ddbe284-fc62-4450-8772-2ac17c7c0965'>档案管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/AttendanceList.aspx?navId=7c9a6619-fb50-4b30-a6ff-58ba81603075'>考勤查看</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Info/InfoCategory.aspx?navId=133a5a79-85a9-48f0-a89d-e76bc0d56ab7'>公告类别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_OA/WorkRule.aspx?navId=74905593-b5ff-4a16-8880-f8ee23a4a6b7'>考勤规定设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='员工管理' isIndex='false' u='18616126092' d='' i='xygl.jpg' ico='icon-yuangongguanli'
+            style='text-align: center;'>员工管理</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>组织架构管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/Department.aspx?navId=9793c155-1405-4de2-add0-cac6445cda15'>部门信息管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/Position.aspx?navId=5d4ba9de-7ae0-4b38-b71d-2d47ae319225'>员工岗位管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/WorkerEdit.aspx?navId=f9e63389-b767-4a30-8ce4-fa1fe8525ccc'>员工信息添加</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Department/WorkerList.aspx?navId=d00ca3d2-27c4-4f92-b910-c1d7b2332d2e'>员工信息查看</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ParamConfig.aspx?navId=2610ec56-ed40-42de-b8e8-e2f6e3a1f230&ParentGuid=5e0c8b6a-7d2d-42e6-852d-a22afa53e573'>老师级别设置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/RightList.aspx?navId=a78eb73c-63ac-459e-bc7a-6999025f7bbe'>员工权限设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='统计报表' isIndex='false' u='18616126092' d='' i='tjbb.jpg' ico='icon-tongjibaobiao'
+            style='text-align: center;'>统计报表</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>统计报表分析
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MktRpt.aspx?navId=896010da-8d65-4964-86b9-7d69f378c845'>市场名单分析报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/SourceRpt1.aspx?navId=90c05629-a958-4e21-868a-e9136c0ffe74'>学员来源统计报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Chart/KHZTTJ_Report.aspx?navId=62a2b7cb-187f-446d-a4a1-93312ba052b1'>学员状态分类统计</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/Chart/YDXZKH_Report.aspx?navId=65b45513-4dce-490c-8fb6-cf29940da6e8'>月度新增学员统计</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CourseInfo.aspx?navId=19babac9-0b6d-4126-99ef-a7c3141302aa'>上课预约课表明细</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/HYXK_Report.aspx?navId=9478eede-165a-49a4-a59b-74301643e5ac'>班级上课情况统计</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberClassHours.aspx?navId=46fd9d83-dc64-4510-85e1-24e9e0cc81f9'>学员消课详细表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CourseDayReport.aspx?navId=3915ccf2-f4ba-4653-977c-3125cfd6c05d'>会员当天消课报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/ClassHourDetail.aspx?navId=2892f252-5ef2-4df1-bdae-19ab24cb6848'>会员课时剩余报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberCourseStats.aspx?navId=bfd25acf-98ad-439a-85d7-c26f3fb6fa40'>会员出勤情况统计</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/Xiaoke.aspx?navId=a9549c4e-03a7-4118-99b7-8ba5e7874046'>课时统计报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/MemberDoCourseList.aspx?navId=6aae0317-a1e8-40e9-984c-adc60bba050a'>活动详细报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/CMAchievement.aspx?navId=de51d440-147e-4e3a-ab5c-7717fd340742'>顾问业绩统计报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/ProductBillList.aspx?navId=0a8ea5fd-e7aa-4269-a84f-cb215d8c272a'>商城销售统计报表</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_Report/PosFlow.aspx?navId=cb415dc2-defe-408c-abaf-62072e82adaa'>Pos支付记录统计</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>个性定制报表
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/MyIndex/BBSLogin.aspx?navId=4f111155-4368-41e8-96b7-8a3f15991c8b&type=report'>提交个性定制需求</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='家校互联' isIndex='false' u='18616126092' d='' i='jxhl.png' ico='icon-jiaxiaohulian'
+            style='text-align: center;'>家校互联</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>家校互联管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppCourseList.aspx?navId=0109c710-589d-44e6-b1c4-9e2b6d3696c6'>申请上课管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppDoList.aspx?navId=f2826be3-fa39-467d-b22b-ae555c053556'>申请活动管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/AppLeaveList.aspx?navId=88a42ca3-806c-4e64-a061-a23ebc67ff6d'>申请请假管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/SchoolNewsList.aspx?navId=29319faa-e5d9-4a8c-8de8-45462f1b4da3'>校园微网管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/TeachingAchievementList.aspx?navId=78001d65-2876-423e-87a2-452b8e359361'>教学成果管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/ClassPhotoList.aspx?navId=1489d465-16d6-48d7-bdba-a264580af8dc'>班级相册管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/QFNaireList.aspx?navId=325bb7b5-cfe6-4a75-a75f-9f076e73a406'>智汇测评管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/LessonList.aspx?navId=dda62959-b121-452a-97bd-0d65a34c8745'>特色课程管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/ManagerList.aspx?navId=89b897cc-b3f4-408e-a26b-c70f921d55d7'>优质老师管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/BBSNoteList.aspx?navId=b48817b2-d396-42ed-9b71-099247c4340a'>动态社区管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/CommentReplyList.aspx?navId=44c8ee54-946d-4b19-bf1a-bd035bc2af84'>用户评论管理</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/BindMemberList.aspx?navId=39074952-51a2-4ae1-9993-019b66a06958'>绑定会员管理</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>基础信息设置
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/FamilySchool/Setting.aspx?navId=8f21d9b7-978e-4c54-8b4d-98d117dc6b63'>家校互联设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='系统配置' isIndex='false' u='18616126092' d='' i='xtpz.jpg' ico='icon-xitongpeizhi'
+            style='text-align: center;'>系统配置</a>
+          <div class='hidden'>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>系统菜单管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/ColumnInfo.aspx?navId=4505923e-2d7b-4278-b016-85bd9fb564aa'>功能菜单设置</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>数据维护管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/DataBackUp.aspx?navId=4fcdeed2-4b10-4ac5-871d-024d843093a3'>数据安全备份</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/SystemConfig.aspx?navId=1b617b8c-69f1-4050-bc5c-792e5e9e0a19'>系统维护配置</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/Log.aspx?navId=df75187c-09ec-4c23-9114-8a6306afe95f'>系统操作日志</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/K_System/AppConfig.aspx?navId=0c8d1fde-c7e8-4e11-a7f3-16b592e1245d'>APP功能开通</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+            <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>系统更新管理
+              <span class='secMenuSelectedTips'>
+                <img class='arrowRight' src='/assets/img/ArrowRight.png' />
+              </span>
+            </a>
+            <div class='thirdMenus hidden'>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_system/update.aspx?navId=2d2a9b34-ad27-44cc-ba74-79840c44a142'>系统可用更新</a>
+              <a class='thirdMemu aNormal  thirdMemuDisplay' target='content' href='/k_system/updateLog.aspx?navId=93233094-fce1-4087-ba60-3fb079ad06d3'>系统更新记录</a>
+            </div>
+            <div class='bottomBar'>&nbsp;</div>
+          </div>
+
+          <!--一级菜单End-->
+
+
+        </td>
+
+
+
+
+
+        <td id="childMenu" class="" style="border-right-width:0px;">
+
+          <div class="fixIndex hidden" style="position: relative;height: 80px;width: 3px;">
+            <div style=" border-right: 1px solid #F18D00;height: 60px;position: absolute;right: -4px; top: 0; width: 13px;">&nbsp;</div>
+          </div>
+
+          <!-- <div class="childMenuTopBar hidden">
+            <div class="d" source=""></div>
+            <div class="i" source=""></div>
+            <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动" />
+          </div> -->
+
+          <div class="childMenuTopBar">
+            <div class="d" source="招生推广">招生推广</div>
+            <div class="i" source="18616126092">18616126092</div>
+
+            <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动">
+            <div class="fixTopBarColor">&nbsp;</div>
+          </div>
+
+          <div id="menuhover" class="hidden">
+
+          </div>
+          <div id="menuNormal" class="hidden">
+          </div>
+
+          <div id="menuNormal" class="" style="height: 836px; overflow-y: hidden; outline: none;" tabindex="5001" index="0">
+            <a class="secMemu aNormal secUnSelected  secMemuBg" href="javascript:void(0);">微信公众账号
+              <span class="secMenuSelectedTips">
+                <img class="arrowDown" src="Images/ArrowDown.png">
+              </span>
+            </a>
+            <div class="thirdMenus">
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/SubscribeUserList.aspx?navId=b06734bc-7263-4ab8-a8cc-ecf1bc4c3839">微关注学员</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/SubscribeUserListForSend.aspx?navId=b356d405-d445-435f-86ee-6164701e62bd">微信息群发</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/Welcome.aspx?navId=813c333c-b50b-41cf-a7b3-e4403568d5d5">欢迎词管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/KeywordList.aspx?navId=35ad844e-956c-4aa4-8f87-a26f6dd6e77d">关键词管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/MPDoList.aspx?navId=f3c5dd5a-cfcb-4e36-8501-b4ed595014ce">微推广管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/MPWebBase.aspx?navId=f338637e-124d-42ca-872d-7ea3d8daaee7">微官网管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay selected currentThirdMemuSelected" target="content"
+                href="/k_weixin/MPWebPhotos.aspx?navId=07ed0b28-4f52-4929-b38d-e372b2838bc1">微相册管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/k_weixin/CourseInfoList.aspx?navId=fd065372-32e0-4eb2-8420-d0ddf2ad4204">微约课管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/WxMenuEdit.aspx?navId=33eb781e-b292-42f0-81b1-e09f39deae09">自定义菜单</a>
+            </div>
+            <div class="bottomBar">&nbsp;</div>
+            <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">手机短信管理
+              <span class="secMenuSelectedTips">
+                <img class="arrowRight" src="Images/ArrowRight.png">
+              </span>
+            </a>
+            <div class="thirdMenus hidden">
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/SendUserMsg.aspx?navId=09ad0f5a-8f64-4cb7-937e-80151719307f">学员短信发送</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/SendMsg.aspx?navId=ac6a8920-e708-40e1-86a1-5df7ec49cede">通用短信发送</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MsgList.aspx?navId=8f5675bd-b351-4b50-977a-67c2a71edc1c">短信发送记录</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/RecvMsgList.aspx?navId=f21ad3e8-a2e5-1031-8e4c-7d8c47bee644">回复短信查看</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MsgParam.aspx?navId=81843360-1191-4f58-b996-63dd94a5cf8f">短信余额查询</a>
+            </div>
+            <div class="bottomBar">&nbsp;</div>
+            <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">企业邮件管理
+              <span class="secMenuSelectedTips">
+                <img class="arrowRight" src="Images/ArrowRight.png">
+              </span>
+            </a>
+            <div class="thirdMenus hidden">
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/SendUserMail.aspx?navId=45e92ecf-2c41-43ea-85d6-e3482b87ae29">学员邮件发送</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/SendMail.aspx?navId=fcad5078-26c5-4863-b5fc-7f12c2f84919">通用邮件发送</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MailLogList.aspx?navId=0ac43bf7-cc2d-4003-9fd8-7f3de105ebea">邮件发送记录</a>
+            </div>
+            <div class="bottomBar">&nbsp;</div>
+            <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">推广分析曲线
+              <span class="secMenuSelectedTips">
+                <img class="arrowRight" src="Images/ArrowRight.png">
+              </span>
+            </a>
+            <div class="thirdMenus hidden">
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/k_info/TimePromotionCurve.aspx?navId=401c2752-4bf3-4257-b0af-4cacd33447e6">时间推广曲线</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/k_info/EfficiencyPromotionCurve.aspx?navId=56ab64e8-83c6-4859-aacf-f92a2cc358e5">效率推广曲线</a>
+            </div>
+            <div class="bottomBar">&nbsp;</div>
+            <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">基础信息设置
+              <span class="secMenuSelectedTips">
+                <img class="arrowRight" src="Images/ArrowRight.png">
+              </span>
+            </a>
+            <div class="thirdMenus hidden">
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Weixin/MPSetting.aspx?navId=30fe26ae-1ffe-4a57-b1a4-53155f2be065">公众帐号设置</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MsgTemplate.aspx?navId=93b87308-a08a-4ae1-bf54-191d257a3083">短信模板设置</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MsgConfig.aspx?navId=c3ebec36-7148-4f0e-84b7-5b1053f96747">短信参数设置</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MailTemplateList.aspx?navId=4cd292b3-9ab5-4979-85e1-e223f00673be">邮件模板管理</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MailType.aspx?navId=bf2e4d7a-576c-4b65-941d-0dc63beaa27d">邮件类型设置</a>
+              <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_Info/MailParam.aspx?navId=42794508-c8f5-416d-b153-248df0e5d1a6">邮件参数设置</a>
+            </div>
+            <div class="bottomBar">&nbsp;</div>
+          </div>
+
+        </td>
+
+
+
+
+
+
+
+
+
+
+
+
         
-        <input name="webImData" type="hidden" id="webImData" />
-        <!--提醒-->
-        <div id="remindContainer">
 
-        </div>
-        
-        <style type="text/css">
-            #weiXinTips{color: #FFFFFF;position: absolute;top: 4px;left: 0px;font-family: "Microsoft Yahei","黑体",Helvetica,Arial,sans-serif;
-                font-size: 25px;
-                height: 50px;
-                line-height: 50px;}
-            #weiXinTips .word{ }
-        </style>
-        <script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <td valign="top" class="rightMainContent">
+          <div class="topBar">
+
+            <div id="pagetitle">
+              <img class="img1" src="/assets/img/icon.png" />
+              <span class="pagetitle">我的桌面</span>
+            </div>
+
+
+
+            <a id="weiXinTips" class="hidden" href="javascript:void(0);" target="content">有新微信消息[
+              <span class="words" style="color: white;"></span>]</a>
+
+
+
+
+            <div class="floatRight">
+              <a href="javascript:void(0)" target='content' id="btnGoIndex" style="margin-top:5px;margin-right: 15px; padding-top:5px;">
+
+                <i class="icon iconfont icon-shouye" sourceclass="icon-shouye" hoverclass="icon-shouye-hover" style="font-size: 32px;"></i>
+                <span class="fixTop hidden" style="top: 17px;">我的桌面</span>
+                <span class="fixWidth hidden">&nbsp;</span>
+              </a>
+              <a href="javascript:void(0);" id="btnInfo" style="padding-top:5px;">
+
+                <i class="icon iconfont icon-pifu" sourceclass="icon-pifu" hoverclass="icon-pifu-hover" style="font-size: 32px;"></i>
+                <span class="fixTop hidden" style="top: 17px;">系统皮肤</span>
+                <span class="fixWidth hidden">&nbsp;</span>
+              </a>
+
+              <a href="javascript:void(0)" class="webIm" id="webIM" style="margin-right: 0px; padding-top:5px;">
+
+                <i class="icon iconfont icon-xiaoxi" sourceclass="icon-xiaoxi" hoverclass="icon-xiaoxi-hover" id="webimicon" style="font-size: 32px;"></i>
+                <span class="fixTop hidden" style="width: 95px;">
+                  <span>
+                    <span>18616126092</span>
+                    <span style="overflow: hidden;">&nbsp;&nbsp;&nbsp;&nbsp;校长</span>
+                  </span>
+                </span>
+                <span class="fixWidth hidden">&nbsp;</span>
+              </a>
+            </div>
+          </div>
+
+
+          <!-- <iframe name="content" width="100%" frameborder="0" id="content" scrolling="no" src="/v1/homepage/index"></iframe> -->
+
+
+
+
+
+
+          <div id="shortcut" class="hidden" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
+            <a class="item" href="uploadfile/etmprocess/process.html" target="content">
+              <div class="icon">
+                <img src="/assets/img/Index/cangjing.png" />
+              </div>
+              <div class="description aWhite">应用场景</div>
+            </a>
+          </div>
+
+
+        </td>
+      </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+    <!--WebIm-->
+
+    <input name="webImData" type="hidden" id="webImData" />
+
+    <!--提醒-->
+    <div id="remindContainer">
+
+    </div>
+
+    <style type="text/css">
+      #weiXinTips {
+        color: #FFFFFF;
+        position: absolute;
+        top: 4px;
+        left: 0px;
+        font-family: "Microsoft Yahei", "黑体", Helvetica, Arial, sans-serif;
+        font-size: 25px;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      #weiXinTips .word {}
+    </style>
+    <script type="text/javascript">
             // $(function() {
                 // $("#weiXinTips").css("left", ($(window).width() - 60 - $("#weiXinTips").width())/2+"px");
             // });
-        </script>
-        <!--取微信信息-->
-        <!-- <script src="JS/GetWeixinMessage.js" type="text/javascript"></script> -->
-        
-    
-
-    </form>
-    
-<div id='langList' class='hidden'><div lang='zh_CN'>简体中文</div><div lang='zh_HK'>香港繁體</div><div lang='zh_TW'>台湾繁體</div><div lang='en_US'>English</div><div lang='ar'>العربية</div><div lang='fr'>français</div><div lang='de'>Deutsch</div><div lang='ja_JP'>日本語</div><div lang='ko_KR'>한국어</div><div lang='pt'>Português</div><div lang='ru'>русский язык</div></div>
+    </script>
+    <!--取微信信息-->
+    <!-- <script src="JS/GetWeixinMessage.js" type="text/javascript"></script> -->
 
 
-    
-    <!-- <script src="JS/guide.js" type="text/javascript"></script> -->
-    <script type="text/javascript">
-        
+
+  </form>
+
+
+
+
+  <div id='langList' class='hidden'>
+    <div lang='zh_CN'>简体中文</div>
+    <div lang='zh_HK'>香港繁體</div>
+    <div lang='zh_TW'>台湾繁體</div>
+    <div lang='en_US'>English</div>
+    <div lang='ar'>العربية</div>
+    <div lang='fr'>français</div>
+    <div lang='de'>Deutsch</div>
+    <div lang='ja_JP'>日本語</div>
+    <div lang='ko_KR'>한국어</div>
+    <div lang='pt'>Português</div>
+    <div lang='ru'>русский язык</div>
+  </div>
+
+
+  <script>
+    // 
+
+    $(document).ready(function () {
+
+
+
+
+      resizeLeftMenu();
+      leftMenuHover();
+
+      logoEvent();
+
+
+      //console.log($.cookie("asdf"));
+
+      // $(document.body).on("mouseenter", function() {
+      //   $("#settingForHover").addClass("hidden");
+      // })
+
+    });
+
+    function resizeLeftMenu() {
+      var menuheight = $("#maintable").outerHeight() - $("#logo").outerHeight();
+      menuheight = menuheight < 0 ? 0 : menuheight;
+      var menulength = $(".firstMenu").length;
+      if (menulength) {
+        menuheight = menuheight / menulength;
+        menuheight = Math.round(menuheight * 10000) / 10000;
+        menuheight = menuheight - 18;
+      }
+
+      $(".firstMenu").each(function (index, elem) {
+        $(elem).css("height", menuheight + "px");
+        $(elem).css("line-height", menuheight + "px");
+      });
+    }
+
+    function leftMenuHover() {
+      $(".firstMenu").on("mouseover", function () {
+        $(this).addClass("selected");
+        $(this).addClass("currentSelected");
+        return false;
+      })
+
+      $(".firstMenu").on("mouseleave", function () {
+        $(this).removeClass("selected");
+        $(this).removeClass("currentSelected");
+        return false;
+      })
+    }
+
+    function logoEvent() {
+
+      $("#logo").hover(function () {
+        $("#settingForHover").removeClass("hidden");
+      }, function () {
+        $("#settingForHover").addClass("hidden");
+      });
+
+      $("#settingForHover").hover(function () {
+        $("#settingForHover").removeClass("hidden");
+      }, function () {
+        $("#settingForHover").addClass("hidden");
+      });
+
+
+      $(".fixIndex").hover(function () {
+        $("#settingForHover").removeClass("hidden");
+      }, function () {
+        $("#settingForHover").addClass("hidden");
+      });
+
+
+
+    }
+
+
+
+
+
+
+
+
+    console.log($(".firstMenu").length);
+
+
+  </script>
+
+
+  <!-- <script src="JS/guide.js" type="text/javascript"></script> -->
+  <script type="text/javascript">
+
         //$.post("../Ashx/CheckService.ashx", { "action": "setAddedservice" }, function (result) {}, "text");
 
         // $(document).ready(function() {
@@ -912,20 +1729,21 @@
         //         var seconds = new Date().getSeconds();
         //         $("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
         //     },1000);
-	
+
         //     setInterval( function() {
         //         var minutes = new Date().getMinutes();
         //         $("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
         //     },1000);
-	
+
         //     setInterval( function() {
         //         var hours = new Date().getHours();
         //         $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
         //     }, 1000);
         // });
 
-    </script>
+  </script>
 
 
 </body>
+
 </html>
