@@ -92,6 +92,10 @@ aku.layerConfirm = function() {
     
 }
 
+
+
+
+
 /**
  * Table Manager 类
  */
@@ -170,8 +174,8 @@ function ListTable(obj) {
     var colsOptions = {
          field : '', //    String  （必填项）设定字段名。字段名的设定非常重要，且是表格数据列的唯一标识
          title : '', //    String  （必填项）设定标题名称
-         width : 0, //    Number/String   设定列宽（默认自动分配）。支持填写：数字、百分比。请结合实际情况，对不同列做不同设定。注意：如果是 layui 2.2.0 之前的版本，列宽必须设定一个固定数字
-         minWidth : 60, // Number  （layui 2.2.1 新增）局部定义当前常规单元格的最小宽度（默认：60），一般用于列宽自动分配的情况。其优先级高于基础参数中的 cellMinWidth
+         width : 60, //    Number/String   设定列宽（默认自动分配）。支持填写：数字、百分比。请结合实际情况，对不同列做不同设定。注意：如果是 layui 2.2.0 之前的版本，列宽必须设定一个固定数字
+         minWidth : 0, // Number  （layui 2.2.1 新增）局部定义当前常规单元格的最小宽度（默认：60），一般用于列宽自动分配的情况。其优先级高于基础参数中的 cellMinWidth
          type : '', // String  设定列类型。可选值有：normal（常规列，无需设定）、checkbox（复选框列）、space（空列）、edit (可编辑区域)、 。注意：该参数为 layui 2.2.0 新增。而如果是之前的版本，复选框列采用 checkbox: true、空列采用 space: true
          sort : false, // Boolean 是否允许排序（默认：false）。如果设置 true，则在对应的表头显示排序icon，从而对列开启排序功能。注意：不推荐对值同时存在“数字和普通字符”的列开启排序，因为会进入字典序比对。比如：'贤心' > '2' > '100'，这可能并不是你想要的结果，但字典序排列算法（ASCII码比对）就是如此。
          initSort : '', // string   ASC or DESC  初始排序状态。用于在数据表格渲染完毕时，默认按某个字段排序。注：该参数为 layui 2.1.1 新增
@@ -672,7 +676,22 @@ function ListTable(obj) {
         width = width + (this.flexigrid.find(".flexigridTips").length > 0 ? this.flexigrid.find(".flexigridTips").outerHeight() : 0);
         width = width + (this.flexigrid.find(".pDiv").length > 0 ? this.flexigrid.find(".pDiv").outerHeight() : 0);
         width = width + (this.flexigrid.find(".vGrip").length > 0 ? this.flexigrid.find(".vGrip").outerHeight() : 0);
+        // width = width + 40;
         this.flexigrid.find(".bDiv").css("height", bodyDivHeight-width-10 + "px");
+
+        
+
+        this.flexigrid.find(".bDiv").niceScroll({ 
+                cursorcolor: '#F18D00', 
+                cursorborderradius: "0px",
+                cursorwidth: "8px",
+                autohidemode: false,
+                railpadding: { top: 0, right: 0, left: 0, bottom: 0 }
+        }); 
+        this.flexigrid.find(".bDiv").niceScroll().resize();
+
+        
+        // $('form').height($(window).height() - 0)
     }
 
     this.loadList = function() {
@@ -735,11 +754,20 @@ function ListTable(obj) {
 
                         if (col['type'] == "checkbox") {
                             var tdValue = "<input type=\"checkbox\" class=\"selectItem\" name=\"selectItem\" value=\"17682304378|小杨||\">";
+
                         } else if (col['type'] == "edit") {
+
                             var tdValue = "<input type=\"text\" name=\"MemberName\" class=\"int\" style=\"width:90%;\" value=\""+ listData[y][col['field']] +"\">";
+
                         } else {
+
                             var tdValue = listData[y][col['field']];
+
                         }
+
+                        // if (col['type'] == "toolbar") {
+
+                        // }
 
                         var td = "<td align=\""+ options.cols[i].align +"\"  data-tableid=\""+ options.id +"\" data-colsid=\""+ i +"\" >" +
                         "<div class=\"wordwrap\"  style=\""+ center +  width + minWidth +" \">"+ tdValue  +"</div>" +
@@ -788,6 +816,8 @@ function ListTable(obj) {
         this.__construct();
     }
 }
+
+
 
 /**
  * Table 分页类

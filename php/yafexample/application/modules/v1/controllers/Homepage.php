@@ -1,7 +1,7 @@
 <?php
 //use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
-class HomepageController extends Base_V1Controller {
+class HomepageController extends Base_CrmController {
 
     public function indexAction() { //默认Action
 

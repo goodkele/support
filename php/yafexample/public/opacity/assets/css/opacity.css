@@ -1,8 +1,6 @@
-
 .flexigridColumnHeader tr:hover {
     background-color:#fffcd3;
 }
-
 .flexigridColumnHeader tr td {
     cursor:pointer; 
     height:25px;
@@ -18,6 +16,7 @@
 .flexigrid table {
     border-collapse:collapse;
 }
+
 
 
 .flexigrid table thead {
@@ -44,4 +43,11 @@
 .flexigrid table thead th div.sasc{	 background:url(../../images/up.png) no-repeat left center;}
 .flexigrid table thead th div.sdesc{	 background:url(../../images/dn.png) no-repeat left center;}
 
-.dropdownStatus{background:url(../../Images/arrowdown1.png) no-repeat scroll center right transparent;}
+.dropdownStatus{    background:url(../../Images/arrowdown1.png) no-repeat scroll center right transparent;}
+
+/*
+.flexigrid table tbody tr{
+    background-color: expression((this.rowIndex % 2 == 0) ?   "#F4F4F4" : "#FFF" ); 
+}
+*/
+
