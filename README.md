@@ -92,6 +92,24 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [jquery ajax发送Post请求，如何添加请求头](https://www.oschina.net/question/263977_57725)
 * [jQuery AJAX 方法](http://www.runoob.com/jquery/jquery-ref-ajax.html)
 * [jQuery ajax - ajax() 方法](http://www.w3school.com.cn/jquery/ajax_ajax.asp)
+* [nginx快速入门之配置篇](https://zhuanlan.zhihu.com/p/31202053)
+* [nginx快速入门之基本原理篇](https://zhuanlan.zhihu.com/p/31196264)
+* [设计模式一句话总结](https://zhuanlan.zhihu.com/p/28737945)
+
+
+## Redis
+* [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
+* [Redis环境搭建和代码测试及与GIS结合的GEO数据类型预研](http://www.cnblogs.com/naaoveGIS/p/6728459.html)
+* [WebGIS中GeoHash编码的研究和扩展](http://www.cnblogs.com/naaoveGIS/p/5164187.html)
+* [阿里云Redis GEO地理位置功能上线啦](https://yq.aliyun.com/articles/62844)
+* [Redis持久化方式对比](http://www.cnblogs.com/wupeixuan/p/8667335.html)
+
+
+## 数据库
+* [MySQL索引总结](https://zhuanlan.zhihu.com/p/29118331)
+* [MySQL锁总结](https://zhuanlan.zhihu.com/p/29150809)
+* [数据库事务与MySQL事务总结](https://zhuanlan.zhihu.com/p/29166694)
+
 
 
 # 前端
@@ -104,12 +122,6 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [create-react-app的使用及原理分析](https://www.cnblogs.com/axl234/p/8269018.html)
 * [Layui Layui/LayaAdmin/Lay论坛](http://www.layui.com/)
 
-## Redis
-* [使用 redis-py 储存地理位置数据](https://zhuanlan.zhihu.com/p/22067024)
-* [Redis环境搭建和代码测试及与GIS结合的GEO数据类型预研](http://www.cnblogs.com/naaoveGIS/p/6728459.html)
-* [WebGIS中GeoHash编码的研究和扩展](http://www.cnblogs.com/naaoveGIS/p/5164187.html)
-* [阿里云Redis GEO地理位置功能上线啦](https://yq.aliyun.com/articles/62844)
-* [Redis持久化方式对比](http://www.cnblogs.com/wupeixuan/p/8667335.html)
 
 # 产品
 
