@@ -10,6 +10,7 @@
 
   <script type="text/javascript" charset="utf-8" src="<?php echo  $SYSTEM['static_version_assets']?>/js/jquery.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="<?php echo  $SYSTEM['static_version_assets']?>/js/jquery.cookie.js"></script>
+  <script type="text/javascript" charset="utf-8" src="<?php echo  $SYSTEM['static_version_assets']?>/js/aku.js"></script>
 
   <style type="text/css">
     body {
@@ -260,7 +261,8 @@
     }
   </style>
 
-  
+  <script>
+  </script>
 
   <script>
 
@@ -287,14 +289,15 @@
 
 
 
-
-    <div id='loading-mask' class="hidden">
-    </div>
-    <div id="loading" class="hidden">
-      <div class="loading-indicator">
-        <img src="/assets/img/loading.gif" style="margin-right: 8px; float: left; vertical-align: top; margin-left: 136px" />
-        <div id="loading-msg" style="font-size: 12px; font-weight: normal;">
-          执行中，请耐心等待 ...
+    <div>
+      <div id='loading-mask' class="hidden">
+      </div>
+      <div id="loading" class="hidden">
+        <div class="loading-indicator">
+          <img src="/assets/img/loading.gif" style="margin-right: 8px; float: left; vertical-align: top; margin-left: 136px" />
+          <div id="loading-msg" style="font-size: 12px; font-weight: normal;">
+            执行中，请耐心等待 ...
+          </div>
         </div>
       </div>
     </div>
@@ -362,7 +365,7 @@
 
 
 
-    <div id="floatMenu" class="borderBottom borderRight borderTop ">
+    <div id="floatMenu" class="borderBottom borderRight borderTop hidden">
       <img src="/assets/img/floatNormal.png" id="btnFloatNormal" title="停靠" />
       <div class="firstMenuContent">学员管理</div>
       <div class="otherMenuContent">
@@ -591,26 +594,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
     <table id="maintable" border="0" cellpadding="0" cellspacing="0" style="height:100%;">
       <tr>
 
         <td id="firstMenu">
 
 
-          <a d='&nbsp;|&nbsp;校长' u='<a href="../K_Department/WorkerInfo.aspx?ManagerGuid=66b1889f-40dc-4b78-81b7-1ddd3a8c0bbc&navId=d00ca3d2-27c4-4f92-b910-c1d7b2332d2e" target="content">18616126092</a>'
-            isindex='true' title1='我的桌面' id='logo' href='javascript:void(0);' class=' aWhite selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>
-
-            <img class='sex' style="border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;" src="/assets/img/icon.jpg" hasupdate="false"
-            />
-            <span class='firstMenuSelectedTips' style="top: 24.3929px;">
+          <a id='logo' href='javascript:void(0);' class=' aWhite selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>
+            <img class='sex' style="border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;" src="/assets/img/icon.jpg"  />
+            <!-- <span class='firstMenuSelectedTips' style="top: 24.3929px;">
               <img src='/assets/img/ArrowLeft.png'>
-            </span>
+            </span> -->
           </a>
 
 
 
           <!--一级菜单Start-->
-          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='招生推广' isIndex='false' u='18616126092' d='' i='yxtg.jpg' ico='icon-zhaoshengtuiguang'
+          <a class='aWhite firstMenu ' href='javascript:void(0);' title1='招生推广'  i='yxtg.jpg' ico='icon-zhaoshengtuiguang'
             style='text-align: center;'>招生推广</a>
 
           <div class='hidden'>
@@ -683,6 +692,7 @@
 
           <a class='aWhite firstMenu ' href='javascript:void(0);' title1='呼叫中心' isIndex='false' u='18616126092' d='' i='hjzx.jpg' ico='icon-hujiaozhongxin'
             style='text-align: center;'>呼叫中心</a>
+            
           <div class='hidden'>
             <a class='secMemu aNormal secUnSelected ' href='javascript:void(0);'>呼叫通话管理
               <span class='secMenuSelectedTips'>
@@ -1363,7 +1373,7 @@
 
 
 
-        <td id="childMenu" class="" style="border-right-width:0px;">
+        <td id="childMenu" style="border-right-width:0px;">
 
           <div class="fixIndex hidden" style="position: relative;height: 80px;width: 3px;">
             <div style=" border-right: 1px solid #F18D00;height: 60px;position: absolute;right: -4px; top: 0; width: 13px;">&nbsp;</div>
@@ -1375,7 +1385,7 @@
             <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动" />
           </div> -->
 
-          <div class="childMenuTopBar">
+          <div id="menuNormalTopBar" class="childMenuTopBar ">
             <div class="d" source="招生推广">招生推广</div>
             <div class="i" source="18616126092">18616126092</div>
 
@@ -1383,16 +1393,16 @@
             <div class="fixTopBarColor">&nbsp;</div>
           </div>
 
-          <div id="menuhover" class="hidden">
-
+          <!-- <div id="menuhover" class="hidden">
+asdfasdf
           </div>
           <div id="menuNormal" class="hidden">
-          </div>
+          </div> -->
 
-          <div id="menuNormal" class="" style="height: 836px; overflow-y: hidden; outline: none;" tabindex="5001" index="0">
-            <a class="secMemu aNormal secUnSelected  secMemuBg" href="javascript:void(0);">微信公众账号
+          <div id="menuNormal" class="" style="overflow-y: hidden; outline: none;" tabindex="5001" index="0">
+            <a class="secMemu aNormal secUnSelected secMemuBg" href="javascript:void(0);">微信公众账号
               <span class="secMenuSelectedTips">
-                <img class="arrowDown" src="Images/ArrowDown.png">
+                <img class="arrowDown" src="/assets/img/ArrowDown.png">
               </span>
             </a>
             <div class="thirdMenus">
@@ -1410,7 +1420,7 @@
             <div class="bottomBar">&nbsp;</div>
             <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">手机短信管理
               <span class="secMenuSelectedTips">
-                <img class="arrowRight" src="Images/ArrowRight.png">
+                <img class="arrowRight" src="/assets/img/ArrowRight.png">
               </span>
             </a>
             <div class="thirdMenus hidden">
@@ -1423,7 +1433,7 @@
             <div class="bottomBar">&nbsp;</div>
             <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">企业邮件管理
               <span class="secMenuSelectedTips">
-                <img class="arrowRight" src="Images/ArrowRight.png">
+                <img class="arrowRight" src="/assets/img/ArrowRight.png">
               </span>
             </a>
             <div class="thirdMenus hidden">
@@ -1434,7 +1444,7 @@
             <div class="bottomBar">&nbsp;</div>
             <a class="secMemu aNormal secUnSelected " href="javascript:void(0);">推广分析曲线
               <span class="secMenuSelectedTips">
-                <img class="arrowRight" src="Images/ArrowRight.png">
+                <img class="arrowRight" src="/assets/img/ArrowRight.png">
               </span>
             </a>
             <div class="thirdMenus hidden">
@@ -1572,7 +1582,7 @@
 
     <!--WebIm-->
 
-    <input name="webImData" type="hidden" id="webImData" />
+    <!-- <input name="webImData" type="hidden" id="webImData" /> -->
 
     <!--提醒-->
     <div id="remindContainer">
@@ -1630,12 +1640,12 @@
 
 
 
-
+/*
       resizeLeftMenu();
       leftMenuHover();
 
       logoEvent();
-
+*/
 
       //console.log($.cookie("asdf"));
 
