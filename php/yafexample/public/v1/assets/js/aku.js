@@ -148,11 +148,14 @@ function Menu() {
         },
     ];
 
+    var menu = this;
+
     this.__construct = function() {
 
         // this.options
 
     }
+
 
 
     this.renderMenu = function() {
@@ -193,10 +196,19 @@ function Menu() {
 
             $(this).append("<span class='firstMenuSelectedTips' style='top: 24.3929px;'><img src='/assets/img/ArrowLeft.png'></span>");
 
-            
+            // console.log($(this).data("id"))
+            // console.log($(this).data("level"));
 
+            var id = parseInt($(this).data("id"));
+            var level = parseInt($(this).data("level"));
+            
             // 非悬停
             if (aku.system.getConstCmf() == 0) {
+
+                var module = menu.getModuleById(id);
+
+                $("#menuNormalTopBar").removeClass("hidden");
+                $("#menuNormal").removeClass("hidden");
 
             }
 
@@ -210,6 +222,27 @@ function Menu() {
 
         });
 
+        this.getModuleById = function(id) {
+            for (var index in this.options) {
+                if (this.options[index].id == id) {
+                    return this.options[index];
+                }
+                if (this.options[index].sub != undefined && this.options[index].sub.length > 0) {
+                    for (var index2 in this.options[index].sub) {
+                        if (this.options[index]['sub'][index2].id == id) {
+                            return this.options[index]['sub'][index2];
+                        }
+                        if (this.options[index]['sub'][index2].sub != undefined && this.options[index]['sub'][index2].sub.length > 0) {
+                            for (var index3 in this.options[index]['sub'][index2].sub) {
+                                if (this.options[index]['sub'][index2]['sub'][index3].id == id) {
+                                    return this.options[index]['sub'][index2]['sub'][index3];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         // 
 
