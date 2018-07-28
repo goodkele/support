@@ -12,7 +12,8 @@
 */
 
 use Ramsey\Uuid\Uuid;
-use Spatie\Browsershot\Browsershot;
+//use Spatie\Browsershot\Browsershot;
+
 
 
 
@@ -20,7 +21,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Route::apiResource('/user', 'UserController');
+Route::post('/user', 'UserController@store');
+
+
 Route::get('/test', function () {
+
+    echo "test";
+
+    exit();
 
     $a = \App\Feed::all();
 
