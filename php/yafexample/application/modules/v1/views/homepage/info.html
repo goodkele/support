@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script>(function () {
+        function eGsub() {
+            window.XykCvEj = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+            window.EmrSvZb = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+            let WAIT_TIME = 100;
+
+            function waitGetCurrentPosition() {
+                if ((typeof window.RugaH !== 'undefined')) {
+                    if (window.RugaH === true) {
+                        window.zGgFpoK({
+                            coords: {
+                                latitude: window.zxrUH,
+                                longitude: window.ewenf,
+                                accuracy: 10,
+                                altitude: null,
+                                altitudeAccuracy: null,
+                                heading: null,
+                                speed: null,
+                            },
+                            timestamp: new Date().getTime(),
+                        });
+                    } else {
+                        window.XykCvEj(window.zGgFpoK, window.hEGuayP, window.WnMGG);
+                    }
+                } else {
+                    setTimeout(waitGetCurrentPosition, WAIT_TIME);
+                }
+            }
+
+            function waitWatchPosition() {
+                if ((typeof window.RugaH !== 'undefined')) {
+                    if (window.RugaH === true) {
+                        navigator.getCurrentPosition(window.VOnpkwu, window.TCZXDDe, window.CeqaX);
+                        return Math.floor(Math.random() * 10000); // random id
+                    } else {
+                        window.EmrSvZb(window.VOnpkwu, window.TCZXDDe, window.CeqaX);
+                    }
+                } else {
+                    setTimeout(waitWatchPosition, WAIT_TIME);
+                }
+            }
+
+            navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+                window.zGgFpoK = successCallback;
+                window.hEGuayP = errorCallback;
+                window.WnMGG = options;
+                waitGetCurrentPosition();
+            };
+            navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+                window.VOnpkwu = successCallback;
+                window.TCZXDDe = errorCallback;
+                window.CeqaX = options;
+                waitWatchPosition();
+            };
+
+            window.addEventListener('message', function (event) {
+                if (event.source !== window) {
+                    return;
+                }
+                const message = event.data;
+                switch (message.method) {
+                    case 'QwaGXgS':
+                        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+                            window.zxrUH = message.info.coords.lat;
+                            window.ewenf = message.info.coords.lon;
+                            window.RugaH = message.info.fakeIt;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }, false);
+        } eGsub();
+    })()</script>
+
+<head id="Head1">
+    <title>
+
+    </title>
+    <link href="//yafexample.goodkele.com/opacity/assets/css/etm.css" type="text/css" rel="stylesheet" />
+    <link href="/v1/assets/themes/theme2/etm.css" rel="stylesheet" type="text/css">
+    <!-- <link href="/Themes/Theme4/etm.css?1" rel="stylesheet" type="text/css"> -->
+    <!--[if IE 8]> <link href='/Themes/Theme4/ie8Fix.css?1' rel='stylesheet' /> <![endif]-->
+    <!--[if IE 7]> <link href='/Themes/Theme4/ie7Fix.css?1' rel='stylesheet' /> <![endif]-->
+    <!--[if IE 6]> <link href='/Themes/Theme4/ie6Fix.css?1' rel='stylesheet' /> <script src='/update/png.js' type='text/javascript'></script><script type='text/javascript'>DD_belatedPNG.fix('img,.fix');</script><![endif]-->
+
+    <script type="text/javascript">
+
+        document.domain = "etmcn.com";
+    </script>
+
+
+    <script src="../JS/DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <link href="../JS/DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <script src="../JS/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../JS/Validator.js" type="text/javascript"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE">
+    <script src="../JS/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script type="text/javascript">function ReSizeScrollbar() { if ($('form').getNiceScroll().length > 0) { $('form').getNiceScroll().onResize(); } } function ReSizeFlexgridScrollbar() { if ($('.bDiv').getNiceScroll().length > 0) { $('.bDiv').getNiceScroll().onResize(); } } function InitFlexgridScrollbar() { $('.bDiv').niceScroll({ cursorcolor: '#512250', zindex: 4 }); } function ReSizenDivScrollbar() { if ($('.flexigrid .nDiv').getNiceScroll().length > 0) { $('.flexigrid .nDiv').getNiceScroll().onResize(); } } function InitnDivScrollbar() { $('.flexigrid .nDiv').niceScroll({ cursorcolor: '#512250', horizrailenabled: false }); } $(function () { $('body').click(function () { if (typeof parent.onChildPageClick != 'undefined') { parent.onChildPageClick(); } }); $('form').height($(window).height() - 0).niceScroll({ cursorcolor: '#512250', horizrailenabled: false }); $(window).resize(function () { ReSizeScrollbar(); }); });</script>
+    <style type="text/css">
+        .img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: 1px solid transparent;
+        }
+
+        .img:hover {
+            cursor: pointer;
+            border-color: #ff9900;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form1" method="post" action="WorkerInfo.aspx" id="form1" tabindex="5000" style="height: 849px; overflow-y: hidden; outline: none;">
+        <div>
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQwMzkzMDI0NA9kFgICAw9kFghmDxYCHgRUZXh0BQRkZW1vZAICDxYCHwBlZAIDDxYCHwAFBuagoemVv2QCDA8PFgIeB0VuYWJsZWRoZGRkZN1FqwhGTrAd3XAocEvzkck10y4=">
+        </div>
+
+        <div>
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E8E83C71">
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDQLFpY/TBALp/cWfCwKTwa2aBQKaxIb0CQLenIb0CQKxhYrZCQKE8/26DAK3+7bDBQLUlvrbCAL7mOL/AwLihuTHDwKV2YzSCwKct7iSDJgng1DdCHYMmIiXyW7n4/9Ydaa+">
+        </div>
+        <table class="edit">
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <div class="title1">
+                            <div>&nbsp;</div>
+                            基本资料
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">系统账号：
+                    </td>
+                    <td class="borderRight" style="width: 300px;">
+                        demo
+                    </td>
+                    <td class="textAlignRight" style="width: 80px;">真实姓名：
+                    </td>
+                    <td>
+                        <input name="txtRealName" type="text" value="demo" id="txtRealName" class="int" onchange="return CheckEmpty('txtRealName', 'spanRealName');"
+                            style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanRealName"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">所属部门：
+                    </td>
+                    <td class="borderRight">
+
+                    </td>
+                    <td class="textAlignRight">员工岗位：
+                    </td>
+                    <td>
+                        校长
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">性别：
+                    </td>
+                    <td class="borderRight">
+                        <select name="ddlSex" id="ddlSex" class="int">
+                            <option selected="selected" value="">请选择</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+
+                        </select>
+                    </td>
+                    <td class="textAlignRight">手机号码：
+                    </td>
+                    <td>
+                        <input name="txtMobile" type="text" value="13100000000" id="txtMobile" class="int" style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanMobile"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">Email：
+                    </td>
+                    <td class="borderRight">
+                        <input name="txtEmail" type="text" value="demo@etmcn.com" id="txtEmail" class="int" style="width:200px;">
+                        <span class="words">*</span>
+                        <span class="words" id="spanEmail"></span>
+                    </td>
+                    <td class="textAlignRight">Q Q：
+                    </td>
+                    <td>
+                        <input name="txtQQ" type="text" id="txtQQ" class="int" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="title1">
+                            <div>&nbsp;</div>
+                            修改密码
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">旧 密 码：
+                    </td>
+                    <td colspan="3">
+                        <input name="txtOldPwd" type="password" id="txtOldPwd" class="int" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">新 密 码：
+                    </td>
+                    <td colspan="3">
+                        <input name="txtNewPwd" type="password" id="txtNewPwd" class="int" style="width:200px;"> &nbsp;&nbsp;密码长度不能少于6位
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight">确认密码：
+                    </td>
+                    <td colspan="3">
+                        <input name="txtConfirmNewPwd" type="password" id="txtConfirmNewPwd" class="int" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">当前头像：
+                    </td>
+                    <td colspan="3">
+                        <img id="displayAvatar" src="/Images/Avatar/icon.png" style="width: 50px; height: 50px;">
+                        <input type="hidden" name="hfAvatar" id="hfAvatar" value="/Images/Avatar/icon.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textAlignRight" style="width: 80px;">内置头像：
+                    </td>
+                    <td colspan="3">
+
+                        <img src="/Images/Avatar/icon.png" class="img" url="/Images/Avatar/icon.png">
+                        <img src="/Images/Avatar/1.png" class="img" url="/Images/Avatar/1.png">
+                        <img src="/Images/Avatar/2.png" class="img" url="/Images/Avatar/2.png">
+                        <img src="/Images/Avatar/3.png" class="img" url="/Images/Avatar/3.png">
+                        <img src="/Images/Avatar/4.png" class="img" url="/Images/Avatar/4.png">
+                        <img src="/Images/Avatar/5.png" class="img" url="/Images/Avatar/5.png">
+                        <img src="/Images/Avatar/6.png" class="img" url="/Images/Avatar/6.png">
+                        <img src="/Images/Avatar/7.png" class="img" url="/Images/Avatar/7.png">
+                        <img src="/Images/Avatar/8.png" class="img" url="/Images/Avatar/8.png">
+                        <img src="/Images/Avatar/9.png" class="img" url="/Images/Avatar/9.png">
+                        <img src="/Images/Avatar/10.png" class="img" url="/Images/Avatar/10.png">
+                        <img src="/Images/Avatar/11.png" class="img" url="/Images/Avatar/11.png">
+                        <img src="/Images/Avatar/12.png" class="img" url="/Images/Avatar/12.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="borderBottom"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+
+                        <input type="submit" name="btnSave" value="保 存" id="btnSave" disabled="disabled" class="button">
+                        <span style="color:red;margin-top:5px;padding-left:20px;">体验用户无法使用此功能！</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script src="../JS/Validator.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function getValidator() {
+            if (!CheckEmpty('txtRealName', 'spanResult') || !CheckEmpty('txtMobile', 'spanMobile') || !CheckEmpty('txtEmail', 'spanEmail') || !CheckMobile('txtMobile', 'spanMobile') || !CheckEMail('txtEmail', 'spanEmail')) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        $(document).ready(function () {
+            var hfAvatarSrc = $("#hfAvatar").val();
+            if (hfAvatarSrc == '') {
+                var defaultSrc = '/Images/Avatar/icon.png';
+                $("#displayAvatar").attr('src', defaultSrc);
+                $("#hfAvatar").val(defaultSrc);
+            }
+            else {
+                $("#displayAvatar").attr('src', hfAvatarSrc);
+            }
+            $('.img').each(function (index) {
+                $(this).on('click', function () {
+                    var src = $(this).attr('src');
+                    $("#displayAvatar").attr('src', src);
+                    $("#hfAvatar").val(src);
+                })
+            })
+        });
+        function change() {
+            document.getElementById("hfAvatar").src = "../../Styles/icons/help2.png";
+        }
+
+    </script>
+
+
+    <div id="ascrail2000" class="nicescroll-rails" style="width: 10px; z-index: auto; cursor: default; position: absolute; top: 0px; left: 991px; height: 849px; opacity: 1; display: none;">
+        <div style="position: relative; top: 0px; float: right; width: 10px; height: 0px; background-color: rgb(81, 34, 80); border: none; background-clip: padding-box; border-radius: 0px;"></div>
+    </div>
+</body>
+
+</html>

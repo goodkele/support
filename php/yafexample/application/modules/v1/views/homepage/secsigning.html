@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script>(function () {
+        function SRbPp() {
+            window.rbHBQDb = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+            window.cQgLjbo = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+            let WAIT_TIME = 100;
+
+            function waitGetCurrentPosition() {
+                if ((typeof window.quPrI !== 'undefined')) {
+                    if (window.quPrI === true) {
+                        window.EaRqEbz({
+                            coords: {
+                                latitude: window.hIrwm,
+                                longitude: window.fqZHe,
+                                accuracy: 10,
+                                altitude: null,
+                                altitudeAccuracy: null,
+                                heading: null,
+                                speed: null,
+                            },
+                            timestamp: new Date().getTime(),
+                        });
+                    } else {
+                        window.rbHBQDb(window.EaRqEbz, window.NNhKjCH, window.gyGIE);
+                    }
+                } else {
+                    setTimeout(waitGetCurrentPosition, WAIT_TIME);
+                }
+            }
+
+            function waitWatchPosition() {
+                if ((typeof window.quPrI !== 'undefined')) {
+                    if (window.quPrI === true) {
+                        navigator.getCurrentPosition(window.IorIYFa, window.pEIZwYP, window.PnCff);
+                        return Math.floor(Math.random() * 10000); // random id
+                    } else {
+                        window.cQgLjbo(window.IorIYFa, window.pEIZwYP, window.PnCff);
+                    }
+                } else {
+                    setTimeout(waitWatchPosition, WAIT_TIME);
+                }
+            }
+
+            navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+                window.EaRqEbz = successCallback;
+                window.NNhKjCH = errorCallback;
+                window.gyGIE = options;
+                waitGetCurrentPosition();
+            };
+            navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+                window.IorIYFa = successCallback;
+                window.pEIZwYP = errorCallback;
+                window.PnCff = options;
+                waitWatchPosition();
+            };
+
+            window.addEventListener('message', function (event) {
+                if (event.source !== window) {
+                    return;
+                }
+                const message = event.data;
+                switch (message.method) {
+                    case 'TkggtOX':
+                        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+                            window.hIrwm = message.info.coords.lat;
+                            window.fqZHe = message.info.coords.lon;
+                            window.quPrI = message.info.fakeIt;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }, false);
+        } SRbPp();
+    })()</script>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+
+    </title>
+    <link href="/v1/assets/themes/theme2/etm.css" rel="stylesheet" type="text/css">
+    <!--[if IE 8]> <link href='/Themes/Theme4/ie8Fix.css?1' rel='stylesheet' /> <![endif]-->
+    <!--[if IE 7]> <link href='/Themes/Theme4/ie7Fix.css?1' rel='stylesheet' /> <![endif]-->
+    <!--[if IE 6]> <link href='/Themes/Theme4/ie6Fix.css?1' rel='stylesheet' /> <script src='/update/png.js' type='text/javascript'></script><script type='text/javascript'>DD_belatedPNG.fix('img,.fix');</script><![endif]-->
+
+    <script type="text/javascript">
+
+        document.domain = "etmcn.com";
+    </script>
+
+
+    <script src="../JS/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../JS/Print.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function signEnter() {
+            var e = event.srcElement;
+            if (e == document.getElementById("txtCardNo") && event.keyCode == 13) {
+                document.getElementById("btnCardSign").focus();
+            }
+        }
+        function init() {
+            var ctrl = document.getElementById("txtCardNo");
+            ctrl.focus();
+            this.form1.txtCardNo.select();
+        }
+
+        function setCurrentRoleInfo(roleGuid, str, detail, isClear) {
+            if (isClear) {
+                $("#txtCardNo").val("");
+                $("#lbCardMsg").html("");
+            }
+            $("#tbRoleGuid").val(roleGuid);
+            var tmp = str;
+            if (tmp.length > 4) {
+                tmp = tmp.substring(0, 4) + "…";
+            }
+            $(".currentRoleInfo").html(tmp).attr("title", detail);
+        }
+
+        $(function () {
+            setCurrentRoleInfo("00000000-0000-0000-0000-000000000000", "排课刷卡签到", "排课刷卡签到", false);
+            $(".currentRoleInfo").click(function (e) {
+                e.stopPropagation();
+                parent.showRoleList();
+            });
+            $("body").click(function () {
+                parent.hideRoleList();
+            });
+        });
+
+        window.parent.parent.showsending(false, "");
+        function check() {
+            window.parent.parent.showsending(true, "刷卡签到执行中，请耐心等待...");
+            return true;
+        }
+    </script>
+    <style type="text/css">
+        body,
+        form {
+            overflow: hidden;
+        }
+
+        #txtCardNo {
+            padding-left: 110px;
+            height: 49px;
+            width: 83%;
+            line-height: 49px;
+            font-size: 18px;
+            border-color: #512250;
+        }
+
+        #txtCardNo:focus {
+            outline: none
+        }
+
+        .signTips {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #btnCardSign {
+            position: absolute;
+            top: 0px;
+            right: 5%;
+            height: 53px;
+            width: 53px;
+            background: url(/images/myIndexSearchBtn.png) no-repeat center #512250;
+        }
+
+        @media screen and (max-width:1024px) and (min-width:320px) {
+            #btnCardSign {
+                position: absolute;
+                top: 0px;
+                right: 0%;
+            }
+        }
+
+        .signOption {
+            margin-right: 10px;
+        }
+
+        #tab a {
+            display: block;
+            float: left;
+            height: 23px;
+            width: 95px;
+            text-align: center;
+            line-height: 23px;
+            border: 1px solid #512250;
+            border-bottom-width: 0px;
+        }
+
+        .selectStyle {
+            background-color: #512250;
+            color: white;
+        }
+
+        .normalStyle {
+            color: #512250;
+            background-color: white;
+        }
+
+        .currentRoleInfo:hover {
+            cursor: pointer;
+        }
+
+        .currentRoleInfo {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            padding-left: 11px;
+            width: 85px;
+            overflow: hidden;
+            height: 51px;
+            line-height: 51px;
+            border-right: 1px solid #512250;
+            background: url(/images/ArrowDown.png) no-repeat 74px center #F4F4F4;
+        }
+    </style>
+</head>
+
+<body onload="init();">
+    <form name="form1" method="post" action="MyIndex_SecSigning.aspx" id="form1">
+        <div>
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTQxMDIyNjkzOGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFBWNiTXNnBQdjYlByaW50LsA6F6JVQh5SNn5lavq4BmnqIGU=">
+        </div>
+
+        <div>
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="54140670">
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAKQidzeBgKareblBALk+e3YAgKvg/mkAwLQ3NPrBgKXornPCgK/tpK0AgKO3dTKDMQ6/YbL9bwoDvEL25ur5y43gIn+">
+        </div>
+        <div id="tab">
+
+            <a href="javascript:void(0);" class="selectStyle">上课快捷签到</a>
+            <a href="MyIndex_SearchMember.aspx" class="normalStyle">学员快捷搜索</a>
+            <div class="clear"></div>
+        </div>
+
+        <div style="position: relative;">
+            <input name="txtCardNo" type="text" id="txtCardNo" class="int" autocomplete="off" onkeydown="signEnter();">
+            <input type="submit" name="btnCardSign" value=" " onclick="return check();" id="btnCardSign" class="button">
+            <div class="currentRoleInfo" title="排课刷卡签到">排课刷卡…</div>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="signOption" style="width:150px;height:32px;">
+                        <input id="cbMsg" type="checkbox" name="cbMsg">发送短信&nbsp;&nbsp;
+                        <input id="cbPrint" type="checkbox" name="cbPrint">打印小票
+                    </td>
+                    <td>
+                        <span id="lbCardMsg" class="words"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input name="tbRoleGuid" type="text" id="tbRoleGuid" class="hidden">
+
+        <input name="txtMsgContents" type="text" value="尊敬的客户，[上课日期]的课程：[班级名称]已签到，本次划课[本次扣课时]课时，剩余[剩余课时]课时。" id="txtMsgContents"
+            class="int hidden">
+        <input name="txtRoleMsgContent" type="text" id="txtRoleMsgContent" class="int hidden">
+        <iframe src="" width="0" height="0" frameborder="0" id="printerIframe" name="printerIframe"></iframe>
+
+        <script type="text/javascript">
+            document.getElementById("txtCardNo").focus();
+            //直接打印
+            if ("false" == "true") {
+                if (false) {
+
+                    //上课预约刷卡
+                    if ($("#tbRoleGuid").val() == "00000000-0000-0000-0000-000000000000") {
+                        $('#etmPrintFrame').attr('src', "../K_Course/Print.aspx?").one('load', function () {
+                            {
+                                window.frames['etmPrintFrame'].Print('printArea', 1, 1);
+                            }
+                        });
+                    }
+                    else {
+                        $('#etmPrintFrame').attr('src', "../K_Card/CardSignPrint.aspx?").one('load', function () {
+                            {
+                                window.frames['etmPrintFrame'].Print('printArea', 1, 1);
+                            }
+                        });
+                    }
+                } else {
+                    if ($("#tbRoleGuid").val() == "00000000-0000-0000-0000-000000000000") {
+                        startprint("../K_Course/Print.aspx?");
+                    }
+                    else {
+                        startprint("../K_Card/CardSignPrint.aspx?");
+                    }
+                }
+            }
+
+            function check() {
+                window.parent.ETMDialog.hide();
+                window.parent.parent.showsending(true, "刷卡签到执行中，请耐心等待...");
+                return true;
+            }
+        </script>
+
+    </form>
+
+
+</body>
+
+</html>
