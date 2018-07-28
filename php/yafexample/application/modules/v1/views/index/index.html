@@ -431,11 +431,10 @@
 
 
 
-    <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">
-      
+    <!-- <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">
+
       <div class="settingNormal1">
-        <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;"
-        />
+        <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;"/>
 
         <div class="bottomBarForSetting">
           <span class="userNameStr" style='font-size:16px;'>18616126092</span>
@@ -460,10 +459,8 @@
               </td>
               <td id="btnLockScreen">
                 <i class="icon iconfont icon-xitongsuoping" sourceclass="icon-xitongsuoping" hoverclass="icon-xitongsuoping-hover" style="font-size: 40px;"></i>
-
                 <div class="name">系统锁屏</div>
               </td>
-
             </tr>
           </table>
         </div>
@@ -472,89 +469,83 @@
           <div class="borderBottom" style="margin-bottom: 10px; margin-top: 0px;">
             <img src="/assets/img/logo.gif" id="img_logo" style="margin-bottom: 10px;" />
           </div>
-
           <div>ETM早教管家</div>
           <div>当前版本：v11.0.0.0</div>
-
-
           <table cellpadding="0" cellspacing="0">
             <tr>
               <td align="left" class='langbtn'>
-
               </td>
               <td align="center">
                 <div id="langContainer" style='display:none;'>
-                  <input type='button' id="langSelect" value='简体中文' class='button' />
+                  <input type='button' id="langSelect" value='简体中文' class='button' value="adsf" />
                   <img src="/assets/img/ArrowDown2.png" />
                 </div>
               </td>
               <td align="right" class='langbtn'>
-                
               </td>
-
             </tr>
           </table>
           <div class="cc">Copyright © 2018</div>
           <div class="clear"></div>
         </div>
 
-        <div class="settingNormal2 hidden">
-          <div class="bottomBarForSetting">
-            <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
-            <div id="btnReturn1" title="返回">&nbsp;</div>
-          </div>
-          <div class="borderBottom" style="width: 100%;overflow: hidden;">
-
-            <div class="clock">
-              <ul>
-                <li id="hours" class="font"></li>
-                <li id="point" class="font">:</li>
-                <li id="min" class="font"></li>
-                <li id="point" class="font">:</li>
-                <li id="sec" class="font"></li>
-              </ul>
-            </div>
-          </div>
-          <div id="countInfo">
-            <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
-            <div>
-              准&nbsp;&nbsp;&nbsp;&nbsp;时：
-              <span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次， 迟&nbsp;&nbsp;&nbsp;&nbsp;到：
-              <span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次， 早&nbsp;&nbsp;&nbsp;&nbsp;退：
-              <span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
-            </div>
-          </div>
-          <div class="borderTop" style="margin-top:10px;padding-top:5px;">
-            <span id="lbSignInfo"></span>
-          </div>
-          <div class="info">
-            <div class="cc">Copyright © 2017</div>
-            <div class="clear"></div>
-          </div>
-
-          <script type="text/javascript">
-                        // function showSignInfo() {
-                        //     $.post("/Ashx/GetCurrentTime.ashx", { "act": "signrpt" },
-                        //         function (result) {
-                        //             if (result != null) {
-                        //                 $("#signTotal").html("电子考勤（" + result.Total + "次）");
-                        //                 $("#spanZhunShi").html(result.ZhunShi);
-                        //                 $("#spanChiDao").html(result.ChiDao);
-                        //                 $("#spanZaoTui").html(result.ZaoTui);
-                        //             }
-                        //         }, "json");
-                        // }
-                        // showSignInfo();
-          </script>
-
-        </div>
       </div>
-    </div>
+    </div> -->
 
 
 
 
 
+    <!-- <div class="settingNormal2 hidden">
+        <div class="bottomBarForSetting">
+          <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
+          <div id="btnReturn1" title="返回">&nbsp;</div>
+        </div>
+        <div class="borderBottom" style="width: 100%;overflow: hidden;">
+
+          <div class="clock">
+            <ul>
+              <li id="hours" class="font"></li>
+              <li id="point" class="font">:</li>
+              <li id="min" class="font"></li>
+              <li id="point" class="font">:</li>
+              <li id="sec" class="font"></li>
+            </ul>
+          </div>
+        </div>
+        <div id="countInfo">
+          <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
+          <div>
+            准&nbsp;&nbsp;&nbsp;&nbsp;时：
+            <span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次， 迟&nbsp;&nbsp;&nbsp;&nbsp;到：
+            <span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次， 早&nbsp;&nbsp;&nbsp;&nbsp;退：
+            <span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
+          </div>
+        </div>
+        <div class="borderTop" style="margin-top:10px;padding-top:5px;">
+          <span id="lbSignInfo"></span>
+        </div>
+        <div class="info">
+          <div class="cc">Copyright © 2017</div>
+          <div class="clear"></div>
+        </div>
+
+        <script type="text/javascript">
+                      // function showSignInfo() {
+                      //     $.post("/Ashx/GetCurrentTime.ashx", { "act": "signrpt" },
+                      //         function (result) {
+                      //             if (result != null) {
+                      //                 $("#signTotal").html("电子考勤（" + result.Total + "次）");
+                      //                 $("#spanZhunShi").html(result.ZhunShi);
+                      //                 $("#spanChiDao").html(result.ChiDao);
+                      //                 $("#spanZaoTui").html(result.ZaoTui);
+                      //             }
+                      //         }, "json");
+                      // }
+                      // showSignInfo();
+        </script>
+
+      </div> -->
 
 
 
