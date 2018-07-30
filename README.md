@@ -95,6 +95,7 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [nginx快速入门之配置篇](https://zhuanlan.zhihu.com/p/31202053)
 * [nginx快速入门之基本原理篇](https://zhuanlan.zhihu.com/p/31196264)
 * [设计模式一句话总结](https://zhuanlan.zhihu.com/p/28737945)
+* [gis arcgis 下载](https://malagis.com/arcgis-10-2-full-iso-download.html)
 
 
 ## Redis
