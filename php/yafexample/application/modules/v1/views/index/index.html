@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ETM早教管家1</title>
   
-  <link rel="stylesheet" href="/assets/themes/mainicon/iconfont.css?v=1" />
-  <link rel='stylesheet' href='/assets/themes/theme2/etm.css' />
+  <link rel="stylesheet" href="/v1/assets/themes/mainicon/iconfont.css?v=1" />
+  <link rel='stylesheet' href='/v1/assets/themes/theme2/etm.css' />
 
   <script type="text/javascript" charset="utf-8" src="<?php echo  $SYSTEM['static_version_assets']?>/js/jquery.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="<?php echo  $SYSTEM['static_version_assets']?>/js/jquery.cookie.js"></script>
@@ -268,8 +268,9 @@
 
   </script>
 
-
 </head>
+
+
 
 <body scroll="no" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
 
@@ -278,17 +279,17 @@
   <form name="form1" method="post" action="main.aspx" id="form1">
 
 
-
+<!-- 
     <div id="lockScreen" class="hidden">
       <img src="/assets/img/etm_logo.png" class="etmlogo" alt="" style="width:424.444px;height:424.444px">
       <div id="moveLock" class="lockNormal">&nbsp;</div>
     </div>
 
-    <div id="hasUpdate" class="hidden" hasupdate="false"></div>
+    <div id="hasUpdate" class="hidden" hasupdate="false">123123</div> -->
 
 
 
-
+<!--     
     <div>
       <div id='loading-mask' class="hidden">
       </div>
@@ -300,10 +301,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
-
+    
 
 
     <div id="setting" class="borderRight textAlignLeft borderBottom borderLeft hidden" style="padding:0 1px 0 1px;">
@@ -377,7 +378,7 @@
                 <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserEdit.aspx?navId=8e5f7ad0-28f0-488f-9b45-0b46d4a9fe57">添加学员</a>
                 <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/ImportData.aspx?navId=3c43cdad-9e2e-47d7-87e7-1b6d7a6e86b6">批量导入学员</a>
                 <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/ImportHistory.aspx?navId=93c18cb1-b3a9-43ee-960c-3fbf738cd7a0">导入批次管理</a>
-                <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserSuperEdit.aspx?navId=ef809cd1-8557-4b91-9846-7dfa9bb186fc">学员核心资料维护</a>
+                <a class="thirdMemu aNormal  thirdMemuDisplay" tar get="content" href="/K_User/UserSuperEdit.aspx?navId=ef809cd1-8557-4b91-9846-7dfa9bb186fc">学员核心资料维护</a>
                 <a class="thirdMemu aNormal  thirdMemuDisplay" target="content" href="/K_User/UserList.aspx?navId=e8082491-e1bf-4aeb-80bf-d48cd0224134">我的学员</a>
                 <div class="clear"></div>
               </td>
@@ -430,12 +431,10 @@
 
 
 
+    <!-- <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">
 
-
-    <div id="settingForHover" class="borderRight textAlignLeft borderBottom hidden">
       <div class="settingNormal1">
-        <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;"
-        />
+        <input type="image" name="btnLogOut11" id="btnLogOut11" title="安全退出" src="/assets/img/logout.png" style="border-width:0px;"/>
 
         <div class="bottomBarForSetting">
           <span class="userNameStr" style='font-size:16px;'>18616126092</span>
@@ -460,10 +459,8 @@
               </td>
               <td id="btnLockScreen">
                 <i class="icon iconfont icon-xitongsuoping" sourceclass="icon-xitongsuoping" hoverclass="icon-xitongsuoping-hover" style="font-size: 40px;"></i>
-
                 <div class="name">系统锁屏</div>
               </td>
-
             </tr>
           </table>
         </div>
@@ -472,89 +469,83 @@
           <div class="borderBottom" style="margin-bottom: 10px; margin-top: 0px;">
             <img src="/assets/img/logo.gif" id="img_logo" style="margin-bottom: 10px;" />
           </div>
-
           <div>ETM早教管家</div>
           <div>当前版本：v11.0.0.0</div>
-
-
           <table cellpadding="0" cellspacing="0">
             <tr>
               <td align="left" class='langbtn'>
-
               </td>
               <td align="center">
                 <div id="langContainer" style='display:none;'>
-                  <input type='button' id="langSelect" value='简体中文' class='button' />
+                  <input type='button' id="langSelect" value='简体中文' class='button' value="adsf" />
                   <img src="/assets/img/ArrowDown2.png" />
                 </div>
               </td>
               <td align="right" class='langbtn'>
-
               </td>
-
             </tr>
           </table>
           <div class="cc">Copyright © 2018</div>
           <div class="clear"></div>
         </div>
 
-        <div class="settingNormal2 hidden">
-          <div class="bottomBarForSetting">
-            <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
-            <div id="btnReturn1" title="返回">&nbsp;</div>
-          </div>
-          <div class="borderBottom" style="width: 100%;overflow: hidden;">
-
-            <div class="clock">
-              <ul>
-                <li id="hours" class="font"></li>
-                <li id="point" class="font">:</li>
-                <li id="min" class="font"></li>
-                <li id="point" class="font">:</li>
-                <li id="sec" class="font"></li>
-              </ul>
-            </div>
-          </div>
-          <div id="countInfo">
-            <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
-            <div>
-              准&nbsp;&nbsp;&nbsp;&nbsp;时：
-              <span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次， 迟&nbsp;&nbsp;&nbsp;&nbsp;到：
-              <span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次， 早&nbsp;&nbsp;&nbsp;&nbsp;退：
-              <span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
-            </div>
-          </div>
-          <div class="borderTop" style="margin-top:10px;padding-top:5px;">
-            <span id="lbSignInfo"></span>
-          </div>
-          <div class="info">
-            <div class="cc">Copyright © 2017</div>
-            <div class="clear"></div>
-          </div>
-
-          <script type="text/javascript">
-                        // function showSignInfo() {
-                        //     $.post("/Ashx/GetCurrentTime.ashx", { "act": "signrpt" },
-                        //         function (result) {
-                        //             if (result != null) {
-                        //                 $("#signTotal").html("电子考勤（" + result.Total + "次）");
-                        //                 $("#spanZhunShi").html(result.ZhunShi);
-                        //                 $("#spanChiDao").html(result.ChiDao);
-                        //                 $("#spanZaoTui").html(result.ZaoTui);
-                        //             }
-                        //         }, "json");
-                        // }
-                        // showSignInfo();
-          </script>
-
-        </div>
       </div>
-    </div>
+    </div> -->
 
 
 
 
 
+    <!-- <div class="settingNormal2 hidden">
+        <div class="bottomBarForSetting">
+          <span id="signTotal" class="userNameStr">电子考勤（0次）</span>
+          <div id="btnReturn1" title="返回">&nbsp;</div>
+        </div>
+        <div class="borderBottom" style="width: 100%;overflow: hidden;">
+
+          <div class="clock">
+            <ul>
+              <li id="hours" class="font"></li>
+              <li id="point" class="font">:</li>
+              <li id="min" class="font"></li>
+              <li id="point" class="font">:</li>
+              <li id="sec" class="font"></li>
+            </ul>
+          </div>
+        </div>
+        <div id="countInfo">
+          <div style="font-weight: bold;margin-bottom: 10px;margin-top: 10px;">我的本月累计考勤</div>
+          <div>
+            准&nbsp;&nbsp;&nbsp;&nbsp;时：
+            <span id="spanZhunShi" class="countInfo" style="width: 15px;">0</span>次， 迟&nbsp;&nbsp;&nbsp;&nbsp;到：
+            <span id="spanChiDao" class="countInfo" style="width: 15px;">0</span>次， 早&nbsp;&nbsp;&nbsp;&nbsp;退：
+            <span id="spanZaoTui" class="countInfo" style="width: 15px;">0</span>次
+          </div>
+        </div>
+        <div class="borderTop" style="margin-top:10px;padding-top:5px;">
+          <span id="lbSignInfo"></span>
+        </div>
+        <div class="info">
+          <div class="cc">Copyright © 2017</div>
+          <div class="clear"></div>
+        </div>
+
+        <script type="text/javascript">
+                      // function showSignInfo() {
+                      //     $.post("/Ashx/GetCurrentTime.ashx", { "act": "signrpt" },
+                      //         function (result) {
+                      //             if (result != null) {
+                      //                 $("#signTotal").html("电子考勤（" + result.Total + "次）");
+                      //                 $("#spanZhunShi").html(result.ZhunShi);
+                      //                 $("#spanChiDao").html(result.ChiDao);
+                      //                 $("#spanZaoTui").html(result.ZaoTui);
+                      //             }
+                      //         }, "json");
+                      // }
+                      // showSignInfo();
+        </script>
+
+      </div> -->
 
 
 
@@ -576,8 +567,7 @@
         <div class="kf-li kf-qq">
           <a class="kf-a a-blue" href="http://b.qq.com/webc.htm?new=0&sid=4000313400&o=etmcn.com&q=7" target="_blank">QQ咨询</a>
         </div>
-
-
+        
       </div>
     </div>
     <div class="kf-sure">
@@ -608,8 +598,7 @@
 
         <td id="firstMenu">
 
-
-          <a id='logo' href='javascript:void(0);' class=' aWhite selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>
+          <a id='logo' href='javascript:void(0);' class=' aWhite  selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>
             <img class='sex' style="border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;" src="/assets/img/icon.jpg"  />
             <!-- <span class='firstMenuSelectedTips' style="top: 24.3929px;">
               <img src='/assets/img/ArrowLeft.png'>
@@ -1373,6 +1362,11 @@
 
 
 
+
+
+
+
+
         <td id="childMenu" style="border-right-width:0px;">
 
           <div class="fixIndex hidden" style="position: relative;height: 80px;width: 3px;">
@@ -1385,7 +1379,7 @@
             <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动" />
           </div> -->
 
-          <div id="menuNormalTopBar" class="childMenuTopBar ">
+          <div id="menuNormalTopBar" class="childMenuTopBar hidden">
             <div class="d" >招生推广</div>
             <div class="i" >18616126092</div>
             <img src="/assets/img/floatTop.png" id="btnFloatTop" title="浮动" />
@@ -1398,7 +1392,7 @@
           <div id="menuNormal" class="hidden">
           </div> -->
 
-          <div id="menuNormal" class="" style="overflow-y: hidden; outline: none;" tabindex="5001" index="0">
+          <div id="menuNormal" class="hidden" style="overflow-y: hidden; outline: none;" tabindex="5001" index="0">
             <a class="secMemu aNormal secUnSelected secMemuBg" href="javascript:void(0);">微信公众账号
               <span class="secMenuSelectedTips">
                 <img class="arrowDown" src="/assets/img/ArrowDown.png">
@@ -1548,9 +1542,16 @@
           </div>
 
 
-          <!-- <iframe name="content" width="100%" frameborder="0" id="content" scrolling="no" src="/v1/homepage/index"></iframe> -->
 
 
+
+
+
+          <iframe name="content" style="width:100%; height:100%;" frameborder="0" id="content" scrolling="no" src="/v1/homepage/index"></iframe>
+
+
+
+          
 
 
 

@@ -72,6 +72,16 @@ class HomepageController extends Base_CrmController {
         
     }
 
+    public function secsigningAction() 
+    {
+
+    }
+
+    public function searchmemberAction()
+    {
+
+    }
+
     public function mainAction()
     {
 
@@ -80,4 +90,9 @@ class HomepageController extends Base_CrmController {
     public function main2Action()
     {
     }
+
+    public function infoAction()
+    {
+    }
+    
 }
