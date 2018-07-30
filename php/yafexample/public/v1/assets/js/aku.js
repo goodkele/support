@@ -36,7 +36,49 @@ function Menu() {
                             name : '微关注学员',
                             level : 3,
                             pid : 100,
-                        }
+                        },
+                        {
+                            id : 1100002,
+                            name : '微信息群发',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100003,
+                            name : '欢迎词管理',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100004,
+                            name : '关键词管理',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100005,
+                            name : '微推广管理',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100006,
+                            name : '微官网管理',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100007,
+                            name : '微约课管理',
+                            level : 3,
+                            pid : 100,
+                        },
+                        {
+                            id : 1100007,
+                            name : '自定义菜单',
+                            level : 3,
+                            pid : 100,
+                        },
                     ]
                 },
                 {
@@ -50,9 +92,65 @@ function Menu() {
                             name : '学员短信发送',
                             level : 3,
                             pid : 101,
+                        },
+                        {
+                            id : 1101002,
+                            name : '通用短信发送',
+                            level : 3,
+                            pid : 101,
+                        },
+                        {
+                            id : 1101003,
+                            name : '短信发送记录',
+                            level : 3,
+                            pid : 101,
+                        },
+                        {
+                            id : 1101004,
+                            name : '回复短信查看',
+                            level : 3,
+                            pid : 101,
+                        },
+                        {
+                            id : 1101005,
+                            name : '短信余额查询',
+                            level : 3,
+                            pid : 101,
                         }
                     ]
-                }
+                },
+                {
+                    id : 102,
+                    name : '企业邮件管理',
+                    level : 2,
+                    pid : 1,
+                    sub : [
+                        {
+                            id : 1102001,
+                            name : '学员邮件发送',
+                            level : 3,
+                            pid : 102,
+                        },
+                    ]
+                },
+                {
+                    id : 103,
+                    name : '推广分析曲线',
+                    level : 2,
+                    pid : 1,
+                    sub : [
+
+                    ]
+                },
+                {
+                    id : 104,
+                    name : '基础信息设置',
+                    level : 2,
+                    pid : 1,
+                    sub : [
+
+                    ]
+                },
             ],
         },
         {
@@ -60,7 +158,9 @@ function Menu() {
             name : '呼叫中心',
             level : 1,
             pid : 0,
-            sub : [],
+            sub : [
+                
+            ],
         },
         {
             id : 3,
@@ -144,7 +244,55 @@ function Menu() {
             name : '系统配置',
             level : 1,
             pid : 0,
-            sub : [],
+            sub : [
+                {
+                    id : 1400,
+                    name : '系统菜单管理',
+                    level : 2,
+                    pid : 14,
+                    sub : [
+                        {
+                            id : 11400001,
+                            name : '功能菜单设置',
+                            level : 3,
+                            pid : 1400,
+                        },
+                    ]
+                },
+                {
+                    id : 1401,
+                    name : '数据维护管理',
+                    level : 2,
+                    pid : 14,
+                    sub : [
+                        {
+                            id : 11401001,
+                            name : '数据安全备份',
+                            level : 3,
+                            pid : 1401,
+                        },
+                        {
+                            id : 11401002,
+                            name : '系统维护配置',
+                            level : 3,
+                            pid : 1401,
+                        },
+                        {
+                            id : 11401003,
+                            name : '系统操作日志',
+                            level : 3,
+                            pid : 1401,
+                        },
+                        {
+                            id : 11401004,
+                            name : 'APP功能开通',
+                            level : 3,
+                            pid : 1401,
+                        },
+                    ]
+                },
+                
+            ],
         },
     ];
 
@@ -159,10 +307,10 @@ function Menu() {
 
     }
 
-
+    
 
     this.renderMenu = function() {
-        var logoHtml = "<a id='logo' href='javascript:void(0);' class=' aWhite selected currentSelected' style='width:60px;height:60px; padding: 0 3px 0 2px;'>" + 
+        var logoHtml = "<a id='logo' href='javascript:void(0);' class=' aWhite ' style='width:60px;height:60px; padding: 0 3px 0 2px;'>" + 
             "<img class='sex' style='border-radius: 40px;width: 40px;height: 40px;margin-top: 10px;' src='/assets/img/icon.jpg'  />" + 
         "</a>";
 
@@ -174,6 +322,11 @@ function Menu() {
         $("#firstMenu").html('');
         $("#firstMenu").append(logoHtml);
         $("#firstMenu").append(cells.join("\n"));
+
+        if (aku.system.getConstCmf() == 1) {
+            $("#firstMenu").find("#logo").addClass("selected currentSelected");
+            $("#firstMenu").find("#logo").append("<span class='firstMenuSelectedTips' style='top: "+ ($("#firstMenu").find("#logo").height()/2) +"px;'><img src='/assets/img/ArrowLeft.png'></span>");
+        }
     }
 
 
@@ -189,8 +342,30 @@ function Menu() {
                 menu.firstModuleId = $(this).data("id");
                 // 显示浮动
                 menu.floatSecMenu();
+
+                var firstoffset = $(".firstMenu:first").offset();
+                var lastoffset = $(".firstMenu:last").offset();
+
+                // var floatmenuoffset = $("#floatMenu").offset();
+
                 var offset = $(this).offset();
-                $("#floatMenu").css("top", offset.top);
+                var top = (offset.top + ($(this).outerHeight() / 2)) - ($("#floatMenu").outerHeight() / 2);
+                var bottom = top + $("#floatMenu").outerHeight();
+                
+                if (top < firstoffset.top) {
+                    $("#floatMenu").css("top", firstoffset.top);
+                } else if (bottom > (lastoffset.top + $(this).outerHeight())) {
+                    top = (lastoffset.top + $(this).outerHeight()) - $("#floatMenu").outerHeight();
+                    $("#floatMenu").css("top", top);
+                } else {
+                    $("#floatMenu").css("top", top);
+                }
+            }
+            // 固定
+            if (aku.system.getConstCmf() == 0) {
+                $(".firstMenu").removeClass("menuHover");
+                $(this).addClass("menuHover");
+
             }
         })
         $("#firstMenu").on("mouseleave", function () {
@@ -198,15 +373,22 @@ function Menu() {
                 $(this).removeClass("menuHover1");
                 menu.floatSecMenuHide();
             }
+            if (aku.system.getConstCmf() == 0) {
+                $(".firstMenu").removeClass("menuHover");
+            }
         });
         $("#floatMenu").on("mouseover", function() {
-            $("#floatMenu").removeClass("hidden");
+            if (aku.system.getConstCmf() == 1) {
+                $("#floatMenu").removeClass("hidden");
+            }
         });
         $("#floatMenu").on("mouseleave", function() {
-            $(".firstMenu").removeClass("menuHover1");
-            $("#floatMenu").addClass("hidden");
+            if (aku.system.getConstCmf() == 1) {
+                $(".firstMenu").removeClass("menuHover1");
+                $("#floatMenu").addClass("hidden");
+            }
         });
-        
+
         // 固定
         $("#firstMenu").on("click", "a", function () {
 
@@ -219,31 +401,50 @@ function Menu() {
                 menu.firstModuleId = $(this).data("id");
 
                 $(".firstMenuSelectedTips").remove();
-                $(this).append("<span class='firstMenuSelectedTips' style='top: 24.3929px;'><img src='/assets/img/ArrowLeft.png'></span>");
+                $(this).append("<span class='firstMenuSelectedTips' style='top: "+ ($(this).height()/2) +"px;'><img src='/assets/img/ArrowLeft.png'></span>");
     
+                $("#logo").removeClass("selected currentSelected");
                 $(".firstMenu").removeClass("selected currentSelected");
                 $(this).addClass("selected currentSelected");
 
                 menu.fixedSecMenu();
-
             }
-
         });
 
         // logo
         $("#logo").on("mouseover", function() {
+            $(".firstMenu").removeClass("menuHover1");
+            $(".firstMenu").removeClass("menuHover");
+
             menu.settingForHover();
+            if (aku.system.getConstCmf() == 1) {
+
+                // $(this).addClass("menuHover1");
+                // $(this).removeClass("selected currentSelected");
+            };
         });
         $("#logo").on("mouseleave", function() {
             menu.settingForHoverHide();
+            if (aku.system.getConstCmf() == 1) {
+                // $(this).removeClass("menuHover1");
+            };
         });
 
-        // 切换浮动／固定
+        // 切换浮动
         $("#btnFloatTop").on("click", function() {
-            aku.system.setConstCmf(1);
+            aku.system.setConstCmf(1);            
+            menu.fixedSecMenuHide();
+
+
+
         });
+        // 切换固定
         $("#btnFloatNormal").on("click", function() {
             aku.system.setConstCmf(0);
+
+            menu.fixedSecMenu();
+            menu.floatSecMenuHide();
+            // $("#floatMenu").addClass("hidden");
         });
 
     }
@@ -253,9 +454,6 @@ function Menu() {
     // 显示浮动菜单
     this.floatSecMenu = function() {
         $("#floatMenu").removeClass("hidden");
-
-        // console.log(this.firstModuleId);
-        // return;
 
         var firstModuleId = this.firstModuleId;
 
@@ -304,19 +502,7 @@ function Menu() {
         var firstModuleId = this.firstModuleId;
         var module = this.getModuleById(firstModuleId);
 
-        
-
         if (!$.isEmptyObject(module)) {
-
-            // $(".firstMenuSelectedTips").remove();
-            // $(this).append("<span class='firstMenuSelectedTips' style='top: 24.3929px;'><img src='/assets/img/ArrowLeft.png'></span>");
-
-            // $(".firstMenu").removeClass("selected currentSelected");
-            // $(this).addClass("selected currentSelected");
-
-            // var module = menu.getModuleById(id);
-
-
 
             $("#menuNormalTopBar").find(".d").html(module.name);
 
@@ -420,6 +606,8 @@ function Menu() {
     // 隐藏固定菜单
     this.fixedSecMenuHide = function() {
 
+        $("#menuNormalTopBar").addClass("hidden");
+        $("#menuNormal").addClass("hidden");
     }
     // 显示设置菜单
     this.settingForHover = function() {
@@ -532,9 +720,31 @@ function Menu() {
         });
 
         // iconfont
+
+
+        // $("#logo").on("mouseover", function() {
+        //     menu.settingForHover();
+        //     if (aku.system.getConstCmf() == 1) {
+        //         $(".firstMenu").removeClass("menuHover1");
+        //         $(this).addClass("menuHover1");
+        //         $(this).removeClass("selected currentSelected");
+        //     };
+        // });
+        // $("#logo").on("mouseleave", function() {
+        //     menu.settingForHoverHide();
+        //     if (aku.system.getConstCmf() == 1) {
+        //         $(this).removeClass("menuHover1");
+        //     };
+        // });
+
         
         $(html).on("mouseover", function() {
             menu.settingForHover();
+        //    if (aku.system.getConstCmf() == 1) {
+        //         $(".firstMenu").removeClass("menuHover1");
+        //         $(this).addClass("menuHover1");
+        //         $(this).removeClass("selected currentSelected");
+        //     };
         });
         $(html).on("mouseleave", function() {
             menu.settingForHoverHide();
