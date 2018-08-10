@@ -6,6 +6,7 @@ namespace Goodkele\Support\Snowflake;
  * Twitter Snowflake算法 生成全局唯一ID
  * 
  * 1 2 ~ 41 42 ~ 52 53 ~ 64
+ * 
  * ID 生成策略
  * 毫秒级时间41位+机器ID 10位+毫秒内序列12位。
  * 0           41     51     64
@@ -28,19 +29,20 @@ class Snowflake
     const PARAM_WORKID = 1;
     const PARAM_INCTYPE = 2;
 
-    const INC_TYPE_RAND = 1;
+    const INC_TYPE_CLASS = 1;
     const INC_TYPE_FILE = 2;
     const INC_TYPE_REDIS = 3;
+    const INC_TYPE_RAND = 4;
 
     public $options = [
         self::PARAM_WORKID => 1,
-        self::PARAM_INCTYPE => self::INC_TYPE_RAND,
+        self::PARAM_INCTYPE => self::INC_TYPE_CLASS,
     ];
     
 
-    public $incType = self::INC_TYPE_RAND;
-    public $workId = 0;
-    public $inc = 0;
+    // public $incType = self::INC_TYPE_RAND;
+    // public $workId = 0;
+    // public $inc = 0;
 
     /**
      * 构造函数
@@ -94,7 +96,7 @@ class Snowflake
         return intval(microtime(true) * 1000) - self::BEGIN_TIME;
     }
 
-    
+
 
     /**
      * 生成GUID
@@ -104,6 +106,9 @@ class Snowflake
         
         // $this->calcMicroTime();
 
+        var_dump(dirname(__FILE__));
+
+        var_dump(__FILE__);
 
 
         $a = 1;
