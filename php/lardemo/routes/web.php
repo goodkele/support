@@ -28,11 +28,11 @@ Route::post('/user', 'UserController@store');
 
 Route::get('/test', function () {
 
-    echo "test";
-
-    exit();
-
-    $a = \App\Feed::all();
+//    echo "test";
+//
+//    exit();
+//
+//    $a = \App\Feed::all();
 
     // vaR_dump($a->toArray());
 
@@ -56,6 +56,8 @@ Route::get('/test', function () {
     // var_dump($uuids1);
 
     // exit();
+
+
 
     $uuid1 = Uuid::uuid5(Uuid::NAMESPACE_DNS, 1); 
     echo $uuid1->toString() . "<br />";

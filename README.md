@@ -96,6 +96,12 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [nginx快速入门之基本原理篇](https://zhuanlan.zhihu.com/p/31196264)
 * [设计模式一句话总结](https://zhuanlan.zhihu.com/p/28737945)
 * [gis arcgis 下载](https://malagis.com/arcgis-10-2-full-iso-download.html)
+* [PHP html 转 图片](https://github.com/spatie/browsershot)
+* [puppeteer 部署错误](https://gomiba.co.in/blog/archives/1088)
+* [介绍操作 Chrome 浏览器无头模式的工具库 Puppeteer](https://github.com/laispace/puppeteer-explore)
+* [爬取《es6标准入门》、自动推文到掘金、站点性能分析；高级爬虫、自动化UI测试、性能分析](https://github.com/zhentaoo/puppeteer-deep)
+* [Twitter-Snowflake，64位自增ID算法详解](https://www.lanindex.com/twitter-snowflake%EF%BC%8C64%E4%BD%8D%E8%87%AA%E5%A2%9Eid%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/)
+
 
 
 ## Redis
