@@ -101,7 +101,11 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [介绍操作 Chrome 浏览器无头模式的工具库 Puppeteer](https://github.com/laispace/puppeteer-explore)
 * [爬取《es6标准入门》、自动推文到掘金、站点性能分析；高级爬虫、自动化UI测试、性能分析](https://github.com/zhentaoo/puppeteer-deep)
 * [Twitter-Snowflake，64位自增ID算法详解](https://www.lanindex.com/twitter-snowflake%EF%BC%8C64%E4%BD%8D%E8%87%AA%E5%A2%9Eid%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/)
-
+* [PHP-FPM不完全指南](https://www.tooto.cc/archives/193/)
+* [游戏服务器背包设计与开发](https://blog.csdn.net/y13156556538/article/details/72638338)
+* [PHP 线程，进程和并发](http://www.cnblogs.com/scott19820130/p/4915515.html)
+* [php-fpm模式下opcache的内存是共享全部吗？](https://segmentfault.com/q/1010000010931338/a-1020000010961699)
+* [PHP 生命周期 PHP Life Cycle](https://segmentfault.com/a/1190000000600059)
 
 
 ## Redis
