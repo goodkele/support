@@ -18,3 +18,6 @@ $dis->registerPlugin(new AdminLoginPlugin());
 \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("HTTP_STATIC_URL", $config->http->static_url);
 \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("HTTP_HOST_URL", $config->http->host_url);
 \Yaf\Registry::get(\GameConst::CURRENTVIEW)->assign("VIEW_PATH", $config->view_path);
+
+
+
