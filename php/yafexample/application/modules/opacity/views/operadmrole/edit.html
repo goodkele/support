@@ -1,0 +1,188 @@
+{{include file="include/header.html"}}
+<div class="content">
+<div class="left_menu lft" id="leftMenu">
+{{include file="include/left.html"}}
+</div>
+<form name="form1" id="form1" action="/admgroup/edit" method="post" onsubmit="userEdit(this); return false;" >
+<div class="right_conter">
+<div class="crumbs">
+       当前位置：{{$navi}}
+</div>
+<div class="col-1 cl" id="main_box">
+     <div class="content cl" style="">
+          <div class="subnav">
+               <div class="content-menu ib-a blue line-btm ">
+                     <a class="on" href="javascript:void(0);"><em>编辑部门</em></a>
+                     <span>|</span>
+                     <a class="off" href="{{$back}}"><em>返回部门列表</em></a>
+               </div>
+          </div>
+          <div class="p_lr_10 cl">
+              <table class="table_form" width="100%">
+                 <tbody>
+
+                    <tr>
+                        <td width="80">名称</td>
+                        <td>
+                           <input type="text" value="{{$data.name}}" id="" class="input-text" name="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80">运营商</td>
+                        <td>
+                           {{foreach item=subitem2 from=$company}}
+                              <span class="box p_r_20 lft">
+                               <input type="checkbox" name="company[]" {{if $subitem2.def}}checked="checked"{{/if}} value="{{$subitem2.id}}" style="margin-right:5px;">{{$subitem2.name}}
+                              </span>
+                            {{/foreach}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="fb blue">超级管理员</span></td>
+                        <td>
+                        <input type="radio" value="1" name="super" style="margin-right:5px;" {{if $data.purview=='ADMIN'}}checked="checked"{{/if}} onclick='$("#purviewBox").css({display:"none"})'>
+                        <span class="fb" style="color:#039; padding-right:15px;">是</span>
+
+                        <input type="radio" value="0" name="super" {{if $data.purview !='ADMIN'}}checked="checked"{{/if}} style="margin-right:5px;" onclick='$("#purviewBox").css({display:""})'>
+                        <span class="fb" style="color:#F00;">否 </span>
+                        </td>
+                    </tr>
+                 </tbody>
+              </table>
+
+       <!--游戏区-->
+
+              {{if $viewServerTf == 1}}
+              <thead>
+              <tr>
+                  <th style="text-align:left;color:#444444;" colspan='2'>
+                      <a href="#1F" name="1F" id="1F"></a>
+                      <strong>游戏区</strong>
+                  </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td colspan='2'>
+                      {{foreach item=item from=$treeServer}}
+                      <div id="purviewBox{{$item->dept}}">
+                          <div class="blue fb tb_lst_title">
+
+                              <input type="checkbox" value="{{$item->dept}}" name="depts[]"
+                                     id="box{{$item->dept}}"
+                                     onclick="selectDept({{$item->dept}})"
+                                     {{if $item->isChecked}} checked{{/if}}
+                              style="margin-right:5px;"> {{$item->name}}
+                          </div>
+                            <span id="purviewBoxServers{{$item->dept}}">
+                            <table width="99%">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        {{foreach item=subitem2 from=$item->sub}}
+                                  <span class="box p_r_20 lft">
+                                   <input type="checkbox" name="server[]" class="server{{$item->dept}}" tag="server{{$item->dept}}"
+
+                                          {{if $subitem2->isChecked}} checked{{/if}}
+                                          value="{{$subitem2->server_id}}" style="margin-right:5px;">{{$subitem2->server_name}}
+                                  </span>
+                                        {{/foreach}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </span>
+                      </div>
+                      {{/foreach}}
+              </tbody>
+            {{/if}}
+
+
+
+
+
+              </table>
+
+
+              <div class="table-list" id="purviewBox" style="margin-top:12px;{{if $data.purview=='ADMIN'}}display:none;{{/if}}">
+                  {{foreach item=item from=$list}}
+                  <div class="blue fb tb_lst_title">
+                     {{$item.name}}
+                  </div>
+                  <table width="100%">
+                  {{foreach item=subitem from=$item.sub}}
+                     <thead>
+                       <tr>
+                          <th  align="left">
+                             <span class="fb">{{$subitem.name}}</span>
+                          </th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>
+                           {{foreach item=subitem2 from=$subitem.sub}}
+                              <span class="box p_r_20 lft">
+                               <input type="checkbox" name="purview_tag[]" {{if $subitem2.def==1}}checked="checked"{{/if}} value="{{$subitem2.purview_tag}}" style="margin-right:5px;">{{$subitem2.name}}
+                              </span>
+                            {{/foreach}}
+                           </td>
+                        </tr>
+                     </tbody>
+                   {{/foreach}}
+                  </table>
+                  {{/foreach}}
+
+                    <INPUT TYPE="hidden" NAME="id" value="{{$data.id}}">
+                    <INPUT TYPE="hidden" NAME="back" value="{{$back}}">
+              </div>
+                <div class="btn" style=" margin-bottom:20px;">
+                       <input type="submit" onclick="" value="确 定" name="dosubmit" class="button">
+                       <input type="button" value="返 回" name="" class="button" onclick="location.href='{{$back}}'">
+                  </div>
+          </div>
+     </div>
+</div>
+</div>
+</form>
+</div>
+<script>
+//添加客户
+function userEdit( form )
+{
+loader.post( '', '/admgroup/edit', form );
+return false;
+}
+</script>
+{{include file="include/footer.html"}}
+
+
+<script type="text/javascript">
+$("#destroystart_time").click(
+function(obj) {
+    document.getElementById('start_time').value = "";
+}
+)
+$("#destroyend_time").click(
+function(obj) {
+    document.getElementById('end_time').value = "";
+}
+)
+
+function selectDept(dept)
+{
+var box = document.getElementById("box" + dept);
+var servers = document.getElementsByName("server[]");
+for (i in servers) {
+if (servers[i].className == undefined) {
+    $(".server" + dept).attr('checked', box.checked);
+} else {
+    if (servers[i].className == ("server" + dept)) {
+        servers[i].checked = box.checked;
+    }
+}
+}
+}
+</script>
+

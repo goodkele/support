@@ -1,0 +1,123 @@
+<?php include $VIEW_PATH . "/include/maincontentheader2.html"; ?>
+
+
+<body style="background: url()">
+
+ <!-- <div class="content"> -->
+<!--    <div class="left_menu lft" id="leftMenu">
+        {{include file="include/left.html"}}
+    </div>
+
+    <div class="right_conter">
+        <div class="crumbs">
+            当前位置：{{$navi}}
+        </div>
+        <div class="col-1" id="main_box"> -->
+
+
+
+            <!-- <div class="content"> -->
+
+                
+
+                <!--通用内容表-->
+                <div class="subnav">
+                    <div class="content-menu ib-a blue line-btm ">
+                        <a href="/admgroup/add?back={{$url}}" class="add fb"><em>添加部门</em></a><span>|</span>
+                        <a class="on" href="javascript:void(0);"><em>部门列表</em></a>
+                    </div>
+                </div>
+
+                <div class="p_lr_10">
+                    <form  name="sear" id="sear" action="" method="post" >
+                        <table cellspacing="0" width="100%" class="search-form">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="explain-col">
+
+                                        <input onfocus="if(this.value=='关键字')this.value=''" type="text" class="input-text"  value="{{$_GET.keyword|default:'关键字'}}" name='keyword'>
+                                        <input type="button" value="搜索" class="button" name="search" onclick="artsearch()">
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="cl table-list">
+                        <table cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th align="center" width="35"><input type="checkbox" onclick="selectall('id[]', this);" id="check_box_all" value=""></th>
+                                <th align="left" width="160" >部门名称</th>
+                                <th align="left" >运营商</th>
+                                <th align="center" width="100">人员数</th>
+                                <th align="center" width="68">添加日期</th>
+                                <th align="center" width="60">管理操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{foreach item=item from=$list}}
+                            <tr>
+                                <td align="center"><input type="checkbox" value="{{$item.id}}" name="id[]"></td>
+                                <td>{{$item.name}}</td>
+                                <td>{{$item.company}}</td>
+                                <td align='center'>{{$item.user_num}}</td>
+                                <td align="center">{{$item.addtime|date_format:'%Y/%m/%d'}}</td>
+                                <td align="center"><a href="/admgroup/edit?uid={{$item.id}}&back={{$url}}">编辑</a>
+                                </td>
+                            </tr>
+                            {{foreachelse}}
+                            <tr>
+                                <td colspan='5' align='center'>暂无部门</td>
+                            </tr>
+                            {{/foreach}}
+                            </tbody>
+                        </table>
+                        <div class="btn">
+                            <a onclick="" href="javascript:selectall('id[]',1)">全选</a> / <a onclick="" href="javascript:selectall('id[]',0)">取消</a>
+                            &nbsp;&nbsp;<input type="button" onclick="show_confirm ('确认要删除选定的部门吗？','batch_del_user()')" value="删除选中的部门" class="button" name="button">&nbsp;&nbsp;
+                        </div>
+                        {{$pageLink}}
+                    </div>
+                </div>
+
+
+
+            <!-- </div> -->
+
+
+
+        <!-- </div> -->
+    <!-- </div> -->
+    <!-- <script>
+
+        //批量删除回收站文章
+        function batch_del_user(  )
+        {
+            id = chkValues( 'id[]' );
+
+            if( id == '' )
+            {
+                show_alert( {'result':'请选择要删除的部门。'} );
+            }
+            else
+            {
+                loader.get( '', '/admgroup/del?id='+id );
+                return false;
+            }
+        }
+        function artsearch()
+        {
+            var url = '/admgroup/index?pN={{$_GET.pN|default:1}}';
+            if(document.sear.keyword.value!='关键字'){
+                url += '&keyword='+document.sear.keyword.value;
+            }
+            location.href = url;
+        }
+    </script> -->
+</body>
+    <?php include $VIEW_PATH . "/include/maincontentfooter2.html"; ?>
+
+     
+

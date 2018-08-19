@@ -5,13 +5,18 @@ class OperAdmUserController extends Base_OpacityController
 
     public function indexAction() 
     {
-        // echo "index";
-        // exit();
+
+        \Yaf\Dispatcher::getInstance()->autoRender(false);
+        
+
+        
+        
+        $this->display("index2");
     }
 
     public function addAction()
     {
-
+        
     }
     
 }

@@ -106,6 +106,7 @@ grant all privileges on *.* to 'root'@'%' identified by '!Mima2008';
 * [PHP 线程，进程和并发](http://www.cnblogs.com/scott19820130/p/4915515.html)
 * [php-fpm模式下opcache的内存是共享全部吗？](https://segmentfault.com/q/1010000010931338/a-1020000010961699)
 * [PHP 生命周期 PHP Life Cycle](https://segmentfault.com/a/1190000000600059)
+* [Redis 性能](http://www.cnblogs.com/lulu/archive/2013/06/10/3130878.html)
 
 
 ## Redis

@@ -1,0 +1,7 @@
+User-agent: * 
+Disallow: /css/
+Disallow: /image/
+Disallow: /js/
+Disallow: /font/
+Disallow: index.php
+Disallow: Item.xml
