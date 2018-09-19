@@ -1,0 +1,112 @@
+<?php include $VIEW_PATH . "/include/maincontentheader2.html"; ?>
+
+    <body style="background: url()">
+        
+        <div class="col-1 cl" id="main_box">
+            <div class="content cl" style="">
+                <div class="subnav">
+                    <div class="content-menu ib-a blue line-btm">
+                        <a class="on" href="javascript:void(0)"><em>用户日志</em></a>
+                    </div>
+                </div>
+                <div class="p_lr_10 cl">
+                    <form  name="sear" id="sear" action="" method="post" >
+                        <table cellspacing="0" width="100%" class="search-form">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="explain-col">
+                                        用户：<select name="user" id="user">
+                                        <OPTION VALUE=''>全部</OPTION>
+                                        {{foreach item=item from=$user}}
+                                        <OPTION VALUE='{{$item.id}}' {{if $_GET.user==$item.id}}selected="selected"{{/if}}>{{$item.username}}</OPTION>
+                                        {{/foreach}}
+                                    </select>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        日期：
+                                        <link rel="stylesheet" type="text/css" href="/js/calendar/jscal2.css"/>
+                                        <link rel="stylesheet" type="text/css" href="/js/calendar/border-radius.css"/>
+                                        <link rel="stylesheet" type="text/css" href="/js/calendar/win2k.css"/>
+                                        <script type="text/javascript" src="/js/calendar/calendar.js"></script>
+                                        <script type="text/javascript" src="/js/calendar/lang/en.js"></script>
+                                        <input type="text" readonly="" class="date input-text" size="10" value="{{$_GET.start}}" id="start_time" name="start_time">
+                                        <script type="text/javascript">
+                                            Calendar.setup({
+                                                weekNumbers: false,
+                                                inputField : "start_time",
+                                                trigger    : "start_time",
+                                                dateFormat: "%Y-%m-%d",
+                                                showTime: false,
+                                                onSelect   : function() {this.hide();}
+                                            });
+                                        </script>
+
+                                        -
+                                        <input type="text" readonly="" class="date input-text" size="10" value="{{$_GET.end}}" id="end_time" name="end_time">
+                                        <script type="text/javascript">
+                                            Calendar.setup({
+                                                weekNumbers: false,
+                                                inputField : "end_time",
+                                                trigger    : "end_time",
+                                                dateFormat: "%Y-%m-%d",
+                                                showTime: false,
+                                                onSelect   : function() {this.hide();}
+                                            });
+                                        </script>
+
+                                        <input type="button" value="搜索" class="button" name="search" onclick="artsearch()">
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <!--玩家列表 -->
+                    <div class="table-list">
+                        <table width="100%">
+                            <thead>
+                            <tr>
+                                <th width="80">操作用户</th>
+                                <th width="100" align="left">服务器</th>
+                                <th width="100" align="left">IP</th>
+                                <th align="left">操作内容</th>
+                                <th width="80">操作用户</th>
+                                <th width="120">操作时间</th>
+                                <th width="100">详细</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{foreach item=item from=$list}}
+                            <tr>
+                                <td align="center">{{$item.adm_username|default:'-'}}</td>
+                                <td >{{$item.server_name}}</td>
+                                <td >{{$item.ip}}</td>
+                                <td >{{$item.desc}}</td>
+                                <td align="center"></td>
+                                <td align="center">{{$item.addtime}}</td>
+
+                                <td align="center">
+                                    <a onclick="" href="javascript:infoFun({{$item.id}})">查看详细</a>
+                                </td>
+                            </tr>
+                            {{foreachelse}}
+                            <tr>
+                                <td colspan="8" style="text-align:center;">暂无日志记录</td>
+                            </tr>
+                            {{/foreach}}
+                            </tbody>
+                        </table>
+                        <div class="btn">&nbsp;</div>
+
+                        {{$pageLink}}
+                    </div>
+                    <!--玩家列表 -->
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+<?php include $VIEW_PATH . "/include/maincontentfooter2.html"; ?>

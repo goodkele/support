@@ -1,0 +1,57 @@
+{{ include file="include/header.html" }}
+<div class="content">
+    <div class="left_menu lft" id="leftMenu">
+        {{include file="include/left.html"}}
+    </div>
+
+    <div class="right_conter">
+        <div class="crumbs">
+            当前位置：{{$navi}}
+        </div>
+        <div class="col-1">
+            <div class="main">
+                <!--通用内容表-->
+                <div class="subnav">
+                    <div class="content-menu ib-a blue line-btm ">
+                        <a class="off" href="{{$back}}"><em>&lt;&lt; 返回用户列表</em></a>
+                    </div>
+                </div>
+
+                <div class="p_lr_10">
+
+                    <div class="cl table-list">
+                        <table cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th align="center" width="168">登录时间</th>
+                                <th align="center" width="168">登录IP</th>
+                                <th align="center" width="68">状态</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{foreach item=item from=$list}}
+                            <tr>
+                                <td align="center">{{$item.time|date_format:'%Y/%m/%d %H:%M:%S'}}</td>
+                                <td align="center">{{$item.ip}}</td>
+                                <td align="center">{{if $item.status==1}}成功{{else}}<span style="color:#ff0000">失败</span>{{/if}}</td>
+                                <td align="center">&nbsp;
+                                </td>
+                            </tr>
+                            {{/foreach}}
+                            </tbody>
+                        </table>
+                        {{$pageLink}}
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{include file="include/footer.html"}}
+
+     
+

@@ -1,0 +1,35 @@
+<table class="table_form" style="width:500px;" >
+    <tbody>
+    <tr>
+        <td width='80'>操作</td>
+        <td>
+            {{$data.desc}}
+        </td>
+    </tr>
+    <tr>
+        <td width='80'>操作用户</td>
+        <td>
+            {{$data.adm_username}}
+        </td>
+    </tr>
+    <tr>
+        <td>操作时间</td>
+        <td>
+            {{$data.addtime}}
+        </td>
+    </tr>
+    <tr>
+        <td>玩家</td>
+        <td>
+            {{if $data.user}}UID:{{$data.uid}}, 账户:{{$data.user.pt}}, 掌门名:{{$data.user.zm_name}}{{else}}--{{/if}}
+        </td>
+    </tr>
+
+    <tr>
+        <td>详细</td>
+        <td>
+            {{$data.info_str}}
+        </td>
+    </tr>
+    </tbody>
+</table>

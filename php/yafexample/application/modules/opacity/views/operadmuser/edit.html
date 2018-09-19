@@ -3,7 +3,7 @@
     <div class="left_menu lft" id="leftMenu">
         {{include file="include/left.html"}}
     </div>
-    <form name="form1" id="form1" action="/admuser/add" method="post" onsubmit="userAdd(this); return false;" >
+    <form name="form1" id="form1" action="" method="post" onsubmit="userEdit(this); return false;" >
         <div class="right_conter">
             <div class="crumbs">
                 当前位置：{{$navi}}
@@ -12,7 +12,9 @@
                 <div class="content cl" style="">
                     <div class="subnav">
                         <div class="content-menu ib-a blue line-btm ">
-                            <a class="on" href="javascript:void(0);"><em>添加用户</em></a>
+                            <a class="on" href="javascript:void(0);"><em>编辑用户</em></a>
+                            <span>|</span>
+                            <a class="off" href="{{$back}}"><em>返回用户列表</em></a>
                         </div>
                     </div>
                     <div class="p_lr_10 cl">
@@ -21,22 +23,21 @@
                             <tr>
                                 <td width="80">用户名</td>
                                 <td>
-                                    <input type="text" id="" class="input-text" name="username">
-                                    <div id="" class="onShow">请输入用户名</div>
+                                    {{$data.username}}
                                 </td>
                             </tr>
                             <tr>
                                 <td>密码</td>
                                 <td>
                                     <input type="password" value="" id="" class="input-text" name="pwd">
-                                    <div id="" class="onShow">密码应该为6-20位之间</div>
+                                    <div id="" class="onError">不输入密码，则不修改密码</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>确认密码</td>
                                 <td>
                                     <input type="password" value="" id="" class="input-text" name="pwd2">
-                                    <div id="pwdconfirmTip" class="onShow">请输入确认密码</div>
+                                    <div id="pwdconfirmTip" class="onShow">密码应该为6-20位之间</div>
                                 </td>
                             </tr>
                             <tr>
@@ -44,8 +45,9 @@
                                 <td>
 
                                     <SELECT NAME="group_id">
+                                        <option value="0">-- 空 --</option>
                                         {{foreach item=item from=$company}}
-                                        <OPTION VALUE="{{$item.id}}" >{{$item.name}}</OPTION>
+                                        <OPTION VALUE="{{$item.id}}" {{if $data.group_id==$item.id}}selected="selected"{{/if}}>{{$item.name}}</OPTION>
                                         {{/foreach}}
                                     </SELECT>
                                 </td>
@@ -53,10 +55,10 @@
                             <tr>
                                 <td>账号状态</td>
                                 <td>
-                                    <input type="radio" value="1" checked="checked" name="status" style="margin-right:5px;">
+                                    <input type="radio" value="1" {{if $data.status==1}}checked="checked"{{/if}} name="status" style="margin-right:5px;">
                                     <span  class="fb" style="color:#039; padding-right:15px;">正常</span>
 
-                                    <input type="radio" value="0" name="status" style="margin-right:5px;">
+                                    <input type="radio" value="0" {{if $data.status==0}}checked="checked"{{/if}} name="status" style="margin-right:5px;">
                                     <span class="fb" style="color:#F00;">冻结 </span>
                                 </td>
                             </tr>
@@ -64,8 +66,11 @@
                             </tbody>
                         </table>
 
+
                         <div class="btn" style=" margin-bottom:20px;">
-                            <input type="submit" onclick="" value="添 加" name="dosubmit" class="button">
+                            <INPUT TYPE="hidden" NAME="uid" value="{{$data.id}}">
+                            <INPUT TYPE="hidden" NAME="back" value="{{$back}}">
+                            <input type="submit" onclick="" value="确 定" name="dosubmit" class="button">
                             <input type="button" value="返 回" name="" class="button" onclick="location.href='{{$back}}'">
                         </div>
                     </div>
@@ -74,6 +79,14 @@
         </div>
     </form>
 </div>
+<script>
+    //添加用户
+    function userEdit( form )
+    {
+        loader.post( '', '/admuser/edit', form );
+        return false;
+    }
+</script>
 {{include file="include/footer.html"}}
 
      

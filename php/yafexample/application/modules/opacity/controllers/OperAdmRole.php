@@ -8,6 +8,9 @@ use \Aku\Models\Admin\AuthModuleRole;
 class OperAdmRoleController extends Base_OpacityController
 {
 
+    /**
+     * 部门列表
+     */
     public function indexAction() 
     {
 
@@ -31,6 +34,9 @@ class OperAdmRoleController extends Base_OpacityController
 
     }
 
+    /**
+     * 添加部门
+     */
     public function addAction()
     {
 
